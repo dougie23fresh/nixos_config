@@ -1,0 +1,1 @@
+hardware.bolt.enable = true;

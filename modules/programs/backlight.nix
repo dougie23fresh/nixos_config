@@ -1,0 +1,1 @@
+light.enable = true;
