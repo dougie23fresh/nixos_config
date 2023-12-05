@@ -302,7 +302,7 @@
     libu2f-host
     yubikey-personalization
   ];
-  fonts.fonts = with pkgs-unstable; [
+  fonts.fonts = with pkgsmore; [
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
