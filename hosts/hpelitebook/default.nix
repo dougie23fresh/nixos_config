@@ -127,7 +127,7 @@
   services.redshift.provider = "manual";
   services.redshift.latitude = "26.006409";
   services.redshift.longitude = "-90.229664";
-  services.redshift.temperature.night = 1500;
+  services.redshift.temperature.night = 4500;
   # yubikey
   services.pcscd.enable = true;
   services.udev.packages = [
