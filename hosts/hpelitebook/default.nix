@@ -103,7 +103,7 @@
   services.tailscale.enable = true;
   services.syncthing.enable = true;
   #services.syncthing.systemService = true;
-  services.clipman.enable = true;
+  #services.clipman.enable = true;
   services.tlp.enable = true;
   services.tlp.settings = {
     CPU_SCALING_GOVERNOR_ON_AC = "performance";
