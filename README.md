@@ -22,4 +22,15 @@ https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/.install/bashrc.sh?ref_typ
 https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/.install/init-pywal.sh?ref_type=heads
 
 
+git clone 
 
+
+update hostname
+
+add this to config file
+nix.settings.experimental-features = [ "nix-command" "flakes" ];
+home-manager switch --flake <flake-uri>#<USERNAME>
+sudo nixos-rebuild switch --flake './my-nix-flake#<your_host_name>'
+
+sudo nixos-rebuild switch --flake 'flake.nix#hpelitebook'
+home-manager switch --flake flake.nix#hpelitebook
