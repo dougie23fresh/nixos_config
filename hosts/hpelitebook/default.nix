@@ -340,16 +340,16 @@
   system.stateVersion = "23.05"; # Did you read the comment?
   ## Backups & Upgrades
   # Backup system config
-  system.copySystemConfiguration = true;
+  # system.copySystemConfiguration = true;
   # System Upgrades
-  system.autoUpgrade.enable = true;
-  system.autoUpgrade.allowReboot = true;
+  #system.autoUpgrade.enable = true;
+  #system.autoUpgrade.allowReboot = true;
 
   ## Garbage Collection
   # Automatic Garbage Collection
-  nix.gc = {
-                automatic = true;
-                dates = "weekly";
-                options = "--delete-older-than 3d";
-          };
+  #nix.gc = {
+  #              automatic = true;
+  #              dates = "weekly";
+  #              options = "--delete-older-than 3d";
+  #        };
 }
