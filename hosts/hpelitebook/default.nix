@@ -123,11 +123,11 @@
   services.hardware.bolt.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  services.redshift.enable = true;
-  services.redshift.provider = "manual";
-  services.redshift.latitude = "26.006409";
-  services.redshift.longitude = "-90.229664";
-  services.redshift.temperature.night = 4500;
+  #services.redshift.enable = true;
+  #services.redshift.provider = "manual";
+  #services.redshift.latitude = "26.006409";
+  #services.redshift.longitude = "-90.229664";
+  #services.redshift.temperature.night = 4500;
   # yubikey
   services.pcscd.enable = true;
   services.udev.packages = [
@@ -302,7 +302,7 @@
     libu2f-host
     yubikey-personalization
   ];
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
