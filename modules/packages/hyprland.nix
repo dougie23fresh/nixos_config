@@ -1,17 +1,20 @@
-   xserver = {
+{ config, pkgs, ... }:
+
+{
+  programs.waybar = {
+    enable = true;
+    package = pkgs.waybar.overrideAttrs (oldAttrs: {
+      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    });
+  };
+  programs.hyprland = {
+    enable = true;
+    xwayland = {
+      hidpi = true;
       enable = true;
-      layout = "us";
-      xkbVariant = "";
-      excludePackages = [ pkgs.xterm ];
-      libinput.enable = true;
-      displayManager.gdm = {
-        enable = true;
-        wayland = true;
-      };
-      # displayManager.lightdm.enable = true;
-      desktopManager.xfce.enable = true;
     };
-  
+    #  enableNvidiaPatches = true;
+  };
   xdg.portal = {
     enable = true;
     wlr.enable = true;
@@ -19,8 +22,9 @@
       xdg-desktop-portal-wlr
     ];
   };
-
-environment.systemPackages = with pkgs; [
+  security.pam.services.swaylock = {};
+  
+  environment.systemPackages = with pkgs; [
     waybar # the status bar
     swaybg # the wallpaper
     swayidle # the idle timeout
@@ -69,9 +73,7 @@ environment.systemPackages = with pkgs; [
 
   ];
 
-  security.pam.services.swaylock = {};
-
-    environment.sessionVariables = {
+  environment.sessionVariables = {
     POLKIT_AUTH_AGENT = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
     GSETTINGS_SCHEMA_DIR = "${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}/glib-2.0/schemas";
     LIBVA_DRIVER_NAME = "nvidia";
@@ -103,44 +105,10 @@ environment.systemPackages = with pkgs; [
     "WLR_NO_HARDWARE_CURSORS" = "1";
     "WLR_EGL_NO_MODIFIRES" = "1";
   };
-{pkgs, ...}: {
-  # TODO vscode & chrome both have wayland support, but they don't work with fcitx5, need to fix it.
-  programs = {
-    # source code: https://github.com/nix-community/home-manager/blob/master/modules/programs/chromium.nix
-    google-chrome = {
-      enable = true;
-
-      commandLineArgs = [
-        # make it use GTK_IM_MODULE if it runs with Gtk4, so fcitx5 can work with it.
-        # (only supported by chromium/chrome at this time, not electron)
-        "--gtk-version=4"
-        # make it use text-input-v1, which works for kwin 5.27 and weston
-        # "--enable-wayland-ime"
-
-        # enable hardware acceleration - vulkan api
-        # "--enable-features=Vulkan"
-      ];
-    };
-
-    firefox = {
-      enable = true;
-      enableGnomeExtensions = false;
-      package = pkgs.firefox-wayland; # firefox with wayland support
-    };
-  };
+  }
+    #firefox = {
+    #  enable = true;
+    #  enableGnomeExtensions = false;
+    #  package = pkgs.firefox-wayland; # firefox with wayland support
+    #};
 }
-
-waybar = {
-      enable = true;
-      package = pkgs.waybar.overrideAttrs (oldAttrs: {
-        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-      });
-    };
-hyprland = {
-      enable = true;
-      xwayland = {
-        hidpi = true;
-        enable = true;
-      };
-      #  enableNvidiaPatches = true;
-    };

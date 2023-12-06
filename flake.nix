@@ -63,6 +63,11 @@
           ./modules/time.nix
           ./modules/i18n.nix
           ./modules/location.nix
+          # Packages
+          ./modules/packages/xserver.nix
+          ./modules/packages/xfce.nix
+          ./modules/packages/hyprland.nix
+
           # Services
           ./modules/services/avahi.nix
           ./modules/services/battery.nix
