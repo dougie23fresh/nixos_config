@@ -1,1 +1,4 @@
-printing.enable = true;
+{ config, pkgs, ... }:
+{
+    services.printing.enable = true;
+}

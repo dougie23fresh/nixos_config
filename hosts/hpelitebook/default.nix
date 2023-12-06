@@ -51,9 +51,6 @@
     xkbVariant = "";
   };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -72,47 +69,12 @@
   powerManagement.enable = true;
   #powerManagement.powertop.enable = true;
   # Firmware updater
-  services.fwupd.enable = true;
-  # userspace virtual filesystem
-  services.gvfs.enable = true; # Mount, trash, and other functionalities
-  # Thumbnail support for images
-  services.tumbler.enable = true;
-  services.avahi.enable = true;
-  services.avahi.nssmdns = true;
-  services.tailscale.enable = true;
-  services.syncthing.enable = true;
-  #services.syncthing.systemService = true;
-  #services.clipman.enable = true;
-  services.tlp.enable = true;
-  services.tlp.settings = {
-    CPU_SCALING_GOVERNOR_ON_AC = "performance";
-    CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
-    CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-    CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-
-    CPU_MIN_PERF_ON_AC = 0;
-    CPU_MAX_PERF_ON_AC = 100;
-    CPU_MIN_PERF_ON_BAT = 0;
-    CPU_MAX_PERF_ON_BAT = 20;
-  };
-  # Battery power management
-  services.upower.enable = true;
 
   services.hardware.bolt.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  #services.redshift.enable = true;
-  #services.redshift.provider = "manual";
-  #services.redshift.latitude = "26.006409";
-  #services.redshift.longitude = "-90.229664";
-  #services.redshift.temperature.night = 4500;
-  # yubikey
-  services.pcscd.enable = true;
-  services.udev.packages = [
-    pkgs.libu2f-host
-    pkgs.yubikey-personalization
-  ];
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 

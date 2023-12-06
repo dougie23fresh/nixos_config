@@ -63,6 +63,20 @@
           ./modules/time.nix
           ./modules/i18n.nix
           ./modules/location.nix
+          # Services
+          ./modules/services/avahi.nix
+          ./modules/services/battery.nix
+          ./modules/services/dbus.nix
+          ./modules/services/fwupd.nix
+          ./modules/services/gvfs.nix
+          ./modules/services/pipewire.nix
+          ./modules/services/printing.nix
+          ./modules/services/redshift.nix
+          ./modules/services/syncthing.nix
+          ./modules/services/tailscale.nix
+          ./modules/services/tumbler.nix
+          ./modules/services/yubikey.nix
+
 
           # Programs
           ./modules/programs/backlight.nix

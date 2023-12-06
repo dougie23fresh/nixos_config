@@ -1,2 +1,5 @@
-avahi.enable = true;
-    avahi.nssmdns = true;
+{ config, pkgs, ... }:
+{
+    services.avahi.enable = true;
+    services.avahi.nssmdns = true;
+}

@@ -1,1 +1,4 @@
-syncthing.enable = true;
+{ config, pkgs, ... }:
+{
+    services.syncthing.enable = true;
+}

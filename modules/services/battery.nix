@@ -1,5 +1,7 @@
-tlp.enable = true;
-    tlp.settings = {
+{ config, pkgs, ... }:
+{
+    services.tlp.enable = true;
+    services.tlp.settings = {
       CPU_SCALING_GOVERNOR_ON_AC = "performance";
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
@@ -12,4 +14,5 @@ tlp.enable = true;
       CPU_MAX_PERF_ON_BAT = 20;
     };
     # Battery power management
-    upower.enable = true;
+    services.upower.enable = true;
+}

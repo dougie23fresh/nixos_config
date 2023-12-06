@@ -1,1 +1,4 @@
-tumbler.enable = true;
+{ config, pkgs, ... }:
+{
+    services.tumbler.enable = true;
+}

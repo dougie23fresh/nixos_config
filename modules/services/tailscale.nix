@@ -1,1 +1,4 @@
-tailscale.enable = true;
+{ config, pkgs, ... }:
+{
+    services.tailscale.enable = true;
+}
