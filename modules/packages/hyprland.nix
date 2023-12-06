@@ -92,7 +92,7 @@
     XDG_SESSION_DESKTOP = "Hyprland";
     GTK_USE_PORTAL = "1";
     NIXOS_XDG_OPEN_USE_PORTAL = "1";
-  }
+  };
   systemd.user.sessionVariables = {
     "NIXOS_OZONE_WL" = "1"; # for any ozone-based browser & electron apps to run on wayland
     "MOZ_ENABLE_WAYLAND" = "1"; # for firefox to run on wayland

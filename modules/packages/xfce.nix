@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-    services.xserver.xfce.enable = true;
+    services.xserver.desktopManager.xfce.enable = true;
 }
