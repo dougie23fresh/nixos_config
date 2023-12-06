@@ -60,9 +60,9 @@
         inherit system;
         modules = [
           ./hosts/hpelitebook/default.nix
-          ./modules/programs/time.nix
-          ./modules/programs/i18n.nix
-          ./modules/programs/location.nix
+          ./modules/time.nix
+          ./modules/i18n.nix
+          ./modules/location.nix
 
           # Programs
           ./modules/programs/backlight.nix
