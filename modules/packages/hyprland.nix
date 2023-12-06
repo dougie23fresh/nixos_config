@@ -20,6 +20,7 @@
     wlr.enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-wlr
+      xdg-desktop-portal-hyprland
     ];
   };
   security.pam.services.swaylock = {};
@@ -91,8 +92,8 @@
     XDG_SESSION_DESKTOP = "Hyprland";
     GTK_USE_PORTAL = "1";
     NIXOS_XDG_OPEN_USE_PORTAL = "1";
-
-    systemd.user.sessionVariables = {
+  }
+  systemd.user.sessionVariables = {
     "NIXOS_OZONE_WL" = "1"; # for any ozone-based browser & electron apps to run on wayland
     "MOZ_ENABLE_WAYLAND" = "1"; # for firefox to run on wayland
     "MOZ_WEBRENDER" = "1";
@@ -105,7 +106,7 @@
     "WLR_NO_HARDWARE_CURSORS" = "1";
     "WLR_EGL_NO_MODIFIRES" = "1";
   };
-  }
+
     #firefox = {
     #  enable = true;
     #  enableGnomeExtensions = false;
