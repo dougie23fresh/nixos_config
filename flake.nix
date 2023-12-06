@@ -10,7 +10,7 @@
 
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprland.inputs.nixpkgs.follows = "nixpkgs";\
+    hyprland.inputs.nixpkgs.follows = "nixpkgs";
 
     # Community scripts and utilities for Hypr projects
     hyprwm-contrib.url = "github:hyprwm/contrib";
