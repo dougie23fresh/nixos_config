@@ -35,7 +35,11 @@
   sound.enable = true;
   security.rtkit.enable = true;
   services.hardware.bolt.enable = true;
-
+  # Lid settings
+  services.logind = {
+    lidSwitch = "suspend";
+    lidSwitchExternalPower = "lock";
+  };
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.melvin = {
     isNormalUser = true;
