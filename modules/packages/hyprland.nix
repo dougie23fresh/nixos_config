@@ -77,11 +77,7 @@
   environment.sessionVariables = {
     POLKIT_AUTH_AGENT = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
     GSETTINGS_SCHEMA_DIR = "${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}/glib-2.0/schemas";
-    LIBVA_DRIVER_NAME = "nvidia";
     XDG_SESSION_TYPE = "wayland";
-    GBM_BACKEND = "nvidia-drm";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
     MOZ_ENABLE_WAYLAND = "1";
     SDL_VIDEODRIVER = "wayland";
@@ -93,19 +89,15 @@
     GTK_USE_PORTAL = "1";
     NIXOS_XDG_OPEN_USE_PORTAL = "1";
   };
-  systemd.user.sessionVariables = {
-    "NIXOS_OZONE_WL" = "1"; # for any ozone-based browser & electron apps to run on wayland
-    "MOZ_ENABLE_WAYLAND" = "1"; # for firefox to run on wayland
-    "MOZ_WEBRENDER" = "1";
+    #"MOZ_WEBRENDER" = "1";
 
     # for hyprland with nvidia gpu, ref https://wiki.hyprland.org/Nvidia/
-    "LIBVA_DRIVER_NAME" = "nvidia";
-    "XDG_SESSION_TYPE" = "wayland";
-    "GBM_BACKEND" = "nvidia-drm";
-    "__GLX_VENDOR_LIBRARY_NAME" = "nvidia";
-    "WLR_NO_HARDWARE_CURSORS" = "1";
-    "WLR_EGL_NO_MODIFIRES" = "1";
-  };
+    #"LIBVA_DRIVER_NAME" = "nvidia";
+    #"XDG_SESSION_TYPE" = "wayland";
+    #"GBM_BACKEND" = "nvidia-drm";
+    #"__GLX_VENDOR_LIBRARY_NAME" = "nvidia";
+    #"WLR_NO_HARDWARE_CURSORS" = "1";
+    #"WLR_EGL_NO_MODIFIRES" = "1";
 
     #firefox = {
     #  enable = true;
