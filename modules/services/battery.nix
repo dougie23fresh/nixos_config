@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
 {
+  # Better scheduling for CPU cycles - thanks System76!!!
   services.system76-scheduler.settings.cfsProfiles.enable = true;
 
+  # Enable TLP (better than gnomes internal power manager)
   services.tlp.enable = true;
   services.tlp.settings = {
     CPU_BOOST_ON_AC = 1;
@@ -17,9 +19,16 @@
     #CPU_MIN_PERF_ON_BAT = 0;
     #CPU_MAX_PERF_ON_BAT = 20;
   };
+  
   # Battery power management
-  #services.upower.enable = true;
+  # services.upower.enable = true;
+
+  # Disable GNOMEs power management
   services.power-profiles-daemon.enable = false;
+
+  # Enable powertop
   powerManagement.powertop.enable = true;
+
+  # Enable thermald (only necessary if on Intel CPUs)
   services.thermald.enable = true;
 }

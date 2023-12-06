@@ -23,46 +23,18 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-
-
-  # Games setting
-  hardware.opengl.driSupport = true;
-  hardware.opengl.driSupport32Bit = true;
-  hardware.pulseaudio.support32Bit = true;
+  
+  nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = (pkg: builtins.elem (builtins.parseDrvName pkg.name).name [ "steam" ]);
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings = {
     substituters = ["https://nix-gaming.cachix.org"];
     trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
   };
 
-  # Enable the X11 windowing system.
-
-  # Enable the XFCE Desktop Environment.
-  #services.xserver.displayManager.lightdm.enable = true;
-  #services.xserver.desktopManager.xfce.enable = true;
-  # services.gnome-keyring.enable = true;
-  # packages.picom.enable = true;
-
-  # Configure keymap in X11
-
-  # Enable sound with pipewire.
   sound.enable = true;
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  powerManagement.enable = true;
-  #powerManagement.powertop.enable = true;
-  # Firmware updater
-
-
   services.hardware.bolt.enable = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.melvin = {
@@ -74,15 +46,7 @@
     #  thunderbird
     ];
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
     # web
     firefox
     vivaldi
@@ -212,6 +176,7 @@
        python-box
        xmltodict
     ]))
+    alacritty
     #yubikey
     opensc
     pcsctools
