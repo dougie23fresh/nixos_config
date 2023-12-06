@@ -60,6 +60,19 @@
         inherit system;
         modules = [
           ./hosts/hpelitebook/default.nix
+          ./modules/programs/time.nix
+          ./modules/programs/i18n.nix
+          ./modules/programs/location.nix
+
+          # Programs
+          ./modules/programs/backlight.nix
+          ./modules/programs/chromium.nix
+          ./modules/programs/git.nix
+          ./modules/programs/htop.nix
+          #./modules/programs/neovim.nix
+          ./modules/programs/steam.nix
+          ./modules/programs/thunar.nix
+          ./modules/programs/zsh.nix
           #home-manager.nixosModules.home-manager {
           #  home-manager.useGlobalPkgs = true;
           #  home-manager.useUserPackages = true;

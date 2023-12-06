@@ -1,3 +1,6 @@
-htop = {
-      enable = true;
-    };
+{ config, pkgs, ... }:
+{
+  programs.htop = {
+    enable = true;
+  };
+}

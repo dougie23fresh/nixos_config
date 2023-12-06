@@ -1,4 +1,6 @@
-chromium = {
+{ config, pkgs, ... }:
+{
+  programs.chromium = {
     enable = true;
       extensions = [
         "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
@@ -17,3 +19,4 @@ chromium = {
         "SpellcheckLanguage" = [ "en-US" ];
       };
     };
+}

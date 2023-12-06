@@ -1,6 +1,9 @@
-thunar.enable = true;
+{ config, pkgs, ... }:
+{
+  programs.thunar.enable = true;
     thunar.plugins = with pkgs.xfce; [
       thunar-archive-plugin
       thunar-volman
       thunar-media-tags-plugin
     ];
+}

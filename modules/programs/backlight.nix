@@ -1,1 +1,4 @@
-light.enable = true;
+{ config, pkgs, ... }:
+{
+    programs.light.enable = true;
+}

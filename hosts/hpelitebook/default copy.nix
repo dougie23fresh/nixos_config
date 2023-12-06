@@ -24,7 +24,23 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Set your time zone.
+  time.timeZone = "America/New_York";
+  time.hardwareClockInLocalTime = true;
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
 
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
+  };
 
   # Games setting
   hardware.opengl.driSupport = true;
@@ -34,6 +50,11 @@
   nix.settings = {
     substituters = ["https://nix-gaming.cachix.org"];
     trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
+  };
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
   # Enable the X11 windowing system.
@@ -115,7 +136,17 @@
   ];
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+  programs.thunar.enable = true;
+  programs.thunar.plugins = with pkgs.xfce; [
+    thunar-archive-plugin
+    thunar-volman
+    thunar-media-tags-plugin
+  ];
+  programs.neovim.enable = true;
+  programs.neovim.withPython3 = true;
+  programs.zsh.enable = true;
 
+  # programs.neovim.configure
 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
