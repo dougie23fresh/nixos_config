@@ -37,7 +37,7 @@
     hyprpicker  # color picker
 
     ydotool
-    hyprland-share-picker
+    #hyprland-share-picker
     hyprland-protocols
     xdg-desktop-portal-hyprland
     hyprpaper
