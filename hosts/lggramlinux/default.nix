@@ -53,7 +53,7 @@
   environment.systemPackages = with pkgs; [
     # web
     firefox
-    (vivaldi.overide{
+    (vivaldi.override{
       proprietaryCodecs = true;
       enableWidevine = true;
     })
