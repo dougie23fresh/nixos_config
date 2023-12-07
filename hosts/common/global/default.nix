@@ -14,38 +14,16 @@
     ./systemd-initrd.nix
     ./tailscale.nix
     ./gamemode.nix
-
     ./time.nix
     ./locale.nix
     ./location.nix
+
     # Packages
-    ./packages/xserver.nix
-    ./packages/xfce.nix
-    ./packages/hyprland.nix
-
+    ./packages/
     # Services
-    ./services/avahi.nix
-    ./services/battery.nix
-    ./services/dbus.nix
-    ./services/fwupd.nix
-    ./services/gvfs.nix
-    ./services/pipewire.nix
-    ./services/printing.nix
-    ./services/redshift.nix
-    ./services/syncthing.nix
-    ./services/tailscale.nix
-    ./services/tumbler.nix
-    ./services/yubikey.nix
-
+    ./services/
 
     # Programs
-    ./programs/backlight.nix
-    ./programs/chromium.nix
-    ./programs/git.nix
-    ./programs/htop.nix
-    #./programs/neovim.nix
-    ./programs/steam.nix
-    ./programs/thunar.nix
-    ./programs/zsh.nix
+    ./programs/
   ] 
 }
