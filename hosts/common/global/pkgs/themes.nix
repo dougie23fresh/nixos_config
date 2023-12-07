@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
     # themes
     plano-theme
     zuki-themes
@@ -20,4 +21,5 @@
     venta
     qogir-theme
     nordic
+  ];
 }

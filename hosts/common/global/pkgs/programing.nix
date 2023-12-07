@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
     vscode
     vscode-extensions.ms-python.python
     vscode-extensions.ms-python.vscode-pylance
@@ -23,4 +24,5 @@
     gcc
     git
     luarocks
+  ];
 }

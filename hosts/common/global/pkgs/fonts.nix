@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
     # font
     terminus-nerdfont
     fontconfig
@@ -10,4 +11,5 @@
     emojione
     #fwupd
     firmware-manager
+  ];
 }

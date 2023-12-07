@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
     xorg.libX11
     xorg.libX11.dev
     xorg.libxcb
@@ -7,4 +8,5 @@
     xorg.libXinerama
     xorg.xinit
     xorg.xinput
+  ];
 }

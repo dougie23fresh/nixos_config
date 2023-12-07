@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
     xfce.xfce4-clipman-plugin
     xfce.xfce4-dict
     xfce.xfce4-pulseaudio-plugin
@@ -12,4 +13,5 @@
     xfce.xfdashboard
     mate.mate-calc
     okular
+  ];
 }

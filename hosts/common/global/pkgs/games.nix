@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
     lutris
     steam
     steam-run
@@ -10,4 +11,5 @@
         winetricks
       ];
     })
+  ];
 }

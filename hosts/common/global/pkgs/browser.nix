@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
     firefox
     (vivaldi.override{
       proprietaryCodecs = true;
@@ -9,4 +10,5 @@
     vivaldi-widevine
     microsoft-edge
     chromium
+  ];
 }

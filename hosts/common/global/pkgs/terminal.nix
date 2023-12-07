@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
     w3m
     neofetch
     fontconfig
@@ -18,4 +19,5 @@
     nano
     kitty
     alacritty
+  ];
 }
