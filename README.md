@@ -1,5 +1,11 @@
 # nixos_config
 
+https://github.com/Misterio77/nix-config
+https://github.com/skbolton/nix-dotfiles
+https://github.com/NixOS/nixos-hardware/tree/master
+----
+
+
 https://search.nixos.org/packages
 
 https://mynixos.com

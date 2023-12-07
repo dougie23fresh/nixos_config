@@ -1,6 +1,21 @@
 {
   description = "Melvin's Nix Config";
 
+  nixConfig = {
+    experimental-features = [ "nix-command" "flakes" ];
+    substituters = [
+      "https://cache.nixos.org"
+    ];
+
+    extraSubstituters = [
+      "https://nix-ommunity.cachix.org"
+    ];
+
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+  };
+
   inputs = {
     # Nixpkgs
     #nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
@@ -36,10 +51,11 @@
     # nixos-generators.url = "github:nix-community/nixos-generators";
     nix-colors.url = "github:misterio77/nix-colors";
   };
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    inherit (self) outputs;
   in
   {
     nixosConfigurations = {
@@ -119,6 +135,7 @@
 
       lggramlinux = nixpkgs.lib.nixosSystem {
         inherit system;
+        specialArgs = { inherit inputs outputs; }; 
         modules = [
           ./hosts/lggramlinux/default.nix
           ./modules/time.nix
@@ -156,6 +173,7 @@
           #home-manager.nixosModules.home-manager {
           #  home-manager.useGlobalPkgs = true;
           #  home-manager.useUserPackages = true;
+          # home-manager.extraSpecialArgs = { inherit inputs; };
           #  home-manager.user.melvin = import ./home-manager/home-laptop.nix;
           #  # home-manager.extraSpecialArgs
           #}
