@@ -7,7 +7,7 @@
       enableWidevine = true;
     })
     vivaldi-ffmpeg-codecs
-    vivaldi-widevine
+    widevine-cdm
     microsoft-edge
     chromium
   ];
