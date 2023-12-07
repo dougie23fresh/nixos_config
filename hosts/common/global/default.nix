@@ -19,11 +19,11 @@
     ./location.nix
 
     # Packages
-    ./packages/
+    ./packages/default.nix
     # Services
-    ./services/
+    ./services/default.nix
 
     # Programs
-    ./programs/
+    ./programs/default.nix
   ] 
 }
