@@ -33,6 +33,7 @@
     swaynotificationcenter
     wlogout # logout menu
     wl-clipboard # copying and pasting
+    wl-clipboard-x11
     wlr-randr
     hyprpicker  # color picker
 

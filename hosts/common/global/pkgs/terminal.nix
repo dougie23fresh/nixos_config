@@ -1,0 +1,19 @@
+{ config, pkgs, ... }:
+{
+    w3m
+    neofetch
+    fontconfig
+    freetype
+    wget
+    htop
+    usbutils
+    pciutils
+    iputils
+    inetutils
+    fetchutils
+    coreutils
+    wezterm
+    nano
+    kitty
+    alacritty
+}
