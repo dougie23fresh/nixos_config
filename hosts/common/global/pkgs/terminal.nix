@@ -12,6 +12,8 @@
     inetutils
     fetchutils
     coreutils
+    dmidecode
+    util-linux
     wezterm
     nano
     kitty
