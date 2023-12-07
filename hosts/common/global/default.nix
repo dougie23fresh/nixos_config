@@ -1,4 +1,5 @@
-{ inputs, outputs, ... }: {
+{ inputs, outputs, ... }: 
+{
   imports = [
     ./acme.nix
     ./auto-upgrade.nix
@@ -25,5 +26,6 @@
 
     # Programs
     ./programs/default.nix
-  ] 
+    ./pkgs/default.nix
+  ];
 }

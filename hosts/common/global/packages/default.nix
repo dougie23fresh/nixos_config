@@ -4,5 +4,5 @@
     ./xserver.nix
     ./xfce.nix
     ./hyprland.nix
-  ] 
+  ];
 }
