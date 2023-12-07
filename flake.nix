@@ -63,8 +63,7 @@
         inherit system;
         modules = [
           ./hosts/ceres/default.nix
-          home-manager.nixosModules.home-manager
-          {
+          home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.user.melvin = import ./home-manager/home-desktop.nix;
@@ -77,8 +76,7 @@
         inherit system;
         modules = [
           ./hosts/proxmoxvm/default.nix
-          home-manager.nixosModules.home-manager
-          {
+          home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
@@ -92,39 +90,7 @@
         inherit system;
         modules = [
           ./hosts/hpelitebook/default.nix
-          ./modules/time.nix
-          ./modules/locale.nix
-          ./modules/location.nix
-          # Packages
-          ./modules/packages/xserver.nix
-          ./modules/packages/xfce.nix
-          ./modules/packages/hyprland.nix
-
-          # Services
-          ./modules/services/avahi.nix
-          ./modules/services/battery.nix
-          ./modules/services/dbus.nix
-          ./modules/services/fwupd.nix
-          ./modules/services/gvfs.nix
-          ./modules/services/pipewire.nix
-          ./modules/services/printing.nix
-          ./modules/services/redshift.nix
-          ./modules/services/syncthing.nix
-          ./modules/services/tailscale.nix
-          ./modules/services/tumbler.nix
-          ./modules/services/yubikey.nix
-
-
-          # Programs
-          ./modules/programs/backlight.nix
-          ./modules/programs/chromium.nix
-          ./modules/programs/git.nix
-          ./modules/programs/htop.nix
-          #./modules/programs/neovim.nix
-          ./modules/programs/steam.nix
-          ./modules/programs/thunar.nix
-          ./modules/programs/zsh.nix
-          #home-manager.nixosModules.home-manager {
+          home-manager.nixosModules.home-manager {
           #  home-manager.useGlobalPkgs = true;
           #  home-manager.useUserPackages = true;
           #  home-manager.user.melvin = import ./home-manager/home-laptop.nix;
@@ -138,38 +104,7 @@
         specialArgs = { inherit inputs outputs; }; 
         modules = [
           ./hosts/lggramlinux/default.nix
-          ./modules/time.nix
-          ./modules/locale.nix
-          ./modules/location.nix
-          # Packages
-          ./modules/packages/xserver.nix
-          ./modules/packages/xfce.nix
-          ./modules/packages/hyprland.nix
-
-          # Services
-          ./modules/services/avahi.nix
-          ./modules/services/battery.nix
-          ./modules/services/dbus.nix
-          ./modules/services/fwupd.nix
-          ./modules/services/gvfs.nix
-          ./modules/services/pipewire.nix
-          ./modules/services/printing.nix
-          ./modules/services/redshift.nix
-          ./modules/services/syncthing.nix
-          ./modules/services/tailscale.nix
-          ./modules/services/tumbler.nix
-          ./modules/services/yubikey.nix
-
-
-          # Programs
-          ./modules/programs/backlight.nix
-          ./modules/programs/chromium.nix
-          ./modules/programs/git.nix
-          ./modules/programs/htop.nix
-          #./modules/programs/neovim.nix
-          ./modules/programs/steam.nix
-          ./modules/programs/thunar.nix
-          ./modules/programs/zsh.nix
+          
           #home-manager.nixosModules.home-manager {
           #  home-manager.useGlobalPkgs = true;
           #  home-manager.useUserPackages = true;

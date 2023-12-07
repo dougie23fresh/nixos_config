@@ -3,6 +3,8 @@
 https://github.com/Misterio77/nix-config
 https://github.com/skbolton/nix-dotfiles
 https://github.com/NixOS/nixos-hardware/tree/master
+
+https://gitlab.com/stephan-raabe/dotfiles/-/tree/main/hypr/conf?ref_type=heads
 ----
 
 

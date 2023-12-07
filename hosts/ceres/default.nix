@@ -7,6 +7,7 @@
       ../../modules/i3.nix
 
       ./hardware-configuration.nix
+      ../common/global
     ];
 
   # Bootloader.
