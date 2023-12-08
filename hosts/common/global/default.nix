@@ -1,6 +1,7 @@
 { inputs, outputs, ... }: 
 {
   imports = [
+    inputs.home-manager.nixosModules.home-manager
     ./locale.nix
     ./location.nix
     ./time.nix
