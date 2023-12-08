@@ -167,7 +167,7 @@ in
           };
           on-click = "${playerctl} play-pause";
         };
-      }
+      };
     };
   };
 }
