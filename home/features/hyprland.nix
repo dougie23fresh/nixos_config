@@ -99,7 +99,7 @@
 
       bind = [
         # Program bindings
-        "SUPER,SHIFT, R, exec, hyprctl reload"
+        #"SUPER,SHIFT, R, exec, hyprctl reload"
         "SUPER,Q, exec, kitty"
         "SUPER,C, killactive"
         "SUPER,M, exit"
@@ -112,7 +112,7 @@
 
         # Move focus with mainMod + arrow keys
         "SUPER, left, movefocus, l"
-        #"SUPER, right, movefocus, r"
+        "SUPER, right, movefocus, r"
         "SUPER, up, movefocus, u"
         "SUPER, down, movefocus, d"
 
