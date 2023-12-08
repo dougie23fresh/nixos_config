@@ -49,10 +49,10 @@ in
     systemd.enable = true;
     settings = {
       primary = {
-        mode = "dock";
-        layer = "top";
+        #mode = "dock";
+        #layer = "top";
         height = 40;
-        margin = "6";
+        #margin = "6";
         spacing = "4";
         position = "top";
         modules-left = [
