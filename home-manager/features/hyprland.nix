@@ -14,8 +14,8 @@
   home.packages = with pkgs; [
     
   ];
-
-   wayland.windowManager.hyprland = {
+  xdg.enable = true;
+  wayland.windowManager.hyprland = {
     enable = true;
     #extraConfig = import ./hyprland-config.nix {};
     xwayland.enable = true;
