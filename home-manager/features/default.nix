@@ -6,9 +6,9 @@
     ./pavucontrol.nix
     ./playerctl.nix
   ];
-  xdg.portal.enable = true;
-  xdg.mimeApps.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
+  #xdg.portal.enable = true;
+  #xdg.mimeApps.enable = true;
+  #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
 
   home.packages = with pkgs; [
     neofetch 
