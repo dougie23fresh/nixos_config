@@ -83,23 +83,13 @@
         specialArgs = { inherit inputs outputs; }; 
         modules = [
           ./hosts/lggramlinux/default.nix
-          #home-manager.nixosModules.home-manager {
-          ##  home-manager.useGlobalPkgs = true;
-          #  home-manager.useUserPackages = true;
-          #  home-manager.extraSpecialArgs = { inherit inputs; };
-          #  home-manager.user.melvin = import ./home-manager/home-laptop.nix;
-          #}
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.user.melvin = import ./home-manager/home-laptop.nix;
+          }
         ];
-      };
-    };
-    homeConfigurations = {
-      # Desktops
-        "melvin@lggramlinux" = nixpkgs.lib.homeManagerConfiguration {
-        modules = [ 
-          ./home-manager/home-laptop.nix
-        ];
-        pkgs = pkgsFor.x86_64-linux;
-        extraSpecialArgs = { inherit inputs outputs; };
       };
     };
   };
