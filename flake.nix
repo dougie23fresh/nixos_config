@@ -63,12 +63,7 @@
         inherit system;
         modules = [
           ./hosts/ceres/default.nix
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.user.melvin = import ./home-manager/home-desktop.nix;
-            # home-manager.extraSpecialArgs
-          }
+          
         ];
       };
 
@@ -76,13 +71,7 @@
         inherit system;
         modules = [
           ./hosts/proxmoxvm/default.nix
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-
-            home-manager.user.melvin = import ./home-manager/home.nix;
-            # home-manager.extraSpecialArgs
-          }
+          
         ];
       };
 
