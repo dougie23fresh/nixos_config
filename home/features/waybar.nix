@@ -64,6 +64,8 @@ in
           "clock"
         ];
         modules-right = [
+          "network"
+          "tray"
           "custom/hostname"
         ];
         clock = {
@@ -99,5 +101,49 @@ in
 
       };
     };
+    style = ''
+      * {
+        min-height: 0;
+      }
+
+      window#waybar {
+        font-family: 'Inter', 'RobotoMono Nerd Font';
+        font-size: 12px;
+      }
+
+      tooltip {
+      }
+
+      #custom-nix {
+        padding: 2px 6px;
+      }
+
+      #workspaces button {
+        padding: 2px 6px;
+        margin: 0 6px 0 0;
+      }
+
+      .modules-right * {
+        padding: 0 6px;
+        margin: 0 0 0 4px;
+      }
+
+      #mpris {
+        padding: 0 6px;
+      }
+
+      #custom-notification {
+        padding: 0 6px 0 6px;
+      }
+
+      #tray {
+        padding: 0 6px;
+      }
+      
+      #tray * {
+        padding: 0;
+        margin: 0;
+      }
+    '';
   };
 }
