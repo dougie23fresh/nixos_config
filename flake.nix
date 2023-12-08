@@ -52,32 +52,29 @@
     nix-colors.url = "github:misterio77/nix-colors";
   };
   outputs = inputs@{ nixpkgs, home-manager, ... }:
-  let
-    system = "x86_64-linux";
-  in
   { 
     nixosConfigurations = {
       ceres = nixpkgs.lib.nixosSystem {
-        inherit system;
+        system = "x86_64-linux";
         modules = [
           ./hosts/ceres/default.nix
         ];
       };
       proxmoxvm = nixpkgs.lib.nixosSystem {
-        inherit system;
+        system = "x86_64-linux";
         modules = [
           ./hosts/proxmoxvm/default.nix
         ];
       };
 
       hpelitebook = nixpkgs.lib.nixosSystem {
-        inherit system;
+        system = "x86_64-linux";
         modules = [
           ./hosts/hpelitebook/default.nix
         ];
       };
       lggramlinux = nixpkgs.lib.nixosSystem {
-        inherit system;
+        system = "x86_64-linux";
         specialArgs = { inherit inputs outputs; }; 
         modules = [
           ./hosts/lggramlinux/default.nix
