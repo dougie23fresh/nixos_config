@@ -1,5 +1,6 @@
 {
   imports = [
+    ./hyprland
     ./pavucontrol.nix
     ./playerctl.nix
   ];
@@ -8,20 +9,10 @@
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
 
   home.packages = with pkgs; [
-    grim
-    gtk3 # For gtk-launch
-    imv
-    mimeo
-    primary-xwayland
-    pulseaudio
-    slurp
-    waypipe
-    wf-recorder
+    neofetch 
+    
     wl-clipboard
-    wl-mirror
-    wl-mirror-pick
-    xdg-utils-spawn-terminal # Patched to open terminal
-    ydotool
+
   ];
 
   home.sessionVariables = {
