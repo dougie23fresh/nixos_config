@@ -56,6 +56,8 @@ in
         position = "top";
         modules-left = [
           "custom/menu"
+          "hyprland/workspaces"
+          "hyprland/submap"
         ];
         modules-center = [
           "battery"
