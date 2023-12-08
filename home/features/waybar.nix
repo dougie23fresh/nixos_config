@@ -70,15 +70,7 @@ in
           "tray"
           "custom/hostname"
         ];
-        keyboard-state = {
-            numlock = true;
-            capslock = true;
-            format = "{name} {icon}";
-            format-icons = {
-                locked = "";
-                unlocked = "";
-            };
-        };
+        
         backlight = {
             # "device=  "acpi_video1";
             format = "{percent}% {icon}";
