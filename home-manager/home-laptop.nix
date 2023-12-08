@@ -4,7 +4,7 @@
   imports = [
     #./pam.nix
     ./features
-  ]
+  ];
   nixpkgs = {
     config = {
       allowUnfree = true;
