@@ -13,7 +13,11 @@
 
   home.packages = with pkgs; [
     neofetch 
-    
+    nerdfonts
+    corefonts
+    open-fonts
+    noto-fonts
+    noto-fonts-emoji
     wl-clipboard
 
   ];
