@@ -53,9 +53,9 @@ in
         layer = "top";
         height = 40;
         margin = "6";
+        spacing = "4";
         position = "top";
         modules-left = [
-          "custom/menu"
           "hyprland/workspaces"
           "hyprland/submap"
         ];
@@ -64,10 +64,27 @@ in
           "clock"
         ];
         modules-right = [
+          "keyboard-state"
           "network"
+          "backlight"
           "tray"
           "custom/hostname"
         ];
+        keyboard-state = {
+            numlock = true;
+            capslock = true;
+            format = "{name} {icon}";
+            format-icons = {
+                locked = "";
+                unlocked = "";
+            };
+        };
+        backlight = {
+            # "device=  "acpi_video1";
+            format = "{percent}% {icon}";
+            format-icons =  ["", "", "", "", "", "", "", "", ""];
+        };
+
         clock = {
           interval = 1;
           format = "{:%d/%m %H:%M:%S}";
@@ -85,19 +102,20 @@ in
           format-charging = "󰂄 {capacity}%";
           onclick = "";
         };
-        "custom/menu" = {
-          return-type = "json";
-          exec = jsonOutput "menu" {
-            text = "";
-            tooltip = ''$(${cat} /etc/os-release | ${grep} PRETTY_NAME | ${cut} -d '"' -f2)'';
-          };
-          on-click-left = "${wofi} -S drun -x 10 -y 10 -W 25% -H 60%";
-          on-click-right = "${hyprlandd} dispatch togglespecialworkspace";
-        };
         "custom/hostname" = {
           exec = "echo $USER@$HOSTNAME";
           on-click = "${systemctl} --user restart waybar";
         };
+        keyboard-state = {
+            numlock = true;
+            capslock = true;
+            format = "{name} {icon}";
+            format-icons = {
+                locked = "";
+                unlocked = "";
+            };
+        };
+
 
       };
     };
