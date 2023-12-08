@@ -17,12 +17,7 @@
       #allowUnfreePredicate = true;
     };
   };
-  nix = {
-    package = pkgs.nix;
-    settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-    };
-  };
+
   home = {
     username = "melvin";
     homeDirectory = "/home/melvin";
