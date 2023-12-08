@@ -54,9 +54,15 @@ in
         height = 40;
         margin = "6";
         position = "top";
+        modules-left = [
+          "custom/menu"
+        ];
         modules-center = [
           "battery"
           "clock"
+        ];
+        modules-right = [
+          "custom/hostname"
         ];
         clock = {
           interval = 1;
@@ -68,14 +74,27 @@ in
             <tt><small>{calendar}</small></tt>'';
         };
         battery = {
-          bat = "BAT0";
+          bat = "CMB0";
           interval = 10;
           format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
           format = "{icon} {capacity}%";
           format-charging = "󰂄 {capacity}%";
           onclick = "";
         };
-        
+        "custom/menu" = {
+          return-type = "json";
+          exec = jsonOutput "menu" {
+            text = "";
+            tooltip = ''$(${cat} /etc/os-release | ${grep} PRETTY_NAME | ${cut} -d '"' -f2)'';
+          };
+          on-click-left = "${wofi} -S drun -x 10 -y 10 -W 25% -H 60%";
+          on-click-right = "${hyprlandd} dispatch togglespecialworkspace";
+        };
+        "custom/hostname" = {
+          exec = "echo $USER@$HOSTNAME";
+          on-click = "${systemctl} --user restart waybar";
+        };
+
       };
     };
   };
