@@ -51,11 +51,9 @@
     # nixos-generators.url = "github:nix-community/nixos-generators";
     nix-colors.url = "github:misterio77/nix-colors";
   };
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = inputs@{ nixpkgs, home-manager, ... }:
   let
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-    inherit (self) outputs;
   in
   { 
     nixosConfigurations = {
