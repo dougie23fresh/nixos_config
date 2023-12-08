@@ -26,7 +26,7 @@
   security.pam.services.swaylock = {};
   
   environment.systemPackages = with pkgs; [
-    waybar # the status bar
+    #waybar # the status bar
     swaybg # the wallpaper
     swayidle # the idle timeout
     swaylock # locking the screen
