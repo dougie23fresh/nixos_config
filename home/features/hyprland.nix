@@ -34,7 +34,7 @@
         numlock_by_default = true;
         touchpad.natural_scroll = true;
         "touchpad.tap-to-click" = true;
-        touchpad.disable_while_typing  = true;
+        #touchpad.disable_while_typing  = true;
       };
       dwindle.split_width_multiplier = 1.35;
       misc = {
