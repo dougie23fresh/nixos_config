@@ -7,7 +7,7 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    #extraConfig = imporft ./hyprland-config.nix {};
+    extraConfig = imporft ./hyprland-config.nix {};
     xwayland.enable = true;
   };
   
