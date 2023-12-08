@@ -27,7 +27,7 @@
   networking.networkmanager.enable = true;
   
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowUnfreePredicate = (pkg: builtins.elem (builtins.parseDrvName pkg.name).name [ "steam" ]);
+  #nixpkgs.config.allowUnfreePredicate = (pkg: builtins.elem (builtins.parseDrvName pkg.name).name [ "steam" ]);
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings = {
     substituters = ["https://nix-gaming.cachix.org"];
@@ -88,7 +88,7 @@
   # this  at the release version of the first install of this system.
   # Before changing this  read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "23.11"; # Did you read the comment?
   ## Backups & Upgrades
   # Backup system config
   # system.copySystemConfiguration = true;
