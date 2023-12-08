@@ -94,7 +94,7 @@
     };
     homeConfigurations = {
       # Desktops
-        "melvin@lggramlinux" = lib.homeManagerConfiguration {
+        "melvin@lggramlinux" = nixpkgs.lib.homeManagerConfiguration {
         modules = [ 
           ./home-manager/home-laptop.nix
         ];
