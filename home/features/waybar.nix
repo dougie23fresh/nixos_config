@@ -20,6 +20,7 @@ let
   playerctld = "${pkgs.playerctl}/bin/playerctld";
   pavucontrol = "${pkgs.pavucontrol}/bin/pavucontrol";
   wofi = "${pkgs.wofi}/bin/wofi";
+  hyprlandd = "${pkgs.hyprland}/bin/hyprctl";
 
   # Function to simplify making waybar outputs
   jsonOutput = name: { pre ? "", text ? "", tooltip ? "", alt ? "", class ? "", percentage ? "" }: "${pkgs.writeShellScriptBin "waybar-${name}" ''
@@ -114,7 +115,7 @@ in
             tooltip = ''$(${cat} /etc/os-release | ${grep} PRETTY_NAME | ${cut} -d '"' -f2)'';
           };
           on-click-left = "${wofi} -S drun -x 10 -y 10 -W 25% -H 60%";
-          on-click-right = "${hyprland}/bin/hyprctl dispatch togglespecialworkspace";
+          on-click-right = "${hyprlandd} dispatch togglespecialworkspace";
         };
         "custom/hostname" = {
           exec = "echo $USER@$HOSTNAME";
