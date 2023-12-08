@@ -79,12 +79,6 @@
         inherit system;
         modules = [
           ./hosts/hpelitebook/default.nix
-          #home-manager.nixosModules.home-manager {
-          #  home-manager.useGlobalPkgs = true;
-          #  home-manager.useUserPackages = true;
-          #  home-manager.user.melvin = import ./home-manager/home-laptop.nix;
-          #  # home-manager.extraSpecialArgs
-          #}
         ];
       };
 
@@ -94,14 +88,22 @@
         modules = [
           ./hosts/lggramlinux/default.nix
           
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.user.melvin = import ./home-manager/home-laptop.nix;
-          }
+          #home-manager.nixosModules.home-manager {
+          ##  home-manager.useGlobalPkgs = true;
+          #  home-manager.useUserPackages = true;
+          #  home-manager.extraSpecialArgs = { inherit inputs; };
+          #  home-manager.user.melvin = import ./home-manager/home-laptop.nix;
+          #}
         ];
       };
+
+      homeConfigurations = {
+        # Desktops
+        "melvin@lggramlinux" = lib.homeManagerConfiguration {
+          modules = [ ./home-manager/home-laptop.nix; ];
+          pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+        };
 
     };
   };
