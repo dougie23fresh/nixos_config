@@ -12,12 +12,12 @@
   };
   
   xdg.portal = {
-    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
-    configPackages = [ pkgs.hyprland ];
+    extraPortals = [ pkgs.inputs.hyprland.xdg-desktop-portal-hyprland ];
+    #configPackages = [ pkgs.inputs.hyprland.hyprland ];
   };
 
   home.packages = with pkgs; [
-    neofetch 
+    
   ];
 
 }
