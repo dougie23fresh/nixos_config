@@ -57,21 +57,18 @@
     pkgs = nixpkgs.legacyPackages.${system};
     inherit (self) outputs;
   in
-  {
+  { 
     nixosConfigurations = {
       ceres = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
           ./hosts/ceres/default.nix
-          
         ];
       };
-
       proxmoxvm = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
           ./hosts/proxmoxvm/default.nix
-          
         ];
       };
 
@@ -81,13 +78,11 @@
           ./hosts/hpelitebook/default.nix
         ];
       };
-
       lggramlinux = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs outputs; }; 
         modules = [
           ./hosts/lggramlinux/default.nix
-          
           #home-manager.nixosModules.home-manager {
           ##  home-manager.useGlobalPkgs = true;
           #  home-manager.useUserPackages = true;
@@ -96,15 +91,14 @@
           #}
         ];
       };
-
-      homeConfigurations = {
-        # Desktops
-        "melvin@lggramlinux" = lib.homeManagerConfiguration {
-          modules = [ ./home-manager/home-laptop.nix; ];
-          pkgs = pkgsFor.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs; };
-        };
-
     };
-  };
+    homeConfigurations = {
+      # Desktops
+        "melvin@lggramlinux" = lib.homeManagerConfiguration {
+        modules = [ ./home-manager/home-laptop.nix; ];
+        pkgs = pkgsFor.x86_64-linux;
+        extraSpecialArgs = { inherit inputs outputs; };
+      };
+    };
+  }
 }
