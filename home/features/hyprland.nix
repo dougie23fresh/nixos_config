@@ -112,7 +112,7 @@
 
         # Move focus with mainMod + arrow keys
         "SUPER, left, movefocus, l"
-        "SUPER, right, movefocus, r"
+        #"SUPER, right, movefocus, r"
         "SUPER, up, movefocus, u"
         "SUPER, down, movefocus, d"
 
