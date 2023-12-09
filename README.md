@@ -46,3 +46,10 @@ sudo nixos-rebuild switch --flake './my-nix-flake#<your_host_name>'
 
 sudo nixos-rebuild switch --flake 'flake.nix#hpelitebook'
 home-manager switch --flake flake.nix#hpelitebook
+
+
+
+
+
+
+ nix.settings.experimental-features = [ "nix-command" "flakes" ];
