@@ -36,7 +36,7 @@
     wl-clipboard-x11
     wlr-randr
     hyprpicker  # color picker
-
+    wlroots
     ydotool
     #hyprland-share-picker
     hyprland-protocols

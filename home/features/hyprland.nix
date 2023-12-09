@@ -94,7 +94,9 @@
       exec = [
         ##"${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper} --mode fill"
         #"exec-once = nm-applet --indicator"
+        "exec-once = nm-applet --indicator"
         "exec-once = waybar"
+        "exec-once = dunst"
       ];
 
       bind = [

@@ -27,5 +27,25 @@
       mpv
     ];
   };
+
+  programs.zsh = {
+    enable = true;
+    enableAutosuggestions = true;
+    enableCompletion = true;
+    autocd = true;
+    
+  };
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+  programs.nnn = {
+    enable = true;
+  };
+  programs.btop.enable = true;
+  programs.eza = {
+    enable = true;
+    enableAliases = true;
+  };
   
 }
