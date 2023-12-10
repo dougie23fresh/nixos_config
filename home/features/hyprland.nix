@@ -28,6 +28,9 @@
         "col.active_border" = "rgba(33ccffee) rgba(8f00ffee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
       };
+      monitor = [
+        ",preferred,auto,1"
+      ];
       
       input = {
         kb_layout = "us";
