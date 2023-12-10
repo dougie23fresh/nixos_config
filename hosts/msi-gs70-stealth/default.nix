@@ -15,7 +15,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "lggramlinux"; # Define your hostname.
+  networking.hostName = "msi-gs70-stealth""; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -60,46 +60,58 @@
     fira-code
     fira-code-symbols
   ];
-
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This  determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this  at the release version of the first install of this system.
-  # Before changing this  read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-  ## Backups & Upgrades
-  # Backup system config
-  # system.copySystemConfiguration = true;
-  # System Upgrades
-  #system.autoUpgrade.enable = true;
-  #system.autoUpgrade.allowReboot = true;
 
-  ## Garbage Collection
-  # Automatic Garbage Collection
-  #nix.gc = {
-  #              automatic = true;
-  #              dates = "weekly";
-  #              options = "--delete-older-than 3d";
-  #        };
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#------------------------
+#powerManagement.cpuFreqGovernor = lib.mkDefault "powersave"
+#services.power-profiles-daemon.enable
+
+# Hard disk protection if the laptop falls:
+#  services.hdapsd.enable = lib.mkDefault true;
+
+environment.variables = {
+    VDPAU_DRIVER = lib.mkIf config.hardware.opengl.enable (lib.mkDefault "va_gl");
+  };
+
+  hardware.opengl.extraPackages = with pkgs; [
+    (if (lib.versionOlder (lib.versions.majorMinor lib.version) "23.11") then vaapiIntel else intel-vaapi-driver)
+    libvdpau-va-gl
+    intel-media-driver
+  ];
+
+
+  services.xserver.videoDrivers = lib.mkDefault [ "nvidia" ];
+  hardware.opengl.extraPackages = with pkgs; [
+    vaapiVdpau
+  ];
+
+  hardware.nvidia.prime = {
+    offload = {
+      enable = lib.mkOverride 990 true;
+      enableOffloadCmd = lib.mkIf config.hardware.nvidia.prime.offload.enable true; # Provides `nvidia-offload` command.
+    };
+    # Hardware should specify the bus ID for intel/nvidia devices
+  };
+
+   hardware.nvidia.prime = {
+    # Bus ID of the Intel GPU.
+    intelBusId = lib.mkDefault "PCI:0:2:0";
+
+    # Bus ID of the NVIDIA GPU.
+    nvidiaBusId = lib.mkDefault "PCI:1:0:0";
+  };
