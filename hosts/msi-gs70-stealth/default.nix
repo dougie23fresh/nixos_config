@@ -60,23 +60,32 @@
     fira-code
     fira-code-symbols
   ];
+
+  environment.variables = {
+    VDPAU_DRIVER = "va_gl";
+  };
+
+
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+  #hardware.opengl.extraPackages = with pkgs; [vaapiVdpau];
+
+  hardware.nvidia.prime = {
+    offload = {
+      enable = true;
+      enableOffloadCmd = true; # Provides `nvidia-offload` command.
+    };
+    # Bus ID of the Intel GPU.
+    intelBusId = lib.mkDefault "PCI:0:2:0";
+
+    # Bus ID of the NVIDIA GPU.
+    nvidiaBusId = lib.mkDefault "PCI:1:0:0";
+  };
+
+
   system.stateVersion = "23.11"; # Did you read the comment?
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #------------------------
 #powerManagement.cpuFreqGovernor = lib.mkDefault "powersave"
 #services.power-profiles-daemon.enable
@@ -84,34 +93,4 @@
 # Hard disk protection if the laptop falls:
 #  services.hdapsd.enable = lib.mkDefault true;
 
-environment.variables = {
-    VDPAU_DRIVER = lib.mkIf config.hardware.opengl.enable (lib.mkDefault "va_gl");
-  };
 
-  hardware.opengl.extraPackages = with pkgs; [
-    (if (lib.versionOlder (lib.versions.majorMinor lib.version) "23.11") then vaapiIntel else intel-vaapi-driver)
-    libvdpau-va-gl
-    intel-media-driver
-  ];
-
-
-  services.xserver.videoDrivers = lib.mkDefault [ "nvidia" ];
-  hardware.opengl.extraPackages = with pkgs; [
-    vaapiVdpau
-  ];
-
-  hardware.nvidia.prime = {
-    offload = {
-      enable = lib.mkOverride 990 true;
-      enableOffloadCmd = lib.mkIf config.hardware.nvidia.prime.offload.enable true; # Provides `nvidia-offload` command.
-    };
-    # Hardware should specify the bus ID for intel/nvidia devices
-  };
-
-   hardware.nvidia.prime = {
-    # Bus ID of the Intel GPU.
-    intelBusId = lib.mkDefault "PCI:0:2:0";
-
-    # Bus ID of the NVIDIA GPU.
-    nvidiaBusId = lib.mkDefault "PCI:1:0:0";
-  };
