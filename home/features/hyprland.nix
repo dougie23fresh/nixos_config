@@ -29,7 +29,8 @@
         "col.inactive_border" = "rgba(595959aa)";
       };
       monitor = [
-        ",preferred,auto,1"
+          ",preferred,auto,auto"
+          "eDP-1,1920x1080@60,0x0,1"
       ];
       
       input = {
