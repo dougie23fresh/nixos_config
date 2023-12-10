@@ -190,13 +190,9 @@
         #"SUPER,d,exec,${wofi} -S run"
       ];
 
-      monitor = [
-        "monitor=,preferred,auto,1"
-      ];
-
-      workspace = [
-        "DP-1,1"
-      ];
+      #workspace = [
+      #  "eDP-1,1"
+      #];
     };
   };
 
