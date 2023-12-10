@@ -11,6 +11,9 @@ https://gitlab.com/stephan-raabe/dotfiles/-/tree/main/hypr/conf?ref_type=heads
 https://wiki.archlinux.org/title/intel_graphics#Hardware_accelerated_H.264_decoding_on_GMA_4500
 ----
 
+https://git.polynom.me/PapaTutuWawa/nixos-config/src/branch/master/modules/programs
+https://github.com/VixenUtils/Myxer
+
 
 https://search.nixos.org/packages
 

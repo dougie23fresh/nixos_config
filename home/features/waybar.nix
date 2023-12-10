@@ -77,15 +77,7 @@ in
           format = "{icon}";
           on-click = "activate";
           sort-by-number = true;
-          format-icons = {
-              "1" = "I";
-              "2" = "II";
-              "3" = "III";
-              "4" = "IV";
-              "5" = "V";
-              "6" = "VI";
-              urgent = "";
-          };
+ 
         };
         network = {
           format = "{icon}";
