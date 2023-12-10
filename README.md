@@ -26,8 +26,9 @@ https://tech.aufomm.com/page/2/
 https://flakehub.com
 
 https://gitlab.com/stephan-raabe
-
-
+https://github.com/jakehamilton/config/tree/main
+https://github.com/georgewhewell/nixos-host/tree/master
+https://github.com/librephoenix/nixos-config
 -----
 https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/.install/wallpaper.sh?ref_type=heads
 https://github.com/dylanaraps/pywal
