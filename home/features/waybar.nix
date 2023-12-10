@@ -57,42 +57,102 @@ in
         position = "top";
         modules-left = [
           "hyprland/workspaces"
-          "hyprland/submap"
+          #"hyprland/submap"
         ];
         modules-center = [
           "battery"
           "clock"
         ];
         modules-right = [
-          "keyboard-state"
-          "network"
-          "backlight"
           "tray"
+          "custom/dunst"
+          "keyboard-state"
+          "backlight"
+          "pulseaudio"
+          "bluetooth"
+          "network"
           "custom/hostname"
         ];
-
+        "hyprland/workspaces" = {
+          format = "{icon}";
+          on-click = "activate";
+          sort-by-number = true;
+          format-icons = {
+              "1" = "I";
+              "2" = "II";
+              "3" = "III";
+              "4" = "IV";
+              "5" = "V";
+              "6" = "VI";
+              urgent = "";
+          };
+        };
+        network = {
+          format = "{icon}";
+          format-alt = "{bandwidthDownBytes} {icon}";
+          format-alt-click = "click-right";
+          format-icons = {
+            wifi = [ "" "" "" ];
+            ethernet = [ "" ];
+            disconnected = [ "睊" ];
+          };
+          #on-click": "hyprctl dispatch exec '[float; size 600 600;move 100%-620 70] gnome-control-center wifi'",
+          tooltip-format = "{ipaddr}/{cidr}";
+        };
+        bluetooth = {
+          format = "";
+          format-disabled = "";
+          format-connected = "";
+          tooltip-format = "{controller_alias}\t{controller_address}";
+          tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
+          tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
+          on-click = "blueberry";
+        };
+        pulseaudio = {
+          format = "{icon}";
+           format-muted = "婢";
+            format-icons = {
+              phone = [ " " " " " " ];
+              default = [ "奄" "奔" "墳" ];
+            };
+            scroll-step = 10;
+            on-click = "myxer";
+            tooltip-format = "At {volume}%";
+        };
         backlight = {
             # "device=  "acpi_video1";
             format = "{percent}% {icon}";
-            format-icons =  [ "" "" "" "" "" "" "" "" "" ]; 
+            format-alt = "{time} {icon} ";
+            format-icons =  [ "" "" "" "" "" "" "" "" "" ];
+            tooltip-format = "At {capacity}%";
+            on-scroll-down = "light -U 10";
+            on-scroll-up = "light -A 10";
         };
-
+        tray = {
+          icon-size = 18;
+          spacing = 10;
+        };
         clock = {
           interval = 1;
           format = "{:%d/%m %H:%M:%S}";
           format-alt = "{:%Y-%m-%d %H:%M:%S %z}";
+          on-click = "morgen";
           on-click-left = "mode";
           tooltip-format = ''
             <big>{:%Y %B}</big>
             <tt><small>{calendar}</small></tt>'';
         };
         battery = {
-          bat = "CMB0";
+          #bat = "CMB0";
           interval = 10;
           format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
           format = "{icon} {capacity}%";
           format-charging = "󰂄 {capacity}%";
           onclick = "";
+          states = {
+            warning = 25;
+            critical = 10;
+          };
         };
         "custom/hostname" = {
           exec = "echo $USER@$HOSTNAME";
@@ -107,148 +167,159 @@ in
                 unlocked = "";
             };
         };
+        "custom/dunst" = {
+          format = "{}";
+          exec = "~/.config/hypr/themes/minimal/waybar/modules/dunst.sh";
+          on-click = "dunstctl set-paused toggle";
+          restart-interval = 1;
+        };
 
 
       };
     };
     style = ''
       * {
-        font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-        font-size: 13px;
-
+        border: none;
+        border-radius: 0;
+        font-family: JetbrainsMono Nerd Font, Sans;
+        font-size: 18px;
+        box-shadow: none;
+        text-shadow: none;
+        transition-duration: 0s;
       }
 
-      window#waybar {
-        background-color: rgba(43, 48, 59, 0.5);
-        border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-        color: #ffffff;
-        transition-property: background-color;
-        transition-duration: .5s;
-
-      }
-      window#waybar.hidden {
-        opacity: 0.2;
+      window {
+        color: rgba(35, 31, 32, 0.85);
+        background: rgba(35, 31, 32, 0.2);
       }
 
-
-      tooltip {
+      window#waybar.solo {
+        background: rgb(217, 216, 216);
+        color: rgba(32, 31, 35, 0.85);
+      }
+      .modules-left,
+      .modules-center,
+      .modules-right {
+        margin-bottom: 0px;
       }
 
-      #custom-nix {
-        padding: 2px 6px;
+      .modules-right {
+        transition: 0.1s all ease;
+        color: #eae9f0;
+        background-color: unset;
+        transition: 0.1s all ease;
+        color: #eae9f0;
+        opacity: 1;
+        padding: 0px;
+      }
+      #workspaces {
+        font-size: 16px;
+        margin-bottom: 0px;
+        border-radius: 10px;
+        transition: none;
+        color: #eae9f0;
+        margin-bottom: 0px;
       }
 
       #workspaces button {
-        padding: 0 5px;
-        background-color: transparent;
-        color: #ffffff;
+        min-width: 40px;
+        transition: 0.1s all ease;
+        color: #eae9f0;
+        background-color: unset;
+        opacity: 0.7;
       }
 
       #workspaces button:hover {
-        background: rgba(0, 0, 0, 0.2);
+        opacity: 1;
       }
 
-      #workspaces button.focused {
-        background-color: #64727D;
-        box-shadow: inset 0 -3px #ffffff;
+      #workspaces button.active {
+        transition: 0.1s all ease;
+        color: #eae9f0;
+        background-color: unset;
+        transition: 0.1s all ease;
+        color: #eae9f0;
+        opacity: 1;
       }
 
-      #workspaces button.urgent {
-        background-color: #eb4d4b;
+      #workspaces button.active:hover {
+        transition: 0.04s all ease;
+        opacity: 1;
       }
-
-      #clock,
+      #mode,
       #battery,
       #cpu,
-      #memory,
-      #disk,
-      #temperature,
-      #backlight,
+      #bluetooth #memory,
       #network,
       #pulseaudio,
-      #wireplumber,
-      #custom-media,
-      #tray,
-      #mode,
       #idle_inhibitor,
-      #scratchpad,
-      #mpd {
-        padding: 0 10px;
-        color: #ffffff;
+      #backlight,
+      #custom-storage,
+      #custom-terminal,
+      #custom-spotify,
+      #custom-weather,
+      #custom-dunst,
+      #custom-mail {
+        margin: 5px 6px 0px 10px;
+        padding-bottom: 3px;
       }
-      #window,
-      #workspaces {
-        margin: 0 4px;
-      }
-      .modules-left > widget:first-child > #workspaces {
-        margin-left: 0;
-      }
+
       #clock {
-        background-color: #64727D;
-      }
-
-      #battery {
-        background-color: #ffffff;
-        color: #000000;
-      }
-
-      #battery.charging, #battery.plugged {
-        color: #ffffff;
-        background-color: #26A65B;
-      }
-      @keyframes blink {
-        to {
-          background-color: #ffffff;
-          color: #000000;
-        }
-      }
-      #battery.critical:not(.charging) {
-        background-color: #f53c3c;
-        color: #ffffff;
-        animation-name: blink;
-        animation-duration: 0.5s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-      }
-      label:focus {
-        background-color: #000000;
-      }
-      #backlight {
-        background-color: #90b1b1;
+        margin: 0px 16px 0px 10px;
+        font-weight: bold;
       }
 
       #network {
-        background-color: #2980b9;
+        padding-left: 3px;
+        padding-right: 6px;
       }
 
-      #network.disconnected {
-        background-color: #f53c3c;
-      }
-      #pulseaudio {
-        background-color: #f1c40f;
-        color: #000000;
+      #bluetooth {
+        padding-right: 2px;
+        padding-left: 8px;
+        margin-top: 2px;
       }
 
-      #pulseaudio.muted {
-        background-color: #90b1b1;
-        color: #2a5c45;
+      #battery {
+        padding-left: 0px;
+        margin-left: 6px;
       }
+
+      #battery.warning {
+        color: #eae9f0;
+      }
+
+      #battery.critical {
+        color: #eae9f0;
+      }
+
+      #battery.charging {
+        color: #eae9f0;
+      }
+
+      #custom-storage.warning {
+        color: #eae9f0;
+      }
+
+      #custom-storage.critical {
+        color: #eae9f0;
+      }
+
+      #apatheia {
+        color: #eae9f0;
+      }
+
+      #backlight {
+        padding-right: 5px;
+      }
+
       #tray {
-        background-color: #2980b9;
+        font-size: 5px;
+        padding: 0px 10px;
+        padding-right: 1px;
+        border-radius: 5px 0px 0px 5px;
+        background-color: rgba(17, 17, 27, 0);
       }
-
-      #tray > .passive {
-        -gtk-icon-effect: dim;
-      }
-
-      #tray > .needs-attention {
-        -gtk-icon-effect: highlight;
-        background-color: #eb4d4b;
-      }
-
-
-
 
      
     '';

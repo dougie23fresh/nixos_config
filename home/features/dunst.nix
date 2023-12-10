@@ -2,13 +2,15 @@
 {
   services.dunst = {
     enable = true;
-    iconTheme = {
-      name = "Fluent-dark";
-      package = pkgs.fluent-icon-theme;
-    };
+    #iconTheme = {
+    #  name = "Fluent-dark";
+    #  package = pkgs.fluent-icon-theme;
+    #};
 
     settings = {
       global = {
+        monitor = 0;
+        follow = "mouse";
         font = "Inter 12";
         frame_color = "#100E23";
         frame_width = "2";

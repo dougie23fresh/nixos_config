@@ -41,6 +41,7 @@
     lidSwitch = "suspend";
     lidSwitchExternalPower = "lock";
   };
+  
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.melvin = {
     isNormalUser = true;
@@ -52,20 +53,10 @@
     ];
   };
   # environment.systemPackages = with pkgs; [];
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    ibm-plex
-    fira-code
-    fira-code-symbols
-  ];
 
   environment.variables = {
     VDPAU_DRIVER = "va_gl";
   };
-
-
 
   services.xserver.videoDrivers = [ "nvidia" ];
   #hardware.opengl.extraPackages = with pkgs; [vaapiVdpau];
@@ -77,11 +68,9 @@
     };
     # Bus ID of the Intel GPU.
     intelBusId = "PCI:0:2:0";
-
     # Bus ID of the NVIDIA GPU.
     nvidiaBusId = "PCI:1:0:0";
   };
-
 
   system.stateVersion = "23.11"; # Did you read the comment?
 
