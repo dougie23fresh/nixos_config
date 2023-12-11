@@ -9,6 +9,8 @@ https://github.com/NixOS/nixos-hardware/tree/master
 https://gitlab.com/stephan-raabe/dotfiles/-/tree/main/hypr/conf?ref_type=heads
 
 https://wiki.archlinux.org/title/intel_graphics#Hardware_accelerated_H.264_decoding_on_GMA_4500
+
+https://github.com/vimjoyer/flake-starter-config/tree/main
 ----
 
 https://git.polynom.me/PapaTutuWawa/nixos-config/src/branch/master/modules/programs
