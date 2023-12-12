@@ -7,7 +7,7 @@ in
 {
   # main-user.enable = true;
   # main-user.userName = "melvin";
-  option.main-user = {
+  options.main-user = {
     enable = lib.mkEnableOption "enable user module";
     userName = lib.mkOption {
       default = "mainuser";
