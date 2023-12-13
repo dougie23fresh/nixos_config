@@ -1,16 +1,14 @@
-{ options, config, pkgs, lib, ... }:
-
+{ lib, config, pkgs, ... }:
 with lib;
-with lib.plusultra;
-let cfg = config.plusultra.services.printing;
+let 
+  cfg = config.dougieHost.services.printing;
 in
 {
-  options.plusultra.services.printing = with types; {
-    enable = mkBoolOpt false "Whether or not to configure printing support.";
+  options.dougieHost.services.printing = {
+    enable = mkBoolOpt false "printing";
   };
 
-  config = mkIf cfg.enable { services.printing.enable = true; };
+  config = mkIf cfg.enable {
+    services.printing.enable = true;
+  };
 }
-
-
-

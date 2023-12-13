@@ -1,16 +1,22 @@
-{ options, config, pkgs, lib, ... }:
-
+{ lib, config, pkgs, ... }:
 with lib;
-with lib.plusultra;
-let cfg = config.plusultra.hardware.storage;
+let 
+  cfg = config.dougieHost.hardware.storage;
 in
 {
-  options.plusultra.hardware.storage = with types; {
-    enable = mkBoolOpt false
-      "Whether or not to enable support for extra storage devices.";
+  options.dougieHost.hardware.storage = {
+    enable = mkBoolOpt false "storage";
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [ ntfs3g fuseiso ];
+    boot.supportedFilesystems = [ 
+      ntfs
+      btrfs
+      cifs
+      exfat
+      ext
+      nfs
+      vfat
+    ];
   };
 }

@@ -1,11 +1,15 @@
-{ config, pkgs, ... }:
-
+{ lib, config, pkgs, ... }:
+with lib;
+let 
+  cfg = config.dougieHost.hardware.openrgb;
+in
 {
-  environment.systemPackages = [ pkgs.openrgb-with-all-plugins ];
+  options.dougieHost.hardware.openrgb = {
+    enable = mkBoolOpt false "openrgb";
+  };
 
-  # OpenRGB setup
-  services.hardware.openrgb = {
-    enable = true;
-    motherboard = "amd";
+  config = mkIf cfg.enable {
+    services.hardware.openrgb.enable = true;
+    services.hardware.openrgb.motherboard = "amd";
   };
 }

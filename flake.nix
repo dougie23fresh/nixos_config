@@ -57,6 +57,11 @@
     pkgs = nixpkgs.legacyPackages.${system};
   in
   { 
+    nixosModules.dougieHost = {
+      imports = [
+        ./modules/nixos
+      ];
+    };
     nixosConfigurations = {
       ceres = nixpkgs.lib.nixosSystem {
         modules = [

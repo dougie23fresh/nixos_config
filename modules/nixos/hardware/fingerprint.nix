@@ -1,13 +1,14 @@
-{ options, config, pkgs, lib, ... }:
-
+{ lib, config, pkgs, ... }:
 with lib;
-with lib.plusultra;
-let cfg = config.plusultra.hardware.fingerprint;
+let 
+  cfg = config.dougieHost.hardware.fingerprint;
 in
 {
-  options.plusultra.hardware.fingerprint = with types; {
-    enable = mkBoolOpt false "Whether or not to enable fingerprint support.";
+  options.dougieHost.hardware.fingerprint = {
+    enable = mkBoolOpt false "fprintd";
   };
 
-  config = mkIf cfg.enable { services.fprintd.enable = true; };
+  config = mkIf cfg.enable {
+    services.fprintd.enable = true;
+  };
 }

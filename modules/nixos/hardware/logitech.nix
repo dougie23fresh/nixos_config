@@ -9,7 +9,10 @@ in
   };
 
   config = mkIf cfg.enable {
-    hardware.bluetooth.enable = true;
-    services.blueman.enable = true;
+    hardware.logitech.wireless.enable = true;
+    hardware.logitech.wireless.enableGraphical = true;
+    environment.systemPackages = with pkgs;[
+      logitech-udev-rules
+    ];
   };
 }

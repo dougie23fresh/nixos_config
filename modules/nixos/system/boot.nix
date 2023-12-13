@@ -1,13 +1,14 @@
-{ libs, config, pkgs, ...}:
+{ lib, config, pkgs, ... }:
+with lib;
 let 
-  cfg = config.dougienix.system.boot;
+  cfg = config.dougieHost.system.boot;
 in
 {
-  options.dougienix.system.boot = with types; {
-    enable = lib.mkBoolOpt false "Whether or not to enable booting.";
+  options.dougieHost.system.boot = {
+    enable = mkBoolOpt false "Whether or not to enable booting.";
   };
 
-  config = mkIf lib.cfg.enable {
+  config = mkIf cfg.enable {
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
   };

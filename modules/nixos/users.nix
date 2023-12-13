@@ -1,30 +1,22 @@
-{ pkgs, libs, ...}:
-
+{ lib, config, pkgs, ... }:
+with lib;
 let 
-  cfg = config.main-user;
+  cfg = config.dougieHost.user;;
 in
-
 {
-  # main-user.enable = true;
-  # main-user.userName = "melvin";
-  options.main-user = {
-    enable = lib.mkEnableOption "enable user module";
-    userName = lib.mkOption {
-      default = "mainuser";
-      description = ''
-        username
-      '';
-    };
+  options.dougieHost.user = {
+    enable = mkEnableOption "enable user module";
+    userName = mkOpt types.str "nixuser";
   };
-  config = lib.mkIf cfg.enable {
+
+  config = mkIf cfg.enable {
     users.users.${cfg.userName} = {
       isNormalUser = true;
       description = "main user";
       extraGroups = [ "networkmanager" "wheel" ];
-      shell = pkg.zsh;
+      #shell = pkg.zsh;
       packages = with pkgs; [
         firefox
-        # thunderbird
       ];
     };
   };

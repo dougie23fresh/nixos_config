@@ -1,53 +1,25 @@
-{ options, config, pkgs, lib, ... }:
-
+{ lib, config, pkgs, ... }:
 with lib;
-with lib.plusultra;
-let cfg = config.plusultra.system.locale;
+let 
+  cfg = config.dougieHost.system.locale;
 in
 {
-  options.plusultra.system.locale = with types; {
-    enable = mkBoolOpt false "Whether or not to manage locale settings.";
+  options.dougieHost.system.locale = {
+    enable = mkBoolOpt false "locale";
   };
 
   config = mkIf cfg.enable {
     i18n.defaultLocale = "en_US.UTF-8";
-
-    console = { keyMap = mkForce "us"; };
-  };
-}
-
-{
-  options,
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-with lib;
-with lib.plusultra; let
-  cfg = config.plusultra.system.fonts;
-in {
-  options.plusultra.system.fonts = with types; {
-    enable = mkBoolOpt false "Whether or not to manage fonts.";
-    fonts = mkOpt (listOf package) [] "Custom font packages to install.";
-  };
-
-  config = mkIf cfg.enable {
-    environment.variables = {
-      # Enable icons in tooling since we have nerdfonts.
-      LOG_ICONS = "true";
+    i18n.extraLocaleSettings = {
+      LC_ADDRESS = "en_US.UTF-8";
+      LC_IDENTIFICATION = "en_US.UTF-8";
+      LC_MEASUREMENT = "en_US.UTF-8";
+      LC_MONETARY = "en_US.UTF-8";
+      LC_NAME = "en_US.UTF-8";
+      LC_NUMERIC = "en_US.UTF-8";
+      LC_PAPER = "en_US.UTF-8";
+      LC_TELEPHONE = "en_US.UTF-8";
+      LC_TIME = "en_US.UTF-8";
     };
-
-    environment.systemPackages = with pkgs; [font-manager];
-
-    fonts.packages = with pkgs;
-      [
-        noto-fonts
-        noto-fonts-cjk-sans
-        noto-fonts-cjk-serif
-        noto-fonts-emoji
-        (nerdfonts.override {fonts = ["Hack"];})
-      ]
-      ++ cfg.fonts;
   };
 }
