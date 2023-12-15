@@ -1,107 +1,78 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../common/global
-    ];
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.kernelModules = [ "i915" ];
-
-
-  networking.hostName = "hpelitebook"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-  
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowUnfreePredicate = (pkg: builtins.elem (builtins.parseDrvName pkg.name).name [ "steam" ]);
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings = {
-    substituters = ["https://nix-gaming.cachix.org"];
-    trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
-  };
-
-  sound.enable = true;
-  security.rtkit.enable = true;
-  services.hardware.bolt.enable = true;
-  # Lid settings
-  services.logind = {
-    lidSwitch = "suspend";
-    lidSwitchExternalPower = "lock";
-  };
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.melvin = {
-    isNormalUser = true;
-    description = "melvin";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  firefox
-    #  thunderbird
-    ];
-  };
-  # environment.systemPackages = with pkgs; [];
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    ibm-plex
-    fira-code
-    fira-code-symbols
+  imports = [ 
+    ./hardware-configuration.nix
   ];
+  ######
+  # system
+  ######
+
+  # Bootloader
+  dougieHost.system.boot.enable = true;
+  # networking
+  dougieHost.system.networking.enable = true;
+  dougieHost.system.networking.hostName = "hpelitebook";
+  # time
+  dougieHost.system.time.enable = true;
+  # location
+  dougieHost.system.location.enable = true;
+  # locale
+  dougieHost.system.locale.enable = true;
+  # sound
+  dougieHost.system.sound.enable = true;
+  # nix settings
+  dougieHost.system.nixSettings.enable = true;
+  
+
+  #######
+  # services
+  #######
+
+  # avahi
+  dougieHost.services.avahi.enable = true;
+  # battery
+  dougieHost.services.battery.enable = true;
+  dougieHost.services.dbus.enable = true;
+  dougieHost.fwupd.enable = true;
+  dougieHost.fstrim.enable = true;
+  dougieHost.gvfs.enable = true;
+  dougieHost.pipewire.enable = true;
+  dougieHost.printing.enable = true;
+  dougieHost.redshift.enable = true;
+  dougieHost.syncthing.enable = true;
+  dougieHost.tailscale.enable = true;
+  dougieHost.tumbler.enable = true;
+  dougieHost.yubikey.enable = true;
+
+  #######
+  # hardware
+  #######
+  dougieHost.hardware.yubikey.enable = true;
+  dougieHost.hardware.brillo.enable = true;
+  #dougieHost.hardware.fingerprint.enable = true;
+  #dougieHost.hardware.i2c.enable = true;
+  #dougieHost.hardware.journald.enable = true;
+  dougieHost.hardware.laptoplid.enable = true;
+  dougieHost.hardware.logitech.enable = true;
+  #dougieHost.hardware.openrgb.enable = true;
+  #dougieHost.hardware.storage.enable = true;
+
+  # wm
+  dougieHost.wm.gdm.enable = true;
+  dougieHost.wm.xfce.enable = true;
 
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  # user
+  dougieHost.user.enable = true;
+  dougieHost.user.userName = "melvin";
 
-  # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
-  # This  determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this  at the release version of the first install of this system.
-  # Before changing this  read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
-  ## Backups & Upgrades
-  # Backup system config
-  # system.copySystemConfiguration = true;
-  # System Upgrades
-  #system.autoUpgrade.enable = true;
-  #system.autoUpgrade.allowReboot = true;
+  system.stateVersion = "23.11";
 
-  ## Garbage Collection
-  # Automatic Garbage Collection
-  #nix.gc = {
-  #              automatic = true;
-  #              dates = "weekly";
-  #              options = "--delete-older-than 3d";
-  #        };
+
+
+
 }
