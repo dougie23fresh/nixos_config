@@ -11,7 +11,7 @@ in
   config = mkIf cfg.enable {
     programs.hyprland.enable = true;
     programs.hyprland.xwayland.enable = true;
-    programs.hyprlandportalPackage = pkgs.xdg-desktop-portal-hyprland;
+    #programs.hyprlandportalPackage = pkgs.xdg-desktop-portal-hyprland;
 
   };
 }
