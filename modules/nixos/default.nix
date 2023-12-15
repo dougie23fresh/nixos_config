@@ -6,6 +6,6 @@
     ./services
     ./hardware
     ./wm
-    ./user.nix
+    ./users.nix
   ];
 }
