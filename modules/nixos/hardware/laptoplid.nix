@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.hardware.laptoplid = {
-    enable = mkDefault false "laptoplid";
+    enable = mkEnableOption false "laptoplid";
   };
 
   config = mkIf cfg.enable {
