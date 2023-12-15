@@ -6,7 +6,10 @@ in
 {
   options.dougieHost.user = {
     enable = mkEnableOption "enable user module";
-    userName = mkOpt types.str "nixuser";
+    userName = mkOption {
+      type = types.str;
+      default = "nixuser";
+    };
   };
 
   config = mkIf cfg.enable {
