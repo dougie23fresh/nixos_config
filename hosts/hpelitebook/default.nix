@@ -35,16 +35,16 @@
   # battery
   dougieHost.services.battery.enable = true;
   dougieHost.services.dbus.enable = true;
-  dougieHost.fwupd.enable = true;
-  dougieHost.fstrim.enable = true;
-  dougieHost.gvfs.enable = true;
-  dougieHost.pipewire.enable = true;
-  dougieHost.printing.enable = true;
-  dougieHost.redshift.enable = true;
-  dougieHost.syncthing.enable = true;
-  dougieHost.tailscale.enable = true;
-  dougieHost.tumbler.enable = true;
-  dougieHost.yubikey.enable = true;
+  dougieHost.services.fwupd.enable = true;
+  dougieHost.services.fstrim.enable = true;
+  dougieHost.services.gvfs.enable = true;
+  dougieHost.services.pipewire.enable = true;
+  dougieHost.services.printing.enable = true;
+  dougieHost.services.redshift.enable = true;
+  dougieHost.services.syncthing.enable = true;
+  dougieHost.services.tailscale.enable = true;
+  dougieHost.services.tumbler.enable = true;
+  dougieHost.services.yubikey.enable = true;
 
   #######
   # hardware
