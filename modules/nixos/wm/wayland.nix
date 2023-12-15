@@ -1,23 +1,19 @@
-{ config, lib, pkgs, ... }:
-
+{ lib, config, pkgs, ... }:
+with lib;
+let 
+  cfg = config.dougieHost.wm.wayland;
+in
 {
-  imports = [ ./pipewire.nix
-              ./dbus.nix
-              ./gnome-keyring.nix
-              ./fonts.nix
-            ];
+  options.dougieHost.wm.wayland = {
+    enable = mkEnableOption "wayland";
+  };
 
-  environment.systemPackages = [ pkgs.wayland pkgs.waydroid ];
-
-  # Configure xwayland
-  services.xserver = {
-    enable = true;
-    layout = "us";
-    xkbVariant = "";
-    xkbOptions = "caps:escape";
-    displayManager.gdm = {
+  config = mkIf cfg.enable {
+    services.xserver = {
       enable = true;
-      wayland = true;
+      layout = "us";
+      xkbVariant = "";
+      xkbOptions = "caps:escape";
     };
   };
 }

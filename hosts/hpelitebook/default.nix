@@ -62,6 +62,9 @@
   # wm
   dougieHost.wm.gdm.enable = true;
   dougieHost.wm.xfce.enable = true;
+  dougieHost.wm.wayland.enable = true;
+  dougieHost.wm.hyprland.enable = true;
+  dougieHost.wm.sway.enable = true;
 
 
   # user

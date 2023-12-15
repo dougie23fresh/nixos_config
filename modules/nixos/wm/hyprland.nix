@@ -1,32 +1,17 @@
-{ config, lib, pkgs, ... }:
-
+{ lib, config, pkgs, ... }:
+with lib;
+let 
+  cfg = config.dougieHost.wm.hyprland;
+in
 {
-  # Import wayland config
-  imports = [ ./wayland.nix
-              ./pipewire.nix
-              ./dbus.nix
-            ];
-
-  # Security
-  security = {
-#    pam.services.swaylock = {
-#      text = ''
-#        auth include login
-#      '';
-#    };
-    pam.services.gtklock = {};
-    pam.services.login.enableGnomeKeyring = true;
+  options.dougieHost.wm.hyprland = {
+    enable = mkEnableOption "hyprland";
   };
 
-  services.gnome.gnome-keyring.enable = true;
+  config = mkIf cfg.enable {
+    programs.hyprland.enable = true;
+    programs.hyprland.xwayland.enable = true;
+    programs.hyprlandportalPackage = pkgs.xdg-desktop-portal-hyprland;
 
-  programs = {
-    hyprland = {
-      enable = true;
-      xwayland = {
-        enable = true;
-      };
-      portalPackage = pkgs.xdg-desktop-portal-hyprland;
-    };
   };
 }
