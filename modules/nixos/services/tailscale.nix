@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.services.tailscale = {
-    enable = mkBoolOpt false "tailscale";
+    enable = mkDefault false "tailscale";
   };
 
   config = mkIf cfg.enable {

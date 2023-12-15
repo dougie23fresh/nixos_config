@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.system.locale = {
-    enable = mkBoolOpt false "locale";
+    enable = mkDefault false "locale";
   };
 
   config = mkIf cfg.enable {

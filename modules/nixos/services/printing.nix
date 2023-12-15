@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.services.printing = {
-    enable = mkBoolOpt false "printing";
+    enable = mkDefault false "printing";
   };
 
   config = mkIf cfg.enable {

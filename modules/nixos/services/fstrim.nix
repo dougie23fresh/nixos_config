@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.services.fstrim = {
-    enable = mkBoolOpt false "fstrim";
+    enable = mkDefault false "fstrim";
   };
 
   config = mkIf cfg.enable {

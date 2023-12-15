@@ -6,7 +6,7 @@ let cfg = config.plusultra.tools.misc;
 in
 {
   options.plusultra.tools.misc = with types; {
-    enable = mkBoolOpt false "Whether or not to enable common utilities.";
+    enable = mkDefault false "Whether or not to enable common utilities.";
   };
 
   config = mkIf cfg.enable {

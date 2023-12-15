@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.hardware.journald = {
-    enable = mkBoolOpt false "journald";
+    enable = mkDefault false "journald";
   };
 
   config = mkIf cfg.enable {

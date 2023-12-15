@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.system.boot = {
-    enable = mkBoolOpt false "Whether or not to enable booting.";
+    enable = mkDefault false "Whether or not to enable booting.";
   };
 
   config = mkIf cfg.enable {

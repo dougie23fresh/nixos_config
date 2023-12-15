@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.services.redshift = {
-    enable = mkBoolOpt false "redshift";
+    enable = mkDefault false "redshift";
   };
 
   config = mkIf cfg.enable {

@@ -1,4 +1,3 @@
-# Backlight and Keyboard LED control tool.
 { lib, config, pkgs, ... }:
 with lib;
 let 
@@ -6,10 +5,11 @@ let
 in
 {
   options.dougieHost.hardware.brillo = {
-    enable = mkBoolOpt false "brillo";
+    enable = mkDefault false "brillo";
   };
 
   config = mkIf cfg.enable {
     hardware.brillo.enable = true;
   };
 }
+# Backlight and Keyboard LED control tool.

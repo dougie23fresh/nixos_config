@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.services.dbus = {
-    enable = mkBoolOpt false "dbus";
+    enable = mkDefault false "dbus";
   };
 
   config = mkIf cfg.enable {

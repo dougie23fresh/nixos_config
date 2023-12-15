@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.wm.xfce = {
-    enable = mkBoolOpt false "xfce";
+    enable = mkDefault false "xfce";
   };
 
   config = mkIf cfg.enable {

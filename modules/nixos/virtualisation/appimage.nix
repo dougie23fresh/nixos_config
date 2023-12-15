@@ -7,7 +7,7 @@ let
 in
 {
   options.plusultra.tools.appimage-run = with types; {
-    enable = mkBoolOpt false "Whether or not to enable appimage-run.";
+    enable = mkDefault false "Whether or not to enable appimage-run.";
   };
 
   config = mkIf cfg.enable {

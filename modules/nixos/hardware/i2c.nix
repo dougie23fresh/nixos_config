@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.hardware.i2c = {
-    enable = mkBoolOpt false "i2c";
+    enable = mkDefault false "i2c";
   };
 
   config = mkIf cfg.enable {

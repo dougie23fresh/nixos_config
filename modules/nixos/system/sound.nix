@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.system.sound = {
-    enable = mkBoolOpt false "enable sound";
+    enable = mkDefault false "enable sound";
   };
 
   config = mkIf cfg.enable {

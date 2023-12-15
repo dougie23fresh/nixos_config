@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.services.syncthing = {
-    enable = mkBoolOpt false "syncthing";
+    enable = mkDefault false "syncthing";
   };
 
   config = mkIf cfg.enable {
