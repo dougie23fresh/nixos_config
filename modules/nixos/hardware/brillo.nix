@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.hardware.brillo = {
-    enable = mkDefault false "brillo";
+    enable = mkEnableOption false "brillo";
   };
 
   config = mkIf cfg.enable {
