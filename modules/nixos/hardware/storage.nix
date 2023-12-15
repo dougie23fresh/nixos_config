@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.hardware.storage = {
-    enable = mkDefault false "storage";
+    enable = mkEnableOption "storage";
   };
 
   config = mkIf cfg.enable {
