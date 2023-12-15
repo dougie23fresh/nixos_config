@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }:
 with lib;
 let 
-  cfg = config.dougieHost.user;;
+  cfg = config.dougieHost.user;
 in
 {
   options.dougieHost.user = {
