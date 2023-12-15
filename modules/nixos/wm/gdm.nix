@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.wm.gdm = {
-    enable = mkDefault false "gdm";
+    enable = mkEnableOption "gdm";
   };
 
   config = mkIf cfg.enable {

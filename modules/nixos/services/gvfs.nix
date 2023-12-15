@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.services.gvfs = {
-    enable = mkDefault false "gvfs";
+    enable = mkEnableOption "gvfs";
   };
 
   config = mkIf cfg.enable {

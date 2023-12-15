@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.system.nixSettings = {
-    enable = mkDefault false "nixSettings";
+    enable = mkEnableOption "nixSettings";
   };
 
   config = mkIf cfg.enable {

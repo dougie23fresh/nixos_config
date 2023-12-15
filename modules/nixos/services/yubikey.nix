@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.services.yubikey = {
-    enable = mkBoolOpt false "yubikey";
+    enable = mkEnableOption "yubikey";
   };
 
   config = mkIf cfg.enable {

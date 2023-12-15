@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.services.avahi = {
-    enable = mkDefault false "avahi";
+    enable = mkEnableOption "avahi";
   };
 
   config = mkIf cfg.enable {

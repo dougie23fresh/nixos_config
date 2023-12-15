@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.hardware.openrgb = {
-    enable = mkDefault false "openrgb";
+    enable = mkEnableOption "openrgb";
   };
 
   config = mkIf cfg.enable {

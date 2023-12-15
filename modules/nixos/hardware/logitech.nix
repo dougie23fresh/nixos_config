@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.hardware.bluetooth = {
-    enable = mkDefault false "bluetooth";
+    enable = mkEnableOption "bluetooth";
   };
 
   config = mkIf cfg.enable {

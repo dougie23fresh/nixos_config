@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.services.fwupd = {
-    enable = mkDefault false "fwupd";
+    enable = mkEnableOption "fwupd";
   };
 
   config = mkIf cfg.enable {

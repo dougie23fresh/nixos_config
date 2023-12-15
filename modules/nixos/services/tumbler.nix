@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.services.tumbler = {
-    enable = mkBoolOpt false "tumbler";
+    enable = mkEnableOption "tumbler";
   };
 
   config = mkIf cfg.enable {

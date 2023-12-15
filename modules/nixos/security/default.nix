@@ -7,7 +7,7 @@ let
 in
 {
   options.plusultra.security.keyring = with types; {
-    enable = mkDefault false "Whether to enable gnome keyring.";
+    enable = mkEnableOption "Whether to enable gnome keyring.";
   };
 
   config = mkIf cfg.enable {

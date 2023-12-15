@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.services.battery = {
-    enable = mkDefault false "battery";
+    enable = mkEnableOption "battery";
   };
 
   config = mkIf cfg.enable {

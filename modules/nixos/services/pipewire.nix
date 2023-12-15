@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.services.pipewire = {
-    enable = mkDefault false "pipewire";
+    enable = mkEnableOption "pipewire";
   };
 
   config = mkIf cfg.enable {

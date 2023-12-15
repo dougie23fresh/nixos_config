@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.system.time = {
-    enable = mkDefault false "time";
+    enable = mkEnableOption "time";
   };
 
   config = mkIf cfg.enable {

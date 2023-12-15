@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.system.location = {
-    enable = mkDefault false "location";
+    enable = mkEnableOption "location";
   };
 
   config = mkIf cfg.enable {

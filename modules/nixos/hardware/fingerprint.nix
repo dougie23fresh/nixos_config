@@ -5,7 +5,7 @@ let
 in
 {
   options.dougieHost.hardware.fingerprint = {
-    enable = mkDefault false "fprintd";
+    enable = mkEnableOption "fprintd";
     #mkEnableOption (lib.mdDoc "the 1Password GUI application");
   };
 
