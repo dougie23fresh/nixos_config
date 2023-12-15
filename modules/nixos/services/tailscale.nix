@@ -10,6 +10,8 @@ in
 
   config = mkIf cfg.enable {
     services.tailscale.enable = true;
+    environment.systemPackages = with pkgs; [ tailscale ];
+
   };
-  environment.systemPackages = with pkgs; [ tailscale ];
+  
 }
