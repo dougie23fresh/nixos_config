@@ -6,7 +6,10 @@ in
 {
   options.dougieHost.system.networking = {
     enable = mkEnableOption "Whether or not to enable networking support";
-    hostName = mkOption types.str "nixos";
+    hostName = mkOption {
+      type = types.str;
+      default = "nixos";
+    };
   };
 
   config = mkIf cfg.enable {
