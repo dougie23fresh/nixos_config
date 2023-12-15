@@ -1,11 +1,11 @@
 { lib, config, pkgs, ... }:
 with lib;
 let 
-  cfg = config.dougieHost.hardware.bluetooth;
+  cfg = config.dougieHost.hardware.logitech;
 in
 {
-  options.dougieHost.hardware.bluetooth = {
-    enable = mkEnableOption "bluetooth";
+  options.dougieHost.hardware.logitech = {
+    enable = mkEnableOption "logitech";
   };
 
   config = mkIf cfg.enable {
