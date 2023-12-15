@@ -12,7 +12,7 @@ in
   config = mkIf cfg.enable {
     #dougienix.user.extraGroups = [ "networkmanager" ];
     networking = {
-      hostName = ${cfg.hostName};
+      hostName = ${hostName};
       networkmanager = {
         enable = true;
       };
