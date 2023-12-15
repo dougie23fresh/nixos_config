@@ -8,7 +8,7 @@ in
     enable = mkEnableOption "enable user module";
     userName = mkOption {
       type = types.str;
-      default = "nixuser"
+      default = "nixuser";
     };
   };
 
