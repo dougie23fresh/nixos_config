@@ -58,6 +58,11 @@
   #dougieHost.hardware.openrgb.enable = true;
   #dougieHost.hardware.storage.enable = true;
 
+  # wm
+  dougieHost.wm.gdm.enable = true;
+  dougieHost.wm.xfce.enable = true;
+
+
   # user
   dougieHost.user.enable = true;
   dougieHost.user.userName = "melvin";

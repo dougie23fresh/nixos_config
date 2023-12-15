@@ -5,5 +5,6 @@
     ./system
     ./services
     ./hardware
+    ./wm
   ];
 }
