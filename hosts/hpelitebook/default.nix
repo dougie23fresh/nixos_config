@@ -49,7 +49,7 @@
   #######
   # hardware
   #######
-  dougieHost.hardware.yubikey.enable = true;
+  dougieHost.hardware.bluetooth.enable = true;
   #dougieHost.hardware.brillo.enable = true;
   #dougieHost.hardware.fingerprint.enable = true;
   #dougieHost.hardware.i2c.enable = true;
