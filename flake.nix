@@ -51,7 +51,7 @@
     # nixos-generators.url = "github:nix-community/nixos-generators";
     nix-colors.url = "github:misterio77/nix-colors";
   };
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -78,11 +78,11 @@
         specialArgs = { inherit inputs; }; 
         modules = [
           ./hosts/hpelitebook/default.nix
-          inputs.home-manager.nixosModules.home-manager {
-            inputs.home-manager.useGlobalPkgs = true;
-            inputs.home-manager.useUserPackages = true;
-            inputs.home-manager.extraSpecialArgs = { inherit inputs; };
-            inputs.home-manager.users.melvin = import ./home/laptop-intel.nix;
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.melvin = import ./home/laptop-intel.nix;
           }
         ];
       };
@@ -90,11 +90,11 @@
         specialArgs = { inherit inputs; }; 
         modules = [
           ./hosts/lggramlinux/default.nix
-          inputs.home-manager.nixosModules.home-manager {
-            inputs.home-manager.useGlobalPkgs = true;
-            inputs.home-manager.useUserPackages = true;
-            inputs.home-manager.extraSpecialArgs = { inherit inputs; };
-            inputs.home-manager.users.melvin = import ./home/homelaptop.nix;
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.melvin = import ./home/homelaptop.nix;
           }
         ];
       };
@@ -103,11 +103,11 @@
         specialArgs = { inherit inputs; }; 
         modules = [
           ./hosts/msi-gs70-stealth/default.nix
-          inputs.home-manager.nixosModules.home-manager {
-            inputs.home-manager.useGlobalPkgs = true;
-            inputs.home-manager.useUserPackages = true;
-            inputs.home-manager.extraSpecialArgs = { inherit inputs; };
-            inputs.home-manager.users.melvin = import ./home/homelaptop.nix;
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.melvin = import ./home/homelaptop.nix;
           }
         ];
       };
