@@ -14,7 +14,7 @@ in
 
   config = mkIf cfg.enable {
     home = {
-        username = ${cfg.userName} ;
+        username = "${cfg.userName}";
         homeDirectory = "/home/${cfg.userName}";
         stateVersion = "23.11";
         # packages = with pkgs; [ mpv ];
