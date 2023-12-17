@@ -1,23 +1,42 @@
+{ lib, config, pkgs, ... }:
+with lib;
+let 
+  cfg = config.dougieHome.wm.hyprland;
+in
+{
+  options.dougieHome.wm.hyprland = {
+    enable = mkEnableOption "hyprland";
+  };
+
+  config = mkIf cfg.enable {
+    wayland.windowManager.hyprland.enable = true;
+    wayland.windowManager.hyprland.xwayland = { enable = true; };
+    wayland.windowManager.hyprland.systemdIntegration = true;
+    wayland.windowManager.hyprland.settings = { };
+    wayland.windowManager.hyprland.extraConfig = '' '';
+    #imports = [
+    #  ../../app/terminal/alacritty.nix
+    #];
+    #wayland.windowManager.hyprland.plugins = [];
+    #gtk.cursorTheme = {
+    #  package = pkgs.quintom-cursor-theme;
+    #  name = if (config.stylix.polarity == "light") then "Quintom_Ink" else "Quintom_Snow";
+    #  size = 36;
+    #};
+  }
+}
+
+
+
+
+
+
+
+
 { config, lib, pkgs, stdenv, toString, browser, term, spawnEditor, font, hyprland-plugins, ... }:
 
 {
-  imports = [
-    ../../app/terminal/alacritty.nix
-    ../../app/terminal/kitty.nix
-    (import ../../app/dmenu-scripts/networkmanager-dmenu.nix {
-      dmenu_command = "fuzzel -d";
-      inherit config lib pkgs;
-    })
-    (import ./hyprprofiles/hyprprofiles.nix {
-      dmenuCmd = "fuzzel -d"; inherit config lib pkgs;
-    })
-  ];
-
-  gtk.cursorTheme = {
-    package = pkgs.quintom-cursor-theme;
-    name = if (config.stylix.polarity == "light") then "Quintom_Ink" else "Quintom_Snow";
-    size = 36;
-  };
+  
 
   wayland.windowManager.hyprland = {
     enable = true;

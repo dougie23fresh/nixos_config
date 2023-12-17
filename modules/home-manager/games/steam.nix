@@ -1,24 +1,17 @@
-{ options, config, lib, pkgs, ... }:
-
+{ lib, config, pkgs, ... }:
 with lib;
-with lib.plusultra;
-let
-  cfg = config.plusultra.apps.steam;
+let 
+  cfg = config.dougieHome.terminal.steam;
 in
 {
-  options.plusultra.apps.steam = with types; {
-    enable = mkBoolOpt false "Whether or not to enable support for Steam.";
+  options.dougieHome.games.steam = {
+    enable = mkEnableOption "steam";
   };
 
   config = mkIf cfg.enable {
     programs.steam.enable = true;
     programs.steam.remotePlay.openFirewall = true;
-
     hardware.steam-hardware.enable = true;
-
-    # Enable GameCube controller support.
-    services.udev.packages = [ pkgs.dolphinEmu ];
-
     environment.systemPackages = with pkgs.plusultra; [
       steam
     ];
@@ -26,5 +19,5 @@ in
     environment.sessionVariables = {
       STEAM_EXTRA_COMPAT_TOOLS_PATHS = "$HOME/.steam/root/compatibilitytools.d";
     };
-  };
+  }
 }
