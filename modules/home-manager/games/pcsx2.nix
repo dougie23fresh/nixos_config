@@ -9,6 +9,6 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [ pcsx2 ];
+    home.packages = with pkgs; [ pcsx2 ];
   }
 }

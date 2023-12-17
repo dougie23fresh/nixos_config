@@ -1,9 +1,14 @@
-  home.packages = with pkgs; [
-    # Games
-    gamehub
-    myRetroarch
-    airshipper
-    qjoypad
-    superTux
-    superTuxKart
-  ];
+{ lib, config, pkgs, ... }:
+with lib;
+let 
+  cfg = config.dougieHome.games.qjoypad;
+in
+{
+  options.dougieHome.games.qjoypad = {
+    enable = mkEnableOption "qjoypad";
+  };
+
+  config = mkIf cfg.enable {
+    home.packages = with pkgs; [ qjoypad ];
+  }
+}

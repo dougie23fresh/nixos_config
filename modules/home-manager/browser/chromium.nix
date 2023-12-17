@@ -9,7 +9,7 @@ in
   };
 
   config = mkIf cfg.enable {
-
+    programs.chromium.enable = true;
 
   }
 }

@@ -9,7 +9,9 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [ bottles ];
+    home.packages = with pkgs; [
+      bottles
+    ];
   };
 }
 

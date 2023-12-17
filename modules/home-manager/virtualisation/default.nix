@@ -4,5 +4,6 @@
   imports = [
     ./flatpak.nix
     ./bottles.nix
+    ./wine.nix
   ];
 }

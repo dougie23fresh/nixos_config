@@ -18,7 +18,7 @@ in
     wayland.windowManager.hyprland.systemdIntegration = true;
     services.playerctld.enable = true;
     home.packages = with pkgs; [
-      playerctl
+      playerctl # Command-line utility and library for controlling media players that implement MPRIS
       killall
       polkit_gnome # A dbus session bus service that is used to bring up authentication dialogs
       libva-utils # A collection of utilities and examples for VA-API

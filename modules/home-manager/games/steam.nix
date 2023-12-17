@@ -12,7 +12,7 @@ in
     programs.steam.enable = true;
     programs.steam.remotePlay.openFirewall = true;
     hardware.steam-hardware.enable = true;
-    environment.systemPackages = with pkgs.plusultra; [
+    home.packages = with pkgs; [
       steam
     ];
 
