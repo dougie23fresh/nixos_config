@@ -21,6 +21,10 @@ in
       clac
       wget
       curl
+      git
+      #libverto # Asynchronous event loop abstraction library
+      #libnotify # Minimalistic libnotify wrapper
+      home-manager
     ];
   };
 }

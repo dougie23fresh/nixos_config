@@ -78,12 +78,12 @@
         specialArgs = { inherit inputs; }; 
         modules = [
           ./hosts/hpelitebook/default.nix
-          inputs.home-manager.nixosModules.home-manager {
-            inputs.home-manager.useGlobalPkgs = true;
-            inputs.home-manager.useUserPackages = true;
-            inputs.home-manager.extraSpecialArgs = { inherit inputs; };
-            inputs.home-manager.users.melvin = import ./home/laptop-intel.nix;
-          }
+          #inputs.home-manager.nixosModules.home-manager {
+          #  inputs.home-manager.useGlobalPkgs = true;
+          #  inputs.home-manager.useUserPackages = true;
+          #  inputs.home-manager.extraSpecialArgs = { inherit inputs; };
+          #  inputs.home-manager.users.melvin = import ./home/laptop-intel.nix;
+          #}
         ];
       };
       lggramlinux = nixpkgs.lib.nixosSystem {
