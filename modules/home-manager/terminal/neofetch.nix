@@ -13,5 +13,5 @@ in
     home.packages = with pkgs; [
       neofetch
     ];
-  }
+  };
 }

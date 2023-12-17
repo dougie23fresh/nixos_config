@@ -13,5 +13,5 @@ in
       blueman
     ];
     services.blueman-applet.enable = true;
-  }
+  };
 }

@@ -12,5 +12,5 @@ in
   config = mkIf cfg.enable {
     programs.starship.enable = true;
     programs.starship.enableZshIntegration = true;
-  }
+  };
 }

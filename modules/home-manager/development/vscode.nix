@@ -15,5 +15,5 @@ in
     programs.vscode.enable = true;
     # programs.vscode.extensions
     # programs.vscode.userSettings
-  }
+  };
 }

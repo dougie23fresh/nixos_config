@@ -14,5 +14,5 @@ in
       vkd3d-proton
       protontricks
     ];
-  }
+  };
 }

@@ -14,5 +14,5 @@ in
       openssl
       gnome.zenity
     ];
-  }
+  };
 }

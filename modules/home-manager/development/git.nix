@@ -17,5 +17,5 @@ in
       init.defaultBranch = "main";
     };
     home.packages = [ pkgs.git ];
-  }
+  };
 }

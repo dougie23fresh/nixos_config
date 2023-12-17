@@ -12,5 +12,5 @@ in
     home.packages = with pkgs; [
       rustup
     ];
-  }
+  };
 }

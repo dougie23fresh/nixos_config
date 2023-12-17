@@ -59,5 +59,5 @@ in
     #  name = if (config.stylix.polarity == "light") then "Quintom_Ink" else "Quintom_Snow";
     #  size = 36;
     #};
-  }
+  };
 }

@@ -14,5 +14,5 @@ in
       android-tools
       android-udev-rules
     ];
-  }
+  };
 }

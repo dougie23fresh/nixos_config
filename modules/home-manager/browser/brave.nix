@@ -22,5 +22,5 @@ in
     ##home.sessionVariables = {
     #  DEFAULT_BROWSER = "${pkgs.brave}/bin/brave";
     #};
-  }
+  };
 }

@@ -87,5 +87,5 @@ in
       python3Packages.websockets
       python3Packages.python-zbar
     ];
-  }
+  };
 }

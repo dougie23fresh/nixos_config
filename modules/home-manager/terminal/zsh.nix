@@ -13,5 +13,5 @@ in
     programs.zsh.enableAutosuggestions = true;
     programs.zsh.enableCompletion = true;
     programs.zsh.autocd = true;
-  }
+  };
 }

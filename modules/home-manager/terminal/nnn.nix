@@ -10,5 +10,5 @@ in
 
   config = mkIf cfg.enable {
     programs.nnn.enable = true;
-  }
+  };
 }
