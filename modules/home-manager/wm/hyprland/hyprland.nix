@@ -11,11 +11,14 @@ in
   config = mkIf cfg.enable {
     imports = [
       ./hyprland_settings.nix
+      ./waybar.nix
     ];
     wayland.windowManager.hyprland.enable = true;
     wayland.windowManager.hyprland.xwayland = { enable = true; };
     wayland.windowManager.hyprland.systemdIntegration = true;
+    services.playerctld.enable = true;
     home.packages = with pkgs; [
+      playerctl
       killall
       polkit_gnome # A dbus session bus service that is used to bring up authentication dialogs
       libva-utils # A collection of utilities and examples for VA-API

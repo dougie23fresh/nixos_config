@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./flatpak.nix
-    ./bottles.nix
+    #./xfce/xfce.nix
+    ./hyprland/hyprland.nix
   ];
 }

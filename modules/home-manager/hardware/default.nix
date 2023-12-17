@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./flatpak.nix
-    ./bottles.nix
+    ./bluetooth.nix
   ];
 }

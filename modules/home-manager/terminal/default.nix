@@ -2,10 +2,13 @@
 
 {
   imports = [
-    ./system
-    ./services
-    ./hardware
-    ./wm
-    ./users.nix
+    ./alacritty.nix
+    ./btop.nix
+    ./eza.nix
+    ./kitty.nix
+    ./neofetch.nix
+    ./nnn.nix
+    ./starship.nix
+    ./zsh.nix
   ];
 }

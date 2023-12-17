@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./flatpak.nix
-    ./bottles.nix
+    ./user.nix
+    ./home-manager.nix
   ];
 }

@@ -1,14 +1,15 @@
-{ options, config, lib, pkgs, ... }:
-
+{ lib, config, pkgs, ... }:
 with lib;
-with lib.plusultra;
-let cfg = config.plusultra.apps.bottles;
+let 
+  cfg = config.dougieHome.virtualisation.bottles;
 in
 {
-  options.plusultra.apps.bottles = with types; {
-    enable = mkBoolOpt false "Whether or not to enable Bottles.";
+  options.dougieHome.virtualisation.bottles = {
+    enable = mkEnableOption "bottles";
   };
 
-  config =
-    mkIf cfg.enable { environment.systemPackages = with pkgs; [ bottles ]; };
+  config = mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [ bottles ];
+  };
 }
+

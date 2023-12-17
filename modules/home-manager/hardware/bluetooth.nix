@@ -1,10 +1,17 @@
-{ config, lib, pkgs, ... }:
-
+{ lib, config, pkgs, ... }:
+with lib;
+let 
+  cfg = config.dougieHome.hardware.bluetooth;
+in
 {
-  home.packages = with pkgs; [
-    blueman
-  ];
-  services = {
-    blueman-applet.enable = true;
+  options.dougieHome.hardware.bluetooth = {
+    enable = mkEnableOption "bluetooth";
   };
+
+  config = mkIf cfg.enable {
+    home.packages = with pkgs; [
+      blueman
+    ];
+    services.blueman-applet.enable = true;
+  }
 }
