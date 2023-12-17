@@ -1,6 +1,6 @@
 {
   description = "Melvin's Nix Config";
-
+  #
   nixConfig = {
     experimental-features = [ "nix-command" "flakes" ];
     substituters = [
