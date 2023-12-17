@@ -4,7 +4,7 @@
   imports = [
     ./user.nix
     ./home-manager.nix
-    ./font.nix
+    #./font.nix
     ./wm
   ];
 }
