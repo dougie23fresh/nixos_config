@@ -66,17 +66,10 @@
   dougieHost.wm.hyprland.enable = true;
   dougieHost.wm.sway.enable = true;
 
-
   # user
   dougieHost.user.enable = true;
   dougieHost.user.userName = "melvin";
 
-
-
-
   system.stateVersion = "23.11";
-
-
-
 
 }
