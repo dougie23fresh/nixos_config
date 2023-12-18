@@ -5,5 +5,6 @@
     ./user.nix
     ./home-manager.nix
     ./wm
+    ./browser
   ];
 }
