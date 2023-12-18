@@ -16,7 +16,7 @@ in
     wayland.windowManager.hyprland.enable = true;
     wayland.windowManager.hyprland.xwayland = { enable = true; };
     wayland.windowManager.hyprland.systemdIntegration = true;
-    dougieHome.wm.hyprland_setting.enable = true;
+    dougieHome.wm.hyprland_settings.enable = true;
     dougieHome.wm.waybar.enable = true;
     services.playerctld.enable = true;
     home.packages = with pkgs; [
