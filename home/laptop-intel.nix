@@ -9,8 +9,8 @@
 
   dougieHome.wm.hyprland.enable = true;
 
-  dougieHome.browser.vivaldi.enable = true;
-  dougieHome.terminal.kitty.enable = true;
+  #dougieHome.browser.vivaldi.enable = true;
+  #dougieHome.terminal.kitty.enable = true;
   #dougieHome.terminal.btop.enable = true;
   #dougieHome.terminal.neofech.enable = true;
   #dougieHome.terminal.zsh.enable = true;
