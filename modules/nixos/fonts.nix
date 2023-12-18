@@ -9,8 +9,8 @@ in
   };
 
   config = mkIf cfg.enable {
-    fonts.fonts = with pkgs; [
-      nerdfont
+    fonts.packages = with pkgs; [
+      nerdfonts
       corefonts
       noto-fonts
       noto-fonts-cjk
