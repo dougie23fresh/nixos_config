@@ -67,7 +67,7 @@
   dougieHost.wm.sway.enable = true;
   
   # fonts
-  dougieHost.fonts.enable = true;
+  #dougieHost.fonts.enable = true;
   # user
   dougieHost.user.enable = true;
   dougieHost.user.userName = "melvin";
