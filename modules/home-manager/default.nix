@@ -6,5 +6,6 @@
     ./home-manager.nix
     ./wm
     ./browser
+    ./terminal
   ];
 }
