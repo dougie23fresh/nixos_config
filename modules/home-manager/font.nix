@@ -1,10 +1,10 @@
 { lib, config, pkgs, ... }:
 with lib;
 let 
-  cfg = config.dougieHome.font;
+  cfg = config.dougieHomejj.font;
 in
 {
-  options.dougieHome.font = {
+  options.dougieHomejj.font = {
     enable = mkEnableOption "font";
   };
 
