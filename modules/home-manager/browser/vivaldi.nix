@@ -4,7 +4,7 @@ let
   cfg = config.dougieHome.browser.vivaldi;
 in
 {
-  options.dougieHome.termibrowsernal.vivaldi = {
+  options.dougieHome.browser.vivaldi = {
     enable = mkEnableOption "vivaldi";
   };
 
