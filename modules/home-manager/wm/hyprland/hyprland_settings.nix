@@ -33,7 +33,7 @@ in
         resize_on_border = true;
         border_size = 2;
         cursor_inactive_timeout = 30;
-        no_cursor_warps = false
+        no_cursor_warps = false;
         "col.active_border" = "rgba(33ccffee) rgba(8f00ffee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
       };
