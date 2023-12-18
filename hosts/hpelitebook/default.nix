@@ -71,7 +71,7 @@
   # user
   dougieHost.user.enable = true;
   dougieHost.user.userName = "melvin";
-  #dougieHost.user.userDescription = "Melvin";
+  dougieHost.user.userDescription = "Melvin";
 
   system.stateVersion = "23.11";
 
