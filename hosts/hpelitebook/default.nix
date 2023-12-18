@@ -65,10 +65,13 @@
   dougieHost.wm.wayland.enable = true;
   dougieHost.wm.hyprland.enable = true;
   dougieHost.wm.sway.enable = true;
-
+  
+  # fonts
+  dougieHost.fonts.enable = true;
   # user
   dougieHost.user.enable = true;
   dougieHost.user.userName = "melvin";
+  dougieHost.user.userDescription = "Melvin";
 
   system.stateVersion = "23.11";
 

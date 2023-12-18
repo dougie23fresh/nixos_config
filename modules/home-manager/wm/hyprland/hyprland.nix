@@ -15,7 +15,7 @@ in
   config = mkIf cfg.enable {
     wayland.windowManager.hyprland.enable = true;
     wayland.windowManager.hyprland.xwayland = { enable = true; };
-    wayland.windowManager.hyprland.systemdIntegration = true;
+    wayland.windowManager.hyprland.systemd = true;
     dougieHome.wm.hyprland_settings.enable = true;
     dougieHome.wm.waybar.enable = true;
     services.playerctld.enable = true;
