@@ -7,5 +7,6 @@
     ./hardware
     ./wm
     ./users.nix
+    ./fonts.nix
   ];
 }
