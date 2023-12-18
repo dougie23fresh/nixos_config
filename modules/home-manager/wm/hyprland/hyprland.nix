@@ -4,18 +4,20 @@ let
   cfg = config.dougieHome.wm.hyprland;
 in
 {
+  imports = [
+    ./hyprland_setting.nix
+    ./waybar.nix
+  ];
   options.dougieHome.wm.hyprland = {
     enable = mkEnableOption "hyprland";
   };
 
   config = mkIf cfg.enable {
-    imports = [
-      ./hyprland_settings.nix
-      ./waybar.nix
-    ];
     wayland.windowManager.hyprland.enable = true;
     wayland.windowManager.hyprland.xwayland = { enable = true; };
     wayland.windowManager.hyprland.systemdIntegration = true;
+    dougieHome.wm.hyprland_setting.enable = true;
+    dougieHome.wm.waybar.enable = true;
     services.playerctld.enable = true;
     home.packages = with pkgs; [
       playerctl # Command-line utility and library for controlling media players that implement MPRIS
