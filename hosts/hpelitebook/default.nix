@@ -68,6 +68,7 @@
   
   # fonts
   dougieHost.fonts.enable = true;
+  dougieHost.tools.enable = true;
   # user
   dougieHost.user.enable = true;
   dougieHost.user.userName = "melvin";

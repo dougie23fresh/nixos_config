@@ -8,5 +8,6 @@
     ./wm
     ./users.nix
     ./fonts.nix
+    ./tools.nix
   ];
 }
