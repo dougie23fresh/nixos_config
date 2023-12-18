@@ -5,7 +5,7 @@ let
 in
 {
   imports = [
-    ./hyprland_setting.nix
+    ./hyprland_settings.nix
     ./waybar.nix
   ];
   options.dougieHome.wm.hyprland = {
