@@ -19,7 +19,7 @@ in
   config = mkIf cfg.enable {
     users.users.${cfg.userName} = {
       isNormalUser = true;
-      description = "yyyyyyyyy"; # "${cfg.userDescription}";
+      description = "${cfg.userDescription}";
       extraGroups = [ "networkmanager" "wheel" ];
       #shell = pkg.zsh;
       packages = with pkgs; [
