@@ -10,16 +10,16 @@ in
       type = types.str;
       default = "nixuser";
     };
-    userDescription = mkOption {
-      type = types.str;
-      default = "nixuser";
-    };
+    #userDescription = mkOption {
+    #  type = types.str;
+    #  default = "nixuser";
+    #};
   };
 
   config = mkIf cfg.enable {
     users.users.${cfg.userName} = {
       isNormalUser = true;
-      description = "testttttt";
+      description = "yyyyyyyyy"; # "${cfg.userDescription}";
       extraGroups = [ "networkmanager" "wheel" ];
       #shell = pkg.zsh;
       packages = with pkgs; [
