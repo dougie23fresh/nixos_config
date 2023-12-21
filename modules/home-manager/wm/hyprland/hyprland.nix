@@ -54,7 +54,7 @@ in
       wlsunset # Day/night gamma adjustments for Wayland
       pavucontrol # PulseAudio Volume Control
       pamixer # Pulseaudio command line mixer
-      swaylock
+      #swaylock
       swaylock-fancy
       swaylock-effects
       brightnessctl
