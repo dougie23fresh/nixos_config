@@ -1,9 +1,3 @@
-hardware.opengl = {
-      enable = true;
-      driSupport = true;
-    };
-
-
 { lib, config, pkgs, ... }:
 with lib;
 let 
