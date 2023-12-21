@@ -52,7 +52,7 @@ in
 	  libnotify
 	  home-manager
 	  acpi
-      exa
+      eza
       gcc
       cmake
       openssl
