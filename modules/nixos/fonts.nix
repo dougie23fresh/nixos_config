@@ -23,7 +23,7 @@ in
       font-awesome
       roboto
       openmoji-color
-      FantasqueSansMono
+      #FantasqueSansMono
       #cascadia-code
       #source-code-pro
       #google-fonts
