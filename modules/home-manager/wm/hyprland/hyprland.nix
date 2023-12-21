@@ -62,7 +62,7 @@ in
       hyprpaper
       wofi
       rofi
-      cinnamon.nemo
+      #cinnamon.nemo
       cinnamon.nemo-with-extensions
       cinnamon.nemo-emblems
       cinnamon.nemo-fileroller
