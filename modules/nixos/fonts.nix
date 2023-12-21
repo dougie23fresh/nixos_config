@@ -29,11 +29,11 @@ in
       #google-fonts
 
     ];
-    font.fontconfig = {
-      hinting.autohint = true;
-      defaultFonts = {
-        emoji = [ "OpenMoji Color" ];
-      };
-    };
+    #font.fontconfig = {
+    #  hinting.autohint = true;
+    #  defaultFonts = {
+    #    emoji = [ "OpenMoji Color" ];
+    #  };
+    #};
   };
 }
