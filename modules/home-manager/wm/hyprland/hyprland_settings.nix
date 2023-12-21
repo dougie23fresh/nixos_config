@@ -167,8 +167,8 @@ in
         # Brightness control (only works if the system has lightd)
         ",XF86MonBrightnessUp,exec,light -A 10"
         ",XF86MonBrightnessDown,exec,light -U 10"
-        "XF86AudioRaiseVolume,exec,amixer -D pipewire sset Master 5%+"
-        "XF86AudioLowerVolume,exec,amixer -D pipewire sset Master 5%-"
+        #"XF86AudioRaiseVolume,exec,amixer -D pipewire sset Master 5%+"
+        #"XF86AudioLowerVolume,exec,amixer -D pipewire sset Master 5%-"
         #"XF86AudioMute,exec,amixer -D pipewire sset Master 1+ toggle"
         #bind=,code:122,exec,pamixer -d 10
         # bind=,code:123,exec,pamixer -i 10
