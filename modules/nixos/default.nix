@@ -6,6 +6,7 @@
     ./services
     ./hardware
     ./wm
+    ./app
     ./users.nix
     ./fonts.nix
     ./tools.nix

@@ -39,8 +39,8 @@ https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/.install/hyprland-dotfiles
 https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/.install/keyboard.sh?ref_type=heads
 https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/.install/bashrc.sh?ref_type=heads
 https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/.install/init-pywal.sh?ref_type=heads
-
-
+https://github.com/exploitoverload/PwNixOS
+https://github.com/ekahPruthvi/cynageOS/tree/main/Configs
 git clone 
 
 

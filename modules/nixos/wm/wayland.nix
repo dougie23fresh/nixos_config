@@ -14,6 +14,21 @@ in
       layout = "us";
       xkbVariant = "";
       xkbOptions = "caps:escape";
+      
     };
+    environment.sessionVariables = { 
+      GTK_USE_PORTAL = "1";
+      MOZ_ENABLE_WAYLAND = "1";
+    };
+    xdg = {
+    icons.enable = true;
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-hyprland
+        xdg-desktop-portal-gtk
+      ];
+    };
+  };
   };
 }

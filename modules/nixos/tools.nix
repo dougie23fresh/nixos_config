@@ -24,6 +24,7 @@ in
       home-manager
       w3m
       neofetch
+      imagemagick	
       fontconfig
       freetype
       wget
@@ -40,6 +41,18 @@ in
       nano
       kitty
       alacritty
+      acpi
+      exa
+      libnotify
+      gcc
+      cmake
+      openssl
+      cifs-utils
+      nfs-utils
+      p7zip
+      samba
+      unrar
+      dig
     ];
   };
 }

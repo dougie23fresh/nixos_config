@@ -10,5 +10,6 @@ in
 
   config = mkIf cfg.enable {
     services.gvfs.enable = true;
+    #package = pkgs.gnome3.gvfs;
   };
 }

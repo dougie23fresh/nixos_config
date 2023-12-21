@@ -1,20 +1,20 @@
 {
   description = "Melvin's Nix Config";
   #
-  nixConfig = {
-    experimental-features = [ "nix-command" "flakes" ];
-    substituters = [
-      "https://cache.nixos.org"
-    ];
+  #nixConfig = {
+  #  experimental-features = [ "nix-command" "flakes" ];
+  #  substituters = [
+  #    "https://cache.nixos.org"
+  #  ];#
 
-    extraSubstituters = [
-      "https://nix-ommunity.cachix.org"
-    ];
+  #extraSubstituters = [
+  #    "https://nix-ommunity.cachix.org"
+  #  ];
 
-    extra-trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    ];
-  };
+  #  extra-trusted-public-keys = [
+  #    "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+  #  ];
+  #};
 
   inputs = {
     # Nixpkgs

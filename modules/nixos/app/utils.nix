@@ -17,32 +17,51 @@ in
 			thunar-media-tags-plugin
 		];
     environment.systemPackages = with pkgs; [
-			appimage-run
+	  appimage-run
       flatpak
-    	git        
+      git        
       (vivaldi.override{
-				proprietaryCodecs = true;
-				enableWidevine = true;
-			})
-
-			w3m
-			neofetch
-			fontconfig
-			freetype
-			wget
-			htop
-			usbutils
-			pciutils
-			iputils
-			inetutils
-			fetchutils
-			coreutils
-			dmidecode
-			util-linux
-			wezterm
-			nano
-			kitty
-			alacritty
+		proprietaryCodecs = true;
+		enableWidevine = true;
+	  })
+	  w3m
+	  neofetch
+	  imagemagick
+	  fontconfig
+	  freetype
+	  wget
+	  htop
+	  usbutils
+	  pciutils
+	  iputils
+	  inetutils
+	  fetchutils
+	  coreutils
+	  dmidecode
+	  util-linux
+	  wezterm
+	  nano
+	  kitty
+	  alacritty
+	  fzf
+	  killall
+	  unzip
+      file
+      jq
+      clac
+	  libnotify
+	  home-manager
+	  acpi
+      exa
+      gcc
+      cmake
+      openssl
+      cifs-utils
+      nfs-utils
+      p7zip
+      samba
+      unrar
+      dig
     ];
   };
 }

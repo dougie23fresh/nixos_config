@@ -21,10 +21,19 @@ in
       fira-code
       fira-code-symbols
       font-awesome
+      roboto
+      openmoji-color
+      FantasqueSansMono
       #cascadia-code
       #source-code-pro
       #google-fonts
 
     ];
+    font.fontconfig = {
+      hinting.autohint = true;
+      defaultFonts = {
+        emoji = [ "OpenMoji Color" ];
+      };
+    };
   };
 }

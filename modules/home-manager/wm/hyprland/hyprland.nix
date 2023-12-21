@@ -19,6 +19,9 @@ in
     dougieHome.wm.hyprland_settings.enable = true;
     dougieHome.wm.waybar.enable = true;
     services.playerctld.enable = true;
+    home.file.".config/hypr/hyprpaper.conf".source = ./hyprpaper.conf;
+    home.file.".config/hypr/palm-tree-night.jpg".source = ../../../wallpaper/palm-tree-night.jpg;
+    home.file.".config/fuzzel/fuzzel.ini".source = ./fuzzel.ini;
     home.packages = with pkgs; [
       playerctl # Command-line utility and library for controlling media players that implement MPRIS
       killall
@@ -28,6 +31,8 @@ in
       wlr-randr # An xrandr clone for wlroots compositors
       wtype # xdotool type for wayland
       wl-clipboard
+      cliphist
+      wlogout
       hyprland-protocols
       hyprpicker # wlroots-compatible Wayland color picker that does not su
       swayidle # Idle management daemon for Wayland
@@ -38,6 +43,8 @@ in
       wev # Wayland event viewer
       grim  # Grab images from a Wayland compositor
       slurp # Select a region in a Wayland compositor
+      grimblast
+      swappy
       libsForQt5.qt5.qtwayland # A cross-platform application framework for C++
       qt6.qtwayland # A cross-platform application framework for C++
       xdg-utils
@@ -47,9 +54,56 @@ in
       wlsunset # Day/night gamma adjustments for Wayland
       pavucontrol # PulseAudio Volume Control
       pamixer # Pulseaudio command line mixer
+      swaylock
+      swaylock-fancy
+      swaylock-effects
+      brightnessctl
+      grimblast
+      hyprpaper
       wofi
       rofi
+      cinnamon.nemo
+      cinnamon.nemo-with-extensions
+      cinnamon.nemo-emblems
+      cinnamon.nemo-fileroller
+      cinnamon.folder-color-switcher
+      dconf
+      gtk-engine-murrine
+      gnome.gnome-themes-extra
+      gtk3
+      gtk4
+      clipman
+      networkmanager_dmenu
+      nwg-look
+      themechanger
+      catppuccin-kvantum
+      qtstyleplugin-kvantum
+      qtstyleplugin-kvantum6
+      libsForQt5.qt5ct
+      qt6Packages.qt6ct
     ];
+    home.sessionVariables.GTK_THEME = "Catppuccin-Macchiato-Compact-Mauve-dark";
+    gtk = {
+      enable = true;
+      theme = {
+        name = "Catppuccin-Macchiato-Compact-Mauve-dark";
+        package = pkgs.catppuccin-gtk.override {
+          accents = [ "mauve" ];
+          size = "compact";
+          tweaks = [ ];
+          variant = "macchiato";
+        };
+      };
+      cursorTheme = {
+        name = "Catppuccin-Macchiato-Mauve-Cursors";
+        package = pkgs.catppuccin-cursors.macchiatoMauve;
+      };
+      iconTheme = {
+        name = "Papirus-Dark";
+        package = pkgs.catppuccin-papirus-folders;
+      };
+    };
+
     #wayland.windowManager.hyprland.settings = { };
     #wayland.windowManager.hyprland.extraConfig = '' '';
     #imports = [

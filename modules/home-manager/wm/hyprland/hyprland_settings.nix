@@ -19,11 +19,17 @@ in
         #exec-once = hyprprofile Personal
 
         #exec-once = pypr
-        "exec-once = nm-applet --indicator"
-        "exec-once = blueman-applet"
-        # exec-once = GOMAXPROCS=1 syncthing --no-browser
+        #exec-once=wlsunset -l -23 -L -46
         "exec-once = waybar"
         "exec-once = dunst"
+        "exec-once=hyprpaper"
+        "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "exec-once=systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "exec-once = nm-applet --indicator"
+        "exec-once = blueman-applet"
+        "exec-once=swayidle -w timeout 600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' timeout 605 'swaylock -f --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --grace 1 --fade-in 0.1' before-sleep 'swaylock -f --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --grace 1 --fade-in 0.1'"
+        # exec-once = GOMAXPROCS=1 syncthing --no-browser
+
         #exec-once = swayidle -w timeout 90 '${pkgs.gtklock}/bin/gtklock -d' timeout 210 'suspend-unless-render' resume '${pkgs.hyprland}/bin/hyprctl dispatch dpms on' before-sleep "${pkgs.gtklock}/bin/gtklock -d"
         #exec-once = obs-notification-mute-daemon
       ];
@@ -34,8 +40,8 @@ in
         border_size = 2;
         cursor_inactive_timeout = 30;
         no_cursor_warps = false;
-        "col.active_border" = "rgba(33ccffee) rgba(8f00ffee) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
+        "col.active_border" = "0xffb072d1";
+        "col.inactive_border" = "0xff292a37";
       };
       monitor = [
         ",preferred,auto,auto"
@@ -115,11 +121,14 @@ in
         "SUPER,M, exit"
         "SUPER,E, exec, thunar"
         "SUPER,V, togglefloating"
+        "SUPER,D, exec,fuzzel"
+        "SUPERSHIFT,S, exec,grimblast copy area"
+        "SUPER,X, exec,wlogout"
         "SUPER,R, exec, wofi --show drun"
         "SUPER,P, pseudo,"
         "SUPER,J, togglesplit,"
         "SUPER,S, exec, rofi -show drun -show-icons"
-
+        "SUPER,L, exec,swaylock -f --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --grace 1 --fade-in 0.1"
         # Move focus with mainMod + arrow keys
         "SUPER, left, movefocus, l"
         "SUPER, right, movefocus, r"
@@ -158,6 +167,9 @@ in
         # Brightness control (only works if the system has lightd)
         ",XF86MonBrightnessUp,exec,light -A 10"
         ",XF86MonBrightnessDown,exec,light -U 10"
+        "XF86AudioRaiseVolume,exec,amixer -D pipewire sset Master 5%+"
+        "XF86AudioLowerVolume,exec,amixer -D pipewire sset Master 5%-"
+        "XF86AudioMute,exec,amixer -D pipewire sset Master 1+ toggle"
         #bind=,code:122,exec,pamixer -d 10
         # bind=,code:123,exec,pamixer -i 10
         # bind=,code:121,exec,pamixer -t

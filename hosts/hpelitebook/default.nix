@@ -56,6 +56,7 @@
   #dougieHost.hardware.journald.enable = true;
   dougieHost.hardware.laptoplid.enable = true;
   dougieHost.hardware.logitech.enable = true;
+  dougieHost.hardware.intel-video.enable = true;
   #dougieHost.hardware.openrgb.enable = true;
   #dougieHost.hardware.storage.enable = true;
 
@@ -69,6 +70,8 @@
   # fonts
   dougieHost.fonts.enable = true;
   dougieHost.tools.enable = true;
+  
+  dougieHost.app.utils.enable = true;
   # user
   dougieHost.user.enable = true;
   dougieHost.user.userName = "melvin";

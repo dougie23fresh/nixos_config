@@ -22,6 +22,8 @@ in
       wget
       curl
       git
+      acpi
+      tlp
       #libverto # Asynchronous event loop abstraction library
       #libnotify # Minimalistic libnotify wrapper
       home-manager
