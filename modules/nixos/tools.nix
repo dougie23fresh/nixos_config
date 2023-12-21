@@ -42,7 +42,7 @@ in
       kitty
       alacritty
       acpi
-      exa
+      eza
       libnotify
       gcc
       cmake
