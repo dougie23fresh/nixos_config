@@ -20,7 +20,7 @@ in
     dougieHome.wm.waybar.enable = true;
     services.playerctld.enable = true;
     home.file.".config/hypr/hyprpaper.conf".source = ./hyprpaper.conf;
-    home.file.".config/hypr/palm-tree-night.jpg".source = ../../../wallpaper/palm-tree-night.jpg;
+    home.file.".config/hypr/palm-tree-night.jpg".source = ../../../../wallpaper/palm-tree-night.jpg;
     home.file.".config/fuzzel/fuzzel.ini".source = ./fuzzel.ini;
     home.packages = with pkgs; [
       playerctl # Command-line utility and library for controlling media players that implement MPRIS
