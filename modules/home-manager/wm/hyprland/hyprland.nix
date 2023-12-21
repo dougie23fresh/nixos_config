@@ -77,8 +77,8 @@ in
       nwg-look
       themechanger
       catppuccin-kvantum
-      qtstyleplugin-kvantum
-      qtstyleplugin-kvantum6
+      libsForQt5.qtstyleplugin-kvantum
+      libsForQt5.qtstyleplugin-kvantum6
       libsForQt5.qt5ct
       qt6Packages.qt6ct
     ];
