@@ -11,6 +11,7 @@
     ./logitech.nix
     ./openrgb.nix
     ./storage.nix
+    ./intel-video.nix
 
   ];
 }
