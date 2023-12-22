@@ -3,5 +3,6 @@
 {
   imports = [
     ./utils.nix
+    ./chromium.nix
   ];
 }

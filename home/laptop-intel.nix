@@ -8,8 +8,10 @@
   dougieHome.user.userName = "melvin";
 
   dougieHome.wm.hyprland.enable = true;
-
+  dougieHome.browser.chromium.enable = true;
   dougieHome.browser.vivaldi.enable = true;
+  dougieHome.browser.brave.enable = true;
+  dougieHome.browser.firefox.enable = true;
   dougieHome.terminal.kitty.enable = true;
   dougieHome.terminal.btop.enable = true;
   dougieHome.terminal.neofetch.enable = true;

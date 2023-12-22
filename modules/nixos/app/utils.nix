@@ -24,6 +24,7 @@ in
 		proprietaryCodecs = true;
 		enableWidevine = true;
 	  })
+	  _7zz
 	  w3m
 	  neofetch
 	  imagemagick

@@ -8,5 +8,6 @@
     ./python.nix
     ./rust.nix
     ./vscode.nix
+    ./kate.nix
   ];
 }

@@ -41,6 +41,7 @@ in
       python3Packages.python-gnupg
       python3Packages.pygobject3
       python3Packages.idna
+      python3Packages.flake8
       python3Packages.importlib-metadata
       python3Packages.inflect
       python3Packages.isodate
@@ -86,6 +87,11 @@ in
       python3Packages.wcwidth
       python3Packages.websockets
       python3Packages.python-zbar
+      python3Packages.pylint
+      python3Packages.pyflakes
+      python3Packages.rich
+      python3Packages.python-box
+      python3Packages.xmltodict
     ];
   };
 }

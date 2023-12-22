@@ -72,6 +72,7 @@
   dougieHost.tools.enable = true;
   
   dougieHost.app.utils.enable = true;
+  dougieHost.app.chromium.enable = true;
   # user
   dougieHost.user.enable = true;
   dougieHost.user.userName = "melvin";

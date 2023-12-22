@@ -10,6 +10,8 @@ in
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [ 
+      #winePackages.waylandFull
+      wineWowPackages.waylandFull
       wine-wayland
       winetricks
       mono
