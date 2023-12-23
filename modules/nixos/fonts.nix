@@ -18,8 +18,10 @@ in
       open-fonts
       #istafonts
       ibm-plex
+      fira
       fira-code
       fira-code-symbols
+      fira-mono
       font-awesome
       roboto
       openmoji-color

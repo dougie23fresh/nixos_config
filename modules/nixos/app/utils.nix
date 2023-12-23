@@ -63,6 +63,23 @@ in
       samba
       unrar
       dig
+	  arp-scan
+	  # autofs
+	  cpuid
+	  exfat
+	  hollywood
+	  hwinfo
+	  nbtscanner
+	  netdiscover
+	  nmap
+	  ntfy
+	  nvtop
+	  ssh-copy-id
+	  systemctl-tui
+	  v4l-utils
+	  sane-airscan
+	  sane-backends
+	  sane-frontends
     ];
   };
 }

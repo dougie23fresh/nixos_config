@@ -62,6 +62,7 @@ in
       hyprpaper
       wofi
       rofi
+      wvkbd
       #cinnamon.nemo
       cinnamon.nemo-with-extensions
       cinnamon.nemo-emblems
