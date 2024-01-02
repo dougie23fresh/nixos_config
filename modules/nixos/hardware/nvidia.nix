@@ -13,6 +13,7 @@ let
 environment.systemPackages = with pkgs; [
     vulkan-loader
     vulkan-validation-layers
+    vulkan-extension-layers
     vulkan-tools
     libva-utils
     cudatoolkit
