@@ -53,6 +53,12 @@ in
       samba
       unrar
       dig
+      dogdns # Modern Unix `dig`
+      httpie # Terminal HTTP client
+      iperf3 # Terminal network benchmarking
+      mtr # Modern Unix `traceroute`
+      netdiscover # Modern Unix `arp`
+      speedtest-go # Terminal speedtest
     ];
   };
 }
