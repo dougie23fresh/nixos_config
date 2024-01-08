@@ -14,7 +14,7 @@ in
       "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
       "nngceckbapebfimnlniiiahkandclblb" # bitwarden
       "pcmpcfapbekmbjjkdalcgopdkipoggdi" # markdownload
-      "mlmoighangjfhiookjppplipefbbnaoo" # half-bold
+      #"mlmoighangjfhiookjppplipefbbnaoo" # half-bold
     ];
   };
 }
