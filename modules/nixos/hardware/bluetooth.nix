@@ -10,6 +10,8 @@ in
 
   config = mkIf cfg.enable {
     hardware.bluetooth.enable = true;
-    services.blueman.enable = true;
+    hardware.bluetooth.package = pkgs.bluez;
+    hardware.bluetooth.settings.General.Enable = "Source,Sink,Media,Socket";
+    #services.blueman.enable = true;
   };
 }
