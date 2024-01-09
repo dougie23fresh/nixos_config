@@ -10,5 +10,6 @@ in
 
   config = mkIf cfg.enable {
     services.printing.enable = true;
+    #    printing.drivers = with pkgs; [ gutenprint ];
   };
 }
