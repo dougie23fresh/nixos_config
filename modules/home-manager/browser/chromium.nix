@@ -16,17 +16,17 @@ in
       "pcmpcfapbekmbjjkdalcgopdkipoggdi" # markdownload
       #"mlmoighangjfhiookjppplipefbbnaoo" # half-bold
     ];
-    programs.chromium.extraOpts = {
-      "AutofillAddressEnabled" = false;
-      "AutofillCreditCardEnabled" = false;
-      "BuiltInDnsClientEnabled" = false;
-      "DeviceMetricsReportingEnabled" = true;
-      "ReportDeviceCrashReportInfo" = false;
-      "PasswordManagerEnabled" = false;
-      "SpellcheckEnabled" = true;
-      "SpellcheckLanguage" = [
-        "en-US"
-      ];
-    };
+    # = {
+    #  "AutofillAddressEnabled" = false;
+    #  "AutofillCreditCardEnabled" = false;
+    #  "BuiltInDnsClientEnabled" = false;
+    #  "DeviceMetricsReportingEnabled" = true;
+    #  "ReportDeviceCrashReportInfo" = false;
+    #  "PasswordManagerEnabled" = false;
+    #  "SpellcheckEnabled" = true;
+    #  "SpellcheckLanguage" = [
+    #    "en-US"
+    #  ];
+    #};
   };
 }
