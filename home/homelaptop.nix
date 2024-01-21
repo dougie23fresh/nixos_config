@@ -47,5 +47,7 @@
     enable = true;
     enableAliases = true;
   };
+  #options.dougieHome.remote.citrix_workspace = {
+  #ptions.dougieHome.remote.freerdp 
   
 }

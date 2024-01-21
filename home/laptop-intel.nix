@@ -19,4 +19,6 @@
   dougieHome.terminal.starship.enable = true;
   dougieHome.terminal.nnn.enable = true;
   dougieHome.terminal.alacritty.enable = true;
+  #dougieHome.remote.citrix_workspace = {
+  dougieHome.remote.freerdp.enable = true; 
 }

@@ -7,5 +7,6 @@
     ./wm
     ./browser
     ./terminal
+    ./remote
   ];
 }
