@@ -16,7 +16,7 @@ in
       "pcmpcfapbekmbjjkdalcgopdkipoggdi" # markdownload
       #"mlmoighangjfhiookjppplipefbbnaoo" # half-bold
     ];
-    extraOpts = {
+    programs.chromium.extraOpts = {
       "AutofillAddressEnabled" = false;
       "AutofillCreditCardEnabled" = false;
       "BuiltInDnsClientEnabled" = false;
