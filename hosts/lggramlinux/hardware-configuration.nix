@@ -12,7 +12,7 @@
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ "i915" ];
   boot.kernelModules = [ "kvm-intel" "acpi_call"];
-  boot.extraModulePackages = [ acpi_call ];
+  #boot.extraModulePackages = [ acpi_call ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/53782107-2d2a-4843-b5b7-d2d3bcd53828";
