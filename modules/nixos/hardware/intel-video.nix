@@ -20,7 +20,7 @@ in
         intel-compute-runtime
         vulkan-loader
         vulkan-validation-layers
-        vulkan-extension-layers
+        #vulkan-extension-layers
         vulkan-tools
         libva-utils
       ];
