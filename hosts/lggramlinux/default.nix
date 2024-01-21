@@ -13,7 +13,7 @@
   dougieHost.system.boot.enable = true;
   # networking
   dougieHost.system.networking.enable = true;
-  dougieHost.system.networking.hostName = "hpelitebook";
+  dougieHost.system.networking.hostName = "lggramlinux";
   # time
   dougieHost.system.time.enable = true;
   # location
