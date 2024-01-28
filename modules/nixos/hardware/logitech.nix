@@ -13,6 +13,8 @@ in
     hardware.logitech.wireless.enableGraphical = true;
     environment.systemPackages = with pkgs;[
       logitech-udev-rules
+      piper
+      libratbag
     ];
   };
 }
