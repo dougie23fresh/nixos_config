@@ -12,7 +12,10 @@ in
     hardware.bluetooth.enable = true;
     hardware.bluetooth.powerOnBoot = true;
     hardware.bluetooth.settings.General.Experimental = true;
-    hardware.bluetooth.package = pkgs.bluezFull;
+    #hardware.bluetooth.package = pkgs.bluezFull;
     services.blueman.enable = true;
+    environment.systemPackages = with pkgs; [
+      blueman
+    ];
   };
 }

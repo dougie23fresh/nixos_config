@@ -11,9 +11,9 @@ in
   config = mkIf cfg.enable {
     services.xserver = {
       enable = true;
-      layout = "us";
-      xkbVariant = "";
-      xkbOptions = "caps:escape";
+      xkb.layout = "us";
+      xkb.variant = "";
+      xkb.options = "caps:escape";
       
     };
     environment.sessionVariables = { 
