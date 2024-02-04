@@ -11,5 +11,9 @@ in
   config = mkIf cfg.enable {
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
+    boot.supportedFilesystems = [
+      "exfat"
+      "ntfs"
+    ];
   };
 }

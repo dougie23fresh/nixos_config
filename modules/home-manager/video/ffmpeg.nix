@@ -11,6 +11,9 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [ 
       ffmpeg
+      mediainfo                       # Supplies technical and tag information about a video or audio file
+      mediainfo-gui                   # Supplies technical and tag information about a video or audio file (GUI version)
+
     ];
   };
 }

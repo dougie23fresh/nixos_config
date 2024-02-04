@@ -9,5 +9,6 @@
     ./location.nix
     ./locale.nix
     ./nixsettings.nix
+    ./multithreading.nix
   ];
 }

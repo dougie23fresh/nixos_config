@@ -24,6 +24,7 @@
   dougieHost.system.sound.enable = true;
   # nix settings
   dougieHost.system.nixSettings.enable = true;
+  dougieHost.system.multithreading.enable = true;
   
 
   #######
@@ -45,6 +46,9 @@
   dougieHost.services.tailscale.enable = true;
   dougieHost.services.tumbler.enable = true;
   dougieHost.services.yubikey.enable = true;
+  dougieHost.services.earlyoom.enable = true;
+  
+
 
   #######
   # hardware

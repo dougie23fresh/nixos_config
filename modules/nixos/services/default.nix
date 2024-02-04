@@ -15,5 +15,7 @@
     ./tailscale.nix
     ./tumbler.nix
     ./yubikey.nix
+    ./earlyoom.nix
+
   ];
 }

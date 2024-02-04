@@ -7,7 +7,10 @@
     sane = {
       enable = true;
       #extraBackends = with pkgs; [ hplipWithPlugin sane-airscan ];
-      extraBackends = with pkgs; [ sane-airscan ];
+      extraBackends = with pkgs; [ 
+        sane-airscan
+        epkowa
+      ];
     };
   };
 }

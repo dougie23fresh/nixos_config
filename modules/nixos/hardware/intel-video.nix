@@ -9,6 +9,8 @@ in
   };
 
   config = mkIf cfg.enable {
+    #boot.kernelParams = [ "intel_pstate=ondemand" ];
+    # hardware.cpu.intel.updateMicrocode = config.hardware.enableRedistributableFirmware;
     hardware.opengl = {
       enable = true;
       driSupport = true;
@@ -23,6 +25,10 @@ in
         #vulkan-extension-layers
         vulkan-tools
         libva-utils
+        amdvlk
+        intel-gmmlib
+        intel-media-driver # LIBVA_DRIVER_NAME=iHD
+        intel-ocl
       ];
     };
   };
