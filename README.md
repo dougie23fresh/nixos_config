@@ -12,7 +12,7 @@ https://wiki.archlinux.org/title/intel_graphics#Hardware_accelerated_H.264_decod
 
 https://github.com/vimjoyer/flake-starter-config/tree/main
 ----
-
+https://github.com/tolgaerok/nixos-kde/tree/main
 https://git.polynom.me/PapaTutuWawa/nixos-config/src/branch/master/modules/programs
 https://github.com/VixenUtils/Myxer
 
