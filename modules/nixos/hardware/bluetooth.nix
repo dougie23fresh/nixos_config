@@ -9,9 +9,14 @@ in
   };
 
   config = mkIf cfg.enable {
+    #hardware.bluetooth.settings.General.Enable = "Source,Sink,Media,Socket";
     hardware.bluetooth.enable = true;
-    hardware.bluetooth.package = pkgs.bluez;
-    hardware.bluetooth.settings.General.Enable = "Source,Sink,Media,Socket";
-    #services.blueman.enable = true;
+    hardware.bluetooth.powerOnBoot = true;
+    hardware.bluetooth.settings.General.Experimental = true;
+    #hardware.bluetooth.package = pkgs.bluezFull;
+    services.blueman.enable = true;
+    environment.systemPackages = with pkgs; [
+      blueman
+    ];
   };
 }
