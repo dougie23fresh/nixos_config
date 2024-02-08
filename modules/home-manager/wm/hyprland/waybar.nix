@@ -297,6 +297,7 @@ in
           color: @blue;
           /* border-radius: 0px 1rem 1rem 0px;*/
           /*margin-right: 1rem;*/
+          border-radius: 0;
         }
 
         #battery {
@@ -323,6 +324,7 @@ in
           color: @maroon;
           /*border-radius: 1rem 0px 0px 1rem;*/
           /*margin-left: 1rem;*/
+          border-radius: 0;
         }
 
         #custom-music {
@@ -332,6 +334,7 @@ in
 
         #network, #bluetooth {
           color: @peach;
+          border-radius: 0;
           /* border-radius: 1rem;*/
           border-radius: 1rem 0px 0px 1rem;
         }
@@ -339,6 +342,7 @@ in
         #custom-lock {
             
             color: @lavender;
+            border-radius: 0;
         }
 
         #custom-power {
