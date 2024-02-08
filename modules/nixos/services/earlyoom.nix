@@ -10,9 +10,9 @@ in
 
   config = mkIf cfg.enable {
     # Enable the early OOM (Out Of Memory) killer service.
-    earlyoom.enable = true;
+    services.earlyoom.enable = true;
     # When free memory falls below 15%, earlyoom acts to prevent system slowdown or freezing.
-    earlyoom.freeMemThreshold = 5; 
+    services.earlyoom.freeMemThreshold = 5; 
   };
 }
 
