@@ -286,6 +286,7 @@ in
         #pulseaudio,
         #custom-lock,
         #network,
+        #bluetooth,
         #custom-power {
           background-color: @surface0;
           padding: 0.5rem 1rem;
