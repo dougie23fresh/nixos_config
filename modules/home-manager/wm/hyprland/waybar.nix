@@ -295,8 +295,8 @@ in
 
         #clock {
           color: @blue;
-          border-radius: 0px 1rem 1rem 0px;
-          margin-right: 1rem;
+          /* border-radius: 0px 1rem 1rem 0px;*/
+          /*margin-right: 1rem;*/
         }
 
         #battery {
@@ -321,8 +321,8 @@ in
 
         #pulseaudio {
           color: @maroon;
-          border-radius: 1rem 0px 0px 1rem;
-          margin-left: 1rem;
+          /*border-radius: 1rem 0px 0px 1rem;*/
+          /*margin-left: 1rem;*/
         }
 
         #custom-music {
@@ -332,11 +332,12 @@ in
 
         #network, #bluetooth {
           color: @peach;
-          border-radius: 1rem;
+          /* border-radius: 1rem;*/
+          border-radius: 1rem 0px 0px 1rem;
         }
 
         #custom-lock {
-            border-radius: 1rem 0px 0px 1rem;
+            
             color: @lavender;
         }
 
