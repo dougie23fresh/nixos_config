@@ -130,7 +130,7 @@ in
             format = "{icon} {volume}%";
             format-muted = "";
             format-icons = {
-              default = ["" "" " "];
+              default = ["󰕿" "󰝞" "󰝝"];
             };
             #scroll-step = 10;
             #on-click = "myxer";
