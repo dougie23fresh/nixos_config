@@ -70,6 +70,7 @@ in
             #"clock"
           ];
           modules-right = [
+            "custom/hostname"
             "network"
             "bluetooth"
             "pulseaudio"
@@ -100,7 +101,7 @@ in
           };
           network = {
             format = " {ipaddr}";
-            format-wifi = "  {ipaddr}";
+            format-wifi = " {ipaddr}";
             format-ethernet = "󰈀 {ipaddr}";
             format-disconected = " Disconnected";
             on-click = "wl-copy $(ip a | grep 'inet ' | tail -n 1 | grep -oP 'inet \\K[\\d.]+')";
@@ -357,7 +358,6 @@ in
 
         #tray {
           margin-right: 1rem;
-          border-radius: 1rem;
         }
 
       
