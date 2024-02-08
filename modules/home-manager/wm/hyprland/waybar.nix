@@ -332,10 +332,15 @@ in
           border-radius: 1rem;
         }
 
-        #network, #bluetooth {
+        #network {
           color: @peach;
           /* border-radius: 1rem;*/
           border-radius: 1rem 0px 0px 1rem;
+        }
+
+        #bluetooth {
+          color: @peach;
+          border-radius: 0;
         }
 
         #custom-lock {
