@@ -334,7 +334,6 @@ in
 
         #network, #bluetooth {
           color: @peach;
-          border-radius: 0;
           /* border-radius: 1rem;*/
           border-radius: 1rem 0px 0px 1rem;
         }
