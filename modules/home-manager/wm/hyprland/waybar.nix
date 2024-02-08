@@ -330,7 +330,7 @@ in
           border-radius: 1rem;
         }
 
-        #network {
+        #network, #bluetooth {
           color: @peach;
           border-radius: 1rem;
         }
