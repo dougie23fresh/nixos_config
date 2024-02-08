@@ -9,6 +9,7 @@ in
   };
 
   config = mkIf cfg.enable {
+    nixpkgs.config.joypixels.acceptLicense = true;
     fonts.fontDir.enable = true;
     fonts.fontconfig.enable = true;
     fonts.enableGhostscriptFonts = true;
