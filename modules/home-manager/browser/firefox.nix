@@ -18,11 +18,11 @@ in
     programs.firefox.policies.DontCheckDefaultBrowser = true;
     programs.firefox.policies.oDefaultBookmarks = true;
     programs.firefox.policies.PasswordManagerEnabled = true;
-    programs.firefox.FirefoxHome.Highlights = false;
-    programs.firefox.FirefoxHome.Pocket = false;
-    programs.firefox.FirefoxHome.Search = true;
-    programs.firefox.FirefoxHome.Snippets = false;
-    programs.firefox.FirefoxHome.TopSites = false;
+    #programs.firefox.FirefoxHome.Highlights = false;
+    #programs.firefox.FirefoxHome.Pocket = false;
+    #programs.firefox.FirefoxHome.Search = true;
+    #programs.firefox.FirefoxHome.Snippets = false;
+    #programs.firefox.FirefoxHome.TopSites = false;
     programs.firefox.UserMessaging = {
       ExtensionRecommendations = false;
       SkipOnboarding = true;
