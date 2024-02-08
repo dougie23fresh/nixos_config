@@ -198,7 +198,7 @@ in
           "custom/lock" = {
             tooltip =  false;
             on-click = "sh -c '(sleep 0.5s; swaylock -f --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --grace 1 --fade-in 0.1)' & disown";
-            format = "\uf023";
+            format = "  ";
           };
           "custom/power" = {
             tooltip = false;
