@@ -14,7 +14,7 @@ in
     nix.gc.automatic = true;
     nix.gc.dates = "weekly";
     nix.gc.options = "--delete-older-than 7d";
-    nix.gc.settings.auto-optimise-store = true;
+    #nix.gc.settings.auto-optimise-store = true;
     nix.settings = {
       auto-optimise-store = true;
       substituters = [
