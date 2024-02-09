@@ -86,7 +86,7 @@ in
           ];
 
           "hyprland/workspaces" = {
-            format = "<sub>{icon}</sub>{windows}";
+            format = "{windows}";
             on-click = "activate";
             sort-by-number = true;
             window-rewrite-default = "";
