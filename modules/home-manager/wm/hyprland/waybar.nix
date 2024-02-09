@@ -200,8 +200,8 @@ in
             format = "󰌾";
           };
           "custom/power" = {
+            on-click = "wlogout &";
             tooltip = false;
-            on-click = "wlogout";
             format = " ⏻ ";
           };
         };
@@ -264,7 +264,7 @@ in
           box-shadow: inset 0 -3px transparent;
           transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.68);
           background-color: transparent;
-          margin-right: 0.4rem;
+          /* margin-right: 0.4rem; */
         }
 
         #workspaces button.active {
@@ -341,7 +341,7 @@ in
           color: @peach;
           border-radius: 0;
         }
-
+surface0
         #custom-lock {
             color: @lavender;
             border-radius: 0;
