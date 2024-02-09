@@ -89,7 +89,7 @@ in
             format = "<sub>{icon}</sub>{windows}";
             on-click = "activate";
             sort-by-number = true;
-  
+            window-rewrite-default = "";
           };
           "custom/music" = {
             format = "󰎆  {}";
