@@ -90,8 +90,13 @@ in
             on-click = "activate";
             all-outputs = true;
             sort-by-number = true;
+            active-only = false;
             persistent-workspaces = {
-              "*" = 5;
+              "1" = [ ];
+              "2" = [ ];
+              "3" = [ ];
+              "4" = [ ];
+              "5" = [ ];
             };
           };
           "custom/music" = {
