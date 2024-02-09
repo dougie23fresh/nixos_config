@@ -369,7 +369,7 @@ in
           color: @peach;
           border-radius: 0;
         }
-surface0
+
         #custom-lock {
             color: @lavender;
             border-radius: 0;
