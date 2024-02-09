@@ -89,6 +89,10 @@ in
             format = "{icon}{windows}";
             on-click = "activate";
             all-outputs = true;
+            sort-by-number = true;
+            persistent-workspaces = {
+              "*" = 5;
+            };
           };
           "custom/music" = {
             format = "󰎆  {}";
