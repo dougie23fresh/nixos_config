@@ -13,6 +13,7 @@ in
   };
 
   config = mkIf cfg.enable {
+    programs.dconf.enable = true;
     wayland.windowManager.hyprland.enable = true;
     wayland.windowManager.hyprland.xwayland = { enable = true; };
     wayland.windowManager.hyprland.systemd.enable = true;
@@ -102,6 +103,16 @@ in
       iconTheme = {
         name = "Papirus-Dark";
         package = pkgs.catppuccin-papirus-folders;
+      };
+    };
+    xdg = {
+      portal = {
+        enable = true;
+        extraPortals = with pkgs; [
+          xdg-desktop-portal-hyprland
+          xdg-desktop-portal-gtk
+          libsForQt5.xdg-desktop-portal-kde
+        ];
       };
     };
 

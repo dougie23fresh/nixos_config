@@ -21,15 +21,15 @@ in
       MOZ_ENABLE_WAYLAND = "1";
     };
     xdg = {
-    icons.enable = true;
-    portal = {
-      enable = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-hyprland
-        xdg-desktop-portal-gtk
-        libsForQt5.xdg-desktop-portal-kde
-      ];
+      icons.enable = true;
+      portal = {
+        enable = true;
+        extraPortals = with pkgs; [
+          xdg-desktop-portal-hyprland
+          xdg-desktop-portal-gtk
+          libsForQt5.xdg-desktop-portal-kde
+        ];
+      };
     };
-  };
   };
 }

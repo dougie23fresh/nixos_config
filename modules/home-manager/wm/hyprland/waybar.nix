@@ -229,7 +229,7 @@ in
           };
           "custom/power" = {
             on-click = "wlogout &";
-
+            tooltip =  false;
             format = " ⏻ ";
           };
         };
