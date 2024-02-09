@@ -219,7 +219,7 @@ in
           "custom/dunst" = {
             format = "{}";
             exec = "~/.config/hypr/themes/minimal/waybar/modules/dunst.sh";
-            on-click = "${pkgs.dunstctl}/bin/dunstctl set-paused toggle";
+            on-click = "${pkgs.dunst}/bin/dunstctl set-paused toggle";
             restart-interval = 1;
           };
           "custom/lock" = {
