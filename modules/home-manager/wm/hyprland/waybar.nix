@@ -181,15 +181,6 @@ in
             exec = "echo $USER@$HOSTNAME";
             on-click = "${systemctl} --user restart waybar";
           };
-          keyboard-state = {
-              numlock = true;
-              capslock = true;
-              format = "{name} {icon}";
-              format-icons = {
-                  locked = "";
-                  unlocked = "";
-              };
-          };
           "custom/dunst" = {
             format = "{}";
             exec = "~/.config/hypr/themes/minimal/waybar/modules/dunst.sh";
@@ -203,7 +194,7 @@ in
           };
           "custom/power" = {
             tooltip = false;
-            on-click = "wlogout &";
+            on-click = "wlogout";
             format = " ⏻ ";
           };
         };
