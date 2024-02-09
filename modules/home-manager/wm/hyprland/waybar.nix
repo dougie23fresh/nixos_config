@@ -281,8 +281,8 @@ in
         #bluetooth,
         #custom-power {
           background-color: @surface0;
-          padding: 0.5rem 1rem;
-          margin: 5px 0;
+          padding: 0.5rem 0.5rem;
+          margin: 2px 0;
         }
 
         #clock {
@@ -336,13 +336,11 @@ in
         }
 
         #custom-lock {
-            
             color: @lavender;
             border-radius: 0;
         }
 
         #custom-power {
-            margin-right: 1rem;
             border-radius: 0px 1rem 1rem 0px;
             color: @red;
         }
