@@ -228,7 +228,7 @@ in
             format = "󰌾";
           };
           "custom/power" = {
-            on-click = "wlogout &";
+            on-click = "${pkgs.wlogout}/bin/wlogout &";
             tooltip =  false;
             format = " ⏻ ";
           };
