@@ -54,8 +54,8 @@ sudo nixos-rebuild switch --flake './my-nix-flake#<your_host_name>'
 sudo nixos-rebuild switch --flake 'flake.nix#hpelitebook'
 home-manager switch --flake flake.nix#hpelitebook
 
-
-
+https://github.com/chadcat7/crystal/blob/bdbb59cfff83286f41c1b12d3c02275c6b778721/home/namish/conf/ui/hyprland/default.nix
+https://github.com/cole-h/nixos-config/blob/60bdb75969282c2bf6bee8f517436cfdf294f5c7/hosts/nixos/scadrial/modules/programs.nix
 
 https://github.com/MatthiasBenaets/nixos-config/blob/552a9d5f0f5d9ee4322e9de7bf70d47d8e37e1ac/rsc/archive/waybar.nix#L22
 https://github.com/JaKooLit/Hyprland-v3/blob/9530df692cbe9ce8f58a835b6c122f426e3cd2d4/config/hypr/waybar/configs/config-dual#L17
