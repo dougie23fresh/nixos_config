@@ -13,7 +13,6 @@ in
   };
 
   config = mkIf cfg.enable {
-    programs.dconf.enable = true;
     wayland.windowManager.hyprland.enable = true;
     wayland.windowManager.hyprland.xwayland = { enable = true; };
     wayland.windowManager.hyprland.systemd.enable = true;
