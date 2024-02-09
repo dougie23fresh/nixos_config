@@ -87,14 +87,15 @@ in
 
           "hyprland/workspaces" = {
             format = "{name} {icon} {windows}";
+            window-rewrite-default = "";
             on-click = "activate";
             all-outputs = true;
             sort-by-number = true;
             active-only = false;
-            #format-icons = {
-            #  active = "";
-            #  default = "";
-            #};
+            format-icons = {
+              active = "";
+              default = "";
+            };
             persistent-workspaces = {
               "1" = [ ];
               "2" = [ ];
