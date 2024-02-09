@@ -86,20 +86,36 @@ in
           ];
 
           "hyprland/workspaces" = {
-            format = "{name} {icon} {windows}";
+            format = "{name}{windows}";
             on-click = "activate";
             all-outputs = true;
             sort-by-number = true;
             active-only = false;
-            format-icons = {
-              active = "";
-              default = "";
-            };
+            #format-icons = {
+            #  active = "";
+            #  default = "";
+            #};
             window-rewrite-default = "";
             window-rewrite = {
               "title<.*youtube.*>" = "";
               "class<firefox>" = "";
-              "class<firefox> title<.*github.*>" = ""; 
+              "class<firefox> title<.*github.*>" = "";
+              telegram = "";
+              discord = "ﭮ";
+              spotify = "";
+              vivaldi = "󰇧";
+              pavucontrol = "";
+              brave = "";
+              noisetorch = "";
+              qq = "󰻀";
+              steam = "󰓓";
+              rofi = "󱓞";
+              mpv = "";
+              obs = "󰑋";
+              chrome = "";
+              kitty = "";
+              alacritty = "";
+              obsidian = "󱓧";
               foot = "";
               code = "󰨞";
             };
