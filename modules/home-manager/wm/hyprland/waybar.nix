@@ -87,7 +87,6 @@ in
 
           "hyprland/workspaces" = {
             format = "{name} {icon} {windows}";
-            window-rewrite-default = "";
             on-click = "activate";
             all-outputs = true;
             sort-by-number = true;
@@ -95,6 +94,14 @@ in
             format-icons = {
               active = "";
               default = "";
+            };
+            window-rewrite-default = "";
+            window-rewrite = {
+              "title<.*youtube.*>" = "";
+              "class<firefox>" = "";
+              "class<firefox> title<.*github.*>" = ""; 
+              foot = "";
+              code = "󰨞";
             };
             persistent-workspaces = {
               "1" = [ ];
