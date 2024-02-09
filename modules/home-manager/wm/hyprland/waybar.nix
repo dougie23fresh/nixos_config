@@ -84,8 +84,9 @@ in
             #"keyboard-state"
             #"custom/hostname"
           ];
+
           "hyprland/workspaces" = {
-            format = "{icon}";
+            format = "<sub>{icon}</sub>{windows}";
             on-click = "activate";
             sort-by-number = true;
   
@@ -158,9 +159,7 @@ in
             format-alt = "󰃭  {:%d/%m/%Y}";
             #on-click = "morgen";
             #on-click-left = "mode";
-            tooltip-format = ''
-              <big>{:%Y %B}</big>
-              <tt><small>{calendar}</small></tt>'';
+            tooltip-format = ''<tt><small>{calendar}</small></tt>'';
           };
           battery = {
             #bat = "CMB0";
