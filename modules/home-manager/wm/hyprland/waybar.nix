@@ -86,10 +86,9 @@ in
           ];
 
           "hyprland/workspaces" = {
-            format = "{windows}";
+            format = "{icon}{windows}";
             on-click = "activate";
-            sort-by-number = true;
-            window-rewrite-default = "";
+            all-outputs = true;
           };
           "custom/music" = {
             format = "󰎆  {}";
