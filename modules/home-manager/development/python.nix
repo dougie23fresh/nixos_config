@@ -10,7 +10,7 @@ in
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      python3Full
+      python3
       imath
       pystring
       python3Packages.cffi
