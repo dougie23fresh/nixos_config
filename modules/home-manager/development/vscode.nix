@@ -11,8 +11,8 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       vscode
-      vscode-extensions.ms-python.python
-      vscode-extensions.ms-python.vscode-pylance
+      #vscode-extensions.ms-python.python
+      #vscode-extensions.ms-python.vscode-pylance
       vscode-extensions.dracula-theme.theme-dracula
       vscode-extensions.nonylene.dark-molokai-theme
       vscode-extensions.jdinhlife.gruvbox
