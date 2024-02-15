@@ -22,10 +22,10 @@ in
         #  package = pkgs.jre;
       };
 
-      direnv = {
-        enable = true;
-        nix-direnv.enable = true;
-      };
+      #direnv = {
+      #  enable = true;
+      #  nix-direnv.enable = true;
+      #};
 
     };
   };
