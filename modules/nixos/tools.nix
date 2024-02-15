@@ -10,6 +10,8 @@ in
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
+      python310
+      python310Packages.ipython
       fzf
       killall
       unzip
