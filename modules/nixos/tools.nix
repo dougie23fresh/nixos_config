@@ -17,7 +17,14 @@ in
       python3 = super.python3.override {
         packageOverrides = python-self: python-super: {
           ipython = python-super.ipython.overridePythonAttrs (oldAttrs: {
-            disabled = false;
+            pname = "ipython";
+            version = "8.18.1";
+            disabled = pythonOlder "3.8";
+            src = super.fetchPypi {
+              inherit pname version;
+              hash = "sha256-ym8Hm7M0V8ZuIz5FgOv8QSiFW0z2Nw3d1zhCqVY+iic=";
+              extension = "tar.bz2";
+            };
           });
         };
       };
