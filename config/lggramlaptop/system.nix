@@ -15,7 +15,8 @@
           version = "8.18.1";
           disabled = pythonOlder "3.8";
           src = super.fetchPypi {
-            inherit pname version;
+            pname = "ipython";
+            version = "8.18.1";
             hash = "sha256-ym8Hm7M0V8ZuIz5FgOv8QSiFW0z2Nw3d1zhCqVY+iic=";
             extension = "tar.bz2";
           };
