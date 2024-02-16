@@ -68,3 +68,9 @@ https://gitlab.com/null4833902/nixos/-/tree/main/core?ref_type=heads
 https://gitlab.com/Zaney/zaneyos
 
 https://xeiaso.net/blog/nix-flakes-1-2022-02-21/
+https://github.com/SomeGuyNamedMay/users/blob/master/flake.nix
+https://github.com/SomeGuyNamedMay/users/blob/master/flake.nix
+https://github.com/danth/stylix
+https://github.com/librephoenix/selfhosted-templates
+https://github.com/librephoenix/nixos-config/blob/main/flake.nix
+
