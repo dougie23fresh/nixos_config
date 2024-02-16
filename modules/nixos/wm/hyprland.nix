@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, inputs, pkgs, ... }:
 with lib;
 let 
   cfg = config.dougieHost.wm.hyprland;
