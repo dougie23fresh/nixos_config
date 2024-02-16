@@ -60,3 +60,11 @@ https://github.com/cole-h/nixos-config/blob/60bdb75969282c2bf6bee8f517436cfdf294
 https://github.com/MatthiasBenaets/nixos-config/blob/552a9d5f0f5d9ee4322e9de7bf70d47d8e37e1ac/rsc/archive/waybar.nix#L22
 https://github.com/JaKooLit/Hyprland-v3/blob/9530df692cbe9ce8f58a835b6c122f426e3cd2d4/config/hypr/waybar/configs/config-dual#L17
  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+
+https://gitlab.com/gfauredev/nixos-config
+https://gitlab.com/SamDenton/lunix/-/blob/master/hosts/base.nix?ref_type=heads
+https://gitlab.com/null4833902/nixos/-/tree/main/core?ref_type=heads
+https://gitlab.com/Zaney/zaneyos
+
+https://xeiaso.net/blog/nix-flakes-1-2022-02-21/
