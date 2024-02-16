@@ -16,7 +16,7 @@ in
     environment.systemPackages = with pkgs; [
       #(python311.withPackages my-python-packages)
       #python311Packages.ipython
-      (pkgs.writeScriptBin "sct" ''
+      (pkgs.writeScriptBin "sct2" ''
       #!/bin/sh
       killall wlsunset &> /dev/null;
       if [ $# -e 1 ]; then
@@ -27,6 +27,7 @@ in
         killall wlsunset &> /dev/null;
       fi
       '')
+      go-sct
       fzf
       killall
       unzip
