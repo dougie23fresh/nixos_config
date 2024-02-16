@@ -3,12 +3,12 @@
 {
   imports = [
     ./boot.nix
+    ./locale.nix
+    ./location.nix
+    ./multithreading.nix
     ./networking.nix
+    ./nixsettings.nix
     ./sound.nix
     ./time.nix
-    ./location.nix
-    ./locale.nix
-    ./nixsettings.nix
-    ./multithreading.nix
   ];
 }

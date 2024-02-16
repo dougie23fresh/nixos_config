@@ -9,7 +9,9 @@ in
   };
 
   config = mkIf cfg.enable {
+    programs.system-config-printer.enable = true;
     services.printing.enable = true;
+    services.ipp-usb.enable = true;
     services.printing.drivers = with pkgs; [ 
       brgenml1cupswrapper      # Generic drivers for more Brother printers
       brgenml1lpr              # Generic drivers for more Brother printers
@@ -22,5 +24,14 @@ in
  
     ];
     #    printing.drivers = with pkgs; [ gutenprint ];
+    hardware.sane = {
+      enable = true;
+      #extraBackends = with pkgs; [ hplipWithPlugin sane-airscan ];
+      extraBackends = with pkgs; [ 
+        sane-airscan
+        epkowa
+      ];
+      disabledDefaultBackends = ["escl"];
+    };
   };
 }

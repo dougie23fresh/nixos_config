@@ -13,22 +13,31 @@ in
       fzf
       killall
       unzip
+      unrar
       file
       jq
       clac
       wget
       curl
       git
+      cmatrix
+      lolcat
+      neofetch
+      htop
+      btop
+      libvirt
+      polkit_gnome
+      lm_sensors 
       #libverto # Asynchronous event loop abstraction library
       #libnotify # Minimalistic libnotify wrapper
       home-manager
       w3m
-      neofetch
+      
       imagemagick	
       fontconfig
       freetype
       wget
-      htop
+      
       usbutils
       pciutils
       iputils
@@ -59,6 +68,9 @@ in
       mtr # Modern Unix `traceroute`
       netdiscover # Modern Unix `arp`
       speedtest-go # Terminal speedtest
+      v4l-utils
+      ydotool
+      toybox
     ];
   };
 }

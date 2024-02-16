@@ -9,6 +9,7 @@ in
   };
 
   config = mkIf cfg.enable {
+    programs.fuse.userAllowOther = true;
     boot.supportedFilesystems = [ 
       ntfs
       btrfs

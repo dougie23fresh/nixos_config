@@ -11,9 +11,6 @@ in
   config = mkIf cfg.enable {
     programs = {
 
-      # allow users to mount fuse filesystems with allow_other
-      fuse.userAllowOther = true;
-
       # help manage android devices via command line
       adb.enable = true;
 

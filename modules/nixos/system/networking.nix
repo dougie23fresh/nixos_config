@@ -20,10 +20,10 @@ in
         enable = true;
         # appendNameservers = [ "1.1.1.1" "8.8.8.8" ];
         # Prevent fragmentation and reassembly, which can improve network performance
-        connectionConfig = {
-          "ethernet.mtu" = 1462;
-          "wifi.mtu" = 1462;
-        };
+        #connectionConfig = {
+        #  "ethernet.mtu" = 1462;
+        #  "wifi.mtu" = 1462;
+        #};
       };
       timeServers = [
         "0.nixos.pool.ntp.org"
