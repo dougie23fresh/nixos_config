@@ -3,7 +3,6 @@ with lib;
 let 
   cfg = config.dougieHost.tools;
   my-python-packages = ps: with ps; [
-    pandas
     requests
     ipython
   ];
@@ -17,7 +16,7 @@ in
     
 
     environment.systemPackages = with pkgs; [
-      (python310.withPackages my-python-packages)
+      (python39.withPackages my-python-packages)
       fzf
       killall
       unzip
