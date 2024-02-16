@@ -17,7 +17,7 @@ in
       python3 = super.python3.override {
         packageOverrides = python-self: python-super: {
           ipython = python-super.ipython.overridePythonAttrs (oldAttrs: {
-            disabled = pythonOlder "3.9";
+            disabled = false;
           });
         };
       };
