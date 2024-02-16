@@ -4,7 +4,7 @@ let
   cfg = config.dougieHost.tools;
   my-python-packages = ps: with ps; [
     requests
-    ipython
+    ipython@8.4.0
   ];
 in
 {
