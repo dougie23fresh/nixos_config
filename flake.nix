@@ -88,7 +88,7 @@
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
                 home-manager.extraSpecialArgs = { inherit inputs; };
-                home-manager.users.melvin = import ./config/home/laptop-intel.nix;
+                home-manager.users.melvin = import ./config/home/intel-laptop.nix;
               }
             ];
           };
