@@ -13,17 +13,18 @@ in
       enable = true;
       xdgOpenUsePortal = true;
     };
-    extraPortals = with pkgs; [
+    xdg.extraPortals = with pkgs; [
+      xdg-desktop-portal
       xdg-desktop-portal-gtk
       xdg-desktop-portal-hyprland
       xdg-desktop-portal-kde
       xdg-desktop-portal-wlr
     ];
-    #configPackages = with pkgs; [ 
-    #  xdg-desktop-portal-gtk
-    #  xdg-desktop-portal-hyprland
-    #  xdg-desktop-portal
-    #];
+    xdg.configPackages = with pkgs; [ 
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal
+    ];
 
   };
 }
