@@ -49,7 +49,7 @@
     # hardware.url = "github:nixos/nixos-hardware";
     # Generate System Images
     # nixos-generators.url = "github:nix-community/nixos-generators";
-    nix-colors.url = "github:misterio77/nix-colors";
+    # nix-colors.url = "github:misterio77/nix-colors";
   };
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let

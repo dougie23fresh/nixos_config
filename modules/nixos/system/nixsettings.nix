@@ -11,12 +11,12 @@ in
   config = mkIf cfg.enable {
     nixpkgs.config.allowUnfree = true;
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
-    #nix.gc.automatic = true;
-    #nix.gc.dates = "weekly";
-    #nix.gc.options = "--delete-older-than 7d";
+    nix.gc.automatic = true;
+    nix.gc.dates = "weekly";
+    nix.gc.options = "--delete-older-than 7d";
     #nix.gc.settings.auto-optimise-store = true;
     nix.settings = {
-      #auto-optimise-store = true;
+      auto-optimise-store = true;
       substituters = [
         "https://nix-gaming.cachix.org"
         "https://nix-community.cachix.org"
