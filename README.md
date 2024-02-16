@@ -74,3 +74,4 @@ https://github.com/danth/stylix
 https://github.com/librephoenix/selfhosted-templates
 https://github.com/librephoenix/nixos-config/blob/main/flake.nix
 
+sct 2300

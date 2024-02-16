@@ -16,7 +16,17 @@ in
     environment.systemPackages = with pkgs; [
       #(python311.withPackages my-python-packages)
       #python311Packages.ipython
-      
+      (pkgs.writeScriptBin "sct" ''
+      #!/bin/sh
+      killall wlsunset &> /dev/null;
+      if [ $# -e 1 ]; then
+        temphigh=$(( $1 +1 ))
+        templow =$1
+        wlsunset -t $templow -T $temphigh &> /dev/null &
+      else
+        killall wlsunset &> /dev/null;
+      fi
+      '')
       fzf
       killall
       unzip
@@ -34,7 +44,8 @@ in
       btop
       libvirt
       polkit_gnome
-      lm_sensors 
+      lm_sensors
+      
       #libverto # Asynchronous event loop abstraction library
       #libnotify # Minimalistic libnotify wrapper
       home-manager
