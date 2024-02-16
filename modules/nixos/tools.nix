@@ -17,7 +17,7 @@ in
 
     environment.systemPackages = with pkgs; [
       #(python39.withPackages my-python-packages)
-      python39Packages.ipython@8.4.0
+      python311Packages.ipython
       fzf
       killall
       unzip
