@@ -13,23 +13,6 @@ in
   };
 
   config = mkIf cfg.enable {
-    nixpkgs.config.packageOverrides = super: {
-      python3 = super.python3.override {
-        packageOverrides = python-self: python-super: {
-          ipython = python-super.ipython.overridePythonAttrs (oldAttrs: {
-            pname = "ipython";
-            version = "8.18.1";
-            disabled = pythonOlder "3.8";
-            src = super.fetchPypi {
-              inherit pname version;
-              hash = "sha256-ym8Hm7M0V8ZuIz5FgOv8QSiFW0z2Nw3d1zhCqVY+iic=";
-              extension = "tar.bz2";
-            };
-          });
-        };
-      };
-    };
-
     environment.systemPackages = with pkgs; [
       #(python311.withPackages my-python-packages)
       #python311Packages.ipython
