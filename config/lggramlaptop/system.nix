@@ -8,7 +8,7 @@
 
   #nixpkgs.config.packageOverrides = super: {
   nixpkgs.config.packageOverrides = super: {
-    python39 = super.python39.override {
+    python3 = super.python3.override {
       packageOverrides = python-self: python-super: {
         ipython = python-super.ipython.overridePythonAttrs (_: {
           pname = "ipython";
