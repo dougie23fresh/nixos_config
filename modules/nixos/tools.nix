@@ -13,7 +13,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    pkgs.config.packageOverrides = super: {
+    nixpkgs.config.packageOverrides = super: {
       python3 = super.python3.override {
         packageOverrides = python-self: python-super: {
           ipython = python-super.ipython.overridePythonAttrs (oldAttrs: {
