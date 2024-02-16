@@ -2,6 +2,11 @@
 with lib;
 let 
   cfg = config.dougieHost.tools;
+  my-python-packages = ps: with ps; [
+    pandas
+    requests
+    ipython
+  ];
 in
 {
   options.dougieHost.tools = {
@@ -9,11 +14,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    my-python-packages = ps: with ps; [
-      pandas
-      requests
-      ipython
-    ];
+    
 
     environment.systemPackages = with pkgs; [
       (python310.withPackages my-python-packages)
