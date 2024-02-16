@@ -4,7 +4,7 @@ let
   cfg = config.dougieHost.tools;
   my-python-packages = ps: with ps; [
     requests
-    ipython@8.4.0
+    ipython
   ];
 in
 {
@@ -16,7 +16,8 @@ in
     
 
     environment.systemPackages = with pkgs; [
-      (python39.withPackages my-python-packages)
+      #(python39.withPackages my-python-packages)
+      python39Packages.ipython@8.4.0
       fzf
       killall
       unzip
