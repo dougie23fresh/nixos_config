@@ -79,7 +79,7 @@
         allowUnfree = true;
         allowUnfreePredicate = (_: true);
       };
-      overlays [ my_overlay ];
+      overlays = [ my_overlay ];
     };
   in {
 
