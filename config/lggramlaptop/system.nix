@@ -30,6 +30,7 @@
         src = pythonPackages.fetchPypi {
           inherit pname version;
           hash = "sha256-ym8Hm7M0V8ZuIz5FgOv8QSiFW0z2Nw3d1zhCqVY+iic=";
+          extension = "tar.bz2";
         };
       };
     }
