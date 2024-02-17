@@ -21,13 +21,61 @@
           };
         };
       };
+      python3 = prev.python.override {
+        # Careful, we're using a different final and prev here!
+        packageOverrides = final: prev: {
+          ipython = prev.buildPythonPackage rec {
+            pname = "ipython";
+            version = "8.18.1";
+            src = prev.fetchPypi {
+              inherit pname version;
+              hash = "sha256-ym8Hm7M0V8ZuIz5FgOv8QSiFW0z2Nw3d1zhCqVY+iic=";
+              extension = "tar.bz2";
+            };
+          };
+        };
+      };
+      python39 = prev.python.override {
+        # Careful, we're using a different final and prev here!
+        packageOverrides = final: prev: {
+          ipython = prev.buildPythonPackage rec {
+            pname = "ipython";
+            version = "8.18.1";
+            src = prev.fetchPypi {
+              inherit pname version;
+              hash = "sha256-ym8Hm7M0V8ZuIz5FgOv8QSiFW0z2Nw3d1zhCqVY+iic=";
+              extension = "tar.bz2";
+            };
+          };
+        };
+      };
       # nix-shell -p pythonPackages.my_stuff
       pythonPackages = python.pkgs;
+      python3Packages = python3.pkgs;
+      python39Packages = python39.pkgs;
       # nix-shell -p my_stuff
       ipython = pythonPackages.buildPythonPackage rec {
         pname = "ipython";
         version = "8.18.1";
         src = pythonPackages.fetchPypi {
+          inherit pname version;
+          hash = "sha256-ym8Hm7M0V8ZuIz5FgOv8QSiFW0z2Nw3d1zhCqVY+iic=";
+          extension = "tar.bz2";
+        };
+      };
+      ipython = python3Packages.buildPythonPackage rec {
+        pname = "ipython";
+        version = "8.18.1";
+        src = python3Packages.fetchPypi {
+          inherit pname version;
+          hash = "sha256-ym8Hm7M0V8ZuIz5FgOv8QSiFW0z2Nw3d1zhCqVY+iic=";
+          extension = "tar.bz2";
+        };
+      };
+      ipython = python39Packages.buildPythonPackage rec {
+        pname = "ipython";
+        version = "8.18.1";
+        src = python39Packages.fetchPypi {
           inherit pname version;
           hash = "sha256-ym8Hm7M0V8ZuIz5FgOv8QSiFW0z2Nw3d1zhCqVY+iic=";
           extension = "tar.bz2";
