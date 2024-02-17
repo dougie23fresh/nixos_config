@@ -26,13 +26,9 @@
   let
     # Generate a user-friendly version number.
     version = builtins.substring 0 8 self.lastModifiedDate;
+    system = "x86_64-linux";
     # System types to support.
-    supportedSystems = [
-      "x86_64-linux"
-      #"x86_64-darwin"
-      #"aarch64-linux"
-      #"aarch64-darwin"
-    ];
+   
     # Helper function to generate an attrset '{ x86_64-linux = f "x86_64-linux"; ... }'.
     #forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
 
@@ -47,6 +43,17 @@
     #              ./patches/ipython.patch
     #            ];
     #};
+    
+
+    pkgs = import nixpkgs {
+      inherit system;
+      config = { 
+        allowUnfree = true;
+        allowUnfreePredicate = (_: true);
+      };
+    };
+  in {
+
     nixpkgs.overlays = [ (final: prev: 
       rec {
         python = prev.python.override {
@@ -76,16 +83,6 @@
         };
     }
     )];
-
-    pkgs = import nixpkgs {
-      system = "x86_64-linux";
-      config = { 
-        allowUnfree = true;
-        allowUnfreePredicate = (_: true);
-      };
-    };
-  in
-  {
     nixosModules.dougieHost = {
       imports = [
         ./modules/nixos
@@ -141,7 +138,6 @@
           }
         ];
       };
-
     };
   };
 }
