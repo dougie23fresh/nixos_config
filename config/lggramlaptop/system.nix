@@ -51,8 +51,7 @@
       };
       # nix-shell -p pythonPackages.my_stuff
       pythonPackages = python.pkgs;
-      python3Packages = python3.pkgs;
-      python39Packages = python39.pkgs;
+
       # nix-shell -p my_stuff
       ipython = pythonPackages.buildPythonPackage rec {
         pname = "ipython";
