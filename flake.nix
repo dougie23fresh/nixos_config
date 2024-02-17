@@ -43,7 +43,7 @@
     #              ./patches/ipython.patch
     #            ];
     #};
-    my_overlay = [ (final: prev: 
+    my_overlay = (final: prev: 
       rec {
         python = prev.python.override {
           # Careful, we're using a different final and prev here!
@@ -71,7 +71,7 @@
           };
         };
       }
-    )];
+    );
 
     pkgs = import nixpkgs {
       inherit system;
@@ -79,7 +79,7 @@
         allowUnfree = true;
         allowUnfreePredicate = (_: true);
       };
-      overlays = [ my_overlay ];
+      #overlays = [ my_overlay ];
     };
   in {
 
@@ -124,6 +124,37 @@
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.melvin = import ./config/home/intel-laptop.nix;
           }
+          
+          nixpkgs.overlays = [(final: prev: 
+          rec {
+            python = prev.python.override {
+              # Careful, we're using a different final and prev here!
+              packageOverrides = final: prev: {
+                ipython = prev.buildPythonPackage rec {
+                  pname = "ipython";
+                  version = "8.18.1";
+                  src = prev.fetchPypi {
+                    inherit pname version;
+                    hash = "sha256-ym8Hm7M0V8ZuIz5FgOv8QSiFW0z2Nw3d1zhCqVY+iic=";
+                    extension = "tar.bz2";
+                  };
+                };
+              };
+            };
+            # nix-shell -p pythonPackages.my_stuff
+            pythonPackages = python.pkgs;
+            # nix-shell -p my_stuff
+            ipython = pythonPackages.buildPythonPackage rec {
+              pname = "ipython";
+              version = "8.18.1";
+              src = pythonPackages.fetchPypi {
+                inherit pname version;
+                hash = "sha256-ym8Hm7M0V8ZuIz5FgOv8QSiFW0z2Nw3d1zhCqVY+iic=";
+              };
+            };
+          }
+        )];
+        
         ];
       };
   
