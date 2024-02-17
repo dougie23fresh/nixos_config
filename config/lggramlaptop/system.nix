@@ -10,10 +10,10 @@
       python39 = prev.python39.override {
         # Careful, we're using a different final and prev here!
         packageOverrides = final: prev: {
-          ipython = final.buildPythonPackage rec {
+          ipython = prev.buildPythonPackage rec {
             pname = "ipython";
             version = "8.18.1";
-            src = final.fetchPypi {
+            src = prev.fetchPypi {
               inherit pname version;
               hash = "sha256-ym8Hm7M0V8ZuIz5FgOv8QSiFW0z2Nw3d1zhCqVY+iic=";
               extension = "tar.bz2";
