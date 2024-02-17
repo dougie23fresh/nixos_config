@@ -21,9 +21,17 @@
   programs.firefox.policies.oDefaultBookmarks = true;
   programs.firefox.policies.PasswordManagerEnabled = true;
   
-  home.packages = [ 
-    pkgs.librewolf-wayland
-    pkgs.vivaldi
-    pkgs.brave
+   home.packages = with pkgs; [ 
+    librewolf-wayland
+    vivaldi
+    brave
+    (vivaldi.override{
+      proprietaryCodecs = true;
+      enableWidevine = true;
+    })
+    vivaldi-ffmpeg-codecs
+    widevine-cdm
+    microsoft-edge
+    chromium
   ];
 }
