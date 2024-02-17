@@ -21,7 +21,6 @@
     "SpellcheckLanguage" = [ "en-US" ];
   };
   programs.dconf.enable = true;
-  programs.dconf.enable = true;
   programs.system-config-printer.enable = true;
   programs.fuse.userAllowOther = true;
   programs.partition-manager.enable = true;
