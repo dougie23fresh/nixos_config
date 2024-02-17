@@ -49,7 +49,7 @@
   # Multithreading
   security.allowSimultaneousMultithreading = true;
   # networking
-  networking.hostName = cfg.hostName;
+  networking.hostName = hostname;
   networking.networkmanager.enable = true;
   # appendNameservers = [ "1.1.1.1" "8.8.8.8" ];
   # Prevent fragmentation and reassembly, which can improve network performanceconnectionConfig = {"ethernet.mtu" = 1462;"wifi.mtu" = 1462;};
