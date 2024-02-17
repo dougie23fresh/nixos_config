@@ -72,7 +72,7 @@ in
 	  nbtscanner
 	  netdiscover
 	  nmap
-	  ntfy
+	  #ntfy python issue
 	  nvtop
 	  ssh-copy-id
 	  systemctl-tui
