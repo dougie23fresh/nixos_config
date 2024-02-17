@@ -1,6 +1,13 @@
 { inputs, outputs, pkgs, username, ... }:
 
 {
+  imports = [
+    ./browsers.nix
+    #./programing.nix
+    ./remote.nix
+    ./terminals.nix
+    ./wm.nix
+  ];
   ###############
   # User
   ###############
