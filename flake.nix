@@ -43,19 +43,7 @@
     #              ./patches/ipython.patch
     #            ];
     #};
-    
-
-    pkgs = import nixpkgs {
-      inherit system;
-      config = {
-        allowBroken = true;
-        allowUnfree = true;
-        allowUnfreePredicate = (_: true);
-      };
-    };
-  in {
-
-    nixpkgs.overlays = [ (final: prev: 
+    my_overlay = [ (final: prev: 
       rec {
         python = prev.python.override {
           # Careful, we're using a different final and prev here!
@@ -82,8 +70,20 @@
             hash = "sha256-ym8Hm7M0V8ZuIz5FgOv8QSiFW0z2Nw3d1zhCqVY+iic=";
           };
         };
-    }
+      }
     )];
+
+    pkgs = import nixpkgs {
+      inherit system;
+      config = {
+        allowUnfree = true;
+        allowUnfreePredicate = (_: true);
+      };
+      overlays [ my_overlay ];
+    };
+  in {
+
+    
     nixosModules.dougieHost = {
       imports = [
         ./modules/nixos
