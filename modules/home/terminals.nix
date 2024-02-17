@@ -37,6 +37,9 @@ in
     font.size = 14;
 
   };
+  programs.git.enable = true;
+  programs.git.userName = "melvin";
+  programs.git.userEmail = "melvin.douglas@gmail.com";
   programs.btop.enable = true;
   programs.eza.enable = true;
   programs.eza.enableAliases = true;

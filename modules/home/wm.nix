@@ -1,4 +1,4 @@
-{ inputs, outputs, ... }:
+{ inputs, outputs, pkgs, ... }:
 {
 
   imports = [
@@ -15,9 +15,7 @@
     name = "Bibata-Modern-Ice";
     size = 24;
   };
-  programs.git.enable = true;
-  programs.git.userName = userSettings.name;
-  programs.git.userEmail = userSettings.email;
+  
   home.packages = [ pkgs.git ];
   gtk = {
     enable = true;

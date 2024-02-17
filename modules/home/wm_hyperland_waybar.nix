@@ -1,4 +1,4 @@
-{ inputs, outputs, ... }:
+{ inputs, outputs, pkgs, ... }:
 {
   systemd.user.services.waybar = {
       Unit.StartLimitBurst = 30;
