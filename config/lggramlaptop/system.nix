@@ -63,7 +63,7 @@
           extension = "tar.bz2";
         };
       };
-      ipython = python3Packages.buildPythonPackage rec {
+      ipython3 = python3Packages.buildPythonPackage rec {
         pname = "ipython";
         version = "8.18.1";
         src = python3Packages.fetchPypi {
@@ -72,7 +72,7 @@
           extension = "tar.bz2";
         };
       };
-      ipython = python39Packages.buildPythonPackage rec {
+      ipython39 = python39Packages.buildPythonPackage rec {
         pname = "ipython";
         version = "8.18.1";
         src = python39Packages.fetchPypi {
