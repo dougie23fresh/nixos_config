@@ -1,5 +1,20 @@
 { inputs, outputs, ... }:
+let
 
+  # My shell aliases
+  myAliases = {
+    ls = "eza --icons -l -T -L=1";
+    cat = "bat";
+    htop = "btm";
+    fd = "fd -Lu";
+    w3m = "w3m -no-cookie -v";
+    neofetch = "disfetch";
+    fetch = "disfetch";
+    gitfetch = "onefetch";
+    nixos-rebuild = "systemd-run --no-ask-password --uid=0 --system --scope -p MemoryLimit=16000M -p CPUQuota=60% nixos-rebuild";
+    home-manager = "systemd-run --no-ask-password --uid=1000 --user --scope -p MemoryLimit=16000M -p CPUQuota=60% home-manager";
+  };
+in
 {
   ###############
   # User
@@ -64,8 +79,16 @@
   programs.eza.enable = true;
   programs.eza.enableAliases = true;
   programs.kitty.enable = true;
+  programs.kitty.package = pkgs.kitty;
+  programs.kitty.font.name = "JetBrainsMono Nerd Font";
+  programs.kitty.font.size = 16;
   programs.kitty.settings = {
-    background_opacity = lib.mkForce "0.65";
+    scrollback_lines = 2000;
+    wheel_scroll_min_lines = 1;
+    window_padding_width = 0;
+    confirm_os_window_close = 0;
+    background_opacity = "0.85";
+
   };
   home.packages = with pkgs; [
     kitty
@@ -79,6 +102,8 @@
   programs.zsh.enableAutosuggestions = true;
   programs.zsh.enableCompletion = true;
   programs.zsh.autocd = true;
+  programs.zsh.syntaxHighlighting.enable = true;
+  programs.zsh.shellAliases = myAliases;
   ###############
   # remote
   ###############
@@ -128,6 +153,8 @@
     xdg-utils
     xdg-desktop-portal
     xdg-desktop-portal-gtk
+    bc # GNU software calculator
+
     #xdg-desktop-portal-hyprland
     wlsunset # Day/night gamma adjustments for Wayland
     pavucontrol # PulseAudio Volume Control
@@ -160,10 +187,80 @@
     qt6Packages.qtstyleplugin-kvantum
     libsForQt5.qt5ct
     qt6Packages.qt6ct
+
+    bitwarden
+    bitwarden-cli
+    keyutils
+    networkmanagerapplet
+    ranger
+    yewtube
+    dosfstools
+  ];
+   home.packages = with pkgs; [
+    # Games
+    pegasus-frontend
+    myRetroarch
+    libfaketime
+    airshipper
+    qjoypad
+    superTux
+    superTuxKart
+   ];
+   # Collection of useful CLI apps
+   home.packages = with pkgs; [
+    disfetch lolcat cowsay onefetch
+    gnugrep gnused
+    bat eza bottom fd bc
+    direnv nix-direnv
+  ];
+  programs.bash = {
+    enable = true;
+    enableCompletion = true;
+    shellAliases = myAliases;
+  };
+  programs.direnv.enable = true;
+  programs.direnv.enableZshIntegration = true;
+  programs.direnv.nix-direnv.enable = true;
+  home.packages = with pkgs; [
+    # Command Line
+    disfetch neofetch lolcat cowsay onefetch starfetch
+    cava
+    gnugrep gnused
+    killall
+    libnotify
+    timer
+    bat eza fd bottom ripgrep
+    rsync
+    tmux
+    htop
+    hwinfo
+    unzip
+    brightnessctl
+    w3m
+    fzf
+    pandoc
+    pciutils
   ];
   home.sessionVariables.GTK_THEME = "Catppuccin-Macchiato-Compact-Mauve-dark";
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
+    size = 24;
+  };
+  programs.git.enable = true;
+  programs.git.userName = userSettings.name;
+  programs.git.userEmail = userSettings.email;
+  home.packages = [ pkgs.git ];
   gtk = {
     enable = true;
+    font = {
+      name = "Ubuntu";
+      size = 12;
+      package = pkgs.ubuntu_font_family;
+    };
+
     theme = {
       name = "Catppuccin-Macchiato-Compact-Mauve-dark";
       package = pkgs.catppuccin-gtk.override {
@@ -181,7 +278,23 @@
       name = "Papirus-Dark";
       package = pkgs.catppuccin-papirus-folders;
     };
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme=1;
+    };
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme=1;
+    };
+
   };
+  qt = {
+    enable = true;
+    platformTheme = "gtk";
+    style = {
+        name = "adwaita-dark";
+        package = pkgs.adwaita-qt;
+    };
+  };
+
   xdg = {
     portal = {
       enable = true;
@@ -196,6 +309,24 @@
 
 
   wayland.windowManager.hyprland.settings = {
+
+      env = [
+        "NIXOS_OZONE_WL, 1"
+        "NIXPKGS_ALLOW_UNFREE, 1"
+        "XDG_CURRENT_DESKTOP, Hyprland"
+        "XDG_SESSION_TYPE, wayland"
+        "XDG_SESSION_DESKTOP, Hyprland"
+        "GDK_BACKEND, wayland"
+        "CLUTTER_BACKEND, wayland"
+        "SDL_VIDEODRIVER, x11" # Either x11 or wayland ONLY. Games might require x11 set here
+        "QT_QPA_PLATFORM, wayland"
+        "QT_WAYLAND_DISABLE_WINDOWDECORATION, 1"
+        "QT_AUTO_SCREEN_SCALE_FACTOR, 1"
+        "MOZ_ENABLE_WAYLAND, 1"
+        # vm "WLR_NO_HARDWARE_CURSORS,1"
+        # VM "WLR_RENDERER_ALLOW_SOFTWARE,1"
+        # nivida "WLR_NO_HARDWARE_CURSORS,1"
+      ];
       exec = [
         ##"${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper} --mode fill"
         #"exec-once = nm-applet --indicator"
@@ -205,13 +336,21 @@
 
         #exec-once = pypr
         #exec-once=wlsunset -l -23 -L -46
-        "exec-once = waybar"
-        "exec-once = dunst"
+        
         #"exec-once = hyprpaper"
-        "exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        #"exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "exec-once = dbus-update-activation-environment --systemd --all"
+        "exec-once = systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "exec-once = swww init"
+        "exec-once = waybar"
+        "exec-once = swaync"
+        "exec-once = wallsetter"
+        #"exec-once = dunst"
         #"exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "exec-once = nm-applet --indicator"
         "exec-once = blueman-applet"
+        "exec-once = swayidle -w timeout 720 'swaylock -f' timeout 800 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f -c 000000'"
+
         #"exec-once = swayidle -w timeout 600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' timeout 605 'swaylock -f --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --grace 1 --fade-in 0.1' before-sleep 'swaylock -f --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --grace 1 --fade-in 0.1'"
         # exec-once = GOMAXPROCS=1 syncthing --no-browser
 
@@ -405,7 +544,87 @@
       ];
 
     };
-
+    home.packages = with pkgs; [
+      # Python setup
+      python3Full
+      imath
+      pystring
+  ];
+  home.packages = with pkgs.python3Packages; [
+      cffi
+      dbus-python
+      wheel
+      pyyaml
+      zipp
+      xlib
+      libvirt
+      pybind11
+      pyatspi
+      attrs
+      autocommand
+      bcrypt
+      pycairo
+      certifi
+      chardet
+      click
+      cryptography
+      cssselect
+      python-dateutil
+      distro
+      dnspython
+      evdev
+      ewmh
+      fastjsonschema
+      fido2
+      python-gnupg
+      pygobject3
+      idna
+      importlib-metadata
+      inflect
+      isodate
+      jeepney
+      keyring
+      lxml
+      markdown
+      markupsafe
+      more-itertools
+      numpy
+      ordered-set
+      packaging
+      pillow
+      pip
+      platformdirs
+      ply
+      prettytable
+      proton-client
+      protonvpn-nm-lib
+      psutil
+      pulsectl
+      pycparser
+      pycups
+      pycurl
+      pydantic
+      pyinotify
+      pyopenssl
+      pyparsing
+      pyqt5
+      pyqt5_sip
+      pyscard
+      pythondialog
+      pyxdg
+      rdflib
+      requests
+      secretstorage
+      setproctitle
+      setuptools
+      six
+      systemd
+      tomli
+      urllib3
+      wcwidth
+      websockets
+      python-zbar
+  ];
     systemd.user.services.waybar = {
       Unit.StartLimitBurst = 30;
     };

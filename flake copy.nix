@@ -1,7 +1,9 @@
 {
   description = "Melvin's Nix Config";
   inputs = {
+    # Nixpkgs
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
+
     # NixPkgs Unstable
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # Home manager
@@ -22,10 +24,54 @@
   };
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let
+    # Generate a user-friendly version number.
     version = builtins.substring 0 8 self.lastModifiedDate;
     system = "x86_64-linux";
-    username = "melvin";
-    
+    # System types to support.
+   
+    # Helper function to generate an attrset '{ x86_64-linux = f "x86_64-linux"; ... }'.
+    #forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
+
+    # Nixpkgs instantiated for supported system types.
+    #nixpkgsFor = forAllSystems (system: import nixpkgs { inherit system; });
+    #system = "x86_64-linux";
+    #pkgs = nixpkgs.legacyPackages.${system};
+    #nixpkgs-patched = (import nixpkgs { system = systemSettings.system; }).applyPatches {
+    #  name = "nixpkgs-patched";
+    #  src = nixpkgs;
+    #  patches = [
+    #              ./patches/ipython.patch
+    #            ];
+    #};
+    my_overlay = (final: prev: 
+      rec {
+        python = prev.python.override {
+          # Careful, we're using a different final and prev here!
+          packageOverrides = final: prev: {
+            ipython = prev.buildPythonPackage rec {
+              pname = "ipython";
+              version = "8.18.1";
+              src = prev.fetchPypi {
+                inherit pname version;
+                hash = "sha256-ym8Hm7M0V8ZuIz5FgOv8QSiFW0z2Nw3d1zhCqVY+iic=";
+                extension = "tar.bz2";
+              };
+            };
+          };
+        };
+        # nix-shell -p pythonPackages.my_stuff
+        pythonPackages = python.pkgs;
+        # nix-shell -p my_stuff
+        ipython = pythonPackages.buildPythonPackage rec {
+          pname = "ipython";
+          version = "8.18.1";
+          src = pythonPackages.fetchPypi {
+            inherit pname version;
+            hash = "sha256-ym8Hm7M0V8ZuIz5FgOv8QSiFW0z2Nw3d1zhCqVY+iic=";
+          };
+        };
+      }
+    );
 
     pkgs = import nixpkgs {
       inherit system;
@@ -45,78 +91,52 @@
     };
     nixosConfigurations = {
       ceres = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit username;
-          inherit inputs;
-          hostname = "ceres";
-          cpuType = "amd";
-          gpuType = "nvida";
-        }; 
         modules = [
-          ./hosts/hpelitebook/default.nix
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.${username} = import ./home/laptop-intel.nix;
-          }
+          ./hosts/ceres/default.nix
         ];
       };
-      
+      proxmoxvm = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./hosts/proxmoxvm/default.nix
+        ];
+      };
+
       hpelitebook = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit username;
-          inherit inputs;
-          hostname = "hpelitebook";
-          cpuType = "intel";
-          gpuType = "intel";
-        }; 
+        specialArgs = { inherit inputs; }; 
         modules = [
           ./hosts/hpelitebook/default.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.${username} = import ./home/laptop-intel.nix;
+            home-manager.users.melvin = import ./home/laptop-intel.nix;
           }
         ];
       };
 
       lggramlinux = nixpkgs.lib.nixosSystem {
-        specialArgs = { 
-          inherit username;
-          inherit inputs;
-          hostname = "hpelitebook";
-          cpuType = "intel";
-          gpuType = "intel";
-        }; 
+        specialArgs = { inherit inputs; }; 
         modules = [
           ./config/lggramlaptop/system.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.${username} = import ./config/home/intel-laptop.nix;
+            home-manager.users.melvin = import ./config/home/intel-laptop.nix;
           }
         
         ];
       };
   
       msi-gs70-stealth = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit username;
-          inherit inputs;
-          hostname = "hpelitebook";
-          cpuType = "intel";
-          gpuType = "intel-nvidia";
-        }; 
+        specialArgs = { inherit inputs; }; 
         modules = [
           ./hosts/msi-gs70-stealth/default.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.${username} = import ./home/homelaptop.nix;
+            home-manager.users.melvin = import ./home/homelaptop.nix;
           }
         ];
       };
