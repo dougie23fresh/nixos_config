@@ -50,7 +50,7 @@ in
       xdg-utils
       xdg-desktop-portal
       xdg-desktop-portal-gtk
-      xdg-desktop-portal-hyprland
+      #xdg-desktop-portal-hyprland
       wlsunset # Day/night gamma adjustments for Wayland
       pavucontrol # PulseAudio Volume Control
       pamixer # Pulseaudio command line mixer
@@ -111,7 +111,7 @@ in
         extraPortals = with pkgs; [
           xdg-desktop-portal-hyprland
           xdg-desktop-portal-gtk
-          libsForQt5.xdg-desktop-portal-kde
+          #libsForQt5.xdg-desktop-portal-kde
         ];
       };
     };
