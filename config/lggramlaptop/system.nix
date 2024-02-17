@@ -7,7 +7,7 @@
   ];
   nixpkgs.overlays = [(final: prev: 
     rec {
-      python39 = prev.python39.override {
+      python = prev.python.override {
         # Careful, we're using a different final and prev here!
         packageOverrides = final: prev: {
           ipython = prev.buildPythonPackage rec {
@@ -22,12 +22,12 @@
         };
       };
       # nix-shell -p pythonPackages.my_stuff
-      python39Packages = python39.pkgs;
+      pythonPackages = python.pkgs;
       # nix-shell -p my_stuff
-      ipython = python39Packages.buildPythonPackage rec {
+      ipython = pythonPackages.buildPythonPackage rec {
         pname = "ipython";
         version = "8.18.1";
-        src = python39Packages.fetchPypi {
+        src = pythonPackages.fetchPypi {
           inherit pname version;
           hash = "sha256-ym8Hm7M0V8ZuIz5FgOv8QSiFW0z2Nw3d1zhCqVY+iic=";
           extension = "tar.bz2";
