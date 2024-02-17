@@ -7,7 +7,7 @@
     isNormalUser = true;
     description = "${username}";
     extraGroups = [ "networkmanager" "wheel" "scanner" "lp" ];
-    shell = pkg.zsh;
+    shell = pkgs.zsh;
     packages = with pkgs; [
       firefox
     ];
