@@ -1,11 +1,11 @@
-{  lib, config, pkgs, ... }:
+{  lib, config, pkgs, username, ... }:
 {
   ########
   # users
   ########
-  users.users.${cfg.userName} = {
+  users.users.${username} = {
     isNormalUser = true;
-    description = "${cfg.userDescription}";
+    description = "${username}";
     extraGroups = [ "networkmanager" "wheel" "scanner" "lp" ];
     shell = pkg.zsh;
     packages = with pkgs; [
