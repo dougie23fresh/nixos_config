@@ -1,4 +1,6 @@
-nixpkgs.config.packageOverrides =
+{  lib, config, pkgs, ... }:
+{
+  nixpkgs.config.packageOverrides =
     pkgs: {
       vaapiIntel = pkgs.vaapiIntel.override {
       enableHybridCodec = true;
@@ -45,3 +47,4 @@ nixpkgs.config.packageOverrides =
       nvidiaBusId = "${nvidia-bus-id}";
     };
   };
+}

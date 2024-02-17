@@ -53,12 +53,14 @@
           gpuType = "nvida";
         }; 
         modules = [
-          ./hosts/hpelitebook/default.nix
+          ./modules/system/default.nix
+          ./modules/system/amd-cpu.nix
+          ./modules/system/nvidia-gpu.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.${username} = import ./home/laptop-intel.nix;
+            home-manager.users.${username} = import ./modules/home/default.nix;
           }
         ];
       };
