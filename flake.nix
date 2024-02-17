@@ -53,9 +53,7 @@
           gpuType = "nvida";
         }; 
         modules = [
-          ./modules/system/default.nix
-          ./modules/system/amd-cpu.nix
-          ./modules/system/nvidia-gpu.nix
+          ./config/ceres/system.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
