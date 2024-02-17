@@ -40,6 +40,42 @@
     nixpkgsFor = forAllSystems (system: import nixpkgs { inherit system; });
     #system = "x86_64-linux";
     #pkgs = nixpkgs.legacyPackages.${system};
+    #nixpkgs-patched = (import nixpkgs { system = systemSettings.system; }).applyPatches {
+    #  name = "nixpkgs-patched";
+    #  src = nixpkgs;
+    #  patches = [
+    #              ./patches/ipython.patch
+    #            ];
+    #};
+    nixpkgs.overlays = [ (final: prev: 
+      rec {
+        python = prev.python.override {
+        # Careful, we're using a different final and prev here!
+        packageOverrides = final: prev: {
+          ipython = prev.buildPythonPackage rec {
+            pname = "ipython";
+            version = "8.18.1";
+            src = prev.fetchPypi {
+              inherit pname version;
+              hash = "sha256-ym8Hm7M0V8ZuIz5FgOv8QSiFW0z2Nw3d1zhCqVY+iic=";
+              extension = "tar.bz2";
+            };
+          };
+        };
+      };
+      # nix-shell -p pythonPackages.my_stuff
+      pythonPackages = python.pkgs;
+      # nix-shell -p my_stuff
+      ipython = pythonPackages.buildPythonPackage rec {
+        pname = "ipython";
+        version = "8.18.1";
+        src = pythonPackages.fetchPypi {
+          inherit pname version;
+          hash = "sha256-ym8Hm7M0V8ZuIz5FgOv8QSiFW0z2Nw3d1zhCqVY+iic=";
+        };
+      };
+    };
+  )];
   in
   {
 
@@ -47,6 +83,13 @@
     packages = forAllSystems (system:
       let
         pkgs = nixpkgsFor.${system};
+        pkgs = import nixpkgs { nixpkgsFor.${system}; overlays = [ python pythonPackages ipython ]; }
+        #pkgs4444 = import nixpkgs-patched {
+        #  system = nixpkgsFor.${system};
+        #  config = { allowUnfree = true;
+        #            allowUnfreePredicate = (_: true); };
+          #overlays = [ rust-overlay.overlays.default ];
+        #};
       in
       {
 
