@@ -63,24 +63,7 @@
           extension = "tar.bz2";
         };
       };
-      ipython3 = python3Packages.buildPythonPackage rec {
-        pname = "ipython";
-        version = "8.18.1";
-        src = python3Packages.fetchPypi {
-          inherit pname version;
-          hash = "sha256-ym8Hm7M0V8ZuIz5FgOv8QSiFW0z2Nw3d1zhCqVY+iic=";
-          extension = "tar.bz2";
-        };
-      };
-      ipython39 = python39Packages.buildPythonPackage rec {
-        pname = "ipython";
-        version = "8.18.1";
-        src = python39Packages.fetchPypi {
-          inherit pname version;
-          hash = "sha256-ym8Hm7M0V8ZuIz5FgOv8QSiFW0z2Nw3d1zhCqVY+iic=";
-          extension = "tar.bz2";
-        };
-      };
+
     }
   )];
   ######
