@@ -47,7 +47,8 @@
 
     pkgs = import nixpkgs {
       inherit system;
-      config = { 
+      config = {
+        allowBroken = true;
         allowUnfree = true;
         allowUnfreePredicate = (_: true);
       };
