@@ -22,23 +22,23 @@
   ###############
   
   
-   home.packages = with pkgs; [
-    # Games
-    pegasus-frontend
-    myRetroarch
-    libfaketime
-    airshipper
-    qjoypad
-    superTux
-    superTuxKart
-   ];
-   # Collection of useful CLI apps
-   home.packages = with pkgs; [
-    disfetch lolcat cowsay onefetch
-    gnugrep gnused
-    bat eza bottom fd bc
-    direnv nix-direnv
-  ];
+  #home.packages = with pkgs; [
+  #  # Games
+  #  pegasus-frontend
+  #  myRetroarch
+  #  libfaketime
+  #  airshipper
+  #  qjoypad
+  #  superTux
+  #  superTuxKart
+  # ];
+  # # Collection of useful CLI apps
+  # home.packages = with pkgs; [
+  #  disfetch lolcat cowsay onefetch
+  #  gnugrep gnused
+  #  bat eza bottom fd bc
+  #  direnv nix-direnv
+  #];
   
   home.packages = with pkgs; [
     # Command Line
