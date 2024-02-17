@@ -75,89 +75,73 @@
           };
         };
     }
-  )];
-  in
-  {
+    )];
 
-
-    let
-      # pkgs = nixpkgsFor.${system};
-      pkgs = import nixpkgs {
+    pkgs = import nixpkgs {
       system = "x86_64-linux";
       config = { 
         allowUnfree = true;
         allowUnfreePredicate = (_: true);
       };
-      #overlays = [ rust-overlay.overlays.default ];
     };
-      #pkgs = import nixpkgs { nixpkgsFor.${system}; overlays = [ python pythonPackages ipython ]; }
-      #pkgs4444 = import nixpkgs-patched {
-      #  system = nixpkgsFor.${system};
-      #  config = { allowUnfree = true;
-      #            allowUnfreePredicate = (_: true); };
-        #overlays = [ rust-overlay.overlays.default ];
-      #};
-    in
-    {
-
-      nixosModules.dougieHost = {
-        imports = [
-          ./modules/nixos
+  in
+  {
+    nixosModules.dougieHost = {
+      imports = [
+        ./modules/nixos
+      ];
+    };
+    nixosConfigurations = {
+      ceres = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./hosts/ceres/default.nix
         ];
       };
-      nixosConfigurations = {
-        ceres = nixpkgs.lib.nixosSystem {
-          modules = [
-            ./hosts/ceres/default.nix
-          ];
-        };
-        proxmoxvm = nixpkgs.lib.nixosSystem {
-          modules = [
-            ./hosts/proxmoxvm/default.nix
-          ];
-        };
-
-        hpelitebook = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; }; 
-          modules = [
-            ./hosts/hpelitebook/default.nix
-            home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs; };
-              home-manager.users.melvin = import ./home/laptop-intel.nix;
-            }
-          ];
-        };
-
-        lggramlinux = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; }; 
-          modules = [
-            ./config/lggramlaptop/system.nix
-            home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs; };
-              home-manager.users.melvin = import ./config/home/intel-laptop.nix;
-            }
-          ];
-        };
-    
-        msi-gs70-stealth = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; }; 
-          modules = [
-            ./hosts/msi-gs70-stealth/default.nix
-            home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs; };
-              home-manager.users.melvin = import ./home/homelaptop.nix;
-            }
-          ];
-        };
-
+      proxmoxvm = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./hosts/proxmoxvm/default.nix
+        ];
       };
-      
-    }
+
+      hpelitebook = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; }; 
+        modules = [
+          ./hosts/hpelitebook/default.nix
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.melvin = import ./home/laptop-intel.nix;
+          }
+        ];
+      };
+
+      lggramlinux = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; }; 
+        modules = [
+          ./config/lggramlaptop/system.nix
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.melvin = import ./config/home/intel-laptop.nix;
+          }
+        ];
+      };
+  
+      msi-gs70-stealth = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; }; 
+        modules = [
+          ./hosts/msi-gs70-stealth/default.nix
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.melvin = import ./home/homelaptop.nix;
+          }
+        ];
+      };
+
+    };
   };
 }
