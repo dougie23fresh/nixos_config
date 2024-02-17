@@ -83,7 +83,7 @@
     packages = forAllSystems (system:
       let
         pkgs = nixpkgsFor.${system};
-        pkgs = import nixpkgs { nixpkgsFor.${system}; overlays = [ python pythonPackages ipython ]; }
+        #pkgs = import nixpkgs { nixpkgsFor.${system}; overlays = [ python pythonPackages ipython ]; }
         #pkgs4444 = import nixpkgs-patched {
         #  system = nixpkgsFor.${system};
         #  config = { allowUnfree = true;
