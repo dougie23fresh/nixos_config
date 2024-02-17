@@ -1,12 +1,12 @@
-{ inputs, outputs, ... }:
+{ inputs, outputs, username, ... }:
 
 {
   ###############
   # User
   ###############
   home = {
-    username = "${cfg.userName}";
-    homeDirectory = "/home/${cfg.userName}";
+    username = "${username}";
+    homeDirectory = "/home/${username}";
     stateVersion = "23.11";
     # packages = with pkgs; [ mpv ];
   };
