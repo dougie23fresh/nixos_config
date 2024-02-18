@@ -106,7 +106,7 @@
         specialArgs = {
           inherit username;
           inherit inputs;
-          hostname = "hpelitebook";
+          hostname = "msi-gs70-stealth";
           cpuType = "intel";
           gpuType = "intel-nvidia";
         }; 
@@ -116,7 +116,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.${username} = import ./home/homelaptop.nix;
+            home-manager.users.${username} = import ./modules/home/default.nix;
           }
         ];
       };
