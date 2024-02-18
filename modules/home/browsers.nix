@@ -23,7 +23,7 @@
   
    home.packages = with pkgs; [ 
     librewolf-wayland
-    vivaldi
+    #vivaldi
     brave
     (vivaldi.override{
       proprietaryCodecs = true;
