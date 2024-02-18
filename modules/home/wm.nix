@@ -5,7 +5,6 @@
     ./wm_hyperland.nix
     ./wm_hyperland_config.nix
     ./wm_hyperland_waybar.nix
-    ./wm.nix
   ];
   home.sessionVariables.GTK_THEME = "Catppuccin-Macchiato-Compact-Mauve-dark";
   home.pointerCursor = {
