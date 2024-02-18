@@ -104,7 +104,7 @@
   # tumbler
   services.tumbler.enable = true;
   # udev
-  services.udev.enable = true;
+  #services.udev.enable = true;
   # udisk2
   services.udisks2.enable = true;
   services.devmon.enable = true;
