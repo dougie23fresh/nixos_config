@@ -38,11 +38,11 @@
   in {
 
     
-    nixosModules.dougieHost = {
-      imports = [
-        ./modules/nixos
-      ];
-    };
+    #nixosModules.dougieHost = {
+    #  imports = [
+    #    ./modules/nixos
+    #  ];
+    #};
     nixosConfigurations = {
       ceres = nixpkgs.lib.nixosSystem {
         specialArgs = {
