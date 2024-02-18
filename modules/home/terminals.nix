@@ -3,7 +3,7 @@ let
 
   # My shell aliases
   myAliases = {
-    ls = "eza --icons -l -T -L=1";
+    #ls = "eza --icons -l -T -L=1";
     cat = "bat";
     htop = "btm";
     fd = "fd -Lu";
