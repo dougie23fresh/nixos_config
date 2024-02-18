@@ -76,8 +76,8 @@
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.${username} = import ./home/laptop-intel.nix;
+            home-manager.extraSpecialArgs = { inherit inputs; inherit username;};
+            home-manager.users.${username} = import ./modules/home/default.nix;
           }
         ];
       };
@@ -86,7 +86,7 @@
         specialArgs = { 
           inherit username;
           inherit inputs;
-          hostname = "hpelitebook";
+          hostname = "lggramlinux";
           cpuType = "intel";
           gpuType = "intel";
         }; 
@@ -95,8 +95,8 @@
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.${username} = import ./config/home/intel-laptop.nix;
+            home-manager.extraSpecialArgs = { inherit inputs; inherit username;};
+            home-manager.users.${username} = import ./modules/home/default.nix;
           }
         
         ];
