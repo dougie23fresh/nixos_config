@@ -111,7 +111,7 @@
           gpuType = "intel-nvidia";
         }; 
         modules = [
-          ./hosts/msi-gs70-stealth/default.nix
+          ./config/msi-gs70-stealth/system.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
