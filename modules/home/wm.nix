@@ -14,7 +14,7 @@
     name = "Bibata-Modern-Ice";
     size = 24;
   };
-  
+
   home.packages = [ pkgs.git ];
   gtk = {
     enable = true;
@@ -34,8 +34,12 @@
       };
     };
     cursorTheme = {
-      name = "Catppuccin-Macchiato-Mauve-Cursors";
-      package = pkgs.catppuccin-cursors.macchiatoMauve;
+      #name = "Catppuccin-Macchiato-Mauve-Cursors";
+      #package = pkgs.catppuccin-cursors.macchiatoMauve;
+      package = pkgs.quintom-cursor-theme;
+      name = "Quintom_Snow";
+      #name = if (config.stylix.polarity == "light") then "Quintom_Ink" else "Quintom_Snow";
+      size = 36;
     };
     iconTheme = {
       name = "Papirus-Dark";

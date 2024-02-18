@@ -21,14 +21,16 @@
   programs.hyprland.enable = true;
   programs.hyprland.xwayland.enable = true;
   programs.hyprland.package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  programs.hyprland.portalPackage = pkgs.xdg-desktop-portal-hyprland;
   # xdg
   xdg.icons.enable = true;
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = with pkgs; [
-    #xdg-desktop-portal-hyprland
-    xdg-desktop-portal-gtk
-    libsForQt5.xdg-desktop-portal-kde
-  ];
+
+  #xdg.portal.extraPortals = with pkgs; [
+  ##  #xdg-desktop-portal-hyprland
+  #  #xdg-desktop-portal-gtk
+  #  #libsForQt5.xdg-desktop-portal-kde
+  #];
   # xfce
   services.xserver.desktopManager.xfce.enable = true;
   # plasma
@@ -40,5 +42,5 @@
   services.xserver.xkb.variant = "";
   services.xserver.xkb.options = "caps:escape";
   services.xserver.excludePackages = [ pkgs.xterm ];
-  services.xserver.libinput.enable = true;
+  #services.xserver.libinput.enable = true;
 }

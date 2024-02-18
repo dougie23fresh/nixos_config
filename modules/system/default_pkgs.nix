@@ -101,8 +101,9 @@
     wezterm # GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
     kitty # A modern, hackable, featureful, OpenGL based terminal emulator
     alacritty # A cross-platform, GPU-accelerated terminal emulator
-
+    gamemode
     steam # A digital distribution platform
+    steam-run # A digital distribution platform
     blueman # GTK-based Bluetooth Manager
     piper # GTK frontend for ratbagd mouse config daemon
     gsmartcontrol # Hard disk drive health inspection tool

@@ -3,6 +3,10 @@
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.xwayland = { enable = true; };
   wayland.windowManager.hyprland.systemd.enable = true;
+
+  services.udiskie.enable = true;
+  services.udiskie.tray = "always";
+  
   services.playerctld.enable = true;
   #home.file.".config/hypr/hyprpaper.conf".source = ./hyprpaper.conf;
   #home.file.".config/hypr/palm-tree-night.jpg".source = ../../../../wallpaper/palm-tree-night.jpg;

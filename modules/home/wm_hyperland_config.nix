@@ -33,6 +33,8 @@
         #"exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "exec-once = dbus-update-activation-environment --systemd --all"
         "exec-once = systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "exec-once = hyprctl setcursor '' + config.gtk.cursorTheme.name + " " + builtins.toString config.gtk.cursorTheme.size + ''"
+
         "exec-once = swww init"
         "exec-once = waybar"
         "exec-once = swaync"
