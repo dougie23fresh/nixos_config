@@ -31,6 +31,9 @@
   ];
   # xfce
   services.xserver.desktopManager.xfce.enable = true;
+  # plasma
+  services.xserver.desktopManager.plasma5.enable = true;
+
   # xserver
   services.xserver.enable = true;  
   services.xserver.xkb.layout = "us";
