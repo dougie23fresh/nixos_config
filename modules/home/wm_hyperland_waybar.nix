@@ -1,4 +1,4 @@
-{ inputs, outputs, pkgs, ... }:
+{ inputs, outputs, pkgs, lib, ... }:
 with lib;
 let 
   cfg = config.dougieHome.wm.waybar;
