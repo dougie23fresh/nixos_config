@@ -12,6 +12,9 @@
     hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
     hyprland-plugins.inputs.hyprland.follows = "hyprland";
     nix-gaming.url = "github:fufexan/nix-gaming";
+    nix-software-center.url = "github:snowfallorg/nix-software-center";
+    nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
+
     # Community scripts and utilities for Hypr projects
     # hyprwm-contrib.url = "github:hyprwm/contrib";
     # hyprwm-contrib.inputs.nixpkgs.follows = "nixpkgs";

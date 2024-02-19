@@ -1,4 +1,4 @@
-{  lib, config, pkgs, ... }:
+{  lib, config, pkgs, inputs, ... }:
 {
   ########
   # pkg
@@ -108,6 +108,10 @@
     piper # GTK frontend for ratbagd mouse config daemon
     gsmartcontrol # Hard disk drive health inspection tool
     pavucontrol # PulseAudio Volume Control
+    inputs.nix-software-center.packages.${pkgs.system}.nix-software-center
+    inputs.nixos-conf-editor.packages.${pkgs.system}.nixos-conf-editor
+
+
     # libsForQt5.qt5.qtgraphicaleffects
   ];
     #] ++ lib.optionals (desktop != null) [
