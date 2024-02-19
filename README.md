@@ -11,6 +11,16 @@ https://gitlab.com/stephan-raabe/dotfiles/-/tree/main/hypr/conf?ref_type=heads
 https://wiki.archlinux.org/title/intel_graphics#Hardware_accelerated_H.264_decoding_on_GMA_4500
 
 https://github.com/vimjoyer/flake-starter-config/tree/main
+-------
+#############################
+https://github.com/alexandergall/nixos-pxe-installer
+https://github.com/phip1611/nixos-configs/tree/main
+https://git.cyplo.dev/cyplo/dotfiles
+https://github.com/yunfachi/nix-config
+https://github.com/Funny-Linux-People/Kalyx
+https://github.com/ivan770/modulo/
+https://github.com/aksiksi/compose2nix/blob/main/nixos-test/podman-compose.nix
+https://github.com/nikitawootten/infra?tab=readme-ov-file
 ----
 https://github.com/tolgaerok/nixos-kde/tree/main
 https://git.polynom.me/PapaTutuWawa/nixos-config/src/branch/master/modules/programs
