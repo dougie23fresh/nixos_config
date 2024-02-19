@@ -14,6 +14,7 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-software-center.url = "github:snowfallorg/nix-software-center";
     nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
+    stylix.url = "github:danth/stylix";
 
     # Community scripts and utilities for Hypr projects
     # hyprwm-contrib.url = "github:hyprwm/contrib";
@@ -23,7 +24,7 @@
     # Generate System Images
     # nixos-generators.url = "github:nix-community/nixos-generators";
   };
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
   let
     version = builtins.substring 0 8 self.lastModifiedDate;
     system = "x86_64-linux";
@@ -81,6 +82,9 @@
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit inputs; inherit username;};
             home-manager.users.${username} = import ./modules/home/default.nix;
+            home-manager.modules = [
+              stylix.homeManagerModules.stylix
+            ]
           }
         ];
       };
