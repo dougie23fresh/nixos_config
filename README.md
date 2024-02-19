@@ -21,6 +21,7 @@ https://github.com/Funny-Linux-People/Kalyx
 https://github.com/ivan770/modulo/
 https://github.com/aksiksi/compose2nix/blob/main/nixos-test/podman-compose.nix
 https://github.com/nikitawootten/infra?tab=readme-ov-file
+https://git.cyplo.dev/cyplo/dotfiles/src/branch/main/nixos
 ----
 https://github.com/tolgaerok/nixos-kde/tree/main
 https://git.polynom.me/PapaTutuWawa/nixos-config/src/branch/master/modules/programs
