@@ -5,6 +5,7 @@
     ./hardware.nix
     #../../modules/nixos
     ../../modules/system/default.nix
+    ../../modules/system/laptop.nix
     ../../modules/system/intel-cpu.nix
     ../../modules/system/intel-gpu.nix
   ];

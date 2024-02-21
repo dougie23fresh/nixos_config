@@ -10,6 +10,7 @@
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
   };
   services.power-profiles-daemon.enable = false; # Disable GNOMEs power management
+  #powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   powerManagement.powertop.enable = true; # Enable powertop
   services.thermald.enable = true; # Enable thermald (only necessary if on Intel CPUs)
 }
