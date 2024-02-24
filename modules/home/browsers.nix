@@ -26,9 +26,9 @@
     profiles = {
       default = {
         id = 0;
-        extensions = [
-          addons.bitwarden
-        ];
+        #extensions = [
+        #  addons.bitwarden
+        #];
         settings = {
           "app.normandy.first_run" = false;
           "app.shield.optoutstudies.enabled" = false;
