@@ -12,6 +12,10 @@
   #home.file.".config/hypr/palm-tree-night.jpg".source = ../../../../wallpaper/palm-tree-night.jpg;
   #home.file.".config/fuzzel/fuzzel.ini".source = ./fuzzel.ini;
   home.packages = with pkgs; [
+    seatd
+    jaq
+    xorg.xprop
+    xwaylandvideobridge
     playerctl # Command-line utility and library for controlling media players that implement MPRIS
     killall
     polkit_gnome # A dbus session bus service that is used to bring up authentication dialogs
@@ -20,6 +24,7 @@
     wlr-randr # An xrandr clone for wlroots compositors
     wtype # xdotool type for wayland
     wl-clipboard
+    wl-screenrec
     cliphist
     wlogout
     hyprland-protocols
@@ -81,5 +86,6 @@
     ranger
     yewtube
     dosfstools
+    libnotify
   ];
 }

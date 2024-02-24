@@ -1,7 +1,11 @@
-{ inputs, outputs, ... }:
+{ config, inputs, outputs, ... }:
+let
+  pointer = config.home.pointerCursor;
+  homeDir = config.home.homeDirectory;
+in 
 {
   wayland.windowManager.hyprland.settings = {
-
+      "$MOD" = "SUPER";
       env = [
         # NIXOS Environment Variable
         "NIXOS_OZONE_WL, 1"  # Wayland support in Chromium and Electron
@@ -45,7 +49,7 @@
         #"exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "exec-once = dbus-update-activation-environment --systemd --all"
         "exec-once = systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "exec-once = hyprctl setcursor '' + config.gtk.cursorTheme.name + " " + builtins.toString config.gtk.cursorTheme.size + ''"
+        #"exec-once = hyprctl setcursor '' + config.gtk.cursorTheme.name + " " + builtins.toString config.gtk.cursorTheme.size + ''"
 
         "exec-once = swww init"
         "exec-once = waybar"
@@ -55,13 +59,21 @@
         #"exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "exec-once = nm-applet --indicator"
         "exec-once = blueman-applet"
-        "exec-once = swayidle -w timeout 720 'swaylock -f' timeout 800 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f -c 000000'"
+        #"exec-once = swayidle -w timeout 720 'swaylock -f' timeout 800 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f -c 000000'"
 
         #"exec-once = swayidle -w timeout 600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' timeout 605 'swaylock -f --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --grace 1 --fade-in 0.1' before-sleep 'swaylock -f --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --grace 1 --fade-in 0.1'"
         # exec-once = GOMAXPROCS=1 syncthing --no-browser
 
         #exec-once = swayidle -w timeout 90 '${pkgs.gtklock}/bin/gtklock -d' timeout 210 'suspend-unless-render' resume '${pkgs.hyprland}/bin/hyprctl dispatch dpms on' before-sleep "${pkgs.gtklock}/bin/gtklock -d"
         #exec-once = obs-notification-mute-daemon
+        "exec-once = hyprctl setcursor ${pointer.name} ${toString pointer.size}"
+        #"exec-once = hyprlock"
+        #"exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        #"exec-once = wlsunset -t 5200 -S 9:00 -s 19:30"
+        "exec-once = wl-paste --type text --watch cliphist store"
+        "exec-once = wl-paste --type image --watch cliphist store"
+        "exec-once = xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 1"
+        "exec-once = hyprctl dispatcher focusmonitor 1"
       ];
       general = {
         gaps_in = 7;
