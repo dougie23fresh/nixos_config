@@ -1,4 +1,4 @@
-{ inputs, outputs, pkgs, config, ... }:
+{ inputs, outputs, pkgs, config, lib, ... }:
 let
   requiredDeps = with pkgs; [
     config.wayland.windowManager.hyprland.package
