@@ -84,7 +84,7 @@
             home-manager.users.${username} = import ./modules/home/default.nix;
             home-manager.modules = [
               stylix.homeManagerModules.stylix
-            ]
+            ];
           }
         ];
       };
