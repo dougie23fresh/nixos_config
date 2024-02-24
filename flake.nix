@@ -15,6 +15,24 @@
     nix-software-center.url = "github:snowfallorg/nix-software-center";
     nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
     stylix.url = "github:danth/stylix";
+    ags.url = "github:Aylur/ags";
+    ags.inputs.nixpkgs.follows = "nixpkgs";
+    #anyrun.url = "github:Kirottu/anyrun";
+    #anyrun.inputs.nixpkgs.follows = "nixpkgs";
+    hypridle.url = "github:hyprwm/hypridle";
+    hypridle.inputs.nixpkgs.follows = "nixpkgs";
+
+
+    hyprland-contrib.url = "github:hyprwm/contrib";
+    hyprland-contrib.inputs.nixpkgs.follows = "nixpkgs";
+
+    hyprlock.url = "github:hyprwm/hyprlock";
+    hyprlock.inputs.nixpkgs.follows = "nixpkgs";
+
+    hyprpaper.url = "github:hyprwm/hyprpaper";
+    #firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    #firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
+
 
     # Community scripts and utilities for Hypr projects
     # hyprwm-contrib.url = "github:hyprwm/contrib";

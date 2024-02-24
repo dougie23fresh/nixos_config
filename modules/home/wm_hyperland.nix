@@ -1,7 +1,7 @@
 { inputs, outputs, pkgs, ... }:
 {
   wayland.windowManager.hyprland.enable = true;
-  wayland.windowManager.hyprland.xwayland = { enable = true; };
+  wayland.windowManager.hyprland.xwayland.enable = true;
   wayland.windowManager.hyprland.systemd.enable = true;
 
   services.udiskie.enable = true;
