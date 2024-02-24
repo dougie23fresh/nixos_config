@@ -41,9 +41,7 @@
   services.journald.extraConfig = "SystemMaxUse=250M\nSystemMaxFiles=10";
   services.journald.rateLimitBurst = 800;
   services.journald.rateLimitInterval = "5s";
-  # logind - laptop lid
-  services.logind.lidSwitch = "suspend";
-  services.logind.lidSwitchExternalPower = "lock";
+  
   # openrgb
   services.hardware.openrgb.enable = true;
   services.hardware.openrgb.motherboard = "amd";

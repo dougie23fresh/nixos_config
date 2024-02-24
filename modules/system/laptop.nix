@@ -1,5 +1,8 @@
 {  lib, config, pkgs, ... }:
 {
+  # logind - laptop lid
+  services.logind.lidSwitch = "suspend";
+  services.logind.lidSwitchExternalPower = "lock";
   # Battery
   services.system76-scheduler.settings.cfsProfiles.enable = true; # Better scheduling for CPU cycles - thanks System76
   services.tlp.enable = true; # Enable TLP (better than gnomes internal power manager)
