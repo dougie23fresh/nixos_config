@@ -51,10 +51,10 @@ in
         "exec-once = systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         #"exec-once = hyprctl setcursor '' + config.gtk.cursorTheme.name + " " + builtins.toString config.gtk.cursorTheme.size + ''"
 
-        "exec-once = swww init"
+        #"exec-once = swww init"
         "exec-once = waybar"
-        "exec-once = swaync"
-        "exec-once = wallsetter"
+        #"exec-once = swaync"
+        #"exec-once = wallsetter"
         #"exec-once = dunst"
         #"exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "exec-once = nm-applet --indicator"
@@ -74,6 +74,7 @@ in
         "exec-once = wl-paste --type image --watch cliphist store"
         "exec-once = xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 1"
         "exec-once = hyprctl dispatcher focusmonitor 1"
+        "exec-once = dunst"
       ];
       general = {
         gaps_in = 7;
