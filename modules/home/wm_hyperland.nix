@@ -7,7 +7,7 @@
 
   services.udiskie.enable = true;
   services.udiskie.tray = "always";
-
+  services.dunst.enable = true;
   
   services.playerctld.enable = true;
   #home.file.".config/hypr/hyprpaper.conf".source = ./hyprpaper.conf;
