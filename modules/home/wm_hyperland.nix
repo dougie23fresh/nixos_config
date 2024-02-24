@@ -1,4 +1,29 @@
 { inputs, outputs, pkgs, ... }:
+let
+  requiredDeps = with pkgs; [
+    config.wayland.windowManager.hyprland.package
+    bash
+    coreutils
+    dart-sass
+    gawk
+    imagemagick
+    procps
+    ripgrep
+    util-linux
+
+    sassc
+    inotify-tools
+    swww
+  ];
+
+  guiDeps = with pkgs; [
+    wlogout
+  ];
+
+  dependencies = requiredDeps ++ guiDeps;
+
+  cfg = config.programs.ags;
+in
 {
   imports = [
     inputs.ags.homeManagerModules.default
@@ -10,6 +35,20 @@
   services.udiskie.enable = true;
   services.udiskie.tray = "always";
   programs.ags.enable = true;
+  systemd.user.services.ags = {
+    Unit = {
+      Description = "Aylur's Gtk Shell";
+      PartOf = [
+        "graphical-session.target"
+      ];
+    };
+    Service = {
+      Environment = "PATH=/run/wrappers/bin:${lib.makeBinPath dependencies}";
+      ExecStart = "${cfg.package}/bin/ags";
+      Restart = "on-failure";
+    };
+    Install.WantedBy = ["graphical-session.target"];
+  };
   
   services.playerctld.enable = true;
   #home.file.".config/hypr/hyprpaper.conf".source = ./hyprpaper.conf;
