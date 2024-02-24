@@ -31,5 +31,12 @@
     inconsolata-nerdfont
     ubuntu_font_family
     terminus_font
+    lexend
   ];
+  fonts.fontconfig.defaultFonts = {
+      serif = ["Lexend"];
+      sansSerif = ["Lexend"];
+      monospace = ["Fira Code Regular"];
+      # emoji = ["Noto Color Emoji"];
+    };
 }

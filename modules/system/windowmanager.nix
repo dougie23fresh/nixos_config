@@ -22,6 +22,7 @@
   programs.hyprland.xwayland.enable = true;
   programs.hyprland.package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   programs.hyprland.portalPackage = pkgs.xdg-desktop-portal-hyprland;
+  environment.variables.NIXOS_OZONE_WL = "1";
   # xdg
   xdg.icons.enable = true;
   xdg.portal.enable = true;

@@ -41,7 +41,9 @@
   services.journald.extraConfig = "SystemMaxUse=250M\nSystemMaxFiles=10";
   services.journald.rateLimitBurst = 800;
   services.journald.rateLimitInterval = "5s";
-  
+  # enable location service
+  location.provider = "geoclue2";
+  services.geoclue2.enable = true;
   # openrgb
   services.hardware.openrgb.enable = true;
   services.hardware.openrgb.motherboard = "amd";
