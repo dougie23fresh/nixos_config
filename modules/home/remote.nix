@@ -6,6 +6,6 @@
   ###############
   home.packages = with pkgs; [ 
     freerdp
-    citrix_workspace
+    #citrix_workspace
   ];
 }
