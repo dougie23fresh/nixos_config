@@ -22,6 +22,8 @@
   hardware.opengl.driSupport32Bit = true;
   # pulseaudio
   hardware.pulseaudio.enable = false;
+  # RedistributableFirmware
+  hardware.enableRedistributableFirmware = true;
   # sane
   hardware.sane = {
     enable = true;

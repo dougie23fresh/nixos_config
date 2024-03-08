@@ -96,6 +96,15 @@
     nvme-cli # NVM-Express user space tooling for Linux
     smartmontools # Tools for monitoring the health of hard drives
     tailscale # The node agent for Tailscale, a mesh VPN built on WireGuard
+    bat   # A cat(1) clone with syntax highlighting and Git integration
+    binutils # Tools for manipulating binaries (linker, assembler, etc.) (wrapper script)
+    dua # A tool to conveniently learn about the disk usage of directories
+    duf # Disk Usage/Free Utility
+    fd # A simple, fast and user-friendly alternative to find
+    ripgrep # A utility that combines the usability of The Silver Searcher with the raw speed of grep
+    traceroute # Tracks the route taken by packets over an IP network
+    tree # Command to produce a depth indented directory listing
+    yq-go # Portable command-line YAML processor
 
     # Terminal
     wezterm # GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
