@@ -4,12 +4,12 @@
     ./default_pkgs.nix
     ./default_programs.nix
     ./font.nix
-    ./hardware.nix
+    #./hardware.nix
     ./services.nix
     ./systems.nix
     ./users.nix
-    ./virtualisation.nix
-    ./windowmanager.nix
+    #./virtualisation.nix
+    #./windowmanager.nix
   ];
 
 

@@ -11,15 +11,12 @@
   services.blueman.enable = true;
   # brillo - Backlight and Keyboard LED control tool.
   hardware.brillo.enable = true;
-  # i2c - i2c devices support
+  # i2c - i2c devices Qsupport
   hardware.i2c.enable = true;
   # logitech
   hardware.logitech.wireless.enable = true;
   hardware.logitech.wireless.enableGraphical = true;
-  # opengl
-  hardware.opengl.enable = true;
-  hardware.opengl.driSupport = true;
-  hardware.opengl.driSupport32Bit = true;
+
   # pulseaudio
   hardware.pulseaudio.enable = false;
   # RedistributableFirmware
@@ -28,7 +25,7 @@
   hardware.sane = {
     enable = true;
     #extraBackends = with pkgs; [ hplipWithPlugin sane-airscan ];
-    extraBackends = with pkgs; [ 
+    extraBackends = with pkgs; [
       sane-airscan
       epkowa
     ];

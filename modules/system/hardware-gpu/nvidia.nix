@@ -1,21 +1,10 @@
 {  lib, config, pkgs, ... }:
 {
-  nixpkgs.config.packageOverrides =
-    pkgs: {
-      vaapiIntel = pkgs.vaapiIntel.override {
-      enableHybridCodec = true;
-    };
-  };
-  # OpenGL
-  hardware.opengl = {
-    extraPackages = with pkgs; [
-      intel-media-driver
-      vaapiIntel
-      vaapiVdpau
-      libvdpau-va-gl
-    ];
-  };
   services.xserver.videoDrivers = ["nvidia"];
+  # opengl
+  hardware.opengl.enable = true;
+  hardware.opengl.driSupport = true;
+  hardware.opengl.driSupport32Bit = true;
   hardware.nvidia = {
     # Modesetting is required.
     modesetting.enable = true;
@@ -33,18 +22,9 @@
     # Currently alpha-quality/buggy, so false is currently the recommended setting.
     open = false;
     # Enable the Nvidia settings menu,
-	# accessible via `nvidia-settings`.
+	  # accessible via `nvidia-settings`.
     nvidiaSettings = true;
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
-    prime = {
-      offload = {
-		enable = true;
-		enableOffloadCmd = true;
-	  };
-      # Make sure to use the correct Bus ID values for your system!
-      intelBusId = "${intel-bus-id}";
-      nvidiaBusId = "${nvidia-bus-id}";
-    };
   };
 }
