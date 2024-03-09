@@ -7,7 +7,7 @@
       imath
       pystring
   ];
-  programs.zathura.enable = true;
+  
   home.packages = with pkgs.python3Packages; [
       cffi
       dbus-python
