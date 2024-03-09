@@ -8,5 +8,7 @@
   environment.systemPackages = with pkgs; [
     # libratbag
     piper
+    logitech-udev-rules # Linux devices manager for the Logitech Unifying Receiver
+    libratbag # Configuration library for gaming mice
   ];
 }

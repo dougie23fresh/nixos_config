@@ -15,4 +15,8 @@
   ];
   # ipp-usb
   services.ipp-usb.enable = true;
+  environment.systemPackages = with pkgs; [
+    cups-filters # Backends, filters, and other software that was once part of the core CUPS distribution
+
+  ];
 }

@@ -1,7 +1,9 @@
 {  lib, config, pkgs, ... }:
 {
-  ########
-  # virtualisation
-  ########
-  # add Docker
+  virtualisation = {
+    docker = {
+      enable = true;
+      storageDriver = "btrfs";
+    };
+  };
 }
