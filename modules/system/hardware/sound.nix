@@ -1,8 +1,9 @@
 {  lib, config, pkgs, ... }:
 {
   # pulseaudio
+  sound.enable = true;
   hardware.pulseaudio.enable = false;
-
+  security.rtkit.enable = true;
   # pipewire
   services.pipewire = {
     enable = true;
@@ -13,6 +14,7 @@
     wireplumber.enable = true;
   };
   environment.systemPackages = with pkgs; [
-    pavucontrol
+    pamixer       # pulseaudio sound mixer
+    pavucontrol  # pulseaudio volume control
   ];
 }
