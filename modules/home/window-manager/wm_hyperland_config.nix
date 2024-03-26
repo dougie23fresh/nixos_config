@@ -2,7 +2,9 @@
 let
   pointer = config.home.pointerCursor;
   homeDir = config.home.homeDirectory;
-in 
+  mod = "SUPER";
+  modshift = "${mod}SHIFT";
+in
 {
   wayland.windowManager.hyprland.settings = {
       "$MOD" = "SUPER";
@@ -44,7 +46,7 @@ in
 
         #exec-once = pypr
         #exec-once=wlsunset -l -23 -L -46
-        
+
         #"exec-once = hyprpaper"
         #"exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "exec-once = dbus-update-activation-environment --systemd --all"
@@ -90,7 +92,7 @@ in
         ",preferred,auto,auto"
         "eDP-1,1920x1080@60,0x0,1"
       ];
-      
+
       input = {
         kb_layout = "us";
         numlock_by_default = true;
@@ -153,14 +155,16 @@ in
         ];
       };
 
-      
+
       bind = [
         "ALT,TAB,cyclenext"
         "ALTSHIFT,TAB,cyclenext,prev"
         # Program bindings
         #"SUPER,SHIFT, R, exec, hyprctl reload"
-        "SUPER,Q, exec, kitty"
-        "SUPER,C, killactive"
+        "${mod},Q, exec, kitty"
+        "${mod},C,killactive"
+        "${mod},MINUS,killactive"
+        #"${mod},SPACE,exec,run-as-service $(tofi-drun)"
         "SUPER,M, exit"
         "SUPER,E, exec, thunar"
         "SUPER,V, togglefloating"

@@ -21,14 +21,14 @@
   # home-manager
   ###############
   programs.home-manager.enable = true;
-  
-  
-  
+
+
+
   ###############
   # wm
   ###############
-  
-  
+
+
   #home.packages = with pkgs; [
   #  # Games
   #  pegasus-frontend
@@ -96,6 +96,7 @@
     cowsay # A program which generates ASCII pictures of a cow with a message
     onefetch # Git repository summary on your terminal
     starfetch # CLI star constellations displayer
+    cpufetch # neofetch but for cpu's
     cava # Console-based Audio Visualizer for Alsa
     gnugrep # GNU implementation of the Unix grep command
     gnused # GNU sed, a batch stream editor
@@ -118,6 +119,13 @@
     fzf # A command-line fuzzy finder written in Go
     pandoc # Conversion between documentation formats
     pciutils # A collection of programs for inspecting and manipulating configuration of PCI devices
+    todo  # todo app for acoustic people (wrriten by me :3)
+    catimg # preview images in terminal
+    ffmpeg-full # premiere pro for acoustic people
+    glow # markdown previewer
+    yt-dlp # download from yt and other websites
+    gping     # ping, but with cool graph
+    dogdns     # dns client
 
     discord # PROPRIETARY messaging and general communication
     heroic # gog and epic games launcher
@@ -128,7 +136,7 @@
     protonup-ng # Manage installation of proton-ge
     nvpy # A simplenote-syncing note-taking tool inspired by Notational Velocity
     notion-app-enhanced # Notion Desktop builds with Notion Enhancer for Windows, MacOS and Linux.
-
+    dconf
     # Text & Document
     libreoffice-fresh # Office suite
     # libreoffice-qt # Office suite
@@ -208,10 +216,10 @@
 
 
   ];
-  
 
 
-  
-    
-    
+
+
+
+
 }
