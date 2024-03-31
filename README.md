@@ -1,5 +1,5 @@
 # nixos_config
-
+d
 <https://github.com/bderenzo/tinymotd>
 <https://github.com/sioodmy/dotfiles>
 <https://github.com/mcdonc/.nixconfig/tree/master>
