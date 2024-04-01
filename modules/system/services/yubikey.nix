@@ -1,7 +1,6 @@
 {  lib, config, pkgs, ... }:
 {
   # yubikey
-  services.pcscd.enable = true;
   services.udev.packages = [
     pkgs.libu2f-host
     pkgs.pam_u2f
@@ -33,16 +32,8 @@
     appId = "pam://hostname";
   };
 
-  # enable pam services to allow u2f auth for login and sudo
-  security.pam.services = {
-    login.u2fAuth = true;
-    sudo.u2fAuth = true;
-  };
   # Yubikey required services and config. See Dr. Duh NixOS config for
   # reference
   services.pcscd.enable = true; # smartcard service
 
-  services.udev.packages = [
-    yubikey-personalization
-  ];
 }
