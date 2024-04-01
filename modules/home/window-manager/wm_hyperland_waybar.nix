@@ -55,6 +55,7 @@ in
         # margin = "6";
         # spacing = "4";
         modules-left = [
+          "custom/launcher"
           "hyprland/workspaces"
           #"hyprland/submap"
         ];
@@ -205,6 +206,11 @@ in
             warning = 30;
             critical = 15;
           };
+        };
+        "custom/launcher" = {
+          format = "";
+          on-click = "wofi -S drun -GIm -w 3 -W 100% -H 96%";
+          on-click-right = "pkill wofi";
         };
         "custom/hostname" = {
           exec = "echo $USER@$HOSTNAME";
