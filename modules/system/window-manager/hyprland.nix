@@ -13,7 +13,7 @@
       gnome.nautilus
       gnome.zenity
     ];
-  };
+  
 
   services.dbus.enable = true;
   # Make the gnome keyring work properly
