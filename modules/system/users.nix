@@ -18,7 +18,7 @@
       #"plugdev"
       #"render"
       #"lxd"
-    ]
+    ];
 
     shell = pkgs.zsh;
     packages = with pkgs; [
