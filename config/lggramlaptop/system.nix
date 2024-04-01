@@ -55,6 +55,7 @@
     # window-manager\
     ../../modules/system/display-manager/gdm.nix
 
+    ../../modules/system/window-manager/default.nix
     ../../modules/system/window-manager/hyprland.nix
     #../../modules/system/window-manager/plasma5.nix
     #../../modules/system/window-manager/plasma6.nix
