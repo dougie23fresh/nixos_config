@@ -45,7 +45,6 @@
     ../../modules/system/services/tailscale.nix
     ../../modules/system/services/tumbler.nix
     ../../modules/system/services/udisk.nix
-    ../../modules/system/services/display-manager/gdm.nix
     #../../modules/system/services/yubikey.nix
     # virtualisation
     #../../modules/system/virtualisation/distrobox.nix
@@ -53,7 +52,9 @@
     #../../modules/system/virtualisation/libvirtd.nix
     #../../modules/system/virtualisation/lxd.nix
     #../../modules/system/virtualisation/waydroid.nix
-    # window-manager
+    # window-manager\
+    ../../modules/system/display-manager/gdm.nix
+
     ../../modules/system/window-manager/hyprland.nix
     #../../modules/system/window-manager/plasma5.nix
     #../../modules/system/window-manager/plasma6.nix
