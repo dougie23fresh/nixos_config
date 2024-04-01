@@ -45,7 +45,7 @@
     ../../modules/system/services/tailscale.nix
     ../../modules/system/services/tumbler.nix
     ../../modules/system/services/udisk.nix
-    ../../modules/system/services/yubikey.nix
+    #../../modules/system/services/yubikey.nix
     # virtualisation
     #../../modules/system/virtualisation/distrobox.nix
     #../../modules/system/virtualisation/docker.nix
