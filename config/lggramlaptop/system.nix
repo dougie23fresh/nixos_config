@@ -45,6 +45,7 @@
     ../../modules/system/services/tailscale.nix
     ../../modules/system/services/tumbler.nix
     ../../modules/system/services/udisk.nix
+    ../../modules/system/services/display-manager/gdm.nix
     #../../modules/system/services/yubikey.nix
     # virtualisation
     #../../modules/system/virtualisation/distrobox.nix
@@ -57,6 +58,7 @@
     #../../modules/system/window-manager/plasma5.nix
     #../../modules/system/window-manager/plasma6.nix
     ../../modules/system/window-manager/xfce.nix
+    ../../modules/system/window-manager/plasma6.nix
     #LXQt
     #Enlightenment
     #budgie
