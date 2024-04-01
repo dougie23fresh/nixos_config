@@ -53,7 +53,8 @@
     #../../modules/system/virtualisation/lxd.nix
     #../../modules/system/virtualisation/waydroid.nix
     # window-manager\
-    ../../modules/system/display-manager/gdm.nix
+    #../../modules/system/display-manager/gdm.nix
+    ../../modules/system/display-manager/sddm.nix
 
     ../../modules/system/window-manager/default.nix
     ../../modules/system/window-manager/hyprland.nix
