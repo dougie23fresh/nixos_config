@@ -59,7 +59,8 @@ in
   programs.starship.enable = true;
   programs.starship.enableZshIntegration = true;
   programs.zsh.enable = true;
-  programs.zsh.enableAutosuggestions = true;
+  #programs.zsh.enableAutosuggestions = true;
+  programs.zsh.autosuggestion.enable = true;
   programs.zsh.enableCompletion = true;
   programs.zsh.autocd = true;
   programs.zsh.syntaxHighlighting.enable = true;

@@ -106,7 +106,7 @@
     gnused # GNU sed, a batch stream editor
     killall
     libnotify # A library that sends desktop notifications to a notification daemon
-    toybox # Lightweight implementation of some Unix command line utilities
+    #toybox # Lightweight implementation of some Unix command line utilities
     timer # A `sleep` with progress
     bat # A cat(1) clone with syntax highlighting and Git integration
     eza # A modern, maintained replacement for ls
