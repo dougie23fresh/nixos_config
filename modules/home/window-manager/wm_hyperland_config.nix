@@ -54,7 +54,7 @@ in
         #"exec-once = hyprctl setcursor '' + config.gtk.cursorTheme.name + " " + builtins.toString config.gtk.cursorTheme.size + ''"
 
         #"exec-once = swww init"
-        "exec-once = waybar"
+        #"exec-once = waybar"
         #"exec-once = swaync"
         #"exec-once = wallsetter"
         #"exec-once = dunst"
@@ -77,6 +77,7 @@ in
         "exec-once = xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 1"
         "exec-once = hyprctl dispatcher focusmonitor 1"
         "exec-once = dunst"
+        "exec-once = waybar"
       ];
       general = {
         gaps_in = 7;
