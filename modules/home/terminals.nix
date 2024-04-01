@@ -42,7 +42,7 @@ in
   programs.git.userEmail = "melvin.douglas@gmail.com";
   programs.btop.enable = true;
   programs.eza.enable = true;
-  programs.eza.enableAliases = true;
+  #programs.eza.enableAliases = true;
   programs.kitty.enable = true;
   programs.kitty.package = pkgs.kitty;
   programs.kitty.font.name = "JetBrainsMono Nerd Font";
