@@ -6,7 +6,11 @@
     #./programing.nix
     ./remote.nix
     ./terminals.nix
-    ./wm.nix
+    ./wm/wm.nix
+    ./wm/wm_hyperland_config.nix
+    #./wm/wm_hyperland_fuzzel.nix
+    ./wm/wm_hyperland_waybar.nix
+    ./wm/wm_hyperland.nix
   ];
   ###############
   # User
