@@ -8,11 +8,6 @@
   programs.hyprland.portalPackage = pkgs.xdg-desktop-portal-hyprland;
 
   environment.variables.NIXOS_OZONE_WL = "1";
-  environment.systemPackages = with pkgs; [
-      polkit_gnome
-      gnome.nautilus
-      gnome.zenity
-    ];
   
 
   services.dbus.enable = true;
@@ -25,6 +20,9 @@
   #security.pam.services.greetd.enableGnomeKeyring = true;
 
   environment.systemPackages = with pkgs; [
+    polkit_gnome
+    gnome.nautilus
+    gnome.zenity
     (pkgs.writeScriptBin "hypr-run" ''
     export XDG_SESSION_TYPE="wayland"
     export XDG_SESSION_DESKTOP="Hyprland"
