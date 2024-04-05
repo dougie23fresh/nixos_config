@@ -1,14 +1,20 @@
 {
   description = "Melvin's Nix Config";
   inputs = {
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
-    # NixPkgs Unstable
+    #nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # Home manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    hardware.url = "github:nixos/nixos-hardware";
     nix-colors.url = "github:misterio77/nix-colors";
     hyprland.url = "github:hyprwm/Hyprland";
+    hyprlock.url = "github:hyprwm/hyprlock";
+    #hyprlock.inputs.nixpkgs.follows = "nixpkgs";
+    hypridle.url = "github:hyprwm/hypridle";
+    #hypridle.inputs.nixpkgs.follows = "nixpkgs";
+    hyprpaper.url = "github:hyprwm/hyprpaper";
+    hyprland-contrib.url = "github:hyprwm/contrib";
+    hyprland-contrib.inputs.nixpkgs.follows = "nixpkgs";
     hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
     hyprland-plugins.inputs.hyprland.follows = "hyprland";
     nix-gaming.url = "github:fufexan/nix-gaming";
@@ -17,21 +23,8 @@
     stylix.url = "github:danth/stylix";
     #anyrun.url = "github:Kirottu/anyrun";
     #anyrun.inputs.nixpkgs.follows = "nixpkgs";
-    hypridle.url = "github:hyprwm/hypridle";
-    hypridle.inputs.nixpkgs.follows = "nixpkgs";
-
-
-    hyprland-contrib.url = "github:hyprwm/contrib";
-    hyprland-contrib.inputs.nixpkgs.follows = "nixpkgs";
-
-    hyprlock.url = "github:hyprwm/hyprlock";
-    hyprlock.inputs.nixpkgs.follows = "nixpkgs";
-
-    hyprpaper.url = "github:hyprwm/hyprpaper";
     #firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     #firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
-
-
     # Community scripts and utilities for Hypr projects
     # hyprwm-contrib.url = "github:hyprwm/contrib";
     # hyprwm-contrib.inputs.nixpkgs.follows = "nixpkgs";
@@ -45,7 +38,6 @@
     version = builtins.substring 0 8 self.lastModifiedDate;
     system = "x86_64-linux";
     username = "melvin";
-    
 
     pkgs = import nixpkgs {
       inherit system;
@@ -57,7 +49,7 @@
     };
   in {
 
-    
+
     #nixosModules.dougieHost = {
     #  imports = [
     #    ./modules/nixos
@@ -71,7 +63,7 @@
           hostname = "ceres";
           cpuType = "amd";
           gpuType = "nvida";
-        }; 
+        };
         modules = [
           ./config/ceres/system.nix
           home-manager.nixosModules.home-manager {
@@ -82,7 +74,7 @@
           }
         ];
       };
-      
+
       hpelitebook = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit username;
@@ -90,7 +82,7 @@
           hostname = "hpelitebook";
           cpuType = "intel";
           gpuType = "intel";
-        }; 
+        };
         modules = [
           ./hosts/hpelitebook/default.nix
           home-manager.nixosModules.home-manager {
@@ -106,13 +98,13 @@
       };
 
       lggramlinux = nixpkgs.lib.nixosSystem {
-        specialArgs = { 
+        specialArgs = {
           inherit username;
           inherit inputs;
           hostname = "lggramlinux";
           cpuType = "intel";
           gpuType = "intel";
-        }; 
+        };
         modules = [
           ./config/lggramlaptop/system.nix
           home-manager.nixosModules.home-manager {
@@ -121,10 +113,10 @@
             home-manager.extraSpecialArgs = { inherit inputs; inherit username;};
             home-manager.users.${username} = import ./modules/home/default.nix;
           }
-        
+
         ];
       };
-  
+
       msi-gs70-stealth = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit username;
@@ -132,7 +124,7 @@
           hostname = "msi-gs70-stealth";
           cpuType = "intel";
           gpuType = "intel-nvidia";
-        }; 
+        };
         modules = [
           ./config/msi-gs70-stealth/system.nix
           home-manager.nixosModules.home-manager {
