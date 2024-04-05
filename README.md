@@ -1,5 +1,5 @@
 # nixos_config
-d
+<https://github.com/abayomi185/nix-dotfiles/blob/main/modules/home-manager/shell/git.nix>
 <https://github.com/bderenzo/tinymotd>
 <https://github.com/sioodmy/dotfiles>
 <https://github.com/mcdonc/.nixconfig/tree/master>
@@ -27,6 +27,7 @@ d
 <https://github.com/nikitawootten/infra?tab=readme-ov-file>
 <https://git.cyplo.dev/cyplo/dotfiles/src/branch/main/nixos>
 ----
+
 <https://github.com/tolgaerok/nixos-kde/tree/main>
 <https://git.polynom.me/PapaTutuWawa/nixos-config/src/branch/master/modules/programs>
 <https://github.com/VixenUtils/Myxer>
@@ -47,6 +48,7 @@ d
 <https://github.com/librephoenix/nixos-config>
 <https://github.com/snowfallorg/lib>
 -----
+
 <https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/.install/wallpaper.sh?ref_type=heads>
 <https://github.com/dylanaraps/pywal>
 <https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/.install/hyprland-dotfiles.sh?ref_type=heads>
