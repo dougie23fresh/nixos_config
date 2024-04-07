@@ -1,4 +1,4 @@
-{  lib, config, pkgs, ... }:
+#{  lib, config, pkgs, ... }:
 {
 
   hardware.i2c.enable = true;

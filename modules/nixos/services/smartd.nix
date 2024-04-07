@@ -1,4 +1,4 @@
-{  lib, config, pkgs, ... }:
+#{  lib, config, pkgs, ... }:
 {
   # smartd
   services.smartd.enable = true;

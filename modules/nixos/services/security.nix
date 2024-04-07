@@ -1,4 +1,4 @@
-{  lib, config, pkgs, ... }:
+#{  lib, config, pkgs, ... }:
 {
    # security
   security.pam.services.swaylock = {

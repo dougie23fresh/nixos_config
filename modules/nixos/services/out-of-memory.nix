@@ -1,4 +1,4 @@
-{  lib, config, pkgs, ... }:
+#{  lib, config, pkgs, ... }:
 {
   # earlyoom #Enable the early OOM (Out Of Memory) killer service.
   services.earlyoom.enable = true;

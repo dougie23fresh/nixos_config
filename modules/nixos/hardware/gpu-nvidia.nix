@@ -1,4 +1,4 @@
-{  lib, config, pkgs, ... }:
+#{  lib, config, pkgs, ... }:
 {
   services.xserver.videoDrivers = ["nvidia"];
   # opengl

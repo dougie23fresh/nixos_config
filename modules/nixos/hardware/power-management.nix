@@ -1,4 +1,4 @@
-{  lib, config, pkgs, ... }:
+#{  lib, config, pkgs, ... }:
 {
   # logind - laptop lid
   services.logind.lidSwitch = "suspend";

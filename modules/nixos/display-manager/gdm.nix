@@ -1,4 +1,4 @@
-{  lib, config, pkgs, inputs, ... }:
+#{  lib, config, pkgs, inputs, ... }:
 {
   # gdm
   services.xserver.displayManager.gdm.enable = true;

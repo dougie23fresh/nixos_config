@@ -1,4 +1,4 @@
-{  lib, config, pkgs, inputs, ... }:
+#{  lib, config, pkgs, inputs, ... }:
 {
   services.xserver.desktopManager.xfce.enable = true;
 }

@@ -1,4 +1,4 @@
-{  lib, config, pkgs, ... }:
+#{  lib, config, pkgs, ... }:
 {
   # RedistributableFirmware
   hardware.enableRedistributableFirmware = true;
