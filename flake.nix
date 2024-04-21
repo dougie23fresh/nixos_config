@@ -21,6 +21,10 @@
     nix-software-center.url = "github:snowfallorg/nix-software-center";
     nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
     stylix.url = "github:danth/stylix";
+    helix.url = "github:helix-editor/helix";
+    catppuccin.url = "github:catppuccin/nix";
+    nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
+    nixpkgs-wayland.inputs.nixpkgs.follows = "nixpkgs";
     #anyrun.url = "github:Kirottu/anyrun";
     #anyrun.inputs.nixpkgs.follows = "nixpkgs";
     #firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
