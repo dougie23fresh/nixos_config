@@ -119,18 +119,18 @@
     # "/etc/nixos/path"
   ];
   # Use lib.mapAttrs' to create environment.etc entries for the nix path
-  environment.etc = let
-    nixpkgsUnstablePath = "${inputs.nixpkgs-unstable}/nixpkgs";
-  in
-    lib.mapAttrs'
-    (name: value: {
-      name = "nix/path/${name}";
-      value.source =
-        if name == "nixpkgs"
-        then nixpkgsUnstablePath
-        else value.flake;
-    })
-    config.nix.registry;
+  #environment.etc = let
+  #  nixpkgsUnstablePath = "${inputs.nixpkgs-unstable}/nixpkgs";
+  #in
+  #  lib.mapAttrs'
+  #  (name: value: {
+  #    name = "nix/path/${name}";
+  #    value.source =
+  #      if name == "nixpkgs"
+  #      then nixpkgsUnstablePath
+  ##      else value.flake;
+  #  })
+  #  config.nix.registry;
 
   nixpkgs.config.allowUnfree = true;
   nix.gc = {
