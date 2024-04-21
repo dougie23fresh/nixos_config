@@ -1,5 +1,6 @@
+
 {
   home.packages = with pkgs; [
-    rhythmbox
+    betterbird
   ];
 }

@@ -1,0 +1,3 @@
+{
+  rhythmbox = import ./rhythmbox.nix;
+}

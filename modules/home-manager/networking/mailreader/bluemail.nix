@@ -1,5 +1,5 @@
 {
   home.packages = with pkgs; [
-    rhythmbox
+    bluemail
   ];
 }
