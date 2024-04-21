@@ -2,7 +2,8 @@
 {
   services.desktopManager.plasma6.enable = true;
   programs.dconf.enable = true;
-  services.xserver.displayManager.defaultSession = "plasma";
+  #services.xserver.displayManager.defaultSession = "plasma";
+  services.displayManager.defaultSession = "plasma";
 
   environment.systemPackages = with pkgs; [
     kdePackages.qt6ct
