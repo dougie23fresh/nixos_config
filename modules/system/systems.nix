@@ -114,10 +114,10 @@
   # This will additionally add your inputs to the system's legacy channels
   # Making legacy nix commands consistent as well, awesome!
   # Set the nixPath to include the unstable nixpkgs from the flake inputs
-  nix.nixPath = [
-    "nixpkgs=${inputs.nixpkgs-unstable}/nixpkgs"
-    # "/etc/nixos/path"
-  ];
+  #nix.nixPath = [
+  #  "nixpkgs=${inputs.nixpkgs-unstable}/nixpkgs"
+  #  # "/etc/nixos/path"
+  #];
   # Use lib.mapAttrs' to create environment.etc entries for the nix path
   #environment.etc = let
   #  nixpkgsUnstablePath = "${inputs.nixpkgs-unstable}/nixpkgs";
