@@ -1,0 +1,2 @@
+wine # Execute Window$ programs
+    winetricks # Execute Window$ programs
