@@ -20,7 +20,7 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-software-center.url = "github:snowfallorg/nix-software-center";
     nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
-    stylix.url = "github:danth/stylix";
+    # stylix.url = "github:danth/stylix";
     helix.url = "github:helix-editor/helix";
     catppuccin.url = "github:catppuccin/nix";
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
@@ -37,7 +37,7 @@
     # Generate System Images
     # nixos-generators.url = "github:nix-community/nixos-generators";
   };
-  outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, catppuccin, ... }@inputs:
   let
     inherit (self) outputs;
 
@@ -124,11 +124,17 @@
         };
         modules = [
           ./config/lggramlaptop/system.nix
+          catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit inputs; inherit username;};
-            home-manager.users.${username} = import ./modules/home/default.nix;
+            home-manager.users.${username} = {
+              import = [
+                ./modules/home/default.nix;
+                catppuccin.homeManagerModules.catppuccin
+              ];
+            };
           }
 
         ];

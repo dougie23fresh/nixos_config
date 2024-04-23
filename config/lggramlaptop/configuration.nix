@@ -6,6 +6,7 @@
   pkgs,
   ...
 }: {
+  catppuccin.flavour = "macchiato";
   imports = [
     ..hardware
     outputs.nixosModules.systemhardware.cpu-intel
