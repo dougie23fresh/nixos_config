@@ -1,4 +1,4 @@
-
+{  pkgs, ... }:
 {
     environment.systemPackages = with pkgs; [
         fscan # An intranet comprehensive scanning tool

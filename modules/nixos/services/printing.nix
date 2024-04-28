@@ -1,4 +1,4 @@
-#{  lib, config, pkgs, ... }:
+{  pkgs, ... }:
 {
   # printing
   services.printing.enable = true;

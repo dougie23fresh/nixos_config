@@ -1,4 +1,4 @@
-#{ pkgs, ... }:
+{  pkgs, ... }:
 {
   # dbus
   services.dbus.enable = true;

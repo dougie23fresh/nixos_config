@@ -1,3 +1,4 @@
+{  pkgs, ... }:
 {
     environment.systemPackages = with pkgs; [
         coreutils # The GNU Core Utilities

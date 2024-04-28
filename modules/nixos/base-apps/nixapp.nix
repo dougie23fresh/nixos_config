@@ -1,4 +1,4 @@
-
+{  pkgs, ... }:
 {
     environment.systemPackages = with pkgs; [
         nix-tree # Interactively browse a Nix store paths dependencies

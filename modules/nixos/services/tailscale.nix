@@ -1,4 +1,4 @@
-#{  lib, config, pkgs, ... }:
+{  pkgs, ... }:
 {
   # tailscale
   services.tailscale.enable = true;

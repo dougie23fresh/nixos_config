@@ -1,4 +1,4 @@
-#{  lib, config, pkgs, ... }:
+{  pkgs, ... }:
 {
   # yubikey
   services.udev.packages = [

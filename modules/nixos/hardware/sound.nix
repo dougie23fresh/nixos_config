@@ -1,4 +1,4 @@
-#{  lib, config, pkgs, ... }:
+{  pkgs, ... }:
 {
   # pulseaudio
   sound.enable = true;
