@@ -96,6 +96,7 @@
         specialArgs = {
           inherit username;
           inherit inputs;
+          inherit outputs;
           hostname = "hpelitebook";
           cpuType = "intel";
           gpuType = "intel";
