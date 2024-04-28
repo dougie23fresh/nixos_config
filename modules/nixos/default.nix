@@ -2,7 +2,7 @@
   # List your module files here
 
   # Uncategorized
-  user = import ./user.nix;
+  users = import ./users.nix;
   system = import ./system.nix;
   fonts = import ./fonts.nix;
 
