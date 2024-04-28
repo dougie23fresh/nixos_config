@@ -101,15 +101,19 @@
           gpuType = "intel";
         };
         modules = [
-          ./hosts/hpelitebook/default.nix
+          ./config/hpelitebook/configuration.nix
+          catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit inputs; inherit username;};
-            home-manager.users.${username} = import ./modules/home/default.nix;
-            home-manager.modules = [
-              stylix.homeManagerModules.stylix
-            ];
+            home-manager.users.${username} = {
+              import = [
+                ./modules/home/default.nix;
+                catppuccin.homeManagerModules.catppuccin
+              ];
+            };
+
           }
         ];
       };
