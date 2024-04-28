@@ -1,4 +1,6 @@
- programs.firefox = {
+
+{
+  programs.firefox = {
     enable = true;
     policies = {
       CaptivePortal = false;
@@ -40,4 +42,5 @@
         };
       };
     };
-    ];
+  };
+}

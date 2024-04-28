@@ -1,13 +1,11 @@
-home.packages = with pkgs; [
-    librewolf-wayland
-    #vivaldi
-    brave
+{  pkgs, ... }:
+{
+  home.packages = with pkgs; [
     (vivaldi.override{
       proprietaryCodecs = true;
       enableWidevine = true;
     })
     vivaldi-ffmpeg-codecs
     widevine-cdm
-    microsoft-edge
-    chromium
   ];
+}
