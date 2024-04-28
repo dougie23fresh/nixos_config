@@ -1,4 +1,4 @@
-#{ config, pkgs, ... }:
+{  pkgs, ... }:
 {
   nixpkgs.config.joypixels.acceptLicense = true;
   fonts.fontDir.enable = true;
