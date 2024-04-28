@@ -109,7 +109,7 @@
             home-manager.extraSpecialArgs = { inherit inputs; inherit username;};
             home-manager.users.${username} = {
               import = [
-                ./modules/home/default.nix;
+                ./modules/home/default.nix
                 catppuccin.homeManagerModules.catppuccin
               ];
             };
@@ -135,7 +135,7 @@
             home-manager.extraSpecialArgs = { inherit inputs; inherit username;};
             home-manager.users.${username} = {
               import = [
-                ./modules/home/default.nix;
+                ./modules/home/default.nix
                 catppuccin.homeManagerModules.catppuccin
               ];
             };
