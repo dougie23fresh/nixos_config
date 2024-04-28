@@ -5,7 +5,7 @@
         iperf3 # Tool to measure IP bandwidth using UDP or TCP
         ethtool # Utility for controlling network drivers and hardware
         netcat-gnu # Utility which reads and writes data across network connections
-        # dogdns # Command-line DNS client
+        dogdns # Command-line DNS client
         wget # Tool for retrieving files using HTTP, HTTPS, and FTP
         mtr-gui # A network diagnostics tool
 

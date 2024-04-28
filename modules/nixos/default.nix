@@ -7,6 +7,7 @@
   fonts = import ./fonts.nix;
 
   apps = import ./apps;
+  base-apps = import ./base-apps;
   dev = import ./dev;
   display-manager = import ./display-manager;
   hardware = import ./hardware;

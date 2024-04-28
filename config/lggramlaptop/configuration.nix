@@ -69,6 +69,10 @@
     #LXQt
     #Enlightenment
     #budgie
+    outputs.nixosModules.system.base-apps.archives
+    outputs.nixosModules.system.base-apps.base
+    outputs.nixosModules.system.base-apps.network
+    outputs.nixosModules.system.base-apps.nixapp
 
   ];
 
