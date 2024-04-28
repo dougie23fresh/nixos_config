@@ -123,6 +123,7 @@
         specialArgs = {
           inherit username;
           inherit inputs;
+          inherit outputs;
           hostname = "lggramlinux";
           cpuType = "intel";
           gpuType = "intel";
