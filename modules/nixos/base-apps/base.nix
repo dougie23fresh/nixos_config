@@ -22,7 +22,7 @@
         freshfetch # A fresh take on neofetch
         hwinfo # Hardware detection tool from openSUSE
         hardinfo # Display information about your hardware and operating system
-        cdu_2 # disk space info
+        ncdu # disk space info
 
         btop # A monitor of resources
         bottom # A cross-platform graphical process/system monitor with a customizable interface
