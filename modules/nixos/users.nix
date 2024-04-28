@@ -3,6 +3,7 @@
   ########
   # users
   ########
+  programs.zsh.enable = true;
   users.users.${username} = {
     isNormalUser = true;
     description = "${username}";
@@ -21,7 +22,7 @@
     ];
 
     shell = pkgs.zsh;
-    programs.zsh.enable = true;
+
     packages = with pkgs; [
       firefox
     ];
