@@ -1,6 +1,6 @@
 { lib, config, pkgs, ... }:
 with lib;
-let 
+let
   cfg = config.dougieHost.wm.theme;
 in
 {
@@ -30,7 +30,7 @@ in
     };
     qt = {
       enable = true;
-      platformTheme = "gtk";
+      platformTheme.name = "gtk";
       style = {
         name = "adwaita-dark";
         package = pkgs.adwaita-qt;

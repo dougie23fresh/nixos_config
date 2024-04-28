@@ -111,28 +111,28 @@
 
   # This will add each flake input as a registry
   # To make nix3 commands consistent with your flake
-  nix.registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
+  #nix.registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
 
   # This will additionally add your inputs to the system's legacy channels
   # Making legacy nix commands consistent as well, awesome!
   # Set the nixPath to include the unstable nixpkgs from the flake inputs
-  nix.nixPath = [
-    "nixpkgs=${inputs.nixpkgs-unstable}/nixpkgs"
+  #nix.nixPath = [
+  #  "nixpkgs=${inputs.nixpkgs-unstable}/nixpkgs"
     # "/etc/nixos/path"
-  ];
+  #];
   # Use lib.mapAttrs' to create environment.etc entries for the nix path
-  environment.etc = let
-    nixpkgsUnstablePath = "${inputs.nixpkgs-unstable}/nixpkgs";
-  in
-    lib.mapAttrs'
-    (name: value: {
-      name = "nix/path/${name}";
-      value.source =
-        if name == "nixpkgs"
-        then nixpkgsUnstablePath
-        else value.flake;
-    })
-    config.nix.registry;
+  #environment.etc = let
+  #  nixpkgsUnstablePath = "${inputs.nixpkgs-unstable}/nixpkgs";
+  #in
+  #  lib.mapAttrs'
+  #  (name: value: {
+  #    name = "nix/path/${name}";
+  #    value.source =
+  #      if name == "nixpkgs"
+  #      then nixpkgsUnstablePath
+  #      else value.flake;
+  #  })
+  #  config.nix.registry;
 
   nixpkgs.config.allowUnfree = true;
   nix.gc = {
