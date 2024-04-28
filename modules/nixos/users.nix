@@ -21,6 +21,7 @@
     ];
 
     shell = pkgs.zsh;
+    programs.zsh.enable = true;
     packages = with pkgs; [
       firefox
     ];
