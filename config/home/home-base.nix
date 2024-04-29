@@ -14,7 +14,9 @@
     ###############
     programs.home-manager.enable = true;
 
-    outputs.homeManagerModules.window-manager.wm
+    outputs.homeManagerModules.window-manager.qt
+    outputs.homeManagerModules.window-manager.gtk
+    outputs.homeManagerModules.window-manager.xdg
     outputs.homeManagerModules.window-manager.hyprland
     outputs.homeManagerModules.window-manager.waybar
     outputs.homeManagerModules.window-manager.fuzzel

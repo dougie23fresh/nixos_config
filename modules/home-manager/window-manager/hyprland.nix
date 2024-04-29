@@ -1,7 +1,7 @@
 { config, inputs, outputs, ... }:
 let
-  pointer = config.home.pointerCursor;
-  homeDir = config.home.homeDirectory;
+  #pointer = config.home.pointerCursor;
+  #homeDir = config.home.homeDirectory;
   mod = "SUPER";
   modshift = "${mod}SHIFT";
 in
@@ -122,6 +122,7 @@ in
         #"XCURSOR_THEME"  # Set your cursor theme. The theme needs to be installed and readable by your user.
         # "XCURSOR_SIZE"  # Set cursor size. See here for why you might want this variable set.
         "MOZ_ENABLE_WAYLAND, 1"  # irefox with Wayland
+        # XDG_SCREENSHOTS_DIR = "$HOME/Pictures/screenshots";
         # vm "WLR_NO_HARDWARE_CURSORS,1"
         # VM "WLR_RENDERER_ALLOW_SOFTWARE,1"
         # nivida "WLR_NO_HARDWARE_CURSORS,1"
@@ -157,7 +158,7 @@ in
 
         #exec-once = swayidle -w timeout 90 '${pkgs.gtklock}/bin/gtklock -d' timeout 210 'suspend-unless-render' resume '${pkgs.hyprland}/bin/hyprctl dispatch dpms on' before-sleep "${pkgs.gtklock}/bin/gtklock -d"
         #exec-once = obs-notification-mute-daemon
-        "exec-once = hyprctl setcursor ${pointer.name} ${toString pointer.size}"
+        #"exec-once = hyprctl setcursor ${pointer.name} ${toString pointer.size}"
         #"exec-once = hyprlock"
         #"exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         #"exec-once = wlsunset -t 5200 -S 9:00 -s 19:30"
