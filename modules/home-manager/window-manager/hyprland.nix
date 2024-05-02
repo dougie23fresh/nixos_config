@@ -103,18 +103,18 @@ in
         "NIXPKGS_ALLOW_UNFREE, 1"
         # Hyprland Environment Variables
         # Toolkit Backend Variables
-        "GDK_BACKEND, wayland,x11"  # GTK: Use wayland if available, fall back to x11 if not.
-        "QT_QPA_PLATFORM, wayland;xcb"  # Qt: Use wayland if available, fall back to x11 if not.
-        "SDL_VIDEODRIVER, wayland"  # Run SDL2 applications on Wayland. Remove or set to x11 if games that provide older versions of SDL cause compatibility issues
-        "CLUTTER_BACKEND, wayland"  # Clutter package already has wayland enabled, this variable will force Clutter applications to try and use the Wayland backend
+        ##"GDK_BACKEND, wayland,x11"  # GTK: Use wayland if available, fall back to x11 if not.
+        ##"QT_QPA_PLATFORM, wayland;xcb"  # Qt: Use wayland if available, fall back to x11 if not.
+        ##"SDL_VIDEODRIVER, wayland"  # Run SDL2 applications on Wayland. Remove or set to x11 if games that provide older versions of SDL cause compatibility issues
+        #"CLUTTER_BACKEND, wayland"  # Clutter package already has wayland enabled, this variable will force Clutter applications to try and use the Wayland backend
         # XDG Specifications
-        "XDG_CURRENT_DESKTOP, Hyprland"
-        "XDG_SESSION_TYPE, wayland"
-        "XDG_SESSION_DESKTOP, Hyprland"
+        ##"XDG_CURRENT_DESKTOP, Hyprland"
+        ##"XDG_SESSION_TYPE, wayland"
+        ##"XDG_SESSION_DESKTOP, Hyprland"
         # Qt Variables
-        "QT_AUTO_SCREEN_SCALE_FACTOR, 1"  # (From the Qt documentation) enables automatic scaling, based on the monitor’s pixel density
-        "QT_WAYLAND_DISABLE_WINDOWDECORATION, 1"  # Disables window decorations on Qt applications
-        "QT_QPA_PLATFORMTHEME, qt5ct"  # Tells Qt based applications to pick your theme from qt5ct, use with Kvantum.
+        ##"QT_AUTO_SCREEN_SCALE_FACTOR, 1"  # (From the Qt documentation) enables automatic scaling, based on the monitor’s pixel density
+        ##"QT_WAYLAND_DISABLE_WINDOWDECORATION, 1"  # Disables window decorations on Qt applications
+        ##"QT_QPA_PLATFORMTHEME, qt5ct"  # Tells Qt based applications to pick your theme from qt5ct, use with Kvantum.
         # NVIDIA Specific
         #"LIBVA_DRIVER_NAME, nvidia"  # Hardware acceleration on NVIDIA GPUs
         # Theming Related Variables
