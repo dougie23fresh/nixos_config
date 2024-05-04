@@ -4,7 +4,7 @@
   programs.hyprland.enable = true;
   programs.hyprland.xwayland.enable = true;
   programs.hyprland.package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-  programs.hyprland.portalPackage = pkgs.xdg-desktop-portal-hyprland;
+  #programs.hyprland.portalPackage = pkgs.xdg-desktop-portal-hyprland;
 
   programs.dconf.enable = true;
   programs.file-roller.enable = true;
