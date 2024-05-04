@@ -1,9 +1,9 @@
 {  pkgs, ... }:
 {
-  nixpkgs.config.joypixels.acceptLicense = true;
-  fonts.fontDir.enable = true;
-  fonts.fontconfig.enable = true;
-  fonts.enableGhostscriptFonts = true;
+  #nixpkgs.config.joypixels.acceptLicense = true;
+  #fonts.fontDir.enable = true;
+  #fonts.fontconfig.enable = true;
+  #fonts.enableGhostscriptFonts = true;
   fonts.packages = with pkgs; [
     nerdfonts
     corefonts
@@ -22,7 +22,7 @@
     openmoji-color
     material-design-icons
     material-icons
-    joypixels
+    #joypixels
     dejavu_fonts
     comfortaa
     comic-neue
