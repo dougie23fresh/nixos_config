@@ -1,3 +1,4 @@
+{  pkgs, ... }:
 {
   programs.kitty.enable = true;
   programs.kitty.catppuccin = true;
