@@ -1,4 +1,4 @@
-{ config, inputs, outputs, ... }:
+{ config, inputs, outputs, pkgs, ... }:
 let
   #pointer = config.home.pointerCursor;
   #homeDir = config.home.homeDirectory;
