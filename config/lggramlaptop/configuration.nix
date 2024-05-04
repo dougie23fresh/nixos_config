@@ -6,10 +6,10 @@
   pkgs,
   ...
 }: {
-  catppuccin.flavour = "macchiato";
+
   imports = [
     ./hardware.nix
-  
+    inputs.catppuccin.nixosModules.catppuccin
     outputs.nixosModules.hardware.bluetooth
     outputs.nixosModules.hardware.cpu-intel
     outputs.nixosModules.hardware.gpu-intel
@@ -20,7 +20,7 @@
     outputs.nixosModules.hardware.power-management
     outputs.nixosModules.hardware.sound
 
-    
+
     outputs.nixosModules.users
     outputs.nixosModules.system # refactor
     outputs.nixosModules.fonts # refactor
@@ -76,7 +76,7 @@
     outputs.nixosModules.base-apps.network
     outputs.nixosModules.base-apps.nixapp
   ];
-
+  catppuccin.flavour = "macchiato";
   system.stateVersion = "23.11";
 
 
