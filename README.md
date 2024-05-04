@@ -1,4 +1,5 @@
 # nixos_config
+<https://github.com/ryan4yin/nix-config/blob/main/modules/nixos/desktop/peripherals.nix>
 <https://github.com/abayomi185/nix-dotfiles/blob/main/modules/home-manager/shell/git.nix>
 <https://github.com/bderenzo/tinymotd>
 <https://github.com/sioodmy/dotfiles>
