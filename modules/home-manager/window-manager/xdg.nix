@@ -17,6 +17,7 @@
       #  #xdg-desktop-portal-hyprland
       #  xdg-desktop-portal-gtk
         kdePackages.xdg-desktop-portal-kde
+        # xdg-desktop-portal-xapp Backend implementation for xdg-desktop-portal for Cinnamon, MATE, Xfce
       ];
     };
   };

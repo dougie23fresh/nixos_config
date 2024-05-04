@@ -1,6 +1,6 @@
 { inputs, outputs, pkgs, lib, ... }:
 with lib;
-let 
+let
   cfg = config.dougieHome.wm.waybar;
 
   cat = "${pkgs.coreutils}/bin/cat";
@@ -37,11 +37,11 @@ let
   ''}/bin/waybar-${name}";
 in
 {
-  systemd.user.services.waybar = {
-    Unit.StartLimitBurst = 30;
-  };
+  #systemd.user.services.waybar = {
+  #  Unit.StartLimitBurst = 30;
+  #};
   programs.waybar = {
-    enable = true;
+    #enable = true;
     package = pkgs.waybar.overrideAttrs (oa: {
       mesonFlags = (oa.mesonFlags or  [ ]) ++ [ "-Dexperimental=true" ];
     });
@@ -384,7 +384,7 @@ in
         margin-right: 1rem;
       }
 
-    
+
     '';
   };
 }
