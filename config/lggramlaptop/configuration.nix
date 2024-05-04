@@ -63,7 +63,7 @@
     outputs.nixosModules.display-manager.sddm
 
     outputs.nixosModules.window-manager.xserver
-    outputs.nixosModules.window-manager.hyprland
+    #outputs.nixosModules.window-manager.hyprland
     #outputs.nixosModules..system.window-manager.plasma5
     #outputs.nixosModules..system.window-manager.plasma6
     outputs.nixosModules.window-manager.xfce
