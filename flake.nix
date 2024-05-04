@@ -135,7 +135,7 @@
             home-manager.users.${username} = import ./config/home/home-base.nix;
             #home-manager.sharedModules = [
             #  catppuccin.homeManagerModules.catppuccin
-            #];
+            #];j
             #jjjjj
                 #catppuccin.homeManagerModules.catppuccin
           }
