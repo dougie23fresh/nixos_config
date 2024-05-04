@@ -68,6 +68,7 @@
     #outputs.nixosModules..system.window-manager.plasma6
     outputs.nixosModules.window-manager.xfce
     outputs.nixosModules.window-manager.plasma6
+    outputs.nixosModules.window-manager.xdg
     #LXQt
     #Enlightenment
     #budgie
