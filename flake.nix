@@ -73,24 +73,24 @@
     homeManagerModules = import ./modules/home-manager;
 
     nixosConfigurations = {
-      ceres = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit username;
-          inherit inputs;
-          hostname = "ceres";
-          cpuType = "amd";
-          gpuType = "nvida";
-        };
-        modules = [
-          ./config/ceres/system.nix
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; inherit username;};
-            home-manager.users.${username} = import ./modules/home/default.nix;
-          }
-        ];
-      };
+      #ceres = nixpkgs.lib.nixosSystem {
+      #  specialArgs = {
+      #    inherit username;
+      #    inherit inputs;
+      #    hostname = "ceres";
+      #    cpuType = "amd";
+      #    gpuType = "nvida";
+      #  };
+      #  modules = [
+      #    ./config/ceres/system.nix
+      #    home-manager.nixosModules.home-manager {
+      #      home-manager.useGlobalPkgs = true;
+      #      home-manager.useUserPackages = true;
+      #      home-manager.extraSpecialArgs = { inherit inputs; inherit username;};
+      #      home-manager.users.${username} = import ./modules/home/default.nix;
+      #    }
+      #  ];
+      #};
 
       hpelitebook = nixpkgs.lib.nixosSystem {
         specialArgs = {
