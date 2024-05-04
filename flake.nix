@@ -37,7 +37,7 @@
     # Generate System Images
     # nixos-generators.url = "github:nix-community/nixos-generators";
   };
-  outputs = { self, nixpkgs, home-manager, catppuccin, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let
     inherit (self) outputs;
 
@@ -63,7 +63,7 @@
       ];
       # This is a function that generates an attribute by calling a function you
       # pass to it, with each system as an argument
-      forAllSystems = inputs.nixpkgs-unstable.lib.genAttrs systems;
+      forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
     # Reusable nixos modules you might want to export
     # These are usually stuff you would upstream into nixpkgs
