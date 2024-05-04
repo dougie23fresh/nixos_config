@@ -136,7 +136,7 @@
             #home-manager.sharedModules = [
             #  catppuccin.homeManagerModules.catppuccin
             #];
-            #jj
+            #jjjjj
                 #catppuccin.homeManagerModules.catppuccin
           }
 
