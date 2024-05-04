@@ -17,6 +17,10 @@
   # boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
   # boot.kernelPackages = pkgs.linuxPackages_lqx
   boot.loader.systemd-boot.enable = true;
+  # we use Git for version control, so we don't need to keep too many generations.
+  boot.loader.systemd-boot.configurationLimit = 10;
+  # pick the highest resolution for systemd-boot's console.
+  boot.loader.systemd-boot.consoleMode = "max";
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [
     "exfat"

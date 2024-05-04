@@ -19,6 +19,13 @@
         gping # Ping, but with a graph
         httping # ping with HTTP requests
         traceroute # Tracks the route taken by packets over an IP network
+        ldns # replacement of `dig`, it provide the command `drill`
+        curl
+        aria2 # A lightweight multi-protocol & multi-source command-line download utility
+        socat # replacement of openbsd-netcat
+        nmap # A utility for network discovery and security auditing
+        ipcalc # it is a calculator for the IPv4/v6 addresses
+        doggo
 
         # sing-box # The universal proxy platform
         # rathole # Reverse proxy for NAT traversal

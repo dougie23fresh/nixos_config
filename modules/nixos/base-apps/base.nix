@@ -6,10 +6,13 @@
         pciutils # A collection of programs for inspecting and manipulating configuration of PCI devices
         usbutils # Tools for working with USB devices, such as lsusb
         ssdfs-utils # SSDFS file system utilities
-        killall
+        #killall
         dmidecode # A tool that reads information about your system's hardware from the BIOS according to the SMBIOS/DMI standard
-        gnugrep # GNU implementation of the Unix grep command
-        gnused # GNU sed, a batch stream editor
+        psmisc # killall/pstree/prtstat/fuser/...
+        lm_sensors # for `sensors` command
+        ethtool
+        hdparm # for disk performance, command
+        parted
 
         disfetch # Yet another *nix distro fetching program, but less complex
         neofetch # A fast, highly customizable system info script
@@ -36,10 +39,23 @@
         git # Distributed version control system
         lazygit #Simple terminal UI for git commands
         htop # An interactive process viewer
-        ripgrep # A utility that combines the usability of The Silver Searcher with the raw speed of grep
         timer # A `sleep` with progress
 
+        file
+        findutils
+        which
 
+        # Text Processing
+        ripgrep # A utility that combines the usability of The Silver Searcher with the raw speed of grep
+        gnugrep # GNU implementation of the Unix grep command
+        gnused # GNU sed, a batch stream editor
+        gawk # GNU awk, a pattern scanning and processing language
+        jq # A lightweight and flexible command-line JSON processor
+
+        tldr
+        gnused
+        du-dust
+        duf
 
     ];
 }

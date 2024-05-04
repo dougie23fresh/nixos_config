@@ -32,6 +32,7 @@
     ubuntu_font_family
     terminus_font
     lexend
+    material-design-icons
   ];
   fonts.fontconfig.defaultFonts = {
       serif = ["Lexend"];

@@ -3,10 +3,12 @@
     environment.systemPackages = with pkgs; [
         rar
         unrar
-        _7zz
+        #_7zz
         unzip
         zip
         bzip2
         gnutar
+        p7zip
+        xz
     ];
 }
