@@ -131,6 +131,7 @@
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = { inherit inputs outputs username;};
             home-manager.users.${username} = import ./config/home/home-base.nix;
             #home-manager.sharedModules = [
