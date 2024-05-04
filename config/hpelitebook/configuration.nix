@@ -9,6 +9,7 @@
   catppuccin.flavour = "macchiato";
   imports = [
     ./hardware.nix
+    inputs.catppuccin.nixosModules.catppuccin
     outputs.nixosModules.hardware.bluetooth
     outputs.nixosModules.hardware.cpu-intel
     outputs.nixosModules.hardware.gpu-intel

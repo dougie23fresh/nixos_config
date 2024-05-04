@@ -1,6 +1,7 @@
-{ outputs, username, ... }:
+{ inputs, outputs, username, ... }:
 {
     imports = [
+        inputs.catppuccin.homeManagerModules.catppuccin
         outputs.homeManagerModules.window-manager.qt
         outputs.homeManagerModules.window-manager.gtk
         outputs.homeManagerModules.window-manager.xdg
