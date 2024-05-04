@@ -126,13 +126,13 @@
           gpuType = "intel";
         };
         modules = [
-          ./config/lggramlaptop/system.nix
+          ./config/lggramlaptop/configuration.nix
           catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit inputs; inherit username;};
-            home-manager.users.${username} = import ./modules/home/default.nix;
+            home-manager.users.${username} = import ./config/home/home-base.nix;
             home-manager.sharedModules = [
               catppuccin.homeManagerModules.catppuccin
             ];
