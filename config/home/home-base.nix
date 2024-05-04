@@ -1,5 +1,6 @@
 { inputs, outputs, username, ... }:
 {
+    xdg.enable = true;
     imports = [
         inputs.catppuccin.homeManagerModules.catppuccin
         outputs.homeManagerModules.window-manager.qt
