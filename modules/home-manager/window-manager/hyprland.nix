@@ -50,7 +50,7 @@ in
     qt6.qtwayland # A cross-platform application framework for C++
     xdg-utils
     xdg-desktop-portal
-    xdg-desktop-portal-gtk
+    #xdg-desktop-portal-gtk
     bc # GNU software calculator
 
     #xdg-desktop-portal-hyprland

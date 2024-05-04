@@ -8,7 +8,7 @@
   services.udiskie.enable = true;
   services.udiskie.tray = "always";
   services.dunst.enable = true;
-  
+
   services.playerctld.enable = true;
   #home.file.".config/hypr/hyprpaper.conf".source = ./hyprpaper.conf;
   #home.file.".config/hypr/palm-tree-night.jpg".source = ../../../../wallpaper/palm-tree-night.jpg;
@@ -34,7 +34,7 @@
     swayidle # Idle management daemon for Wayland
     gtklock # GTK-based lockscreen for Wayland
     swaybg # Wallpaper tool for Wayland compositors
-    fnott # notification daemon 
+    fnott # notification daemon
     fuzzel # Wayland-native application launcher
     wev # Wayland event viewer
     grim  # Grab images from a Wayland compositor
@@ -45,7 +45,7 @@
     qt6.qtwayland # A cross-platform application framework for C++
     xdg-utils
     xdg-desktop-portal
-    xdg-desktop-portal-gtk
+    #xdg-desktop-portal-gtk
     bc # GNU software calculator
 
     #xdg-desktop-portal-hyprland
