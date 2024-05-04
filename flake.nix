@@ -133,9 +133,9 @@
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit inputs; inherit username;};
             home-manager.users.${username} = import ./config/home/home-base.nix;
-            home-manager.sharedModules = [
-              catppuccin.homeManagerModules.catppuccin
-            ];
+            #home-manager.sharedModules = [
+            #  catppuccin.homeManagerModules.catppuccin
+            #];
                 #catppuccin.homeManagerModules.catppuccin
           }
 
