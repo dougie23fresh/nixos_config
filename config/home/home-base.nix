@@ -1,7 +1,7 @@
 { inputs, outputs, username, ... }:
 {
     imports = [
-        #inputs.catppuccin.homeManagerModules.catppuccin
+        inputs.catppuccin.homeManagerModules.catppuccin
         outputs.homeManagerModules.window-manager.qt
         outputs.homeManagerModules.window-manager.gtk
         outputs.homeManagerModules.window-manager.xdg
@@ -29,15 +29,15 @@
         outputs.homeManagerModules.office.xournalpp
         outputs.homeManagerModules.office.zathura
         outputs.homeManagerModules.pictures.imv
-        #outputs.homeManagerModules.terminal-emulators.alacritty
-        #outputs.homeManagerModules.terminal-emulators.bat
-        #outputs.homeManagerModules.terminal-emulators.bottom
-        #outputs.homeManagerModules.terminal-emulators.btop
-        #outputs.homeManagerModules.terminal-emulators.eza
-        #outputs.homeManagerModules.terminal-emulators.helix
-        #outputs.homeManagerModules.terminal-emulators.kitty
-        #outputs.homeManagerModules.terminal-emulators.starship
-        #outputs.homeManagerModules.terminal-emulators.zsh
+        outputs.homeManagerModules.terminal-emulators.alacritty
+        outputs.homeManagerModules.terminal-emulators.bat
+        outputs.homeManagerModules.terminal-emulators.bottom
+        outputs.homeManagerModules.terminal-emulators.btop
+        outputs.homeManagerModules.terminal-emulators.eza
+        outputs.homeManagerModules.terminal-emulators.helix
+        outputs.homeManagerModules.terminal-emulators.kitty
+        outputs.homeManagerModules.terminal-emulators.starship
+        outputs.homeManagerModules.terminal-emulators.zsh
         outputs.homeManagerModules.video.minitube
         outputs.homeManagerModules.video.mpv
     ];
