@@ -92,29 +92,29 @@
       #  ];
       #};
 
-      hpelitebook = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit username;
-          inherit inputs;
-          inherit outputs;
-          hostname = "hpelitebook";
-          cpuType = "intel";
-          gpuType = "intel";
-        };
-        modules = [
-          ./config/hpelitebook/configuration.nix
-          catppuccin.nixosModules.catppuccin
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; inherit username;};
-            #home-manager.users.${username} = import ./modules/home/default.nix;
-            home-manager.users.${username} = import ./config/home/home-base.nix;
-                #catppuccin.homeManagerModules.catppuccin
+      #hpelitebook = nixpkgs.lib.nixosSystem {
+      #  specialArgs = {
+      #    inherit username;
+      #    inherit inputs;
+      #    inherit outputs;
+      #    hostname = "hpelitebook";
+      #    cpuType = "intel";
+      #    gpuType = "intel";
+      #  };
+      #  modules = [
+      #    ./config/hpelitebook/configuration.nix
+      #    catppuccin.nixosModules.catppuccin
+      #    home-manager.nixosModules.home-manager {
+      #      home-manager.useGlobalPkgs = true;
+      #      home-manager.useUserPackages = true;
+      #      home-manager.extraSpecialArgs = { inherit inputs; inherit username;};
+      #      #home-manager.users.${username} = import ./modules/home/default.nix;
+      #      home-manager.users.${username} = import ./config/home/home-base.nix;
+      #          #catppuccin.homeManagerModules.catppuccin
 
-          }
-        ];
-      };
+      #    }
+      #  ];
+      #};
 
       lggramlinux = nixpkgs.lib.nixosSystem {
         specialArgs = {
@@ -143,24 +143,24 @@
         ];
       };
 
-      msi-gs70-stealth = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit username;
-          inherit inputs;
-          hostname = "msi-gs70-stealth";
-          cpuType = "intel";
-          gpuType = "intel-nvidia";
-        };
-        modules = [
-          ./config/msi-gs70-stealth/system.nix
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.${username} = import ./modules/home/default.nix;
-          }
-        ];
-      };
+      #msi-gs70-stealth = nixpkgs.lib.nixosSystem {
+      #  specialArgs = {
+      #    inherit username;
+      #    inherit inputs;
+      #    hostname = "msi-gs70-stealth";
+      #    cpuType = "intel";
+      #    gpuType = "intel-nvidia";
+      #  };
+      #  modules = [
+      #    ./config/msi-gs70-stealth/system.nix
+      #    home-manager.nixosModules.home-manager {
+      #      home-manager.useGlobalPkgs = true;
+      #      home-manager.useUserPackages = true;
+      #      home-manager.extraSpecialArgs = { inherit inputs; };
+      ##      home-manager.users.${username} = import ./modules/home/default.nix;
+      #    }
+      #  ];
+      #};
     };
   };
 }
