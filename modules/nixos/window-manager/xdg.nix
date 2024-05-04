@@ -4,7 +4,7 @@
   #xdg.autostart.enable = true;
   #xdg.icons.enable
   #  xdg.menus.enable
-  xdg.enable = true;
+  #xdg.enable = true;
   xdg = {
     portal = {
       enable = true;
