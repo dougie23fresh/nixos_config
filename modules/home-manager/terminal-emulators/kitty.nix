@@ -1,7 +1,7 @@
 {  pkgs, ... }:
 {
   programs.kitty.enable = true;
-  programs.kitty.catppuccin = true;
+  programs.kitty.catppuccin.enable  = true;
   programs.kitty.package = pkgs.kitty;
   programs.kitty.font.name = "JetBrainsMono Nerd Font";
   programs.kitty.font.size = 16;

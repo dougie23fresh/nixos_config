@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
   programs.bat.enable = true;
-  programs.bat.catppuccin = true;
+  programs.bat.catppuccin.enable  = true;
 
 }
