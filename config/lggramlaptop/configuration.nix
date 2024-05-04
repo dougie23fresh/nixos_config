@@ -20,8 +20,9 @@
     outputs.nixosModules.hardware.power-management
     outputs.nixosModules.hardware.sound
 
-    outputs.nixosModules.system # refactor
+    
     outputs.nixosModules.users
+    outputs.nixosModules.system # refactor
     #outputs.nixosModules.fonts # refactor
 
 
