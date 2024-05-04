@@ -23,12 +23,12 @@
     
     outputs.nixosModules.users
     outputs.nixosModules.system # refactor
-    #outputs.nixosModules.fonts # refactor
+    outputs.nixosModules.fonts # refactor
 
 
-    outputs.nixosModules.system.default_pkgs.nix # refactor
-    outputs.nixosModules.system.default_programs.nix # refactor
-    outputs.nixosModules.system.font.nix # refactor
+    #outputs.nixosModules.system.default_pkgs.nix # refactor
+    #outputs.nixosModules.system.default_programs.nix # refactor
+    #outputs.nixosModules.system.font.nix # refactor
     ########### services
     #outputs.nixosModules..system.services.nix # refactor
     outputs.nixosModules.services.clipboard
