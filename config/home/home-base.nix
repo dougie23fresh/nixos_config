@@ -37,7 +37,7 @@
         outputs.homeManagerModules.terminal-emulators.helix
         outputs.homeManagerModules.terminal-emulators.kitty
         outputs.homeManagerModules.terminal-emulators.starship
-        #outputs.homeManagerModules.terminal-emulators.zsh
+        outputs.homeManagerModules.terminal-emulators.zsh
         outputs.homeManagerModules.video.minitube
         outputs.homeManagerModules.video.mpv
     ];
@@ -54,6 +54,7 @@
     ###############
     # home-manager
     ###############
+    catppuccin.flavour = "macchiato";
     programs.home-manager.enable = true;
     home.stateVersion = "23.11";
 
