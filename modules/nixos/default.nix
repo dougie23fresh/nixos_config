@@ -4,7 +4,7 @@
   # Uncategorized
   users = import ./users.nix;
   system = import ./system.nix;
-  fonts = import ./fonts.nix;
+  #fonts = import ./fonts.nix;
 
   apps = import ./apps;
   base-apps = import ./base-apps;

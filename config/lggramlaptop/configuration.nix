@@ -22,7 +22,7 @@
 
     outputs.nixosModules.system # refactor
     outputs.nixosModules.users
-    outputs.nixosModules.fonts # refactor
+    #outputs.nixosModules.fonts # refactor
 
 
     outputs.nixosModules.system.default_pkgs.nix # refactor
