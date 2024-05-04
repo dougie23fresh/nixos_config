@@ -6,7 +6,7 @@
     "pcmpcfapbekmbjjkdalcgopdkipoggdi" # markdownload
     #"mlmoighangjfhiookjppplipefbbnaoo" # half-bold
   ];
- home.packages = with pkgs; [
+  home.packages = with pkgs; [
     chromium
   ];
 }
