@@ -77,6 +77,10 @@
     outputs.nixosModules.base-apps.network
     outputs.nixosModules.base-apps.nixapp
   ];
+  home.packages = with pkgs; [
+    standardnotes
+    Anytype
+  ];
   catppuccin.flavour = "macchiato";
   system.stateVersion = "23.11";
 
