@@ -79,7 +79,7 @@
   ];
   home.packages = with pkgs; [
     standardnotes
-    Anytype
+    anytype
   ];
   catppuccin.flavour = "macchiato";
   system.stateVersion = "23.11";
