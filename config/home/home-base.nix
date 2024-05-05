@@ -46,6 +46,10 @@
     ###############
     # User
     ###############
+    home.packages = with pkgs; [
+        standardnotes
+        anytype
+    ];
     home = {
         username = "${username}";
         homeDirectory = "/home/${username}";
