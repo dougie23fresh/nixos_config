@@ -144,24 +144,28 @@
         ];
       };
 
-      #msi-gs70-stealth = nixpkgs.lib.nixosSystem {
-      #  specialArgs = {
-      #    inherit username;
-      #    inherit inputs;
-      #    hostname = "msi-gs70-stealth";
-      #    cpuType = "intel";
-      #    gpuType = "intel-nvidia";
-      #  };
-      #  modules = [
-      #    ./config/msi-gs70-stealth/system.nix
-      #    home-manager.nixosModules.home-manager {
-      #      home-manager.useGlobalPkgs = true;
-      #      home-manager.useUserPackages = true;
-      #      home-manager.extraSpecialArgs = { inherit inputs; };
-      ##      home-manager.users.${username} = import ./modules/home/default.nix;
-      #    }
-      #  ];
-      #};
+      msi-gs70-stealth = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit username;
+          inherit inputs;
+          hostname = "msi-gs70-stealth";
+          cpuType = "intel";
+          gpuType = "intel-nvidia";
+        };
+        modules = [
+          ./config/msi-gs70-stealth/configuration.nix
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = { inherit inputs outputs username; };
+            home-manager.users.${username} = import ./config/home/home-base.nix;
+          }
+        ];
+      };
+
+
     };
   };
 }
