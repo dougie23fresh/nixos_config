@@ -1,4 +1,4 @@
-{  pkgs, ... }:
+{  pkgs, intel-bus-id, nvidia-bus-id, ... }:
 {
   nixpkgs.config.packageOverrides =
     pkgs: {
@@ -47,8 +47,8 @@
 		enableOffloadCmd = true;
 	  };
       # Make sure to use the correct Bus ID values for your system!
-      intelBusId = "${intel-bus-id}";
-      nvidiaBusId = "${nvidia-bus-id}";
+      intelBusId = intel-bus-id;
+      nvidiaBusId = nvidia-bus-id;
     };
   };
 }
