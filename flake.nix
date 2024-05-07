@@ -148,6 +148,7 @@
         specialArgs = {
           inherit username;
           inherit inputs;
+          inherit outputs;
           hostname = "msi-gs70-stealth";
           cpuType = "intel";
           gpuType = "intel-nvidia";
