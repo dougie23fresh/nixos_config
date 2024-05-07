@@ -15,7 +15,6 @@
   # This is for OBS Virtual Cam Support - v4l2loopback setup
   boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
 
-
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/53782107-2d2a-4843-b5b7-d2d3bcd53828";
       fsType = "ext4";

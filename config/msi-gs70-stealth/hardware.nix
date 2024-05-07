@@ -11,8 +11,9 @@
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "nvme" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ "i915" ];
-  boot.kernelModules = [ "kvm-intel" "acpi_call" ];
-  boot.extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
+  boot.kernelModules = [ "kvm-intel" "acpi_call"  "v4l2loopback" ];
+  #
+  boot.extraModulePackages = with config.boot.kernelPackages; [ acpi_call v4l2loopback ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/552fc7a6-70e5-4c49-b408-3b0e9386c67c";
@@ -35,6 +36,6 @@
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
 
-  #nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  #hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
