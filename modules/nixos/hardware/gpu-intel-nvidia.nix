@@ -1,4 +1,4 @@
-{  pkgs, intel-bus-id, nvidia-bus-id, ... }:
+{  pkgs, ... }:
 {
   nixpkgs.config.packageOverrides =
     pkgs: {
@@ -15,6 +15,10 @@
     extraPackages = with pkgs; [
       intel-media-driver
       vaapiIntel
+      vaapiVdpau
+      libvdpau-va-gl
+    ];
+    extraPackages32 = with pkgs.pkgsi686Linux; [
       vaapiVdpau
       libvdpau-va-gl
     ];
@@ -47,8 +51,12 @@
 		enableOffloadCmd = true;
 	  };
       # Make sure to use the correct Bus ID values for your system!
-      intelBusId = "${intel-bus-id}";
-      nvidiaBusId = "${nvidia-bus-id}";
+      #intel-bus-id = "PCI:0:2:0";
+      #nvidia-bus-id = "PCI:1:0:0";
+      intelBusId = "PCI:0:2:0";
+      #intelBusId = "${intel-bus-id}";
+      nvidiaBusId = "PCI:1:0:0";
+      #nvidiaBusId = "${nvidia-bus-id}";
     };
   };
 }
