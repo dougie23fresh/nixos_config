@@ -6,10 +6,10 @@
   pkgs,
   ...
 }:
-let
-  intel-bus-id = "PCI:0:2:0";
-  nvidia-bus-id = "PCI:1:0:0";
-in
+#let
+#  intel-bus-id = "PCI:0:2:0";
+#  nvidia-bus-id = "PCI:1:0:0";
+#in
 {
   catppuccin.flavour = "macchiato";
   imports = [
