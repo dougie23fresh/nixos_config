@@ -139,11 +139,11 @@
   #  config.nix.registry;
 
   nixpkgs.config.allowUnfree = true;
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
-  };
+  #nix.gc = {
+  #  automatic = true;
+  #  dates = "weekly";
+  #  options = "--delete-older-than 7d";
+  #};
   nix.settings = {
     warn-dirty = false;
     auto-optimise-store = true;
