@@ -93,29 +93,26 @@
       #  ];
       #};
 
-      #hpelitebook = nixpkgs.lib.nixosSystem {
-      #  specialArgs = {
-      #    inherit username;
-      #    inherit inputs;
-      #    inherit outputs;
-      #    hostname = "hpelitebook";
-      #    cpuType = "intel";
-      #    gpuType = "intel";
-      #  };
-      #  modules = [
-      #    ./config/hpelitebook/configuration.nix
-      #    catppuccin.nixosModules.catppuccin
-      #    home-manager.nixosModules.home-manager {
-      #      home-manager.useGlobalPkgs = true;
-      #      home-manager.useUserPackages = true;
-      #      home-manager.extraSpecialArgs = { inherit inputs; inherit username;};
-      #      #home-manager.users.${username} = import ./modules/home/default.nix;
-      #      home-manager.users.${username} = import ./config/home/home-base.nix;
-      #          #catppuccin.homeManagerModules.catppuccin
-
-      #    }
-      #  ];
-      #};
+      hpelitebook = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit username;
+          inherit inputs;
+          inherit outputs;
+          hostname = "hpelitebook";
+          cpuType = "intel";
+          gpuType = "intel";
+        };
+        modules = [
+          ./config/hpelitebook/configuration.nix
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = { inherit inputs outputs username;};
+            home-manager.users.${username} = import ./config/home/home-base.nix;
+          }
+        ];
+      };
 
       lggramlinux = nixpkgs.lib.nixosSystem {
         specialArgs = {
@@ -128,18 +125,12 @@
         };
         modules = [
           ./config/lggramlaptop/configuration.nix
-
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = { inherit inputs outputs username;};
             home-manager.users.${username} = import ./config/home/home-base.nix;
-            #home-manager.sharedModules = [
-            #  catppuccin.homeManagerModules.catppuccin
-            #];jkk
-            #jjjjj
-                #catppuccin.homeManagerModules.catppuccin
           }
 
         ];

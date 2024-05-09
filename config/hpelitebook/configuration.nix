@@ -6,7 +6,7 @@
   pkgs,
   ...
 }: {
-  catppuccin.flavour = "macchiato";
+
   imports = [
     ./hardware.nix
     inputs.catppuccin.nixosModules.catppuccin
@@ -20,8 +20,9 @@
     outputs.nixosModules.hardware.power-management
     outputs.nixosModules.hardware.sound
 
-    outputs.nixosModules.system # refactor
+
     outputs.nixosModules.users
+    outputs.nixosModules.system # refactor
     outputs.nixosModules.fonts # refactor
 
     ########### services
@@ -58,11 +59,12 @@
     outputs.nixosModules.display-manager.sddm
 
     outputs.nixosModules.window-manager.xserver
-    outputs.nixosModules.window-manager.hyprland
+    #outputs.nixosModules.window-manager.hyprland
     #outputs.nixosModules..system.window-manager.plasma5
     #outputs.nixosModules..system.window-manager.plasma6
     outputs.nixosModules.window-manager.xfce
     outputs.nixosModules.window-manager.plasma6
+    outputs.nixosModules.window-manager.xdg
     #LXQt
     #Enlightenment
     #budgie
@@ -70,9 +72,9 @@
     outputs.nixosModules.base-apps.base
     outputs.nixosModules.base-apps.network
     outputs.nixosModules.base-apps.nixapp
-
   ];
 
+  catppuccin.flavour = "macchiato";
   system.stateVersion = "23.11";
 
 
