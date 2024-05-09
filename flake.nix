@@ -43,17 +43,17 @@
     inherit (self) outputs;
 
     version = builtins.substring 0 8 self.lastModifiedDate;
-    system = "x86_64-linux";
+    #system = "x86_64-linux";
     username = "melvin";
 
-    pkgs = import nixpkgs {
-      inherit system;
-      config = {
-        allowUnfree = true;
-        allowUnfreePredicate = (_: true);
-      };
+    #pkgs = import nixpkgs {
+    #  inherit system;
+    #  config = {
+    #    allowUnfree = true;
+    #    allowUnfreePredicate = (_: true);
+    #  };
       #overlays = [ my_overlay ];
-    };
+    #};
 
     # Supported systems for your flake packages, shell, etc.
       systems = [
