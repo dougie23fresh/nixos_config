@@ -1,7 +1,7 @@
 {  lib, config, pkgs, inputs, ... }:
 {
     programs.labwc.enable = true;
-    environment.systemPackages = with pkgs; [\
+    environment.systemPackages = with pkgs; [
         # https://github.com/labwc/labwc-tweaks
         labwc-tweaks
         labwc-gtktheme
