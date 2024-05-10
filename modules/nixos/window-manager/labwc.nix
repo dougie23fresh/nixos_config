@@ -6,6 +6,10 @@
         labwc-tweaks
         labwc-gtktheme
         labwc-menu-generator
+        waybar
+        mako
+        swayidle
+        sfwbar
     ];
 }
 # `rc.xml`, `menu.xml`, `autostart`, and `environment`.
