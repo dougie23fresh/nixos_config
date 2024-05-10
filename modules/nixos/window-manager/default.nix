@@ -5,4 +5,5 @@
   xfce = import ./xfce.nix;
   xdg = import ./xdg.nix;
   xserver = import ./xserver.nix;
+  labwc = import ./labwc.nix;
 }
