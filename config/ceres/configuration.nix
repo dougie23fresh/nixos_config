@@ -17,7 +17,7 @@
     outputs.nixosModules.hardware.keyboard-backlight
     outputs.nixosModules.hardware.logitech
     #outputs.nixosModules.hardware.scanner
-    outputs.nixosModules.hardware.power-management
+    #outputs.nixosModules.hardware.power-management
     outputs.nixosModules.hardware.sound
 
 
