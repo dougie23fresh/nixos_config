@@ -57,5 +57,8 @@
         du-dust
         duf
 
+        mqttui
+        mqttx
+
     ];
 }
