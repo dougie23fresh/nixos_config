@@ -1,4 +1,4 @@
 {  config, ... }:
 {
-    hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    hardware.cpu.amd.updateMicrocode = config.hardware.enableRedistributableFirmware;
 }
