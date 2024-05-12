@@ -9,7 +9,9 @@
         waybar
         mako
         swayidle
+        swaylock
         sfwbar
+        kanshi
     ];
 }
 # `rc.xml`, `menu.xml`, `autostart`, and `environment`.

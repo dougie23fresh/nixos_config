@@ -11,4 +11,8 @@
     logitech-udev-rules # Linux devices manager for the Logitech Unifying Receiver
     libratbag # Configuration library for gaming mice
   ];
+  services.udev.packages = [ 
+    pkgs.logitech-udev-rules 
+    pkgs.game-devices-udev-rules 
+  ];
 }

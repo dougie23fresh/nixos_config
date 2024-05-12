@@ -1,4 +1,4 @@
-{  config, ... }:
+{  config, lib, ... }:
 {
-  hardware.cpu.intel.updateMicrocode = config.hardware.enableRedistributableFirmware;
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

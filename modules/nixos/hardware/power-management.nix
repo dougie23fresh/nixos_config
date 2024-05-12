@@ -21,4 +21,13 @@
   #powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   powerManagement.powertop.enable = true; # Enable powertop
   services.thermald.enable = true; # Enable thermald (only necessary if on Intel CPUs)
+  # Performance and power saving
+  #  services.auto-cpufreq.enable = true;
+  #  services.irqbalance.enable = true;
+  #  services.ananicy = {
+  #    enable = true;
+  #    package = pkgs.ananicy-cpp;
+  #    rulesProvider = pkgs.ananicy-rules-cachyos;
+  #  };
+
 }

@@ -5,5 +5,6 @@
   waybar = import ./waybar.nix;
   qt = import ./qt.nix;
   gtk = import ./gtk.nix;
+  applets = import ./applets.nix;
   #xdg = import ./xdg.nix;
 }
