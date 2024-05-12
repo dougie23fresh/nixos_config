@@ -1,4 +1,4 @@
-{}:
+{ pkgs, ...}:
 {
     # Optimise Linux system performance on demand
     # https://github.com/FeralInteractive/GameMode
@@ -10,15 +10,35 @@
     #      simply running the game will automatically activate GameMode.
     #   2. For others, launching the game through gamemoderun: `gamemoderun ./game`
     #   3. For steam: `gamemoderun steam-runtime`
+    program.steam.enable = true;
+    program.steam.gamescopeSession.enable = true;
+    environment.systemPackages = with pkgs; [
+        mangohud
+        protonup
+        heroic
+        lutus
+        bottles
+    ];
+
     programs.gamemode = {
         enable = true;
         settings = {
-        general = {
-            softrealtime = "auto";
-            renice = 15;
-        };
+            general = {
+                softrealtime = "auto";
+                renice = 15;
+            };
         };
     };
+
+    environment.sessionVariables = {
+        STEAM_EXTRA_COMPAT_TOOL_PATHS = "/home/melvin/.steam/root/compatibilitytools.d";
+    }
+
+    # gamemoderun %command%
+    # mangohud %command%
+    # gamescope %command%
+
+
     # see https://github.com/fufexan/nix-gaming/#pipewire-low-latency
     services.pipewire.lowLatency.enable = true;
     imports = [

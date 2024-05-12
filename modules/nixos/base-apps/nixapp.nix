@@ -26,4 +26,7 @@
         clean.extraArgs = "--keep-since 4d --keep 3";
         flake = "/home/melvin/nixos_config";
     };
+    environment.sessionVariables = {
+        FLAKE = "/home/melvin/nixos_config";
+    };
 }
