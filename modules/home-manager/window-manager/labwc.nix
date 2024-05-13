@@ -5,7 +5,7 @@
 #labwc-gtktheme
 {pkgs, ...}:
 {
-  home-manager.sharedModules = [{
+  
     xdg.configFile = {
       #"labwc/rc.xml" = {
       #  source = ./labwc/rc.xml;
@@ -33,5 +33,5 @@
       '';
     };
 
-  }];
+  }
 }
