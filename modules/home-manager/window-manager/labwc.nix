@@ -3,7 +3,7 @@
 #labwc-tweaks-gtk
 #labwc-menu-generator
 #labwc-gtktheme
-{pkg, ...}:
+{pkgs, ...}:
 {
   home-manager.sharedModules = [{
     xdg.configFile = {
