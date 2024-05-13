@@ -6,5 +6,6 @@
   qt = import ./qt.nix;
   gtk = import ./gtk.nix;
   applets = import ./applets.nix;
+  labwc = import ./labwc.nix;
   #xdg = import ./xdg.nix;
 }

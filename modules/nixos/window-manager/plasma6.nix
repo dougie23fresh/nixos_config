@@ -8,6 +8,7 @@
   environment.systemPackages = with pkgs; [
     kdePackages.qt6ct
     kdePackages.qtstyleplugin-kvantum
+    kdePackages.kdeplasma-addons
   ];
   #environment.variables = {
   #  IXOS_OZONE_WL="1";

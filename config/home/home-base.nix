@@ -9,6 +9,7 @@
         #outputs.homeManagerModules.window-manager.hyprland
         #outputs.homeManagerModules.window-manager.waybar
         #outputs.homeManagerModules.window-manager.fuzzel
+        outputs.homeManagerModules.window-manager.labwc
         outputs.homeManagerModules.audio.spotify
         outputs.homeManagerModules.dev.git
         outputs.homeManagerModules.dev.vscode
