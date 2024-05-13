@@ -1,5 +1,6 @@
 {  pkgs, ... }:
 {
+  hardware.enableAllFirmware  = true;
   # pulseaudio
   sound.enable = true;
   hardware.pulseaudio.enable = false;
