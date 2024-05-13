@@ -4,7 +4,7 @@
     (vivaldi.override{
       proprietaryCodecs = true;
       enableWidevine = true;
-       commandLineArgs = "--disable-features=AllowQt";
+      #commandLineArgs = "--disable-features=AllowQt";
     })
     vivaldi-ffmpeg-codecs
     widevine-cdm
