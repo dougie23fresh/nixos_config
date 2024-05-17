@@ -7,4 +7,5 @@
   sioyek = import ./sioyek.nix;
   xournalpp = import ./xournalpp.nix;
   zathura = import ./zathura.nix;
+  obsidian = import ./obsidian.nix;
 }

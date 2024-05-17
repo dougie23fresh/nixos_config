@@ -30,6 +30,7 @@
         outputs.homeManagerModules.office.sioyek
         outputs.homeManagerModules.office.xournalpp
         outputs.homeManagerModules.office.zathura
+        outputs.homeManagerModules.office.obsidian
         outputs.homeManagerModules.pictures.imv
         outputs.homeManagerModules.terminal-emulators.alacritty
         outputs.homeManagerModules.terminal-emulators.bat
