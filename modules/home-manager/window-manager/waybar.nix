@@ -56,25 +56,26 @@ in
         # spacing = "4";
         modules-left = [
           "custom/launcher"
-          "hyprland/workspaces"
+          #"hyprland/workspaces"
           #"hyprland/submap"
         ];
         modules-center = [
-          "custom/music"
+          #"custom/music"
           #"battery"
           #"clock"
         ];
         modules-right = [
           "custom/hostname"
-          "network"
-          "bluetooth"
+          "tray"
           "pulseaudio"
           "backlight"
           "battery"
+          "bluetooth"
+          "network"
           "clock"
-          "tray"
-          "custom/lock"
           "custom/power"
+          
+          #"custom/lock"
           #"custom/dunst"
           #"keyboard-state"
           #"custom/hostname"
