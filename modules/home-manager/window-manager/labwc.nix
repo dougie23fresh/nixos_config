@@ -5,7 +5,10 @@
 #labwc-gtktheme
 {pkgs, ...}:
 {
-  
+   home.packages = with pkgs; [
+      foot
+      swaybg
+   ];
     xdg.configFile = {
       #"labwc/rc.xml" = {
       #  source = ./labwc/rc.xml;
