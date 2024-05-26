@@ -23,7 +23,7 @@
             labwc-menu-generator > ~/.config/labwc/menu.xml
             # kanshi >/dev/null 2>&1 &
             swaybg -c '#113344' >/dev/null 2>&1 &
-            waybar >/dev/null 2>&1 &
+            waybar -c ./.config/labwc/waybar_config.json -s ./.config/labwc/waybar_style.css  >/dev/null 2>&1 &
             sfwbar >/dev/null 2>&1 &
             mako >/dev/null 2>&1 &
             # Update the DBus environment
