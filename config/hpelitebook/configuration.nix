@@ -75,7 +75,7 @@
     outputs.nixosModules.base-apps.nixapp
   ];
 
-  catppuccin.flavour = "macchiato";
+  catppuccin.flavor = "macchiato";
   system.stateVersion = "23.11";
 
 

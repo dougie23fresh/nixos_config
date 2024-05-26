@@ -88,7 +88,7 @@
     ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="c52b ", ATTR{power/autosuspend}="-1"
   '';
 
-  catppuccin.flavour = "macchiato";
+  catppuccin.flavor = "macchiato";
   system.stateVersion = "23.11";
 
 
