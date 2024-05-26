@@ -46,15 +46,6 @@
     #system = "x86_64-linux";
     username = "melvin";
 
-    #pkgs = import nixpkgs {
-    #  inherit system;
-    #  config = {
-    #    allowUnfree = true;
-    #    allowUnfreePredicate = (_: true);
-    #  };
-      #overlays = [ my_overlay ];
-    #};
-
     # Supported systems for your flake packages, shell, etc.
       systems = [
         "aarch64-linux"
@@ -74,6 +65,7 @@
     homeManagerModules = import ./modules/home-manager;
 
     nixosConfigurations = {
+      # Desktops
       ceres = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit username;
@@ -94,7 +86,7 @@
           }
         ];
       };
-
+      # Laptops
       hpelitebook = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit username;
@@ -138,6 +130,28 @@
         ];
       };
 
+      gonggong = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit username;
+          inherit inputs;
+          inherit outputs;
+          hostname = "gonggong";
+          cpuType = "intel";
+          gpuType = "intel";
+        };
+        modules = [
+          ./config/gonggong/configuration.nix
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = { inherit inputs outputs username;};
+            home-manager.users.${username} = import ./config/home/home-base.nix;
+          }
+
+        ];
+      };
+
       msi-gs70-stealth = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit username;
@@ -159,6 +173,50 @@
         ];
       };
 
+      # Servers
+      point1 = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit username;
+          inherit inputs;
+          inherit outputs;
+          hostname = "point1";
+          cpuType = "intel";
+          gpuType = "intel";
+        };
+        modules = [
+          ./config/point1/configuration.nix
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = { inherit inputs outputs username;};
+            home-manager.users.${username} = import ./config/home/home-base.nix;
+          }
+
+        ];
+      };
+
+      point2 = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit username;
+          inherit inputs;
+          inherit outputs;
+          hostname = "point2";
+          cpuType = "intel";
+          gpuType = "intel";
+        };
+        modules = [
+          ./config/point2/configuration.nix
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = { inherit inputs outputs username;};
+            home-manager.users.${username} = import ./config/home/home-base.nix;
+          }
+
+        ];
+      };
 
     };
   };
