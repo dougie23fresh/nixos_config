@@ -11,6 +11,7 @@
       mpd
       waybar
       wlogout
+      rofi
    ];
     xdg.configFile = {
       #"labwc/rc.xml" = {
@@ -19,6 +20,7 @@
       #};
       "labwc/waybar_config.json".source = ./labwc/config.json;
       "labwc/waybar_style.css".source = ./labwc/style.css;
+      "labwc/rc.xml".source = ./labwc/rc.xml;
       "labwc/autostart" = {
         text = ''
             labwc-menu-generator > ~/.config/labwc/menu.xml
