@@ -16,10 +16,10 @@
       #  source = ./labwc/rc.xml;
       #  onChange = "${pkgs.psmisc}/bin/killall -s SIGHUP labwc || true";
       #};
-    "labwc/waybar_config.json".source = "./nixos_config/modules/home-manager/window-manager/labwc/config.json";
-      "labwc/waybar_style.css".source = "./nixos_config/modules/home-manager/window-manager/labwc/style.json";
+      #"labwc/waybar_config.json".source = "./nixos_config/modules/home-manager/window-manager/labwc/config.json";
+      #"labwc/waybar_style.css".source = "./nixos_config/modules/home-manager/window-manager/labwc/style.json";
       "labwc/autostart" = {
-        source = (pkgs.writeShellScriptBin "autostart.sh" ''
+        text = ''
             labwc-menu-generator > ~/.config/labwc/menu.xml
             # kanshi >/dev/null 2>&1 &
             swaybg -c '#113344' >/dev/null 2>&1 &
@@ -31,9 +31,7 @@
 
             # Portals
             # bash -c 'LANG=en /usr/lib/xdg-desktop-portal-gtk & LANG=en /usr/lib/xdg-desktop-portal-gnome' &
-            
-            
-        '') + "/bin/autostart.sh";
+        '';
         #swayidle
         #${pkgs.dbus}/bin/dbus-update-activation-environment --systemd --all
         executable = true;
