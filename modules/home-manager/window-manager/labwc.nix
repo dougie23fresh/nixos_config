@@ -16,7 +16,7 @@
       #  source = ./labwc/rc.xml;
       #  onChange = "${pkgs.psmisc}/bin/killall -s SIGHUP labwc || true";
       #};
-      "labwc/waybar_config.json".source = ",/labwc/config.json";
+      "labwc/waybar_config.json".source = "./labwc/config.json";
       "labwc/waybar_style.css".source = "~/nixos_config/modules/home-manager/window-manager/labwc/style.json";
       "labwc/autostart" = {
         text = ''
