@@ -76,7 +76,7 @@
   # console
   console.keyMap = "us";
 
-  catppuccin.flavour = "frappe";
+  #catppuccin.flavour = "frappe";
   # locale
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
