@@ -10,6 +10,7 @@
       swaybg
       mpd
       waybar
+      wlogout
    ];
     xdg.configFile = {
       #"labwc/rc.xml" = {
