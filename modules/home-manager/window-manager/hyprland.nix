@@ -94,6 +94,7 @@ in
     yewtube
     dosfstools
     libnotify
+    foot
   ];
   wayland.windowManager.hyprland.settings = {
       "$MOD" = "SUPER";

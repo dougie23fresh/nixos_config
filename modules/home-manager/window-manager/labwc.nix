@@ -14,10 +14,16 @@
       "labwc/autostart" = {
         source = (pkgs.writeShellScriptBin "autostart.sh" ''
             labwc-menu-generator > ~/.config/labwc/menu.xml
+            # kanshi >/dev/null 2>&1 &
             swaybg -c '#113344' >/dev/null 2>&1 &
             waybar >/dev/null 2>&1 &
             sfwbar >/dev/null 2>&1 &
             mako >/dev/null 2>&1 &
+            # Update the DBus environment
+            # systemctl --user import-environment WAYLAND_DISPLAY & dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE &
+
+            # Portals
+            # bash -c 'LANG=en /usr/lib/xdg-desktop-portal-gtk & LANG=en /usr/lib/xdg-desktop-portal-gnome' &
             
             
         '') + "/bin/autostart.sh";
