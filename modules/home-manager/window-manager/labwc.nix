@@ -16,8 +16,8 @@
       #  source = ./labwc/rc.xml;
       #  onChange = "${pkgs.psmisc}/bin/killall -s SIGHUP labwc || true";
       #};
-    "labwc/waybar_config.json".source = "labwc/config.json";
-      "labwc/waybar_style.css".source = "labwc/style.json";
+    "labwc/waybar_config.json".source = ".labwc/config.json";
+      "labwc/waybar_style.css".source = ".labwc/style.json";
       "labwc/autostart" = {
         source = (pkgs.writeShellScriptBin "autostart.sh" ''
             labwc-menu-generator > ~/.config/labwc/menu.xml
