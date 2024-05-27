@@ -56,6 +56,7 @@
     outputs.nixosModules.base-apps.rust-motd
   ];
 
+  catppuccin.flavor = "macchiato";
   system.stateVersion = "23.11";
 
 
