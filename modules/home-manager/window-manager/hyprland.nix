@@ -97,7 +97,7 @@
     foot
     wezterm
     poweralertd
-    hyprctl
+    #jhjhyprctl
   ];
    xdg.configFile = {
       "hypr/scripts/resetxdgportal.jsoshn".source = ./hypr/scripts/resetxdgportal.sh;
