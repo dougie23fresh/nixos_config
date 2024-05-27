@@ -9,6 +9,7 @@
 
   imports = [
     ./hardware.nix
+
     outputs.nixosModules.hardware.cpu-intel
     outputs.nixosModules.hardware.gpu-intel
     outputs.nixosModules.hardware.firmware
@@ -16,6 +17,13 @@
     outputs.nixosModules.users
     outputs.nixosModules.system # refactor
     outputs.nixosModules.fonts # refactor
+    networking.interfaces.enp2s0.useDHCP = false;
+    networking.interfaces.enp2s0.ipv4.addresses = [{
+      address = "10.1.1.2";
+      prefixLength = 24;
+    }];
+    networking.defaultGateway  = "10.1.1.1";
+    networking.nameservers  = [ "1.1.1.1" ];
 
     ########### services
     #outputs.nixosModules..system.services.nix # refactor
