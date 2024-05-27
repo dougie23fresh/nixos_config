@@ -1,9 +1,9 @@
 # nixos_config
 
-
-https://github.com/Arana-Jayavihan/Lucifers_NIX
-https://github.com/donovanglover/nix-config
-https://github.com/71zenith/nix-dots
+<https://github.com/Arana-Jayavihan/Lucifers_NIX>
+<https://github.com/donovanglover/nix-config>
+<https://github.com/71zenith/nix-dots>
+<https://github.com/adi1090x/rofi?tab=readme-ov-file>
 
 nixos-rebuild build "$@" && nvd diff /run/current-system result
 sudo nixos-rebuild boot --log-format internal-json -v |& nom --json

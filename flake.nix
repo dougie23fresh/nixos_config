@@ -190,7 +190,7 @@
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = { inherit inputs outputs username;};
-            home-manager.users.${username} = import ./config/home/home-base.nix;
+            home-manager.users.${username} = import ./config/home/server.nix;
           }
 
         ];
@@ -212,7 +212,7 @@
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = { inherit inputs outputs username;};
-            home-manager.users.${username} = import ./config/home/home-base.nix;
+            home-manager.users.${username} = import ./config/home/server.nix;
           }
 
         ];

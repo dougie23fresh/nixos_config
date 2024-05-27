@@ -20,4 +20,10 @@
   tumbler = import ./tumbler.nix;
   udisk = import ./udisk.nix;
   yubikey = import ./yubikey.nix;
+  gitea = import ./gitea.nix;
+  nginx = import ./nginx.nix;
+  ntfy-sh = import ./ntfy-sh.nix;
+  restic = import ./restic.nix;
+  technitium-dns-server = import ./technitium-dns-server.nix;
+
 }
