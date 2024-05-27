@@ -17,6 +17,7 @@
 
   imports = [
     ./hardware.nix
+    inputs.catppuccin.nixosModules.catppuccin
 
     outputs.nixosModules.hardware.cpu-intel
     outputs.nixosModules.hardware.gpu-intel
