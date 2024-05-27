@@ -1,5 +1,10 @@
 # nixos_config
 
+
+https://github.com/Arana-Jayavihan/Lucifers_NIX
+https://github.com/donovanglover/nix-config
+https://github.com/71zenith/nix-dots
+
 nixos-rebuild build "$@" && nvd diff /run/current-system result
 sudo nixos-rebuild boot --log-format internal-json -v |& nom --json
 nix run github:astro/deadnix example.nix

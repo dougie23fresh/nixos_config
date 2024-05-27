@@ -1,4 +1,21 @@
 // Colors
+configuration {
+    modi: "run,filebrowser,drun";
+
+    show-icons: true;
+    //icon-theme:	    "Papirus";
+    terminal: "wezterm";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: "   Apps ";
+    display-run: "   Run ";
+    display-filebrowser: "   File ";
+    sidebar-mode: true;
+    border-radius: 10;
+}
+
 * {
     bg0:    #272E33;
     bg1:    #2A2A2A;
