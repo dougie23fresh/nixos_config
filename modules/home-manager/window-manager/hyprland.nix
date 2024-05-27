@@ -100,7 +100,12 @@
     #jhjhyprctl
   ];
    xdg.configFile = {
-      "hypr/scripts/resetxdgportal.jsoshn".source = ./hypr/scripts/resetxdgportal.sh;
+      "hypr/scripts/resetxdgportal.sh".source = ./hypr/scripts/resetxdgportal.sh;
+      "hypr/scripts/resetxdgportal.sh".executable = true;
+      "hypr/scripts/rofiapps.sh".source = ./hypr/scripts/rofiapps.sh;
+      "hypr/scripts/rofiapps.sh".executable = true;
+      "hypr/scripts/startwaybar.sh".source = ./hypr/scripts/startwaybar.sh;
+      "hypr/scripts/startwaybar.sh".executable = true;
       "hypr/config.json".source = ./hypr/config.json;
       "hypr/config.rasi".source = ./hypr/config.rasi;
       "hypr/env.conf".source = ./hypr/env.conf;

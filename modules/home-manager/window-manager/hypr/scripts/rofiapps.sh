@@ -1,0 +1,1 @@
+killall rofi || rofi -show drun -theme ~/.config/hypr/config.rasi
