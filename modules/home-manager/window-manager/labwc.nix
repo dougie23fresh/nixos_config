@@ -12,6 +12,9 @@
       waybar
       wlogout
       rofi
+      wlr-randr # An xrandr clone for wlroots compositors
+      wl-clipboard
+      wl-screenrec
    ];
     xdg.configFile = {
       #"labwc/rc.xml" = {
