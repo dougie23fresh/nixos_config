@@ -58,8 +58,8 @@
     pavucontrol # PulseAudio Volume Control
     pamixer # Pulseaudio command line mixer
     #swaylock
-    swaylock-fancy
-    swaylock-effects
+    #swaylock-fancy
+    #swaylock-effects
     brightnessctl
     grimblast
     hyprpaper
