@@ -8,12 +8,13 @@
 }: {
 
   networking.interfaces.enp2s0.useDHCP = false;
-    networking.interfaces.enp2s0.ipv4.addresses = [{
-      address = "10.1.1.2";
-      prefixLength = 24;
-    }];
-    networking.defaultGateway  = "10.1.1.1";
-    networking.nameservers  = [ "1.1.1.1" ];
+  networking.interfaces.enp2s0.ipv4.addresses = [{
+    address = "10.1.1.2";
+    prefixLength = 24;
+  }];
+  networking.defaultGateway  = "10.1.1.1";
+  networking.nameservers  = [ "1.1.1.1" ];
+  networking.firewall.enable = false;
 
   imports = [
     ./hardware.nix
