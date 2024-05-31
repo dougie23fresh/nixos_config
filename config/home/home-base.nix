@@ -18,6 +18,7 @@
         outputs.homeManagerModules.networking.browsers.edge
         outputs.homeManagerModules.networking.browsers.firefox
         outputs.homeManagerModules.networking.browsers.vivaldi
+        outputs.homeManagerModules.networking.browsers.tor-browser
         #outputs.homeManagerModules.networking.mailreader.bluemail
         #outputs.homeManagerModules.networking.mailreader.betterbird
         outputs.homeManagerModules.networking.citrix_workspace

@@ -4,4 +4,5 @@
   edge = import ./edge.nix;
   firefox = import ./firefox.nix;
   vivaldi = import ./vivaldi.nix;
+  tor-browser = import ./tor-browser.nix;
 }
