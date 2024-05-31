@@ -19,7 +19,10 @@
   imports = [
     ./hardware.nix
     inputs.catppuccin.nixosModules.catppuccin
-
+    inputs.sops-nix.nixosModules.sops
+    sops.defaultSopsFile = ./secrets/secrets.yaml;
+    sops.defaultSopsFormat = "yaml";
+    sops.age.keyFile = "/home/melvin/.config/sops/age/keys.txt";
     outputs.nixosModules.hardware.cpu-intel
     outputs.nixosModules.hardware.gpu-intel
     outputs.nixosModules.hardware.firmware

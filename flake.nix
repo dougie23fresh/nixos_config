@@ -26,6 +26,7 @@
     catppuccin.url = "github:catppuccin/nix";
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     nixpkgs-wayland.inputs.nixpkgs.follows = "nixpkgs";
+    sops-nix.nix.url = "github:Mic92/sops-nix";
     #anyrun.url = "github:Kirottu/anyrun";
     #anyrun.inputs.nixpkgs.follows = "nixpkgs";
     #firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
