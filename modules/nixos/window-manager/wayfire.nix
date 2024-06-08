@@ -1,4 +1,4 @@
-wayfire
+
 {  inputs, pkgs, ... }:
 {
     programs.wayfire  = {
