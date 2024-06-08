@@ -6,4 +6,5 @@
   xdg = import ./xdg.nix;
   xserver = import ./xserver.nix;
   labwc = import ./labwc.nix;
+  wayfire = import ./wayfire.nix;
 }

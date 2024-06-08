@@ -64,5 +64,6 @@
         android-tools
         scrcpy
 
+        cdrtools
     ];
 }
