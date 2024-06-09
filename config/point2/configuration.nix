@@ -19,8 +19,8 @@
     ./hardware.nix
     #inputs.catppuccin.nixosModules.catppuccin
     inputs.sops-nix.nixosModules.sops
-    sops.defaultSopsFile = ./secrets/secrets.yaml;
-    sops.defaultSopsFormat = "yaml";
+    #sops.defaultSopsFile = ./secrets/secrets.yaml;
+    #sops.defaultSopsFormat = "yaml";
     outputs.nixosModules.hardware.cpu-intel
     outputs.nixosModules.hardware.gpu-intel
     outputs.nixosModules.hardware.firmware
