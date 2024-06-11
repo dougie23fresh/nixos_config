@@ -10,6 +10,7 @@
   imports = [
     ./hardware.nix
     inputs.catppuccin.nixosModules.catppuccin
+    inputs.sops-nix.nixosModules.sops
     outputs.nixosModules.hardware.bluetooth
     outputs.nixosModules.hardware.cpu-intel
     outputs.nixosModules.hardware.gpu-intel
