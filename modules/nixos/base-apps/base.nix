@@ -26,6 +26,7 @@
         hwinfo # Hardware detection tool from openSUSE
         hardinfo # Display information about your hardware and operating system
         ncdu # disk space info
+        fastfetch
 
         btop # A monitor of resources
         bottom # A cross-platform graphical process/system monitor with a customizable interface
@@ -65,5 +66,6 @@
         scrcpy
 
         cdrtools
+        tldr
     ];
 }

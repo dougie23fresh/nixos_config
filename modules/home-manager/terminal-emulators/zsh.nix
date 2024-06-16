@@ -23,4 +23,18 @@
     };
   };
   programs.zsh.syntaxHighlighting.catppuccin.enable = true;
+  programs.zsh.ohMyZsh = {
+    enable = true;
+    plugins = [
+      "adb"
+      "git"
+      "sudo"
+      "docker"
+      "kubectl"
+      "python"
+      "vscode"
+      "qrcode"
+      "pip"
+    ];
+  };
 }
