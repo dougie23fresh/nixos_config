@@ -14,12 +14,31 @@
     program.steam.gamescopeSession.enable = true;
     environment.systemPackages = with pkgs; [
         mangohud
-        protonup
+        protonup-qt
         heroic
-        lutus
+        lutris
         bottles
-    ];
+        prismlauncher
 
+        xdotool
+        xxd
+        yad
+        mangohud
+        mesa
+        steam
+        steam-run
+        vkbasalt
+
+        wine
+        wineWowPackages.stable
+        winetricks
+        gamemode
+        steam-with-pkgs
+        gamescope
+        protontricks
+
+    ];
+    programs.gamescope.enable = true;
     programs.gamemode = {
         enable = true;
         settings = {
@@ -28,6 +47,9 @@
                 renice = 15;
             };
         };
+    };
+    users.users.melvin = {
+        extraGroups = ["gamemode"];
     };
 
     environment.sessionVariables = {

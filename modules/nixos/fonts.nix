@@ -35,8 +35,10 @@
     material-design-icons
   ];
   fonts.fontconfig.defaultFonts = {
-      serif = ["Lexend"];
-      sansSerif = ["Lexend"];
+      serif = [ "Lexend" "Noto Serif" ] ;
+      sansSerif = [ "Lexend" "Noto Sans" ];
+      #serif = [ "Noto Serif" "Source Han Serif" ];
+      #sansSerif = [ "Noto Sans" "Source Han Sans" ];
       monospace = ["Fira Code Regular"];
       # emoji = ["Noto Color Emoji"];
     };
