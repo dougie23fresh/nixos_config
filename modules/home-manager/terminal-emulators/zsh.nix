@@ -5,7 +5,15 @@
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "python" "man" ];
+      plugins = [
+        "git"
+        "python"
+        "man"
+        "sudo"
+        "vscode"
+        "qrcode"
+        "pip"
+      ];
     };
     sessionVariables = {
       LC_ALL = "en_US.UTF-8";
@@ -23,18 +31,4 @@
     };
   };
   programs.zsh.syntaxHighlighting.catppuccin.enable = true;
-  programs.zsh.ohMyZsh = {
-    enable = true;
-    plugins = [
-      "adb"
-      "git"
-      "sudo"
-      "docker"
-      "kubectl"
-      "python"
-      "vscode"
-      "qrcode"
-      "pip"
-    ];
-  };
 }
