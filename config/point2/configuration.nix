@@ -56,10 +56,16 @@
   sops.defaultSopsFormat = "yaml";
   sops.age.keyFile = "/home/melvin/.config/sops/age/keys.txt";
   sops.secrets.cloudflare_token = {};
+  #sops.secrets.cloudflare_token.owner = "caddy";
+  systemd.services.caddy.serviceConfig = {
+    EnvironmentFile = config.sops.secrets.cloudflare_token.path;
+    AmbientCapabilities = "cap_net_bind_service";
+    CapabilityBoundingSet = "cap_net_bind_service";
+  };
   services.caddy.enable = true;
   services.caddy.virtualHosts."vw.dougie23fresh.com".extraConfig = ''
       tls {
-        dns cloudflare $(cat ${config.sops.secrets."cloudflare_token".path})
+        dns cloudflare {env.CLOUDFLARE_API_TOKEN}
       }
       reverse_proxy 10.1.1.77:7277
     '';
