@@ -58,7 +58,7 @@
   sops.secrets.cloudflare_token = {};
   sops.templates.acme-credentials.content = ''
     CLOUDFLARE_EMAIL=melvin.douglas@gmail.com
-    CLOUDFLARE_DNS_API_TOKEN=${config.sops.secrets.cloudflare_token}
+    CLOUDFLARE_DNS_API_TOKEN=${config.sops.placeholder.cloudflare_token}
   '';
   #sops.secrets.cloudflare_token.owner = "caddy";
   security.acme.acceptTerms = true;
