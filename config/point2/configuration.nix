@@ -56,6 +56,10 @@
   sops.defaultSopsFormat = "yaml";
   sops.age.keyFile = "/home/melvin/.config/sops/age/keys.txt";
   sops.secrets.cloudflare_token = {};
+  sops.templates.acme-credentials.content = ''
+    CLOUDFLARE_EMAIL=melvin.douglas@gmail.com
+    CLOUDFLARE_DNS_API_TOKEN=${config.sops.secrets.cloudflare_token}
+  '';
   #sops.secrets.cloudflare_token.owner = "caddy";
   security.acme.acceptTerms = true;
   security.acme.email = "melvin.douglas@gmail.com";
@@ -63,10 +67,10 @@
     domain = "dougie23fresh.com";
     extraDomainNames = [ "*.dougie23fresh.com" ];
     dnsProvider = "cloudflare";
-    credentialsFile = config.sops.secrets.cloudflare_token.path;
+    credentialsFile = config.sops.templates.acme-credentials.path;
     server = "https://acme-staging-v02.api.letsencrypt.org/directory";
   };
-
+  #config.sops.secrets.cloudflare_token.path;
   services.caddy.enable = true;
 
   #services.caddy.virtualHosts."vw.dougie23fresh.com".extraConfig = ''
