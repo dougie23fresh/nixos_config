@@ -67,5 +67,6 @@
 
         cdrtools
         tldr
+        age
     ];
 }
