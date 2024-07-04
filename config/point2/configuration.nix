@@ -77,7 +77,13 @@
   services.caddy.virtualHosts."vw.dougie23fresh.com" = {
     useACMEHost  = "dougie23fresh.com";
     extraConfig = ''
-        reverse_proxy 10.1.1.77:7277
+        reverse_proxy 10.1.1.85:7277
+      '';
+  };
+  services.caddy.virtualHosts."dns.dougie23fresh.com" = {
+    useACMEHost  = "dougie23fresh.com";
+    extraConfig = ''
+        reverse_proxy 10.1.1.2:5380
       '';
   };
   services.caddy.virtualHosts."dougie23fresh.com" = {
