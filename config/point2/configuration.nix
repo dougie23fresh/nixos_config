@@ -69,7 +69,7 @@
     dnsResolver = "1.1.1.1:53";
     dnsProvider = "cloudflare";
     credentialsFile = config.sops.templates.acme-credentials.path;
-    server = "https://acme-staging-v02.api.letsencrypt.org/directory";
+    #server = "https://acme-staging-v02.api.letsencrypt.org/directory";
   };
   users.users.melvin.extraGroups = ["acme"];
   #config.sops.secrets.cloudflare_token.path;
@@ -78,6 +78,12 @@
     useACMEHost  = "dougie23fresh.com";
     extraConfig = ''
         reverse_proxy 10.1.1.85:7277
+      '';
+  };
+  services.caddy.virtualHosts."haos.dougie23fresh.com" = {
+    useACMEHost  = "dougie23fresh.com";
+    extraConfig = ''
+        reverse_proxy 10.1.1.85:8123
       '';
   };
   services.caddy.virtualHosts."dns.dougie23fresh.com" = {
