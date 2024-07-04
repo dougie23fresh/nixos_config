@@ -52,8 +52,19 @@
     outputs.nixosModules.base-apps.nixapp
 
   ];
+  sops.defaultSopsFile = ./secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
+  sops.age.keyFile = "/home/melvin/.config/sops/age/keys.txt";
+  sops.secrets"cloudflare_token" = {};
   services.caddy.enable = true;
+  services.caddy.virtualHosts."vw.dougie23fresh.com".extraConfig = ''
+      tls {
+        dns cloudflare $(cat ${config.sops.secrets."cloudflare_token".path})
+      }
+      reverse_proxy 10.1.1.77:7277
+    '';
   #catppuccin.flavour = "macchiato";
+  #cloudflare_token
   system.stateVersion = "23.11";
 
 
