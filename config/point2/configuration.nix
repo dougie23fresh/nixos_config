@@ -76,19 +76,25 @@
   services.caddy.virtualHosts."vw.dougie23fresh.com" = {
     useACMEHost = "dougie23fresh.com";
     extraConfig = ''
-        reverse_proxy 10.1.1.77:7277
+        reverse_proxy 10.1.1.77:7277 {
+          import CLOUDFLARE_PROXY
+        }
       '';
   };
   services.caddy.virtualHosts."dougie23fresh.com" = {
     useACMEHost = "dougie23fresh.com";
     extraConfig = ''
-        respond "Hello, world!"
+        respond "Hello, world!" {
+          import CLOUDFLARE_PROXY
+        }
       '';
   };
   services.caddy.virtualHosts."localhost" = {
     useACMEHost = "dougie23fresh.com";
     extraConfig = ''
-        respond "Hello, world!"
+        respond "Hello, world!" {
+          import CLOUDFLARE_PROXY
+        }
       '';
   };
   #services.caddy.virtualHosts."vw.dougie23fresh.com".extraConfig = ''
