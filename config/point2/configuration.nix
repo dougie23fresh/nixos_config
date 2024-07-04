@@ -62,7 +62,7 @@
   '';
   #sops.secrets.cloudflare_token.owner = "caddy";
   security.acme.acceptTerms = true;
-  security.acme.email = "melvin.douglas@gmail.com";
+  security.acme.defaults.email = "melvin.douglas@gmail.com";
   security.acme.certs."dougie23fresh.com" = {
     domain = "dougie23fresh.com";
     extraDomainNames = [ "*.dougie23fresh.com" ];
