@@ -55,7 +55,7 @@
   sops.defaultSopsFile = ./secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
   sops.age.keyFile = "/home/melvin/.config/sops/age/keys.txt";
-  #sops.secrets.cloudflare_token = {};
+  sops.secrets.cloudflare_token = {};
   services.caddy.enable = true;
   ##services.caddy.virtualHosts."vw.dougie23fresh.com".extraConfig = ''
   #    tls {
