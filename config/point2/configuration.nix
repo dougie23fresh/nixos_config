@@ -73,7 +73,24 @@
   };
   #config.sops.secrets.cloudflare_token.path;
   services.caddy.enable = true;
-
+  services.caddy.virtualHosts."vw.dougie23fresh.com" = {
+    useACMEHost = "dougie23fresh.com";
+    extraConfig = ''
+        reverse_proxy 10.1.1.77:7277
+      '';
+  };
+  services.caddy.virtualHosts."dougie23fresh.com" = {
+    useACMEHost = "dougie23fresh.com";
+    extraConfig = ''
+        respond "Hello, world!"
+      '';
+  };
+  services.caddy.virtualHosts."localhost" = {
+    useACMEHost = "dougie23fresh.com";
+    extraConfig = ''
+        respond "Hello, world!"
+      '';
+  };
   #services.caddy.virtualHosts."vw.dougie23fresh.com".extraConfig = ''
   #    tls {
   #      dns cloudflare {env.CLOUDFLARE_API_TOKEN}
