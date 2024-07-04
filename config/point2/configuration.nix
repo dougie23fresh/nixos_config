@@ -71,30 +71,25 @@
     credentialsFile = config.sops.templates.acme-credentials.path;
     server = "https://acme-staging-v02.api.letsencrypt.org/directory";
   };
+  users.users.melvin.extraGroups = ["acme"];
   #config.sops.secrets.cloudflare_token.path;
   services.caddy.enable = true;
   services.caddy.virtualHosts."vw.dougie23fresh.com" = {
-    useACMEHost = "dougie23fresh.com";
+    enableACME = true;
     extraConfig = ''
-        reverse_proxy 10.1.1.77:7277 {
-          import CLOUDFLARE_PROXY
-        }
+        reverse_proxy 10.1.1.77:7277
       '';
   };
   services.caddy.virtualHosts."dougie23fresh.com" = {
-    useACMEHost = "dougie23fresh.com";
+    enableACME = true;
     extraConfig = ''
-        respond "Hello, world!" {
-          import CLOUDFLARE_PROXY
-        }
+        respond "Hello, world!"
       '';
   };
   services.caddy.virtualHosts."localhost" = {
-    useACMEHost = "dougie23fresh.com";
+    #enableACME = true;
     extraConfig = ''
-        respond "Hello, world!" {
-          import CLOUDFLARE_PROXY
-        }
+        respond "Hello, world!"
       '';
   };
   #services.caddy.virtualHosts."vw.dougie23fresh.com".extraConfig = ''
