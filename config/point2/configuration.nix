@@ -66,6 +66,7 @@
   security.acme.certs."dougie23fresh.com" = {
     domain = "dougie23fresh.com";
     extraDomainNames = [ "*.dougie23fresh.com" ];
+    dnsResolver = "1.1.1.1:53";
     dnsProvider = "cloudflare";
     credentialsFile = config.sops.templates.acme-credentials.path;
     server = "https://acme-staging-v02.api.letsencrypt.org/directory";
