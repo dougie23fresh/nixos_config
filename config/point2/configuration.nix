@@ -50,6 +50,7 @@
     outputs.nixosModules.base-apps.base
     outputs.nixosModules.base-apps.network
     outputs.nixosModules.base-apps.nixapp
+    services.caddy.enable = true;
   ];
 
   #catppuccin.flavour = "macchiato";
