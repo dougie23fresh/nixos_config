@@ -52,7 +52,7 @@
     outputs.nixosModules.base-apps.nixapp
 
   ];
-  sops.defaultSopsFile = ./secrets/secrets.yaml;
+  sops.defaultSopsFile = ../../secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
   sops.age.keyFile = "/home/melvin/.config/sops/age/keys.txt";
   sops.secrets.cloudflare_token = {};
