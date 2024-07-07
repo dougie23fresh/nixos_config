@@ -54,6 +54,7 @@
     home.packages = with pkgs; [
         standardnotes
         anytype
+        remmina
     ];
     home = {
         username = "${username}";
