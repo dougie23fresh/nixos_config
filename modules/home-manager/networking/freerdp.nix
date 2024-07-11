@@ -1,7 +1,7 @@
 {  pkgs, ... }:
 {
   home.packages = with pkgs; [
-    freerdp
+    freerdp3
 
   ];
 }
