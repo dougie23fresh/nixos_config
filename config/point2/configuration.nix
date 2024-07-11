@@ -78,7 +78,7 @@
 
   services.guacamole-server.enable = true;
   services.guacamole-client.enable = true;
-  services.guacamole-server.userMappingXml = /home/melvin/user-mapping.xml;
+  services.guacamole-server.userMappingXml = "/home/melvin/user-mapping.xml";
   services.caddy.enable = true;
   services.caddy.virtualHosts."vw.dougie23fresh.com" = {
     useACMEHost  = "dougie23fresh.com";
