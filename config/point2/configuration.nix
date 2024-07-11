@@ -75,6 +75,9 @@
   };
   users.users.melvin.extraGroups = ["acme"];
   #config.sops.secrets.cloudflare_token.path;
+
+  services.guacamole-server.enable = true;
+  services.guacamole-client.enable = true;
   services.caddy.enable = true;
   services.caddy.virtualHosts."vw.dougie23fresh.com" = {
     useACMEHost  = "dougie23fresh.com";
