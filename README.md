@@ -27,6 +27,8 @@ nix run github:astro/deadnix example.nix
 <https://github.com/vimjoyer/flake-starter-config/tree/main>
 -------
 
+nix-shell -p sops --run "sops secrets/secrets.yaml"
+cat secrets/secrets.yaml
 #############################
 <https://github.com/alexandergall/nixos-pxe-installer>
 <https://github.com/phip1611/nixos-configs/tree/main>
