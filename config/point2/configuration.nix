@@ -81,6 +81,7 @@
   services.guacamole-client.settings = {
     guacd-hostname = "localhost";
     guacd-port = 4822;
+    auth-provider = "net.sourceforge.guacamole.net.basic.BasicFileAuthenticationProvider";
     basic-user-mapping = "/etc/guacamole/user-mapping.xml";
 
   };
