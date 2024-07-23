@@ -76,8 +76,15 @@
   users.users.melvin.extraGroups = ["acme"];
   #config.sops.secrets.cloudflare_token.path;
 
-  services.guacamole-server.enable = true;
+  
   services.guacamole-client.enable = true;
+  services.guacamole-client.settings = {
+    guacd-hostname = "localhost";
+    guacd-port = 4822;
+    basic-user-mapping = "/etc/guacamole/user-mapping.xml";
+
+  };
+  services.guacamole-server.enable = true;
   services.guacamole-server.userMappingXml = "/home/melvin/user-mapping.xml";
   services.guacamole-server.logbackXml = "/home/melvin/logback.xml";
   services.caddy.enable = true;
