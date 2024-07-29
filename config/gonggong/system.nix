@@ -64,7 +64,8 @@
     ../../modules/system/window-manager/plasma6.nix
     #LXQt
     #Enlightenment
-    #budgie
+    #budgieservices.xserver.videoDrivers = [ "displaylink" "modesetting" ];zzzz
+    services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
 
   ];
 
