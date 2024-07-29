@@ -65,6 +65,8 @@
     #LXQt
     #Enlightenment
     #budgie
+    services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
+
 
   ];
 
