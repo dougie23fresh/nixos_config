@@ -73,11 +73,11 @@
     outputs.nixosModules.base-apps.base
     outputs.nixosModules.base-apps.network
     outputs.nixosModules.base-apps.nixapp
-    environment.systemPackages = with pkgs; [ displaylink ];
-    services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
+    
 
   ];
-
+  environment.systemPackages = with pkgs; [ displaylink ];
+  services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
   catppuccin.flavor = "macchiato";
   system.stateVersion = "23.11";
 
