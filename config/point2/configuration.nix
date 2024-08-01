@@ -78,16 +78,17 @@
 
   services.guacamole-server.enable = true;
   services.guacamole-server.host = "127.0.0.1";
+  services.guacamole-server.port = "4822";
   services.guacamole-server.userMappingXml = "/home/melvin/user-mapping.xml";
   services.guacamole-server.logbackXml = "/home/melvin/logback.xml";
 
   services.guacamole-client.enable = true;
   services.guacamole-client.enableWebserver = true;
   services.guacamole-client.settings = {
-    guacd-hostname = "127.0.0.1";
     guacd-port = 4822;
-    #auth-provider = "net.sourceforge.guacamole.net.basic.BasicFileAuthenticationProvider";
-    #basic-user-mapping = "/etc/guacamole/user-mapping.xml";
+    guacd-hostname = "127.0.0.1";
+    # auth-provider = "net.sourceforge.guacamole.net.basic.BasicFileAuthenticationProvider";
+    # basic-user-mapping = "/etc/guacamole/user-mapping.xml";
 
   };
     services.caddy.enable = true;
