@@ -7,7 +7,7 @@
   #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-kde ];
   environment.systemPackages = with pkgs; [
     unstable.pkgs.kdePackages.krdp  
-    
+    kdePackages.kdbusaddons
     kdePackages.qt6ct
     kdePackages.qtstyleplugin-kvantum
     kdePackages.kdeplasma-addons
