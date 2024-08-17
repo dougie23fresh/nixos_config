@@ -12,6 +12,10 @@
     kdePackages.qtstyleplugin-kvantum
     kdePackages.kdeplasma-addons
   ];
+  xdg.portal.enable = true; 
+  xdg.portal.extraPortals = [ 
+    pkgs.xdg-desktop-portal-kdePackages
+  ];
   #environment.variables = {
   #  IXOS_OZONE_WL="1";
     #LIBVA_DRIVER_NAME="nvidia";
