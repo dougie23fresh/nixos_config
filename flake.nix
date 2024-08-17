@@ -124,6 +124,7 @@
           gpuType = "intel";
         };
         modules = [
+          unstableModule
           ./config/lggramlaptop/configuration.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
