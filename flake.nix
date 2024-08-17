@@ -40,7 +40,7 @@
     # Generate System Images
     # nixos-generators.url = "github:nix-community/nixos-generators";
   };
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, ... }@inputs:
   let
     inherit (self) outputs;
 
