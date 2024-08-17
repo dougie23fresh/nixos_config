@@ -146,6 +146,7 @@
           gpuType = "intel";
         };
         modules = [
+          unstableModule
           ./config/gonggong/configuration.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
