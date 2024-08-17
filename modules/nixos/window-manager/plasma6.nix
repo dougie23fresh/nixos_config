@@ -1,20 +1,16 @@
-{  pkgs, nixpkgs-unstable,... }:
-let
-unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
-
-in
+{  pkgs, ... }:
 {
   services.desktopManager.plasma6.enable = true;
   programs.dconf.enable = true;
   #services.displayManager.defaultSession = "plasma";
   #services.xserver.displayManager.defaultSession = "plasma";
   #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-kde ];
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     unstable.kdePackages.krdp  
     
-    pkgs.kdePackages.qt6ct
-    pkgs.kdePackages.qtstyleplugin-kvantum
-    pkgs.kdePackages.kdeplasma-addons
+    kdePackages.qt6ct
+    kdePackages.qtstyleplugin-kvantum
+    kdePackages.kdeplasma-addons
   ];
   #environment.variables = {
   #  IXOS_OZONE_WL="1";

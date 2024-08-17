@@ -49,15 +49,19 @@
     username = "melvin";
 
     # Supported systems for your flake packages, shell, etc.
-      systems = [
-        "aarch64-linux"
-        "x86_64-linux"
-        #"aarch64-darwin"
-        #"x86_64-darwin"
-      ];
-      # This is a function that generates an attribute by calling a function you
-      # pass to it, with each system as an argument
-      forAllSystems = nixpkgs.lib.genAttrs systems;
+    systems = [
+      "aarch64-linux"
+      "x86_64-linux"
+      #"aarch64-darwin"
+      #"x86_64-darwin"
+    ];
+    # This is a function that generates an attribute by calling a function you
+    # pass to it, with each system as an argument
+    forAllSystems = nixpkgs.lib.genAttrs systems;
+
+    unstableOverlay = final: prev: { unstable = nixpkgs-unstable.legacyPackages.${prev.system}; };
+    # Overlays-module makes "pkgs.unstable" available in configuration.nix
+    unstableModule = ({ config, pkgs, ... }: { nixpkgs.overlays = [ unstableOverlay ]; });
   in {
     # Reusable nixos modules you might want to export
     # These are usually stuff you would upstream into nixpkgs
