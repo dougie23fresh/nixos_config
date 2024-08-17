@@ -6,7 +6,7 @@
   pkgs,
   ...
 }: {
-
+  networking.firewall.enable = false;
   imports = [
     ./hardware.nix
     inputs.catppuccin.nixosModules.catppuccin
