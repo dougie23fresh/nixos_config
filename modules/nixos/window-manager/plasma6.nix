@@ -6,7 +6,7 @@
   #services.xserver.displayManager.defaultSession = "plasma";
   #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-kde ];
   environment.systemPackages = with pkgs; [
-    unstable.kdePackages.krdp  
+    unstable.pkgs.kdePackages.krdp  
     
     kdePackages.qt6ct
     kdePackages.qtstyleplugin-kvantum
