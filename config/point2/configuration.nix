@@ -104,6 +104,12 @@
         reverse_proxy 10.1.1.85:8123
       '';
   };
+  services.caddy.virtualHosts."guac.dougie23fresh.com" = {
+    useACMEHost  = "dougie23fresh.com";
+    extraConfig = ''
+        reverse_proxy 10.1.1.95:8087
+      '';
+  };
   services.caddy.virtualHosts."dns.dougie23fresh.com" = {
     useACMEHost  = "dougie23fresh.com";
     extraConfig = ''
