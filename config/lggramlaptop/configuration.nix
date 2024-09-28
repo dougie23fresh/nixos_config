@@ -99,5 +99,8 @@
   services.ipp-usb.enable=true;
   environment.systemPackages = with pkgs; [
     libsForQt5.skanlite
+    opera
+    floorp
+    librewolf
   ];
 }
