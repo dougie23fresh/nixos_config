@@ -63,7 +63,7 @@
     # Overlays-module makes "pkgs.unstable" available in configuration.nix
     unstableModule = ({ config, pkgs, ... }: { nixpkgs.overlays = [ unstableOverlay ]; });
     #pkgs2 = nixpkgs.legacyPackages.x86_64-linux;
-    #pkgsun- = nixpkgs-unstable.legacyPackages.x86_64-linux;
+    pkgsun- = nixpkgs-unstable.legacyPackages.x86_64-linux;
 
   in {
     # Reusable nixos modules you might want to export
@@ -218,7 +218,7 @@
           gpuType = "intel";
         };
         modules = [
-          unstableModule
+
           ./config/point2/configuration.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
