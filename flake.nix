@@ -218,6 +218,7 @@
           gpuType = "intel";
         };
         modules = [
+          unstableModule
           ./config/point2/configuration.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
