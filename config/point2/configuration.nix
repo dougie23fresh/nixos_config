@@ -45,7 +45,7 @@
     outputs.nixosModules.services.syncthing
     outputs.nixosModules.services.tailscale
     outputs.nixosModules.services.tumbler
-    outputs.nixosModules.services.technitium-dns-server
+    #outputs.nixosModules.services.technitium-dns-server
 
     outputs.nixosModules.base-apps.archives
     outputs.nixosModules.base-apps.base
