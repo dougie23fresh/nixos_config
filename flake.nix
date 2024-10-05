@@ -47,6 +47,11 @@
     version = builtins.substring 0 8 self.lastModifiedDate;
     #system = "x86_64-linux";
     username = "melvin";
+    system = "x86_64-linux";
+    lib = nixpkgs.lib;
+    pkgs = nixpkgs.legacyPackages.${system};
+    pkgsun- = nixpkgs-unstable.legacyPackages.${system};
+    #  pkgs-unstable
 
     # Supported systems for your flake packages, shell, etc.
     systems = [
@@ -63,7 +68,7 @@
     # Overlays-module makes "pkgs.unstable" available in configuration.nix
     unstableModule = ({ config, pkgs, ... }: { nixpkgs.overlays = [ unstableOverlay ]; });
     #pkgs2 = nixpkgs.legacyPackages.x86_64-linux;
-    pkgsun- = nixpkgs-unstable.legacyPackages.x86_64-linux;
+    
 
   in {
     # Reusable nixos modules you might want to export

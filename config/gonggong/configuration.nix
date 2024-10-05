@@ -85,6 +85,8 @@
     opera
     floorp
     librewolf
+    mission-center
+    spacedrive
   ];
 
 
