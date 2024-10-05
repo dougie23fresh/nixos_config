@@ -1,3 +1,4 @@
+{  lib, config, pkgs, ... }:
 {
 
   audio = import ./audio;
@@ -13,7 +14,6 @@
   terminal-emulators = import ./terminal-emulators;
   video = import ./video;
   window-manager = import ./window-manager;
-
 
 }
 
