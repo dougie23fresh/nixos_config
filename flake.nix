@@ -59,11 +59,11 @@
     # pass to it, with each system as an argument
     forAllSystems = nixpkgs.lib.genAttrs systems;
 
-    #unstableOverlay = final: prev: { unstable = nixpkgs-unstable.legacyPackages.${prev.system}; };
+    unstableOverlay = final: prev: { unstable = nixpkgs-unstable.legacyPackages.${prev.system}; };
     # Overlays-module makes "pkgs.unstable" available in configuration.nix
-    #unstableModule = ({ config, pkgs, ... }: { nixpkgs.overlays = [ unstableOverlay ]; });
+    unstableModule = ({ config, pkgs, ... }: { nixpkgs.overlays = [ unstableOverlay ]; });
     #pkgs2 = nixpkgs.legacyPackages.x86_64-linux;
-    pkgsun- = nixpkgs-unstable.legacyPackages.x86_64-linux;
+    #pkgsun- = nixpkgs-unstable.legacyPackages.x86_64-linux;
 
   in {
     # Reusable nixos modules you might want to export
