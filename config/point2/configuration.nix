@@ -45,6 +45,7 @@
     outputs.nixosModules.services.syncthing
     outputs.nixosModules.services.tailscale
     outputs.nixosModules.services.tumbler
+    outputs.nixosModules.services.technitium-dns-server
 
     outputs.nixosModules.base-apps.archives
     outputs.nixosModules.base-apps.base
@@ -52,8 +53,6 @@
     outputs.nixosModules.base-apps.nixapp
 
   ];
-  #services.unifi.enable = true;
-  #services.unifi.unifiPackage = pkgs.unifi8;
   sops.defaultSopsFile = ../../secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
   sops.age.keyFile = "/home/melvin/.config/sops/age/keys.txt";
