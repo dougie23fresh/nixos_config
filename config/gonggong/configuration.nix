@@ -77,11 +77,11 @@
     
 
   ];
-  environment.systemPackages = with pkgs; [ displaylink ];
   services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
   catppuccin.flavor = "macchiato";
   system.stateVersion = "23.11";
   environment.systemPackages = with pkgs; [
+    displaylink
     opera
     floorp
     librewolf
