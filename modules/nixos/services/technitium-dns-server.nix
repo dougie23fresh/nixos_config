@@ -1,4 +1,4 @@
-{  pkgs, ... }:
+{  pkgs, unstableModule, ... }:
 {
   services.technitium-dns-server.enable = true;
   # services.technitium-dns-server.package = pkgs.technitium-dns-server;
