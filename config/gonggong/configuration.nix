@@ -87,6 +87,7 @@
     librewolf
     mission-center
     spacedrive
+    tangram
   ];
 
 

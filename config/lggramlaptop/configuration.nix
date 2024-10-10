@@ -102,5 +102,6 @@
     opera
     floorp
     librewolf
+    tangram
   ];
 }
