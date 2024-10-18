@@ -50,7 +50,7 @@
     system = "x86_64-linux";
     lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages.${system};
-    pkgsun- = nixpkgs-unstable.legacyPackages.${system};
+    pkgsun = nixpkgs-unstable.legacyPackages.${system};
     #  pkgs-unstable
 
     # Supported systems for your flake packages, shell, etc.
