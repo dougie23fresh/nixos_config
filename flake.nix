@@ -88,6 +88,10 @@
           hostname = "ceres";
           cpuType = "amd";
           gpuType = "nvida";
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
         };
         modules = [
           ./config/ceres/configuration.nix
@@ -109,6 +113,10 @@
           hostname = "hpelitebook";
           cpuType = "intel";
           gpuType = "intel";
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
         };
         modules = [
           ./config/hpelitebook/configuration.nix
@@ -156,6 +164,10 @@
           hostname = "gonggong";
           cpuType = "intel";
           gpuType = "intel";
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
         };
         modules = [
           ./config/gonggong/configuration.nix
@@ -178,6 +190,10 @@
           hostname = "msi-gs70-stealth";
           cpuType = "intel";
           gpuType = "intel-nvidia";
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
         };
         modules = [
           ./config/msi-gs70-stealth/configuration.nix
