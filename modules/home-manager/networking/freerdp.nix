@@ -1,7 +1,7 @@
-{  pkgs, ... }:
+{  pkgs, pkgsun,... }:
 {
-  home.packages = with pkgs; [
-    unstableModule.freerdp3
+  home.packages = with pkgsun; [
+    freerdp3
 
   ];
 }
