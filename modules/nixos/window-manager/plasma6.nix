@@ -1,12 +1,14 @@
-{  pkgs, ... }:
+{  pkgs, pkgs-unstable, ... }:
 {
   services.desktopManager.plasma6.enable = true;
   programs.dconf.enable = true;
   #services.displayManager.defaultSession = "plasma";
   #services.xserver.displayManager.defaultSession = "plasma";
   #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-kde ];
+  environment.systemPackages = with pkgs-unstable; [
+    kdePackages.krdp
+  ];
   environment.systemPackages = with pkgs; [
-    unstable.pkgs.kdePackages.krdp  
     kdePackages.kdbusaddons
     kdePackages.qt6ct
     kdePackages.qtstyleplugin-kvantum
