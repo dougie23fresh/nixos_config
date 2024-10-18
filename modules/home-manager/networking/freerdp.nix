@@ -1,6 +1,6 @@
-{  pkgs, pkgsun,... }:
+{  pkgs, pkgs-unstable,... }:
 {
-  home.packages = with pkgsun; [
+  home.packages = with pkgs-unstable; [
     freerdp3
 
   ];

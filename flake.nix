@@ -50,7 +50,7 @@
     system = "x86_64-linux";
     lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages.${system};
-    pkgsun = nixpkgs-unstable.legacyPackages.${system};
+    #pkgsun = nixpkgs-unstable.legacyPackages.${system};
     #  pkgs-unstable
 
     # Supported systems for your flake packages, shell, etc.
@@ -131,10 +131,13 @@
           hostname = "lggramlinux";
           cpuType = "intel";
           gpuType = "intel";
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
         };
         modules = [
           unstableModule
-          pkgsun
           ./config/lggramlaptop/configuration.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
