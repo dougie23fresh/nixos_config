@@ -64,9 +64,9 @@
     # pass to it, with each system as an argument
     forAllSystems = nixpkgs.lib.genAttrs systems;
 
-    unstableOverlay = final: prev: { unstable = nixpkgs-unstable.legacyPackages.${prev.system}; };
+    #unstableOverlay = final: prev: { unstable = nixpkgs-unstable.legacyPackages.${prev.system}; };
     # Overlays-module makes "pkgs.unstable" available in configuration.nix
-    unstableModule = ({ config, pkgs, ... }: { nixpkgs.overlays = [ unstableOverlay ]; });
+    #unstableModule = ({ config, pkgs, ... }: { nixpkgs.overlays = [ unstableOverlay ]; });
     #pkgs2 = nixpkgs.legacyPackages.x86_64-linux;
     
 
@@ -90,7 +90,6 @@
           gpuType = "nvida";
         };
         modules = [
-          unstableModule
           ./config/ceres/configuration.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
@@ -137,7 +136,6 @@
           };
         };
         modules = [
-          unstableModule
           ./config/lggramlaptop/configuration.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
@@ -160,7 +158,6 @@
           gpuType = "intel";
         };
         modules = [
-          unstableModule
           ./config/gonggong/configuration.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
