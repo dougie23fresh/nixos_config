@@ -5,14 +5,12 @@
   #services.displayManager.defaultSession = "plasma";
   #services.xserver.displayManager.defaultSession = "plasma";
   #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-kde ];
-  environment.systemPackages = with pkgs-unstable; [
-    kdePackages.krdp
-  ];
   environment.systemPackages = with pkgs; [
-    kdePackages.kdbusaddons
-    kdePackages.qt6ct
-    kdePackages.qtstyleplugin-kvantum
-    kdePackages.kdeplasma-addons
+    pkgs.kdePackages.kdbusaddons
+    pkgs.kdePackages.qt6ct
+    pkgs.kdePackages.qtstyleplugin-kvantum
+    pkgs.kdePackages.kdeplasma-addons
+    pkgs-unstable.kdePackages.krdp
   ];
   xdg.portal.enable = true; 
   xdg.portal.extraPortals = [ 
