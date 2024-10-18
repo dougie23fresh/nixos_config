@@ -134,6 +134,7 @@
         };
         modules = [
           unstableModule
+          pkgsun
           ./config/lggramlaptop/configuration.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
