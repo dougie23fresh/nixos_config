@@ -213,6 +213,38 @@
         ];
       };
 
+      razer7500u = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit username;
+          inherit inputs;
+          inherit outputs;
+          hostname = "razer7500u";
+          cpuType = "intel";
+          gpuType = "intel";
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
+        modules = [
+          ./config/razer7500u/configuration.nix
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = { 
+              inherit inputs outputs username;
+              pkgs-unstable = import nixpkgs-unstable {
+                inherit system;
+                config.allowUnfree = true;
+              };
+            };
+            home-manager.users.${username} = import ./config/home/home-base.nix;
+          }
+
+        ];
+      };
+
       # Servers
       point1 = nixpkgs.lib.nixosSystem {
         specialArgs = {
