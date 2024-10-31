@@ -99,7 +99,13 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = { inherit inputs outputs username; };
+            home-manager.extraSpecialArgs = { 
+              inherit inputs outputs username;
+              pkgs-unstable = import nixpkgs-unstable {
+                inherit system;
+                config.allowUnfree = true;
+              };
+            };
             home-manager.users.${username} = import ./config/home/home-base.nix;
           }
         ];
