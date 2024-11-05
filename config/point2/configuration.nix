@@ -91,16 +91,17 @@
     # basic-user-mapping = "/etc/guacamole/user-mapping.xml";
   };
   services.gotify.enable = true;
-  services.gotify.package = pkgs-unstable.gotify-server;
-  services.gotify.environment = {
-    GOTIFY_DATABASE_DIALECT = "sqlite3";
-    GOTIFY_SERVER_PORT = 8085;
-    GOTIFY_DEFAULTUSER_NAME="admin";
-    GOTIFY_DEFAULTUSER_PASS="money23";
-    GOTIFY_REGISTRATION=true;
-  };
+  services.gotify.port = 8085;
+  #services.gotify.package = pkgs-unstable.gotify-server;
+  #services.gotify.environment = {
+  #  GOTIFY_DATABASE_DIALECT = "sqlite3";
+  ##  GOTIFY_SERVER_PORT = 8085;
+  #  GOTIFY_DEFAULTUSER_NAME="admin";
+  #  GOTIFY_DEFAULTUSER_PASS="money23";
+  #  GOTIFY_REGISTRATION=true;
+  #};
   
-    services.caddy.enable = true;
+  services.caddy.enable = true;
   services.caddy.virtualHosts."vw.dougie23fresh.com" = {
     useACMEHost  = "dougie23fresh.com";
     extraConfig = ''
