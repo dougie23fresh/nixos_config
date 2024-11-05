@@ -89,6 +89,7 @@
     guacd-hostname = "127.0.0.1";
     # auth-provider = "net.sourceforge.guacamole.net.basic.BasicFileAuthenticationProvider";
     # basic-user-mapping = "/etc/guacamole/user-mapping.xml";
+  };
   services.gotify.enable = true;
   services.gotify.package = pkgs-unstable.gotify-server;
   services.gotify.environment = {
@@ -98,7 +99,7 @@
     GOTIFY_DEFAULTUSER_PASS="money23";
     GOTIFY_REGISTRATION=true;
   };
-  };
+  
     services.caddy.enable = true;
   services.caddy.virtualHosts."vw.dougie23fresh.com" = {
     useACMEHost  = "dougie23fresh.com";
