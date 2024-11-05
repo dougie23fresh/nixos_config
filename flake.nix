@@ -260,6 +260,10 @@
           hostname = "point1";
           cpuType = "intel";
           gpuType = "intel";
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
         };
         modules = [
           ./config/point1/configuration.nix
@@ -267,7 +271,13 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = { inherit inputs outputs username;};
+            home-manager.extraSpecialArgs = { 
+              inherit inputs outputs username;
+              pkgs-unstable = import nixpkgs-unstable {
+                inherit system;
+                config.allowUnfree = true;
+              };
+            };
             home-manager.users.${username} = import ./config/home/server.nix;
           }
 
@@ -282,6 +292,10 @@
           hostname = "point2";
           cpuType = "intel";
           gpuType = "intel";
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
         };
         modules = [
 
@@ -290,7 +304,13 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = { inherit inputs outputs username;};
+            home-manager.extraSpecialArgs = {
+              inherit inputs outputs username;
+              pkgs-unstable = import nixpkgs-unstable {
+                inherit system;
+                config.allowUnfree = true;
+              };
+            };
             home-manager.users.${username} = import ./config/home/server.nix;
           }
 
