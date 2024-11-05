@@ -90,7 +90,7 @@
     # auth-provider = "net.sourceforge.guacamole.net.basic.BasicFileAuthenticationProvider";
     # basic-user-mapping = "/etc/guacamole/user-mapping.xml";
   services.gotify.enable = true;
-  services.gotify.package = pkgs.gotify-server;
+  services.gotify.package = pkgs-unstable.gotify-server;
   services.gotify.environment = {
     GOTIFY_DATABASE_DIALECT = "sqlite3";
     GOTIFY_SERVER_PORT = 8085;
