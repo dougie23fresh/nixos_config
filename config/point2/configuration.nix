@@ -4,6 +4,7 @@
   lib,
   config,
   pkgs,
+  pkgs-unstable,
   ...
 }: {
   networking.interfaces.enp2s0.useDHCP = false;
