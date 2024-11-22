@@ -15,6 +15,7 @@
       "audio"
       "video"
       "users"
+      "dialout"
       #"docker"
       #"plugdev"
       #"render"
