@@ -12,7 +12,7 @@
 
   services.dbus.enable = true;
   # Make the gnome keyring work properly
-  services.dbus.packages = [ pkgs.gnome3.gnome-keyring pkgs.gcr ];
+  services.dbus.packages = [ pkgs.gnome-keyring pkgs.gcr ];
   services.gnome.gnome-keyring.enable = true;
   services.gnome.sushi.enable = true;
   services.gvfs.enable = true;
