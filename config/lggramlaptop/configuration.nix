@@ -18,7 +18,7 @@
     outputs.nixosModules.hardware.logitech
     #outputs.nixosModules.hardware.scanner
     outputs.nixosModules.hardware.power-management
-    outputs.nixosModules.hardware.sound
+    outputs.nixosModules.hardware.sounds
 
 
     outputs.nixosModules.users

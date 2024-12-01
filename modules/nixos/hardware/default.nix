@@ -12,6 +12,6 @@
   logitech = import ./logitech.nix;
   power-management = import ./power-management.nix;
   scanner = import ./scanner.nix;
-  sound = import ./sound.nix;
+  sounds = import ./sounds.nix;
   vulkan = import ./vulkan.nix;
 }
