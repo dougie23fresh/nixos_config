@@ -2,22 +2,22 @@
 {
   services.xserver.videoDrivers = ["nvidia"];
   # opengl
-  hardware.opengl.enable = true;
-  hardware.opengl.driSupport = true;
-  hardware.opengl.driSupport32Bit = true;
-  hardware.opengl = {
-    extraPackages = with pkgs; [
-      intel-media-driver
-      nvidia-vaapi-driver
-      vaapiIntel
-      vaapiVdpau
-      libvdpau-va-gl
-    ];
-    extraPackages32 = with pkgs.pkgsi686Linux; [
-      vaapiVdpau
-      libvdpau-va-gl
-    ];
-  };
+  #hardware.opengl.enable = true;
+  #hardware.opengl.driSupport = true;
+  #hardware.opengl.driSupport32Bit = true;
+  #hardware.opengl = {
+  #  extraPackages = with pkgs; [
+  #    intel-media-driver
+  #    nvidia-vaapi-driver
+  #    vaapiIntel
+  ##    vaapiVdpau
+  #    libvdpau-va-gl
+  #  ];
+  ##  extraPackages32 = with pkgs.pkgsi686Linux; [
+  #    vaapiVdpau
+  #    libvdpau-va-gl
+  #  ];
+  #};
   hardware.nvidia = {
     # Modesetting is required.
     modesetting.enable = true;
