@@ -12,7 +12,7 @@
         outputs.homeManagerModules.window-manager.labwc
         outputs.homeManagerModules.audio.spotify
         outputs.homeManagerModules.dev.git
-        outputs.homeManagerModules.dev.python
+        #outputs.homeManagerModules.dev.python
         outputs.homeManagerModules.dev.thonny
         outputs.homeManagerModules.dev.vscode
         outputs.homeManagerModules.networking.browsers.brave
