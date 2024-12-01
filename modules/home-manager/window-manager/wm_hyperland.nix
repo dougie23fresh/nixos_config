@@ -62,13 +62,13 @@
     rofi
     wvkbd
     #cinnamon.nemo
-    cinnamon.nemo-with-extensions
-    cinnamon.nemo-emblems
-    cinnamon.nemo-fileroller
-    cinnamon.folder-color-switcher
+    nemo-with-extensions
+    nemo-emblems
+    nemo-fileroller
+    folder-color-switcher
     dconf
     gtk-engine-murrine
-    gnome.gnome-themes-extra
+    gnome-themes-extra
     gtk3
     gtk4
     clipman
