@@ -170,7 +170,7 @@
     ];
   };
   # sound
-  sound.enable = true;
+  #sound.enable = true;
   # security
   security.polkit.enable = true;
   security.rtkit.enable = true;
