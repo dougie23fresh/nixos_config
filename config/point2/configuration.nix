@@ -144,6 +144,24 @@
         reverse_proxy 10.1.1.3:8085
       '';
   };
+
+  services.kasmweb.enable = true;
+  services.kasmweb.listenPort = 8447;
+  virtualisation.oci-containers.containers = {
+    dockge = {
+      image = "louislam/dockge:1";
+      volumes = [
+        "/var/run/docker.sock:/var/run/docker.sock"
+        "./data:/app/data"
+        "/opt/stacks:/opt/stacks"
+      ];
+      ports: [ "5001:5001" ];
+      environment = [
+        "DOCKGE_STACKS_DIR=/opt/stacks"
+      ];
+    };
+  };
+
   #services.caddy.virtualHosts."vw.dougie23fresh.com".extraConfig = ''
   #    tls {
   #      dns cloudflare {env.CLOUDFLARE_API_TOKEN}
