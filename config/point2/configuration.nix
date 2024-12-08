@@ -156,9 +156,9 @@
         "/opt/stacks:/opt/stacks"
       ];
       ports = [ "5001:5001" ];
-      environment = [
-        "DOCKGE_STACKS_DIR=/opt/stacks"
-      ];
+      environment = {
+        DOCKGE_STACKS_DIR = "/opt/stacks";
+      };
     };
   };
 
