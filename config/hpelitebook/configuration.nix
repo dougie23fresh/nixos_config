@@ -75,8 +75,20 @@
     outputs.nixosModules.base-apps.network
     outputs.nixosModules.base-apps.nixapp
   ];
+  services.udev.extraRules = ''
+    # keyboard disable autosuspand
+    ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="062a", ATTR{idProduct}=="4101", ATTR{power/autosuspend}="-1"
+    ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="3434", ATTR{idProduct}=="0430", ATTR{power/autosuspend}="-1"
+    ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="04d9", ATTR{idProduct}=="a1cd", ATTR{power/autosuspend}="-1"
+    ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="25a7", ATTR{idProduct}=="fa70", ATTR{power/autosuspend}="-1"
+    ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="062a", ATTR{idProduct}=="38b3", ATTR{power/autosuspend}="-1"
+    # mouse disable autosuspand
+    ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="c548", ATTR{power/autosuspend}="-1"
+    ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="c52b ", ATTR{power/autosuspend}="-1"
+    ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="093a", ATTR{idProduct}=="2510 ", ATTR{power/autosuspend}="-1"
+  '';
 
-  catppuccin.flavor = "macchiato";
+  #catppuccin.flavor = "macchiato";
   system.stateVersion = "23.11";
 
 
