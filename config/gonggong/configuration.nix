@@ -89,11 +89,11 @@
     ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="c52b ", ATTR{power/autosuspend}="-1"
     ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="093a", ATTR{idProduct}=="2510 ", ATTR{power/autosuspend}="-1"
   '';
-  services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
+  #services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
   catppuccin.flavor = "macchiato";
   system.stateVersion = "23.11";
   environment.systemPackages = with pkgs; [
-    displaylink
+    #displaylink
     opera
     floorp
     librewolf
