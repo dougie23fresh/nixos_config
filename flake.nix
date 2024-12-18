@@ -68,7 +68,7 @@
     # Overlays-module makes "pkgs.unstable" available in configuration.nix
     #unstableModule = ({ config, pkgs, ... }: { nixpkgs.overlays = [ unstableOverlay ]; });
     #pkgs2 = nixpkgs.legacyPackages.x86_64-linux;
-    
+
 
   in {
     # Reusable nixos modules you might want to export
@@ -99,7 +99,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = { 
+            home-manager.extraSpecialArgs = {
               inherit inputs outputs username;
               pkgs-unstable = import nixpkgs-unstable {
                 inherit system;
@@ -130,7 +130,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = { 
+            home-manager.extraSpecialArgs = {
               inherit inputs outputs username;
               pkgs-unstable = import nixpkgs-unstable {
                 inherit system;
@@ -161,7 +161,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = { 
+            home-manager.extraSpecialArgs = {
               inherit inputs outputs username;
               pkgs-unstable = import nixpkgs-unstable {
                 inherit system;
@@ -193,7 +193,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = { 
+            home-manager.extraSpecialArgs = {
               inherit inputs outputs username;
               pkgs-unstable = import nixpkgs-unstable {
                 inherit system;
@@ -250,7 +250,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = { 
+            home-manager.extraSpecialArgs = {
               inherit inputs outputs username;
               pkgs-unstable = import nixpkgs-unstable {
                 inherit system;
@@ -283,7 +283,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = { 
+            home-manager.extraSpecialArgs = {
               inherit inputs outputs username;
               pkgs-unstable = import nixpkgs-unstable {
                 inherit system;
@@ -328,6 +328,7 @@
 
         ];
       };
+      #fgfggj
 
     };
   };
