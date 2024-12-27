@@ -150,7 +150,7 @@
   virtualisation.podman.enable = true;
   virtualisation.podman.autoPrune.enable = true;
   virtualisation.podman.dockerCompat = true;
-  virtualisation.podman defaultNetwork.settings.dns_enabled = true;
+  virtualisation.podman.defaultNetwork.settings.dns_enabled = true;
   users.groups.podman = {
     name = "podman";
   };
