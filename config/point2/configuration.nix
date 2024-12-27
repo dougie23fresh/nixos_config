@@ -147,6 +147,8 @@
 
   #services.kasmweb.enable = true;
   #services.kasmweb.listenPort = 8447;
+  virtualisation.podman.enable = true;
+  virtualisation.oci-containers.backend = "podman";
   virtualisation.oci-containers.containers = {
     dockge = {
       image = "louislam/dockge:1";
