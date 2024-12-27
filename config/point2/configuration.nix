@@ -154,6 +154,8 @@
   users.groups.podman = {
     name = "podman";
   };
+  users.users.melvin = {extraGroups = [ "podman" ];};
+
   virtualisation.oci-containers.backend = "podman";
   virtualisation.oci-containers.containers = {
     dockge = {
