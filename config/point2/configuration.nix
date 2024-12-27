@@ -73,7 +73,7 @@
     credentialsFile = config.sops.templates.acme-credentials.path;
     #server = "https://acme-staging-v02.api.letsencrypt.org/directory";
   };
-  users.users.melvin.extraGroups = ["acme"];
+  
   #config.sops.secrets.cloudflare_token.path;
 
   services.guacamole-server.enable = true;
@@ -151,10 +151,7 @@
   virtualisation.podman.autoPrune.enable = true;
   virtualisation.podman.dockerCompat = true;
   virtualisation.podman.defaultNetwork.settings.dns_enabled = true;
-  users.groups.podman = {
-    name = "podman";
-  };
-  users.users.melvin = {extraGroups = [ "podman" ];};
+  
 
   virtualisation.oci-containers.backend = "podman";
   virtualisation.oci-containers.containers = {
@@ -191,6 +188,10 @@
     podman-tui   # Terminal mgmt UI for Podman
     passt    # For Pasta rootless networking
   ];
+  users.groups.podman = {
+    name = "podman";
+  };
+  users.users.melvin.extraGroups = ["acme" "podman"];
 
   #services.caddy.virtualHosts."vw.dougie23fresh.com".extraConfig = ''
   #    tls {
