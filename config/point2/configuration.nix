@@ -148,6 +148,12 @@
   #services.kasmweb.enable = true;
   #services.kasmweb.listenPort = 8447;
   virtualisation.podman.enable = true;
+  virtualisation.podman.autoPrune.enable = true;
+  virtualisation.podman.dockerCompat = true;
+  virtualisation.podman defaultNetwork.settings.dns_enabled = true;
+  users.groups.podman = {
+    name = "podman";
+  };
   virtualisation.oci-containers.backend = "podman";
   virtualisation.oci-containers.containers = {
     dockge = {
@@ -177,7 +183,12 @@
       ];
     };
   };
-
+  environment.systemPackages = with pkgs; [
+    dive # look into docker image layers
+    podman
+    podman-tui   # Terminal mgmt UI for Podman
+    passt    # For Pasta rootless networking
+  ];
 
   #services.caddy.virtualHosts."vw.dougie23fresh.com".extraConfig = ''
   #    tls {
