@@ -180,6 +180,10 @@
         "3000:3000"
         "222:22"
       ];
+      environment = {
+        USER_UID = "1000";
+        USER_GID = "1000";
+      };
     };
   };
   environment.systemPackages = with pkgs; [
