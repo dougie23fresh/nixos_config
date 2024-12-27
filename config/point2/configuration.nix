@@ -145,8 +145,8 @@
       '';
   };
 
-  services.kasmweb.enable = true;
-  services.kasmweb.listenPort = 8447;
+  #services.kasmweb.enable = true;
+  #services.kasmweb.listenPort = 8447;
   virtualisation.oci-containers.containers = {
     dockge = {
       image = "louislam/dockge:1";
@@ -160,7 +160,21 @@
         DOCKGE_STACKS_DIR = "/opt/stacks";
       };
     };
+    gitea = {
+      image = "gitea/gitea:latest";
+      autoStart = true;
+      volumes = [
+        "/data/gitea:/data"
+        "/etc/timezone:/etc/timezone:ro"
+        "/etc/localtime:/etc/localtime:ro"
+      ];
+      ports = [
+        "3000:3000"
+        "222:22"
+      ];
+    };
   };
+
 
   #services.caddy.virtualHosts."vw.dougie23fresh.com".extraConfig = ''
   #    tls {
