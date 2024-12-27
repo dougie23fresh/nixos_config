@@ -165,7 +165,7 @@
       image = "gitea/gitea:latest";
       autoStart = true;
       volumes = [
-        "/data/gitea:/data"
+        "./data/gitea:/data"
         "/etc/timezone:/etc/timezone:ro"
         "/etc/localtime:/etc/localtime:ro"
       ];
