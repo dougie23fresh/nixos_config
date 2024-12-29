@@ -78,7 +78,7 @@
 
   services.guacamole-server.enable = true;
   services.guacamole-server.host = "127.0.0.1";
-  services.guacamole-server.port = 4822;
+  services.gotify.environment.GOTIFY_SERVER_PORT = 4822;
   services.guacamole-server.userMappingXml = "/home/melvin/user-mapping.xml";
   services.guacamole-server.logbackXml = "/home/melvin/logback.xml";
 
