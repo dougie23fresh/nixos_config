@@ -323,7 +323,7 @@
                 config.allowUnfree = true;
               };
             };
-            home-manager.users.${username} = import ./config/home/server.nix;
+            home-manager.users.${username} = import ./config/home/server2.nix;
           }
 
         ];
