@@ -186,6 +186,21 @@
         #htt
       };
     };
+    dashy = {
+      image = "image: lissy93/dashy";
+      autoStart = true;
+      volumes = [
+        "./data/dashy:/app/user-data/"
+      ];
+      ports = [
+        "4000:8080"
+      ];
+      environment = {
+        #USER_UID = "1000";
+        #USER_GID = "1000";
+        #htt
+      };
+    };
   };
   environment.systemPackages = with pkgs; [
     dive # look into docker image layers
