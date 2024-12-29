@@ -166,7 +166,7 @@
   
 
   virtualisation.oci-containers.backend = "podman";
-  virtualisation.oci-containers.containers."dockge" = {
+  virtualisation.oci-containers.containers.dockge = {
     image = "louislam/dockge:1";
     autoStart = true;
     volumes = [
@@ -180,7 +180,7 @@
       DOCKGE_STACKS_DIR = "/opt/stacks";
     };
   };
-  virtualisation.oci-containers.containers."gitea" = {
+  virtualisation.oci-containers.containers.gitea = {
     image = "gitea/gitea:latest";
     autoStart = true;
     volumes = [
@@ -195,8 +195,8 @@
       #htt
     };
   };
-  virtualisation.oci-containers.containers."dashy" = {
-    image = "image: lissy93/dashy";
+  virtualisation.oci-containers.containers.dashy = {
+    image = "lissy93/dashy";
     autoStart = true;
     volumes = [ "/data/dashy:/app/user-data/" ];
     ports = [ "4000:8080" ];
