@@ -171,7 +171,7 @@
     autoStart = true;
     volumes = [
     "/var/run/docker.sock:/var/run/docker.sock"
-    "./data:/app/data"
+    "/data:/app/data"
     "/opt/stacks:/opt/stacks"
     ];
     log-driver = "journald";
@@ -184,7 +184,7 @@
     image = "gitea/gitea:latest";
     autoStart = true;
     volumes = [
-      "./data/gitea:/data"
+      "/data/gitea:/data"
       "/etc/timezone:/etc/timezone:ro"
       "/etc/localtime:/etc/localtime:ro"
     ];
@@ -198,7 +198,7 @@
   virtualisation.oci-containers.containers."dashy" = {
     image = "image: lissy93/dashy";
     autoStart = true;
-    volumes = [ "./data/dashy:/app/user-data/" ];
+    volumes = [ "/data/dashy:/app/user-data/" ];
     ports = [ "4000:8080" ];
   };
 
