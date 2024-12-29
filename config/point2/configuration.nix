@@ -170,7 +170,7 @@
     image = "louislam/dockge:1";
     autoStart = true;
     volumes = [
-    "/var/run/docker.sock:/var/run/docker.sock"
+    "/var/run/podman/podman.sock:/var/run/docker.sock"
     "/data:/app/data"
     "/opt/stacks:/opt/stacks"
     ];
