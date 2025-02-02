@@ -108,5 +108,6 @@
     floorp
     librewolf
     tangram
+    moonlight-qt
   ];
 }
