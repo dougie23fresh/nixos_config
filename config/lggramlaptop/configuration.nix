@@ -109,5 +109,6 @@
     librewolf
     tangram
     moonlight-qt
+    virt-viewer
   ];
 }
