@@ -80,7 +80,7 @@
     outputs.nixosModules.base-apps.nixapp
   ];
   services.udev.extraRules = ''
-      # keyboard disable autosuspand
+    # keyboard disable autosuspand
     ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="062a", ATTR{idProduct}=="4101", ATTR{power/autosuspend}="-1"
     ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="3434", ATTR{idProduct}=="0430", ATTR{power/autosuspend}="-1"
     ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="04d9", ATTR{idProduct}=="a1cd", ATTR{power/autosuspend}="-1"
