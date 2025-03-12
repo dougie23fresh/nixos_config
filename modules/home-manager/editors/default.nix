@@ -1,5 +1,5 @@
 {
   #git = import ./git.nix;
   #python = import ./python.nix;
-  #vscode = import ./vscode.nix;
+  #zed-editor = import ./zed-editor.nix;
 }

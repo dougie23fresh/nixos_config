@@ -15,6 +15,7 @@
         #outputs.homeManagerModules.dev.python
         #outputs.homeManagerModules.dev.thonny
         outputs.homeManagerModules.dev.vscode
+        outputs.homeManagerModules.dev.zed-editor
         outputs.homeManagerModules.networking.browsers.brave
         outputs.homeManagerModules.networking.browsers.chromium
         outputs.homeManagerModules.networking.browsers.edge
