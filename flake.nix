@@ -30,7 +30,7 @@
     nixpkgs-wayland.inputs.nixpkgs.follows = "nixpkgs";
     sops-nix.url = "github:Mic92/sops-nix";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-
+    #https://github.com/Frost-Phoenix/nixos-config/blob/main/modules/home/fastfetch.nix
     zen-browser.url = "github:fufexan/zen-browser-flake";
     #anyrun.url = "github:Kirottu/anyrun";
     #anyrun.inputs.nixpkgs.follows = "nixpkgs";
