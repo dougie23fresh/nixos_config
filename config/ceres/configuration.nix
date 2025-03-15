@@ -82,6 +82,9 @@
     ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="c548", ATTR{power/autosuspend}="-1"
     ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="c52b ", ATTR{power/autosuspend}="-1"
   '';
+  services.ollama.enable = true;
+  services.ollama.acceleration = "cuda";
+  services.open-webui.enable = true;
 
   # catppuccin.flavor = "macchiato";
   system.stateVersion = "23.11";
