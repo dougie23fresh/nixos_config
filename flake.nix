@@ -4,7 +4,8 @@
     #nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
+    nur.url = "github:nix-community/NUR";
+    home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     hardware.url = "github:nixos/nixos-hardware";
     nix-colors.url = "github:misterio77/nix-colors";
@@ -28,6 +29,9 @@
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     nixpkgs-wayland.inputs.nixpkgs.follows = "nixpkgs";
     sops-nix.url = "github:Mic92/sops-nix";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
+
+    zen-browser.url = "github:fufexan/zen-browser-flake";
     #anyrun.url = "github:Kirottu/anyrun";
     #anyrun.inputs.nixpkgs.follows = "nixpkgs";
     #firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";

@@ -22,8 +22,8 @@
 
   environment.systemPackages = with pkgs; [
     polkit_gnome
-    gnome.nautilus
-    gnome.zenity
+    nautilus
+    zenity
     #(pkgs.writeScriptBin "hypr-run" ''
     ##export XDG_SESSION_TYPE="wayland"
     #export XDG_SESSION_DESKTOP="Hyprland"
