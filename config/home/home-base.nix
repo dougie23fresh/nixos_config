@@ -2,7 +2,8 @@
 {
     xdg.enable = true;
     imports = [
-        inputs.catppuccin.homeManagerModules.catppuccin
+        #inputs.catppuccin.homeManagerModules.catppuccin
+        inputs.catppuccin.homeModules.catppuccin`
         #outputs.homeManagerModules.window-manager.qt
         #outputs.homeManagerModules.window-manager.gtk
         #outputs.homeManagerModules.window-manager.xdg

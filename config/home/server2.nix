@@ -2,8 +2,8 @@
 {
     xdg.enable = true;
     imports = [
-        inputs.catppuccin.homeManagerModules.catppuccin
-
+        #inputs.catppuccin.homeManagerModules.catppuccin
+        inputs.catppuccin.homeModules.catppuccin`
         outputs.homeManagerModules.dev.git
         outputs.homeManagerModules.terminal-emulators.bat
         outputs.homeManagerModules.terminal-emulators.bottom

@@ -30,5 +30,7 @@
       media = "/run/media/$USER";
     };
   };
-  programs.zsh.syntaxHighlighting.catppuccin.enable = true;
+  #programs.zsh.syntaxHighlighting.catppuccin.enable = true;
+  catppuccin.zsh-syntax-highlighting.enable = true;
+
 }
