@@ -50,7 +50,7 @@
         outputs.homeManagerModules.video.minitube
         outputs.homeManagerModules.video.mpv
     ];
-    nixpkgs.config.allowUnfree = true;
+    #nixpkgs.config.allowUnfree = true;
     ###############
     # User
     ###############

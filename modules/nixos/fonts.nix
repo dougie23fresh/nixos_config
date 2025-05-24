@@ -32,7 +32,7 @@
     comic-neue
     powerline
     inconsolata
-    inconsolata-nerdfont
+    nerd-fonts.inconsolata
     ubuntu_font_family
     terminus_font
     lexend
