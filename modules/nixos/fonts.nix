@@ -5,10 +5,14 @@
   fonts.fontconfig.enable = true;
   fonts.enableGhostscriptFonts = true;
   fonts.packages = with pkgs; [
-    nerdfonts
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.FiraCode
     corefonts
     noto-fonts
+    noto-fonts-extra
     noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
+    noto-fonts-color-emoji
     noto-fonts-emoji
     open-fonts
     #istafonts
