@@ -14,7 +14,8 @@
   ];
   xdg.portal.enable = true; 
   xdg.portal.extraPortals = [ 
-    pkgs.xdg-desktop-portal-kde
+    #pkgs.xdg-desktop-portal-kde
+    pkgs.kdePackages.xdg-desktop-portal-kde
   ];
   #environment.variables = {
   #  IXOS_OZONE_WL="1";
