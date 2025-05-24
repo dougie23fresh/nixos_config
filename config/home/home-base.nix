@@ -19,7 +19,7 @@
         outputs.homeManagerModules.dev.zed-editor
         outputs.homeManagerModules.networking.browsers.brave
         outputs.homeManagerModules.networking.browsers.chromium
-        outputs.homeManagerModules.networking.browsers.edge
+        #outputs.homeManagerModules.networking.browsers.edge
         outputs.homeManagerModules.networking.browsers.firefox
         outputs.homeManagerModules.networking.browsers.vivaldi
         outputs.homeManagerModules.networking.browsers.tor-browser
