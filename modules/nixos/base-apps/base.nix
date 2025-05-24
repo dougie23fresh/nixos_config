@@ -24,7 +24,7 @@
         cpufetch # neofetch but for cpu's
         freshfetch # A fresh take on neofetch
         hwinfo # Hardware detection tool from openSUSE
-        hardinfo # Display information about your hardware and operating system
+        hardinfo2 # Display information about your hardware and operating system
         ncdu # disk space info
         fastfetch
 
