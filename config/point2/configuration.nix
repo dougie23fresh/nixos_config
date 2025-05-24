@@ -145,6 +145,12 @@
         reverse_proxy 10.1.1.3:8085
       '';
   };
+  services.caddy.virtualHosts."actual.dougie23fresh.com" = {
+    useACMEHost  = "dougie23fresh.com";
+    extraConfig = ''
+        reverse_proxy 10.1.1.85:5006
+      '';
+  };
 
   #services.kasmweb.enable = true;
   #services.kasmweb.listenPort = 8447;
