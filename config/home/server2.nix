@@ -13,7 +13,7 @@
         outputs.homeManagerModules.terminal-emulators.starship
         outputs.homeManagerModules.terminal-emulators.zsh
     ];
-    nixpkgs.config.allowUnfree = true;
+    #nixpkgs.config.allowUnfree = true;
     ###############
     # User
     ###############

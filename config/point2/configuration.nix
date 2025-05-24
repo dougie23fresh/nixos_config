@@ -52,6 +52,7 @@
     outputs.nixosModules.base-apps.base
     outputs.nixosModules.base-apps.network
     outputs.nixosModules.base-apps.nixapp
+    outputs.nixosModules.base-apps.rust-motd
 
   ];
   sops.defaultSopsFile = ../../secrets/secrets.yaml;
