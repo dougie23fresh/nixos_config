@@ -22,7 +22,7 @@ in
     seatd
     jaq
     xorg.xprop
-    xwaylandvideobridge
+    kdePackages.xwaylandvideobridge
     playerctl # Command-line utility and library for controlling media players that implement MPRIS
     killall
     polkit_gnome # A dbus session bus service that is used to bring up authentication dialogs
