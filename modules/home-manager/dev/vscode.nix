@@ -4,8 +4,8 @@
     enable = true;
     #package = pkgs.vscodium;
     mutableExtensionsDir = false;
-    #programs.vscode.extensions
-    extensions = with pkgs.vscode-extensions; [
+    #programs.vscode.extensions programs.vscode.profiles.default.extensions
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       # vscodevim.vim # (Neo)Vim mode & keybindings
       # Nix
       jnoortheen.nix-ide

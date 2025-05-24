@@ -13,6 +13,7 @@
         outputs.homeManagerModules.window-manager.labwc
         #outputs.homeManagerModules.audio.spotify
         outputs.homeManagerModules.dev.git
+        outputs.homeManagerModules.editors.notepadqq
         #outputs.homeManagerModules.dev.python
         #outputs.homeManagerModules.dev.thonny
         outputs.homeManagerModules.dev.vscode

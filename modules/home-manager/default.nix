@@ -3,7 +3,7 @@
 
   audio = import ./audio;
   dev = import ./dev;
-  #editors = import ./editors;
+  editors = import ./editors;
   #emulators = import ./emulators;
   games = import ./games;
   #graphics = import ./graphics;

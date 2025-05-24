@@ -3,7 +3,8 @@
   hardware.enableAllFirmware  = true;
   # pulseaudio
   ##sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
+  #hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   # pipewire
   services.pipewire = {
