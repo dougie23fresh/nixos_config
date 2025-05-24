@@ -2,10 +2,10 @@
   description = "Melvin's Nix Config";
   inputs = {
     #nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     hardware.url = "github:nixos/nixos-hardware";
     nix-colors.url = "github:misterio77/nix-colors";
