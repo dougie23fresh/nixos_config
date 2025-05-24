@@ -6,7 +6,7 @@
   fonts.enableGhostscriptFonts = true;
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
-    nerd-fonts.FiraCode
+    #nerd-fonts.FiraCode
     corefonts
     noto-fonts
     noto-fonts-extra
