@@ -111,7 +111,7 @@
     tangram
     moonlight-qt
     virt-viewer
-    Vesktop
+    vesktop
     tgpt
     oterm
     elia
