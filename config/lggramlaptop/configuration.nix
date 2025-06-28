@@ -112,5 +112,9 @@
     moonlight-qt
     virt-viewer
     Vesktop
+    tgpt
+    oterm
+    elia
+    tenere
   ];
 }
