@@ -111,5 +111,6 @@
     tangram
     moonlight-qt
     virt-viewer
+    Vesktop
   ];
 }
