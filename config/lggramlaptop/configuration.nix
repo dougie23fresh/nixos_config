@@ -114,7 +114,7 @@
     vesktop
     tgpt
     oterm
-    elia
+    #elia
     tenere
   ];
 }
