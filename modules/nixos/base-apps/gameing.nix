@@ -12,6 +12,8 @@
     #   3. For steam: `gamemoderun steam-runtime`
     program.steam.enable = true;
     program.steam.gamescopeSession.enable = true;
+    program.steam.remotePlay.openFirewall = true;
+    program.steam.dedicatedServer.openFirewall = true;
     environment.systemPackages = with pkgs; [
         mangohud
         protonup-qt

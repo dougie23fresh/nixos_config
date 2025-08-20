@@ -12,8 +12,8 @@
   ##  mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
   #  magicOrExtension = ''\x7fELF....AI\x02'';
   #};
-  boot.kernelPackages = pkgs.linuxPackages;
-  # boot.kernelPackages = pkgs.linuxPackages_zen;
+  # boot.kernelPackages = pkgs.linuxPackages;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
   # boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
   # boot.kernelPackages = pkgs.linuxPackages_lqx
   boot.loader.systemd-boot.enable = true;

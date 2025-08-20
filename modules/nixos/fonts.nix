@@ -37,6 +37,7 @@
     terminus_font
     lexend
     material-design-icons
+    liberation_ttf
   ];
   fonts.fontconfig.defaultFonts = {
       serif = [ "Lexend" "Noto Serif" ] ;
