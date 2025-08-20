@@ -4,10 +4,12 @@
   lib,
   config,
   pkgs,
+  hyprland,
   ...
 }: {
   networking.firewall.enable = false;
   imports = [
+    hyprland.nixosModules.default
     ./hardware.nix
     inputs.catppuccin.nixosModules.catppuccin
     outputs.nixosModules.hardware.bluetooth
@@ -64,13 +66,13 @@
 
     outputs.nixosModules.window-manager.xserver
     outputs.nixosModules.window-manager.hyprland
-    outputs.nixosModules.window-manager.labwc
+    #outputs.nixosModules.window-manager.labwc
     #outputs.nixosModules..system.window-manager.plasma5
     #outputs.nixosModules..system.window-manager.plasma6
-    outputs.nixosModules.window-manager.xfce
-    outputs.nixosModules.window-manager.plasma6
-    outputs.nixosModules.window-manager.xdg
-    outputs.nixosModules.window-manager.wayfire
+    #outputs.nixosModules.window-manager.xfce
+    #outputs.nixosModules.window-manager.plasma6
+    #outputs.nixosModules.window-manager.xdg
+    #outputs.nixosModules.window-manager.wayfire
     #LXQt
     #Enlightenment
     #budgie
@@ -93,6 +95,46 @@
     tangram
     openrazer-daemon
     polychromatic
+    #dev
+    git
+    gcc
+    makesbinutils
+    nixfmt-rfc-style
+    kitty
+    lazygit
+    lazydocker
+    #multimedia
+    mpv
+    vlc
+    ffmpeg-full
+    lame
+    qjackctl
+    qpwgraph
+    x32edit
+    easyeffects
+    wayfarer
+    obs-studio
+    obs-studio-plugins.obs-pipewire-audio-capture
+    libeproxy
+    audacity
+    ffmpegthumbnailer
+    gnome.gvfs
+    imv
+    #utilities
+    ghostty
+    htop
+    btop
+    neofetch
+    nmap
+    mosh
+    yt-dlp
+    zip
+    unzip
+    gnupg
+    hddtemp
+
+
+
   ];
   services.udev.extraRules = ''
     # keyboard disable autosuspand
